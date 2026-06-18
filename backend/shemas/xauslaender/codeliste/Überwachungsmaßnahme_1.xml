@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+   xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0"
+   xmlns:xoev-cl-2="http://xoev.de/schemata/genericode/2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <!--Metadaten entsprechend XÖV-Handbuch 2.0-->
+         <xoev-cl:beschreibung>Die Überwachungsmaßnahme dient der stärkeren Kontrolle gefährlicher,
+            vollziehbar ausreisepflichtiger Ausländer, die sich weiterhin im Bundesgebiet
+            aufhalten.</xoev-cl:beschreibung>
+         <xoev-cl:datumgueltigkeitab>2018-09-01</xoev-cl:datumgueltigkeitab>
+         <!--Metadaten entsprechend XÖV-Handbuch 2.1-->
+         <xoev-cl-2:nameKurz>Überwachungsmaßnahme</xoev-cl-2:nameKurz>
+         <xoev-cl-2:beschreibung-codeliste>Die Überwachungsmaßnahme dient der stärkeren Kontrolle
+            gefährlicher, vollziehbar ausreisepflichtiger Ausländer, die sich weiterhin im
+            Bundesgebiet aufhalten.</xoev-cl-2:beschreibung-codeliste>
+         <xoev-cl-2:beschreibung-versionCodeliste>Update am 26.04.2023: Diese Codeliste wurde von
+            der KoSIT angepasst um Konformität mit Codelistenregelungen herzustellen. Es gibt keine
+            inhaltlichen Änderungen.</xoev-cl-2:beschreibung-versionCodeliste>
+         <xoev-cl-2:herausgebernameKurz>BVA</xoev-cl-2:herausgebernameKurz>
+         <xoev-cl-2:datumGueltigkeitAb>2018-09-01</xoev-cl-2:datumGueltigkeitAb>
+         <xoev-cl-2:versionXOEVHandbuch>2.1</xoev-cl-2:versionXOEVHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.UeberwachungsmassnahmeArt</ShortName>
+      <LongName>Art der Überwachungsmaßnahme</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:artueberwachungsmassnahme</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:artueberwachungsmassnahme_1</CanonicalVersionUri>
+      <Agency>
+         <ShortName>BVA</ShortName>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="optional">
+         <ShortName>beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung_lang" Use="optional">
+         <ShortName>beschreibung_lang</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl:xoev-code/>
+               <xoev-cl-2:xoev-code/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Aufenthalt nach § 56 Abs. 2 AufenthG beschränkt</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung_lang">
+            <SimpleValue>Aufenthalt nach Par.56 Abs.2 AufenthG beschraenkt auf Bezirk der Auslaenderbehoerde &lt;raeumlicheBeschraenkungBehoerde&gt; Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt; Behörde &lt;meldendeBehoerde&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>abweichende Regelung hinsichtlich der Aufenthaltsbeschränkung nach § 56 Abs. 2 AufenthG angeordnet</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung_lang">
+            <SimpleValue>Abweichende Regelung hinsichtlich der Aufenthaltsbeschraenkung nach Par. 56 Abs. 2 AufenthG Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt; ABH &lt;meldendeBehoerde&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Verpflichtung hinsichtlich Wohnung nach § 56 Abs. 3 AufenthG angeordnet</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung_lang">
+            <SimpleValue>Verpflichtung hinsichtlich Wohnung nach Par.56 Abs.3 AufenthG angeordnet am &lt;ereignisdatum&gt; ABH &lt;meldendeBehoerde&gt; Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Nutzungsverbot hinsichtlich Kommunikationsmittel nach § 56 Abs. 4 AufenthG angeordnet</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung_lang">
+            <SimpleValue>Nutzungsverbot hinsichtlich Kommunikationsmittel nach Par. 56 Abs. 4 AufenthG angeordnet am &lt;ereignisdatum&gt; ABH &lt;meldendeBehoerde&gt; Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Kontaktverbot hinsichtlich Personen nach § 56 Abs. 4 AufenthG angeordnet</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung_lang">
+            <SimpleValue>Kontaktverbot hinsichtlich Personen nach Par. 56 Abs. 4 AufenthG angeordnet am &lt;ereignisdatum&gt; Behoerde &lt;meldendeBehoerde&gt; Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

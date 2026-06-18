@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>MBAuskunftssperre</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Beschreibt die Ausprägungen der relevanten meldebehördlichen Auskunftssperren.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2023-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>mbauskunftssperre</ShortName>
+      <LongName>Meldebehördliche Auskunftssperre</LongName>
+      <Version>4</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:mbauskunftssperre</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:mbauskunftssperre_4</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 5 Nr. 2 BMG (Adoptionspflegeverhältnis gem. § 1758 Abs. 2 BGB)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 1 BMG auf Veranlassung einer Sicherheitsbehörde (bei Gefahr für Leben, Gesundheit, persönliche Freiheit oder ähnliche schutzwürdige Interessen)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Auskunftssperren nach § 51 Abs. 5 Nr. 1 BMG (Eintragungen nach dem Transsexuellengesetz - § 63 Abs. 2 Personenstandsgesetz, Speicherung erfolgt nur in dem Melderegister der Meldebehörde, in deren Zuständigkeitsbereich die Änderung von Daten nach dem Transsexuellengesetz verarbeitet wurde)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>3</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 1 BMG auf Antrag des Betroffenen (bei Gefahr für Leben, Gesundheit, persönliche Freiheit oder ähnliche schutzwürdige Interessen)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>6</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 5 Nr. 1 BMG (Speicherung erfolgt nur in dem Melderegister der Meldebehörde, in deren Zuständigkeitsbereich die Annahme als Kind verarbeitet wurde - § 63 Personenstandsgesetz)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

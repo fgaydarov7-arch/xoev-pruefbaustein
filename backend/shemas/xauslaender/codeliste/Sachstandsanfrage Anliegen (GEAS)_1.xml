@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Sachstandsanfrage Anliegen (GEAS)</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Codeliste wird ein Anliegen der Sachstandsanfrage übermittelt.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>XAuslaender</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Mit dieser Codeliste wird ein Anliegen der Sachstandsanfrage übermittelt.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2026-06-12</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>geas.sachstandsanfrageanliegen</ShortName>
+      <LongName>Sachstandsanfrage Anliegen (GEAS)</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:geas.sachstandsanfrageanliegen</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:geas.sachstandsanfrageanliegen_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Asylverfahren</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Code" Use="required">
+         <ShortName>Code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Beschreibung" Use="required">
+         <ShortName>Beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="CodeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="Code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Rückmeldung zum Überstellungstermin fehlt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Erinnerung zur Zusendung eines Terminvorschlages</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der/Die o.G. befindet/befinden sich in Haft. Aufgrund dessen gilt die zwölfmonatige Überstellungsfrist gem. Art. 46 Abs. 2 Satz 2 AMMVO. Der zuständige Mitgliedstaat wurde entsprechend informiert. Bitte leiten Sie die erforderlichen Maßnahmen ein und übermitteln Sie mir einen (neuen) Terminvorschlag mit einer Bestätigung über die Freigabe der Staatsanwaltschaft.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Eine Überstellung des/der o.g. Person/en ist derzeit nicht möglich. Der Aufenthaltsort der o.g. Person/en bzw. der/des gemeinsam zu überstellenden Familienangehörigen ist nicht bekannt. Aufgrund dessen gilt die dreijährige Überstellungsfrist gem. Art. 46 Abs. 2 Satz 2 AMMVO. Der zuständige Mitgliedstaat wurde entsprechend informiert. Bitte leiten Sie die erforderlichen Maßnahmen ein.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der angekündigte Überstellungsversuch ist gescheitert, weil die o.g. Person/en bzw. der/die gemeinsam zu überstellende/n Familienangehörige/n nicht angetroffen wurde/n. Aufgrund dessen gilt die dreijährige Überstellungsfrist gem. Art. 46 Abs. 2 Satz 2 AMMVO. Der zuständige Mitgliedstaat wurde entsprechend informiert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Überstellungsversuch ist gescheitert. Die Überstellungsfrist hat sich nicht verändert. Es gilt bereits die dreijährige Überstellungsfrist gem. Art. 46 Abs. 2 Satz 2 AMMVO.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Für die Anwendung der dreijährigen Überstellungsfrist gem. Art. 46 Abs. 2 S. 2 AMMVO ist eine Begründung seitens der Ausländerbehörde erforderlich. Bitte reichen Sie eine detaillierte nachvollziehbare Sachaufklärung ein, warum von einem „Flüchtigsein“ auszugehen ist (bitte beachten Sie die aktuellen Hinweise in den „Vorgaben bei ZBV-Überstellungen in die MS" auf ZAIPort.)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Überstellungsversuch ist gescheitert. Die Überstellungsfrist hat sich nicht verändert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Bitte leiten Sie mir unverzüglich einen neuen Terminvorschlag zu.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Ich bitte vom Übersenden von Zutrittsprotokollen mangels Erforderlichkeit grundsätzlich abzusehen. Soweit bekannt, teilen Sie dem Bundesamt bitte lediglich den Zeitpunkt mit, an dem die Person die Unterkunft letztmalig verlassen hat. Das Zutrittsprotokoll als solches ist nicht Bestandteil der Akte geworden. Die Speicherung und Archivierung ist für eine etwaige verwaltungsgerichtliche Überprüfung anhand der geltenden Vorschriften in eigener Zuständigkeit zu prüfen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Individuelle Nachricht</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die o.g. Person/en bzw. der/die gemeinsam zu überstellende/n Familienangehörige/n wurde/n bei dem Überstellungsversuch zur Nachtzeit trotz entsprechender Verfügung nicht angetroffen. Aufgrund dessen gilt die dreijährige Überstellungsfrist gem. Art. 46 Abs. 2 Satz 2 AMMVO. Der zuständige Mitgliedstaat wurde entsprechend informiert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Es wird eine ärztliche Begleitung empfohlen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Bitte lassen Sie durch die BPol prüfen, ob eine Begleitung gem. der „Bestimmungen über die Rückführung ausländischer Staatsangehöriger auf dem Luftweg (Best Rück Luft)“ erforderlich ist und informieren Sie mich über das Ergebnis.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Während der gesetzlichen Mutterschutzfristen ist eine Überstellung unzulässig.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Bitte senden Sie mir die Ihnen vorgelegten ärztlichen Bescheinigungen zu.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Es gilt bereits die dreijährige Überstellungsfrist gem. Art. 46 Abs. 2 S. 2 AMMVO. Eine Rückmeldung Ihrerseits ist nur bei Wiederzuzug von unbekannt erforderlich.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Für die Prüfung der dreijährigen Überstellungsfrist gem. Art. 46 Abs. 2 S. 2 AMMVO ist der Einsatzbericht, aus dem sich der Ort und Zeitpunkt des Zugriffs ergibt, sowie die Terminankündigung bzw. Nachtzeit-/Ordnungsverfügung nebst Empfangsbestätigung zu übermitteln. Da mir die für die Prüfung erforderlichen Unterlagen nicht vollständig vorliegen, bitte ich Sie um Übersendung der fehlenden Unterlagen. </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Aktuelle Informationen zum ZBV (v. a. „Vorgaben bei ZBV-Überstellungen in die MS", tagesaktuelle Sperrtagsliste) finden Sie unter https://zaiport.testa-de.net/ZUR/EU-Themen. Einen persönlichen Zugang für diese Seite können im Überstellungsbereich tätige Mitarbeitende der Ausländerbehörden über service@zaiport.de beantragen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Überstellungsversuch ist gescheitert, weil die o.g. Person/en bzw. der/die gemeinsam zu überstellende/n Familienangehörige/n sich körperlich der Überstellung widersetzte/n. Aufgrund dessen gilt die dreijährige Überstellungsfrist gem. Art. 46 Abs. 2 Satz 2 AMMVO. Der zuständige Mitgliedstaat wurde entsprechend informiert. Bitte leiten Sie die erforderlichen Maßnahmen ein.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Überstellungsversuch ist gescheitert, weil die o.g. Person/en bzw. der/die gemeinsam zu überstellende/n Familienangehörige/n sich für die Überstellung vorsätzlich untauglich machte/n. Aufgrund dessen gilt die dreijährige Überstellungsfrist gem. Art. 46 Abs. 2 Satz 2 AMMVO. Der zuständige Mitgliedstaat wurde entsprechend informiert. Bitte leiten Sie die erforderlichen Maßnahmen ein.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Eine Überstellung der o.g. Person/en bzw. der/des gemeinsam zu überstellenden Familienangehörigen ist derzeit nicht möglich. Die für die Überstellung erforderlichen medizinischen Anforderungen werden nicht erfüllt. Aufgrund dessen gilt die dreijährige Überstellungsfrist gem. Art. 46 Abs. 2 Satz 2 AMMVO. Der zuständige Mitgliedstaat wurde entsprechend informiert. Bitte leiten Sie die erforderlichen Maßnahmen ein.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Es handelt sich um ein zu priorisierendes Verfahren gem. Art. 46 Abs. 1 Unterabs. 2 AMMVO.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die o.g. Person/en bzw. der/die gemeinsam zu überstellende/n Familienangehörige/n stehen wieder zur Verfügung und die verbleibende Zeit beträgt weniger als drei Monate, somit wurde die Überstellungsfrist gem. Art. 46 Abs. 2 S. 3 AMMVO um drei Monate verlängert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der bisher zuständige Mitgliedstaat hat den Überstellungstermin mit Verweis auf den Zuständigkeitsübergang auf einen anderen Mitgliedstaat nicht mehr akzeptiert. Die Zuständigkeit des anderen Mitliedstaates wird nunmehr durch das ZBV-Zentrum geprüft.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

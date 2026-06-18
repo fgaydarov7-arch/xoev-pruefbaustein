@@ -1,0 +1,481 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-2="http://xoev.de/schemata/genericode/2"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-2:nameKurz>xauslaender.BAMFAussenstellen</xoev-cl-2:nameKurz>
+         <xoev-cl-2:beschreibung-codeliste>Bezeichnet die Aussenstellen des BAMF anhand der Behördenkennzahl (ohne Präfix)</xoev-cl-2:beschreibung-codeliste>
+         <xoev-cl-2:herausgebernameKurz>BAMF</xoev-cl-2:herausgebernameKurz>
+         <xoev-cl-2:datumGueltigkeitAb>2019-11-01</xoev-cl-2:datumGueltigkeitAb>
+         <xoev-cl-2:versionXOEVHandbuch>2.1</xoev-cl-2:versionXOEVHandbuch>
+         <xoev-cl-2:aenderungZurVorversion>inaktive AS wurden entfernt: Reutlingen, Würzburg, Ingelheim, Bad Berleburg, Burbach, Mannheim, Kiel, Mühlhausen, Herford, Hermeskeil, Freilassing, Feldkirchen, Greven, Kusel, Münster, Bochum, Saarbrücken, Boostedt, Rendsburg, Glückstadt; neu hinzu gekommen: AS Speyer (099078)</xoev-cl-2:aenderungZurVorversion>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>bamfaussenstellen</ShortName>
+      <LongName>Bundesamtsaussenstellen</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:xoev-de:bund:bamf:codeliste:asyl:bamfaussenstellen</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:bund:bamf:codeliste:asyl:bamfaussenstellen_2</CanonicalVersionUri>
+      <AlternateFormatLocationUri>urn:xoev-de:bund:bamf:codeliste:asyl:bamfaussenstellen_2</AlternateFormatLocationUri>
+      <Agency>
+         <LongName>Bundesamt für Migration un d Flüchtlinge, Fachbereich Ausländerwesen</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="BHKNZ" Use="required">
+         <ShortName>BHKNZ</ShortName>
+         <LongName>BHKNZ</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Aussenstelle-BAMF" Use="required">
+         <ShortName>Aussenstelle-BAMF</ShortName>
+         <LongName>Aussenstelle-BAMF</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-2:xoev-code/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="BHKNZ"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090101</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Karlsruhe</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090102</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Bramsche</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090105</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Abteilung 4</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090201</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Zirndorf</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090202</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>München</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090207</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Deggendorf</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090301</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Berlin</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090401</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Bremen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090501</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Hamburg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090602</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Gießen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090606</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Flughafen Frankfurt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090701</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Braunschweig</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090702</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Friedland</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090802</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Dortmund</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090803</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Düsseldorf</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090804</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Köln</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090805</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Bielefeld</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090807</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Ellwangen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090903</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Trier</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>090905</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Manching</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>091001</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Lebach</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>091103</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Neumünster</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>091201</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Eisenhüttenst.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>091302</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Nostorf-Horst</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>091401</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Chemnitz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>091501</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Halberstadt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>091602</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Jena-Hermsdorf</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099032</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Schweinfurt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099037</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Bamberg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099038</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Unna</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099041</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Rosenheim</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099042</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Leipzig</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099043</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Oldenburg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099044</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Regensburg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099045</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Dresden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099046</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Heidelberg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099047</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Suhl</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099048</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Büdingen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099050</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Augsburg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099051</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Bayreuth</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099052</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Osnabrück</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099053</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Essen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099054</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Heide</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099055</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Bad Fallingbostel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099057</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Neustadt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099058</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Passau</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099062</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Erding</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099065</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Bonn</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099066</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Freiburg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099067</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Mönchengladbach</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099068</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Diez</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099069</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Sigmaringen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099075</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Ankunftszentrum Köln-Bonn</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="BHKNZ">
+            <SimpleValue>099078</SimpleValue>
+         </Value>
+         <Value ColumnRef="Aussenstelle-BAMF">
+            <SimpleValue>Speyer</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

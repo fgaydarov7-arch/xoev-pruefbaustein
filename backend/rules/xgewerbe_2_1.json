@@ -1,0 +1,25 @@
+{
+  "schema_id": "xgewerbe_2_1",
+  "schema_name": "XGewerbe 2.1 (Ordnungsamt)",
+  "version": "2.1.0",
+  "xoev_standard": "XGewerbe",
+  "description": "Validierungsregeln für Gewerbemeldungen gemäß XGewerbe 2.1. Zuständig: Ordnungsamt / Gewerbeamt.",
+  "fields": [
+    {
+      "name": "Gemeindeschluessel",
+      "required": true,
+      "type": "string",
+      "regex": "^[0-9]{8}$",
+      "description": "Amtlicher Gemeindeschlüssel (AGS) mit genau 8 Ziffern.",
+      "fix_suggestion": "Der Gemeindeschlüssel muss exakt 8 Ziffern umfassen (z. B. 08111000 für Stuttgart). Führende Nullen beachten."
+    },
+    {
+      "name": "Gewerbe_Art",
+      "required": true,
+      "type": "string",
+      "codelist": ["Hauptniederlassung", "Zweigniederlassung", "Unselbständige Zweigstelle"],
+      "description": "Art der gewerblichen Niederlassung gemäß XGewerbe-Codeliste.",
+      "fix_suggestion": "Erlaubte Werte: 'Hauptniederlassung', 'Zweigniederlassung' oder 'Unselbständige Zweigstelle'."
+    }
+  ]
+}

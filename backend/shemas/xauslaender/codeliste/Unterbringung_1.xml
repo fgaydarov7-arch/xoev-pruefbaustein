@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Unterbringung</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Enthält Angaben zur Unterbringung für die Asylagentur der Europäi-schen Union nach Artikel 4 der Verordnung (EU) 2021/2303.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Enthält Angaben zur Unterbringung für die Asylagentur der Europäi-schen Union nach Artikel 4 der Verordnung (EU) 2021/2303.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2026-06-12</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>azr.artderangabenunterbringung</ShortName>
+      <LongName>Angaben zur Unterbringung</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:bva:codeliste:azr.artderangabenunterbringung</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:bva:codeliste:azr.artderangabenunterbringung_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Code" Use="required">
+         <ShortName>Code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Beschreibung" Use="optional">
+         <ShortName>Beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="CodeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="Code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Erstaufnahmeeinrichtung nach § 44 AsylG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Erstaufnahmeeinrichtung nach § 44 AsylG, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, aufgenommen am &lt;einzugsdatum&gt;, entlassen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Gemeinschaftsunterkunft nach § 53 AsylG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Gemeinschaftsunterkunft nach § 53 AsylG, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, aufgenommen am &lt;einzugsdatum&gt;, entlassen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Aufnahmezentrum für Grenzverfahren</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufnahmezentrum für Grenzverfahren, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, aufgenommen am &lt;einzugsdatum&gt;, entlassen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Privatunterkünfte gem. Art. 20 (1c) der Aufnahmerichtlinie 2024/1346</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Privatunterkünfte gem. Art. 20 (1c) der Aufnahmerichtlinie 2024/1346, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, eingezogen am &lt;einzugsdatum&gt;, ausgezogen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>im Unterbringungssystem für unbegleitete Minderjährige</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>im Unterbringungssystem für unbegleitete Minderjährige, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, aufgenommen am &lt;einzugsdatum&gt;, entlassen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>im Unterbringungssystem für sonstige vulnerable Personen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>im Unterbringungssystem für sonstige vulnerable Personen, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, aufgenommen am &lt;einzugsdatum&gt;, entlassen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Hotels und andere Räumlichkeiten gem. Art. 2 Nr. 10 und Art. 20 (1b) der Aufnahmerichtlinie 2024/1346</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Hotels und andere Räumlichkeiten gem. Art. 2 Nr. 10 und Art. 20 (1b) der Aufnahmerichtlinie 2024/1346, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, eingezogen am &lt;einzugsdatum&gt;, ausgezogen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Notunterkunft (nach Art. 20 (10b) Aufnahmerichtlinie 2024/1346)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Notunterkunft (nach Art. 20 (10b) Aufnahmerichtlinie 2024/1346), zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, aufgenommen am &lt;einzugsdatum&gt;, entlassen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>im System zur Bargeldversorgung für Unterkunftszwecke</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>im System zur Bargeldversorgung für Unterkunftszwecke, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, eingezogen am &lt;einzugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>aufgrund ausreichender Mittel nicht im Unterbringungssystem</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>aufgrund ausreichender Mittel nicht im Unterbringungssystem – ausreichende Mittel, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, eingezogen am &lt;einzugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>aufgrund mangelnder Kapazität nicht im Unterbringungssystem</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>aufgrund mangelnder Kapazität nicht im Unterbringungssystem, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, eingezogen am &lt;einzugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Asylverfahrenshaft nach § 69 AsylG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Asylverfahrenshaft nach § 69 AsylG, zuständige Aufnahmeeinrichtung &lt;zustaendigeAufnahmeeinrichtung&gt;, aufgenommen am &lt;einzugsdatum&gt;, entlassen am &lt;auszugsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

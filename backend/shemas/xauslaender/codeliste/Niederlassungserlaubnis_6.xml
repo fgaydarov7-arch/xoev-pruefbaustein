@@ -1,0 +1,595 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Niederlassungserlaubnis</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Die Niederlassungserlaubnis wird zum Zwecke der Verfestigung des Aufenthalts eines Ausländers im Bundesgebiet erteilt und ist unbefristet. Darüber hinaus berechtigt sie sowohl zur Beschäftigung als Arbeitnehmer als auch zur Ausübung einer selbständigen Erwerbstätigkeit.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2025-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Altfallkennung 12 und 13</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.NiederlassungserlaubnisArt</ShortName>
+      <LongName>NiederlassungserlaubnisArt</LongName>
+      <Version>6</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:niederlassungserlaubnis</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:niederlassungserlaubnis_6</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="optional">
+         <ShortName>beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="langbezeichnung" Use="optional">
+         <ShortName>langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-ab" Use="optional">
+         <ShortName>meldbar-ab</ShortName>
+         <LongName>meldbar ab</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-bis" Use="optional">
+         <ShortName>meldbar-bis</ShortName>
+         <LongName>meldbar bis</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 9 AufenthG (allgemein) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 9 AufenthG (allgemein) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnisnach § 19 AufenthG (Altfall - Hochqualifizierte) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19 AufenthG (Altfall - Hochqualifizierte) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.07.2012</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 21 Abs. 4 AufenthG (3 Jahre selbständige Tätigkeit) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 21 Abs. 4 AufenthG (3 Jahre selbständige Tätigkeit) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 23 Abs. 2 AufenthG (besondere Fälle) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 23 Abs. 2 AufenthG (besondere Fälle) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 S. 1 AufenthG (Altfall - Asyl/GFK nach 3 Jahren) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 S. 1 AufenthG (Altfall - Asyl/GFK nach 3 Jahren) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>06.08.2016</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 4 AufenthG (Altfall - aus humanitären Gründen nach 7 Jahren) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 4 AufenthG (Altfall - aus humanitären Gründen nach 7 Jahren) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>07.01.2019</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 28 Abs. 2 AufenthG (Familienangehörige von Deutschen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 28 Abs. 2 AufenthG (Familienangehörige von Deutschen) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 31 Abs. 3 AufenthG (eigenständiges Aufenthaltsrecht der ausländischen Ehegatten) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 31 Abs. 3 AufenthG (eigenständiges Aufenthaltsrecht der ausländischen Ehegatten) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 35 AufenthG (Kinder) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 35 AufenthG (Kinder) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 38 Abs. 1 Nr. 1 AufenthG (ehemalige Deutsche) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 38 Abs. 1 Nummer 1 AufenthG (ehemalige Deutsche) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 9a (Daueraufenthaltsrecht-EU) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 9a (Daueraufenthaltsrecht-EU) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>unbefristete Aufenthaltserlaubnis nach dem Freizügigkeitsabkommen EG/Schweiz für freizügigkeitsberechtigte Schweizerische Bürger (Altfall) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>unbefristete Aufenthaltserlaubnis nach dem Freizügigkeitsabkommen EG/Schweiz für freizügigkeitsberechtigte Schweizerische Bürger (Altfall) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>30.04.2025</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>unbefristete Aufenthaltserlaubnis nach dem Freizügigkeitsabkommen EG/Schweiz für Angehörige von freizügigkeitsberechtigten Schweizerischen Bürgern (Altfall) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>unbefristete Aufenthaltserlaubnis nach dem Freizügigkeitsabkommen EG/Schweiz für Angehörige von freizügigkeitsberechtigten Schweizerischen Bürgern (Altfall) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>30.04.2025</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18b AufenthG (Altfall - Niederlassungserlaubnis für Absolventen deutscher Hochschulen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18b AufenthG (Altfall - für Absolventen deutscher Hochschulen) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2012</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19 Abs. 1 AufenthG (Altfall - Hochqualifizierter ohne besondere Zuordnung nach § 19 Abs. 2 AufenthG) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19 Abs. 1 AufenthG (Altfall - Hochqualifizierter ohne besondere Zuordnung nach § 19 Abs. 2 AufenthG) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2012</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19 Abs. 2 Nr. 1 AufenthG (Altfall - hochqualifizierter Wissenschaftler) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19 Abs. 2 Nummer 1 AufenthG (Altfall - hochqualifizierter Wissenschaftler) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2012</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19 Abs. 2 Nr. 2 AufenthG (Altfall - hochqualifizierte Lehrperson) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19 Abs. 2 Nummer 2 AufenthG (Altfall - hochqualifizierte Lehrperson) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2012</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19a Abs. 6 AufenthG (Altfall - Inhaber Blaue Karte EU) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19a Abs. 6 AufenthG (Altfall - Inhaber Blaue Karte EU) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2012</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>05.09.2013</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19a Abs. 6 S. 1 AufenthG (Altfall - Inhaber Blaue Karte EU nach frühestens 33 Monaten) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19a Abs. 6 S. 1 AufenthG (Altfall - Inhaber Blaue Karte EU nach frühestens 33 Monaten) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2012</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19a Abs. 6 S. 3 AufenthG (Altfall - Inhaber Blaue Karte EU nach frühestens 21 Monaten) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 19a Abs. 6 S. 3 AufenthG (Altfall - Inhaber Blaue Karte EU nach frühestens 21 Monaten) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2012</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Bescheinigung nach § 51 Abs. 2 S. 3 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Bescheinigung nach § 51 Abs. 2 S. 3 AufenthG erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>06.09.2013</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>nach § 26 Abs. 3 S. 2 AufenthG (Altfall - Resettlement nach 3 Jahren) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 S. 2 AufenthG (Altfall - Resettlement nach 3 Jahren) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2015</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>06.08.2016</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>nach § 23 Abs. 4 AufenthG (Resettlement) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 23 Abs. 4 AufenthG (Resettlement) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2015</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 Satz 3 AufenthG (Asyl/GFK nach 3 Jahren) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 Satz 3 AufenthG (Asyl/GFK nach 3 Jahren) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>07.08.2016</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 Satz 1 AufenthG (Asyl/GFK nach 5 Jahren) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnisnach § 26 Abs. 3 Satz 1 AufenthG (Asyl/GFK nach 5 Jahren) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>07.08.2016</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>26</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 Satz 6 i.V.m. Satz 3 AufenthG (Resettlement nach 3 Jahren) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 Satz 6 i.V.m. Satz 3 AufenthG (Resettlement nach 3 Jahren) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>07.08.2016</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>27</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 Satz 6 i.V.m. Satz 1 AufenthG (Resettlement nach 5 Jahren ) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 Satz 6 i.V.m. Satz 1 AufenthG (Resettlement nach 5 Jahren ) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>07.08.2016</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>28</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>nach § 26 Abs. 3 S. 5 i.V.m. § 35 AufenthG (Kinder mit Einreise vor Vollendung des 18. Lebensjahrs) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 3 S. 5 i.V.m. § 35 AufenthG (Kinder mit Einreise vor Vollendung des 18. Lebensjahrs) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>06.08.2016</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>29</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>nach § 26 Abs. 4 AufenthG (aus humanitären Gründen nach 5 Jahren) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 26 Abs. 4 AufenthG (aus humanitären Gründen nach 5 Jahren) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>30</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18c Abs 1 AufenthG (Fachkräfte) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18c Abs. 1 AufenthG (Fachkräfte) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18c Abs. 2 S. 1 AufenthG (Inhaber einer Blauen Karte EU) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18c Abs. 2 S. 1 AufenthG (Inhaber einer Blauen Karte EU) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>32</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18c Abs. 2 S. 3 AufenthG (Inhaber einer Blauen Karte EU mit ausreichenden Kenntnissen der deutschen Sprache) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18c Abs. 2 S. 3 AufenthG (Inhaber einer Blauen Karte EU mit ausreichenden Kenntnissen der deutschen Sprache) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>33</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18c Abs. 3 AufenthG (besonders hochqualifizierte Fachkräfte) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach § 18c Abs. 3 AufenthG (besonders hochqualifizierte Fachkräfte) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>99</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>gültige Niederlassungserlaubnis vorhanden</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbezeichnung"/>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

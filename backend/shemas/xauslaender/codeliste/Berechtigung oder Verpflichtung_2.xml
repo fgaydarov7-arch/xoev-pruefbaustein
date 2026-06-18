@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Berechtigung oder Verpflichtung</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit diesem Element wird die aktuell gültige Art der Berechtigung oder Verpflichtung bei Integrationskursen übermittelt.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-04-23</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Neu - Kennung 06</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>azr.artberechtigungoderverpflichtung</ShortName>
+      <LongName>Art der Berechtigung oder Verpflichtung</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:xoev-de:bva:codeliste:azr.artberechtigungoderverpflichtung</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:bva:codeliste:azr.artberechtigungoderverpflichtung_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Code" Use="required">
+         <ShortName>Code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Beschreibung" Use="optional">
+         <ShortName>Beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="CodeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="Code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Berechtigung durch die Ausländerbehörde</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Berechtigung durch die Ausländerbehörde erteilt am &lt;erteilungszeitpunkt&gt; durch &lt;erteilendeStelle.behoerdenkennzeichen&gt;, ausstellende Behörde &lt;originaerSpeicherndeBehoerde&gt;,  Kursart &lt;integrationskursArt&gt;, Kursbeginn &lt;beginn&gt;, Kursabschluss &lt;kursabschluss&gt;, Hinweis nach § 44a Absatz 3 Satz 1 AufenthG &lt;konsequenzenNichtteilnahme&gt;, Gemeldete Fehlzeiten &lt;gesamtGemeldeteFehlzeiten&gt;,  Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Berechtigung durch das Bundesamt für Migration und Flüchtlinge</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Berechtigung durch das Bundesamt für Migration und Flüchtlinge erteilt am &lt;erteilungszeitpunkt&gt; durch &lt;erteilendeStelle.behoerdenkennzeichen&gt;, ausstellende Behörde &lt;originaerSpeicherndeBehoerde&gt;,  Kursart &lt;integrationskursArt&gt;, Kursbeginn &lt;beginn&gt;, Kursabschluss &lt;kursabschluss&gt;, Hinweis nach § 44a Absatz 3 Satz 1 AufenthG &lt;konsequenzenNichtteilnahme&gt;, Gemeldete Fehlzeiten &lt;gesamtGemeldeteFehlzeiten&gt;,  Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Verpflichtung durch die Ausländerbehörde</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Verpflichtung durch die Ausländerbehörde erteilt am &lt;erteilungszeitpunkt&gt; durch &lt;erteilendeStelle.behoerdenkennzeichen&gt;, ausstellende Behörde &lt;originaerSpeicherndeBehoerde&gt;, Kursart &lt;integrationskursArt&gt;, Kursbeginn &lt;beginn&gt;, Kursabschluss &lt;kursabschluss&gt;, Hinweis nach § 44a Absatz 3 Satz 1 AufenthG &lt;konsequenzenNichtteilnahme&gt;, Gemeldete Fehlzeiten &lt;gesamtGemeldeteFehlzeiten&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Verpflichtung durch den Träger der Grundsicherung für Arbeitssuchende</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Verpflichtung durch den Träger der Grundsicherung für Arbeitssuchende erteilt am &lt;erteilungszeitpunkt&gt; durch &lt;erteilendeStelle.behoerdenkennzeichen&gt;, ausstellende Behörde &lt;originaerSpeicherndeBehoerde&gt;,  Kursart &lt;integrationskursArt&gt;, Kursbeginn &lt;beginn&gt;, Kursabschluss &lt;kursabschluss&gt;, Hinweis nach § 44a Absatz 3 Satz 1 AufenthG &lt;konsequenzenNichtteilnahme&gt;, Gemeldete Fehlzeiten &lt;gesamtGemeldeteFehlzeiten&gt;,  Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Verpflichtung durch den Träger der Leistungen nach dem Asylbewerberleistungsgesetz</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Verpflichtung durch den Träger der Leistungen nach dem Asylbewerberleistungsgesetz erteilt am &lt;erteilungszeitpunkt&gt; durch &lt;erteilendeStelle.behoerdenkennzeichen&gt;, ausstellende Behörde &lt;originaerSpeicherndeBehoerde&gt;,  Kursart &lt;integrationskursArt&gt;, Kursbeginn &lt;beginn&gt;, Kursabschluss &lt;kursabschluss&gt;, Hinweis nach § 44a Absatz 3 Satz 1 AufenthG &lt;konsequenzenNichtteilnahme&gt;, Gemeldete Fehlzeiten &lt;gesamtGemeldeteFehlzeiten&gt;,  Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Zulassung durch den Träger der Grundsicherung für Arbeitssuchende</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zulassung durch den Träger der Grundsicherung für Arbeitssuchende erteilt am &lt;erteilungszeitpunkt&gt; durch &lt;erteilendeStelle.behoerdenkennzeichen&gt;, ausstellende Behörde &lt;originaerSpeicherndeBehoerde&gt;, Kursart &lt;integrationskursArt&gt;, Kursbeginn &lt;beginn&gt;, Kursabschluss &lt;kursabschluss&gt;, Hinweis nach § 44a Absatz 3 Satz 1 AufenthG &lt;konsequenzenNichtteilnahme&gt;, Gemeldete Fehlzeiten &lt;gesamtGemeldeteFehlzeiten&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

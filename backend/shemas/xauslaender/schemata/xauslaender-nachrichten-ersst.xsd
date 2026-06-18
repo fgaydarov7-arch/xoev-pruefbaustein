@@ -1,0 +1,2010 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xauslaender="http://www.osci.de/xauslaender2611"
+           xmlns:bn-uq-g2g="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xiaz="http://www.osci.de/xinneres/azrnummer/3"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xilb="http://www.osci.de/xinneres/lichtbild/3"
+           xmlns:xima="http://www.osci.de/xinneres/meldeanschrift/5"
+           targetNamespace="http://www.osci.de/xauslaender2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XAusländer</nameLang>
+            <nameKurz>XAusländer</nameKurz>
+            <nameTechnisch>xinneres.xauslaender</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xauslaender</kennung>
+            <beschreibung>Das Fachmodul XAusländer des Standards XInneres beschreibt die Datenübermittlung im Ausländerwesen.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xauslaender-nachrichten-azr.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/azrnummer/3/xinneres-azrnummer.xsd"
+              namespace="http://www.osci.de/xinneres/azrnummer/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/lichtbild/3/xinneres-lichtbild.xsd"
+              namespace="http://www.osci.de/xinneres/lichtbild/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/meldeanschrift/5"/>
+   <xs:import schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+              namespace="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:simpleType name="ERSST.AKNNummer">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>AKN-Nummer</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird die Nummer des Ankunftsnachweises übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:pattern value="[A-Za-z] [0-9]{7}"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="ERSST.Aktenzeichen45">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Aktenzeichen 45 Zeichen</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp übermittelt das Aktenzeichen einer meldenden Stelle. Das Aktenzeichen muss mindestens einen Buchstaben oder eine Ziffer enthalten, darf also nicht ausschließlich aus Sonderzeichen bestehen.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:maxLength value="45"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="ERSST.Aliaspersonalien">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Aliaspersonalien</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Aliaspersonalien im Rahmen der Erstregistrierung übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname" type="xian:AllgemeinerName"/>
+         <xs:element name="geburtsname" minOccurs="0" type="xian:AllgemeinerName"/>
+         <xs:element name="vorname" type="xian:AllgemeinerName"/>
+         <xs:element name="geburt" minOccurs="0" type="xauslaender:Geburt"/>
+         <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+         <xs:element name="staatsangehoerigkeit"
+                     maxOccurs="4"
+                     type="xauslaender:AngabenZumStaat"/>
+         <xs:any minOccurs="0"
+                 maxOccurs="unbounded"
+                 namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                 processContents="lax"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ERSST.AngabenZurAusreiseverpflichtung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Angaben zur Ausreiseverpflichtung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zur vollziehbaren Ausreiseverpflichtung übermittelt, welche im Sachverhalt Abschiebungen im AZR als "Ausreisepflicht vollziehbar" gespeichert werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ausreisepflichtVollziehbarSeit"
+                     minOccurs="0"
+                     type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum, seit wann die Ausreisepflicht vollziehbar ist, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aktenzeichen" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Aktenzeichen zur Ausreisepflicht übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="loeschfristdatum" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum, bis zu dem die Ausreisepflicht im AZR gespeichert sein darf, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:any minOccurs="0"
+                 maxOccurs="unbounded"
+                 namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                 processContents="lax"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ERSST.Ausweispapier">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Ausweispapier</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben zu Ausweispapieren im Rahmen der Erstregistrierung übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ausweisart" type="xauslaender:Code.AZR.AusweisArt"/>
+         <xs:element name="ausweisIdentifikation" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Seriennummer eines Ausweisdokuments übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellenderStaat" type="xauslaender:AngabenZumStaat">
+            <xs:annotation>
+               <xs:documentation>Die Angabe des Kindelementes staatsgebiet erfolgt genau dann, wenn das Staatsgebiet eigene Pässe ausstellt (vgl. Hinweisspalte in der Destatis-Tabelle Staatsangehörigkeit).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellendeBehoerde" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Dieses Element übermittelt die ausstellende ausländische Behörde.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="gueltigBis" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum, bis zu dem das Ausweisdokument gültig ist, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aufbewahrendeStelle"
+                     minOccurs="0"
+                     type="xauslaender:AZR.Behoerdenkennzeichen">
+            <xs:annotation>
+               <xs:documentation>Dieses Element enthält das Behördenkennzeichen der aufbewahrenden Stelle.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aufbewahrendeStelleFreitext"
+                     minOccurs="0"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Dieses Element enthält die Bezeichnung der aufbewahrenden Stelle, wenn die Angabe aufbewahrendeStelle nicht vorhanden ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geprueftDurch"
+                     minOccurs="0"
+                     type="xauslaender:AZR.Behoerdenkennzeichen">
+            <xs:annotation>
+               <xs:documentation>Dieses Element enthält das Behördenkennzeichen der Stelle, die das Ausweisdokument geprüft hat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geprueftDurchFreitext"
+                     minOccurs="0"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Dieses Element enthält die Bezeichnung der Stelle, die das Ausweisdokument geprüft hat, wenn die Angabe geprueftDurch nicht vorhanden ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geprueftAm" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum der Prüfung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ergebnisDerPruefung"
+                     minOccurs="0"
+                     type="xauslaender:Code.AZR.AusweisPruefungsergebnisArt"/>
+         <xs:element name="dokument" minOccurs="0" type="xauslaender:ERSST.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Kopie des Ausweisdokuments übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:any minOccurs="0"
+                 maxOccurs="unbounded"
+                 namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                 processContents="lax"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="ERSST.BkaEdVorgangsreferenz">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>BKA ED Vorgangsreferenz</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp bildet eine eindeutige Referenz auf einen BVA-Vorgang zur Bestandsbildung bzw. Recherche für bzw. in INPOL/AFIS und/oder EURODAC, falls mind. eine solche Aktivität angestoßen wurde.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:maxLength value="36"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="ERSST.Dokument">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Dokument im Rahmen der Erstregistrierung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Dokumente im Rahmen der Erstregistrierung übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="datenformat"
+                     minOccurs="0"
+                     type="xauslaender:Code.AZR.Dokumentenformat">
+            <xs:annotation>
+               <xs:documentation>Dieses Element bezeichnet das Format des binärcodierten Dokuments.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dokument" minOccurs="0" type="xs:base64Binary">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Dokument übermittelt. Die Größe des Dokuments vor der base64-Kodierung darf 10 MB nicht überschreiten.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dokumentTyp" type="xauslaender:Code.AZR.Dokumenttyp">
+            <xs:annotation>
+               <xs:documentation>Dieses Element übermittelt die Art des Dokumentes.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="ERSST.EasyOptionsnummer">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>EASY-Optionsnummer</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp übermittelt die EASY-Optionsnummer.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:maxLength value="7"/>
+         <xs:minLength value="7"/>
+         <xs:pattern value="[A-Z]{2}[0-9]{7}"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="ERSST.Erweiterungspunkt">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>ERSST-Erweiterungspunkt</title>
+         </xs:appinfo>
+         <xs:documentation>Hiermit können über Schema-Erweiterungen neue Entitäten zur Erstregistrierung übermittelt werden, die außerhalb der XInneres-Releasezyklen hinzugefügt werden. Das Schema zur Erweiterungen zum zugehörigen XAusländer-Release wird auf den Webseiten der KoSIT veröffentlicht.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:any minOccurs="0"
+                 maxOccurs="unbounded"
+                 namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                 processContents="lax"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="ERSST.Eurodacnummer">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>EURODAC-Nummer</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp übermittelt die EURODAC-Nummer. Art. 24 Abs. 4 Verordnung (EU) Nr. 603/2013 [sog. EURODAC-II-VO] gibt die Zusammensetzung der EURODAC-Kennnummern für alle Mitgliedstaaten teilweise verbindlich vor. Die Kennnummer beginnt verpflichtend mit den Kennbuchstaben des jeweiligen Mitgliedstaats gem. Anhang I der EURODAC-II-VO (ISO 3166-2 Buchstaben-Code = zweistellig), z. B. DE für Deutschland. Danach folgt verbindlich die Kennung für die Personen bzw. Antragskategorie als einstellige Ziffer: 1 = EURODAC-Datensatz im Zusammenhang mit einem Antrag auf internationalen Schutz (Art. 9 Abs. 1 EURODAC-II-VO), 2 = EURODAC-Datensatz im Zusammenhang mit einer illegalen Überschreitung einer Dublin-Außengrenze (Art. 14 Abs. 1 EURODAC-II-VO), 3 = EURODAC-Datensatz im Zusammenhang mit einem illegalen Aufgriff im Inland (Art. 17 Abs. 1 EURODAC-II-VO), 9 = EURODAC-Datensatz im Zusammenhang mit einer datenschutzrechtlichen Auskunft der im Zentralsystem gespeicherten Daten (Art. 29 EURODAC-II-VO). Die weiteren Stellen und deren Anzahl können mangels Normierung durch die EURODAC-II-VO nach Belieben des jeweiligen Mitgliedstaates, in Form von Ziffern und Buchstaben belegt werden (z. B. Datum, Aktenzeichen, Registriernummer). Für Deutschland gilt: 17-stellig oder 18-stellig in der Form DE ltKgtltJJMMTTgtltXXXXgtltYYYYYgt. Hierbei steht: DE für Deutschland ltKgt für die EURODAC-Kategorie, dies ist die Anfrageart an EURODAC (siehe oben). ltJJMMTTgt für das Datum der Anfrage in der Form Jahr Monat Tag ltXXXXgt ist ein drei- bis vierstelliges alphanumerisches Kürzel, das eine Erfassungsstation deutschlandweit identifiziert (Stationskennung). Diese Kennung wird vom BKA verwaltet und vergeben. Bei dreistelliger Stationskennung ist die EURODAC-Nummer 17-stellig, bei vierstelliger Stationskennung ist die EURODAC-Nummer 18-stellig. ltYYYYYgt ist eine fünfstellige laufende Nummer und gibt die Anzahl der Registrierungen bezogen auf den Tag und die Station an (ist vom Fachverfahren zu vergeben).</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:pattern value="[A-Z]{2}[1-3][0-9]{6}([a-zA-Z0-9]{3}|[a-zA-Z0-9]{4})[0-9]{5}"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:simpleType name="ERSST.FlueVeID">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>FlüVe-ID</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp übermittelt die FlüVe-ID.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:maxLength value="16"/>
+         <xs:minLength value="16"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="ERSST.GSAT">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>GSAT-Einbindung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp kann durch eine Schema-Erweiterung eine Information mithilfe des GSAT übermittelt werden. Grundsätzliche Informationen können auf den Seiten des BSI abgerufen werden Konkrete Informationen zur Version und genauen Verwendung des GSAT an dieser Stelle, sind dem BVA-Entwicklerportal zu entnehmen. Für einen Zugriff auf das Entwicklerportal wenden Sie sich bitte an das Bundesverwaltungsamt: Referat S I 1 (Kontakt über registerportal@bva.bund.de).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:any minOccurs="1"
+                 maxOccurs="1"
+                 namespace="##any"
+                 processContents="lax"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ERSST.Grundpersonalien">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Grundpersonalien</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Grundpersonalien im Rahmen der Erstregistrierung übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname" type="xian:AllgemeinerName"/>
+         <xs:element name="geburtsname" minOccurs="0" type="xian:AllgemeinerName"/>
+         <xs:element name="vorname" type="xian:AllgemeinerName"/>
+         <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+         <xs:element name="doktorgrad" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Die Angaben sollen entsprechend der Regelungen des DSMeld-Blattes 0401 vorgenommen werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="altersschaetzung"
+                     minOccurs="0"
+                     type="xauslaender:Code.ERSST.Altersschaetzung">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird eine Schätzung des Alters der ausländischen Person übermittelt. Dabei handelt es sich nicht um die offizielle Einschätzung durch das Jugendamt, sondern um eine Schätzung bei der Erstregistrierung. Dies wird unter Anderem verwendet, um zu entscheiden, ob eine Recherche/Meldung in EURODAC durchgeführt werden darf.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtsangaben" type="xauslaender:AZR.Geburt"/>
+         <xs:element name="staatsangehoerigkeit"
+                     maxOccurs="4"
+                     type="xauslaender:AngabenZumStaat"/>
+         <xs:any minOccurs="0"
+                 maxOccurs="unbounded"
+                 namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                 processContents="lax"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ERSST.Hintergrundaktivitaet">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Hintergrundaktivität</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird die nutzende Person darüber informiert, dass im Nachgang zur Registrierung bzw. Speicherung der Daten im AZR weitere Aktivitäten durch das BVA und BKA erfolgen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="angestosseneERHintergrundaktivitaet"
+                     maxOccurs="unbounded"
+                     type="xauslaender:Code.ERSST.Hintergrundaktivitaeten">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird darüber informiert, welche Hintergrundverarbeitungen angestoßen wurden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="bkaEdVorgangsreferenz"
+                     type="xauslaender:ERSST.BkaEdVorgangsreferenz">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird eine eindeutige Referenz auf einen BVA-Vorgang zur Bestandsbildung bzw. Recherche für im INPOL/AFIS bzw. EURODAC übermittelt, falls mindestens eine solche Aktivität angestoßen wurde. Wenn keine ED-Bestandsbildung im Rahmen der Erstregistrierung angestoßen wurde (bei Personen, bei denen die Erfassung nicht zulässig oder möglich ist (Amputation)), so ist die Referenz leer. Die bkaEdVorgangsreferenz wird für den Prozess benötigt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ERSST.Hinweis">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Hinweis</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp können Hinweisrückmeldungen übermittelt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="hinweisschluessel" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird ein eindeutiger Bezeichner eines Hinweises übermittelt. Dieser Beginnt mit „H-“ für Hinweis, enthält dann ein Systemkürzel und dann einen numerischen Fehlerschlüssel innerhalb des Systems.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="hinweistext" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird ein erklärender Text zum Hinweis übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="relevantesElement" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Namen eines oder mehrerer Attribute oder Entitäten aus den Eingabeparametern, die zum Hinweis geführt haben, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="ERSST.Identifikationsergebnis">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikationsergebnis</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp übermittelt ein Identifikationsergebnis.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="azrNummer" minOccurs="0" type="xiaz:AZRNummer">
+            <xs:annotation>
+               <xs:documentation>Eine AZR Nummer wird übermittelt, wenn bereits ein AZR-Eintrag für die Person vorliegt, zu der die FlüVe-ID gehört.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="flueVeID" type="xauslaender:ERSST.FlueVeID">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die FlüVe-ID übermittelt, zu der das Ergebnis gehört.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fehler"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:AZR.Fehler">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird eine Fehlerrückmeldung zur angefragten FlüVe-ID übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="bkaDNummer" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit dem Element wird die D-Nummer des BKA (AFIS-Bestandsschlüssel) übermittelt. Sie kennzeichnet die Zuordnung einer Erkennungsdienstlichen Maßnahme zu einer Person im BKA.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="identifikationsergebnis"
+                     type="xauslaender:Code.ERSST.Identifikationsergebnis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Schlüssel für das Identifikationsergebnis übermittelt, aus dem die weiteren Schritte der Registrierung abzuleiten sind.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="auskunftAsylstatus"
+                     minOccurs="0"
+                     type="xauslaender:AZR.Asylstatus.Auskunft">
+            <xs:annotation>
+               <xs:documentation>Mit dem Element wird der aktuelle Asylstatus der Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="auskunftUnerlaubteEinreiseUndAufenthalt"
+                     minOccurs="0"
+                     type="xauslaender:AZR.UnerlaubteEinreiseUndAufenthalt.Auskunft">
+            <xs:annotation>
+               <xs:documentation>Mit dem Element wird der relevanteste Eintrag zu unerlaubter Einreise und Aufenthalt der Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="auskunftAbschiebung"
+                     minOccurs="0"
+                     type="xauslaender:AZR.Abschiebung.Auskunft">
+            <xs:annotation>
+               <xs:documentation>Mit dem Element wird ein Eintrag zu Abschiebungsandrohung und -anordnung der Person übermittelt, wenn eine Konstellation vorliegt, die die Nacherfassung von Fingerabdrücken für vollziehbar Ausreisepflichtige erfordert.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="auskunftAufenthaltsstatus"
+                     minOccurs="0"
+                     type="xauslaender:AZR.Aufenthaltsstatus.Auskunft">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zum Aufenthaltsstatus übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="erstregistrierungBis" minOccurs="0" type="xs:dateTime">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Ende der Nutzbarkeit der FlüVe-ID für die Erstregistrierung übermittelt. Der Zeitpunkt muss neben einer Angabe zum Datum eine zeitliche Information beinhalten. Diese ist mit einer Genauigkeit auf Ebene von Millisekunden und der Angabe zur Zeitzone zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:any minOccurs="0"
+                 maxOccurs="unbounded"
+                 namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                 processContents="lax"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="Nachricht.G2G.XA.AnERSST">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Allgemeine Nachricht für alle Nachrichten an das BVA, erweitert um das Aktenzeichen</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element wird bei jeder Nachricht, die an das BVA im Rahmen der Registrierung gesendet wird, verwendet. Es sind die abweichenden Regelungen zum Umgang mit dem Nachrichtenkopf zu beachten (s. ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:Nachricht.G2G.XA">
+            <xs:sequence>
+               <xs:element name="aktenzeichen" type="xauslaender:ERSST.Aktenzeichen45"/>
+               <xs:element name="durchfuehrenderSachbearbeiter" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element identifiziert die den Geschäftsvorfall durchführende Person.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="verantwortlicherSachbearbeiter"
+                           minOccurs="0"
+                           type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element identifiziert die für den Geschäftsvorfall verantwortliche Person, sofern sie nicht mit der durchführenden Person übereinstimmt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="durchfuehrendeBehoerde"
+                           type="xauslaender:AZR.Behoerdenkennzeichen">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element identifiziert die für den Geschäftsvorfall durchführende Behörde.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="verantwortlicheBehoerde"
+                           minOccurs="0"
+                           type="xauslaender:AZR.Behoerdenkennzeichen">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element identifiziert die für den Geschäftsvorfall verantwortliche Behörde, sofern sie nicht mit der durchführenden Behörde übereinstimmt. Die Benutzung der Auftragsmeldung ist nur wenigen Behörden vorbehalten.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:element name="AnERSST.Identifikationsanfrage.140001">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Identifikationsanfrage</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird eine Identifikationsanfrage an das BVA übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="fingerabdruecke" type="xauslaender:ERSST.GSAT">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine GSAT-Datei übermittelt, in der flach aufgenommene Fingerabdrücke erfasst sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="transaktionsID" minOccurs="0" type="bn-uq-g2g:UUID">
+                     <xs:annotation>
+                        <xs:documentation>Enthält die DQ-Transaction-ID für die Qualitätsbewertung der Fingerabdruckdaten. Dabei handelt es sich um einen eindeutigen Schlüssel eines TR-Logs zu einer Fingerabdruck-Datei.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.IdentifikationsanfrageAntwort.140002">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Mitteilung der FlüVe-ID</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird die Rückmeldung übermittelt, dass die Identifikationsanfrage erfolgreich entgegengenommen wurde und das Ergebnis dieser Anfrage mit der übermittelten FlüVe-ID angefragt werden kann.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="flueVeID" type="xauslaender:ERSST.FlueVeID">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die FlüVe-ID für die Anfrage des Identifikationsergebnisses übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.IdentifikationsergebnisAbruf.140003">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Anfrage des Identifikationsergebnisses</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird das Identifikationsergebnis zu einer oder mehreren FlüVe-ID angefragt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="flueVeID"
+                              maxOccurs="unbounded"
+                              type="xauslaender:ERSST.FlueVeID"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.Identifikationsergebnis.140004">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Identifikationsergebnis</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird das Ergebnis bzw. ein Fehler zu jeder angefragten FlüVe-ID übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="ergebnis"
+                              maxOccurs="unbounded"
+                              type="xauslaender:ERSST.Identifikationsergebnis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Ergebnis bzw. ein Fehler zu jeder angefragten FlüVe-ID übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.Registrierung.140005">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Registrierung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird eine Registrierung an das BVA übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="flueVeID" minOccurs="0" type="xauslaender:ERSST.FlueVeID">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die FlüVe-ID für die Registrierung des Identifikationsergebnisses übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundFehlendeFingerabdruecke"
+                              minOccurs="0"
+                              type="xauslaender:Code.ERSST.Grundfehlendefingerabdruecke">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Grund angegeben, warum keine FlüVe-ID angegeben wird und/oder keine rollend abgegebenen Fingerabdrücke für die Registrierung übermittelt werden können.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="eurodacBelehrungDurchgefuehrt" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Information übermittelt, ob für EURODAC-Abgleich und -Bestandsbildung eine Belehrungsdokumentation der betroffenen Person vorliegt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="easyOptionsnummer"
+                              minOccurs="0"
+                              type="xauslaender:ERSST.EasyOptionsnummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Verteilschlüssel aus dem EASY-Verfahren des BAMF übermittelt, sofern bereits eine Verteilung über EASY erfolgt ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundpersonalien" type="xauslaender:ERSST.Grundpersonalien">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu Grundpersonalien übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aliaspersonalien"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:ERSST.Aliaspersonalien">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die neuen Angaben zu Aliaspersonalien übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kontaktdaten" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Kontaktdaten der ausländischen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="anschrift" minOccurs="0" type="xima:Meldeanschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die aktuelle Meldeanschrift übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="einzugsdatum" minOccurs="0" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Einzugsdatum übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="hauptTelefonnummer" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Haupt-Telefonnummer einer ausländischen Person übermittelt. Dabei kann es sich auch um eine Mobilfunknummer handeln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="hauptEmailadresse" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Haupt-E-Mailadresse einer ausländischen Person übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="weitereTelefonnummer"
+                                       minOccurs="0"
+                                       maxOccurs="4"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine weitere Telefonnummer einer ausländischen Person übermittelt. Dabei kann es sich auch um eine Mobilfunknummer handeln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="weitereEmailadresse"
+                                       minOccurs="0"
+                                       maxOccurs="4"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine weitere E-Mailadresse einer ausländischen Person übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="zustaendigeAufnahmeeinrichtung"
+                                       minOccurs="0"
+                                       type="xauslaender:AZR.Behoerdenkennzeichen">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Behördenkennzeichen der zuständigen Aufnahmeeinrichtung übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="personenbeschreibung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zur Personenbeschreibung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="koerpergroesse"
+                                       minOccurs="0"
+                                       type="xauslaender:Koerpergroesse">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Körpergröße in cm übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="augenfarbe"
+                                       minOccurs="0"
+                                       type="xauslaender:Code.AZR.AugenfarbeArt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Augenfarbe übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="familienstand" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zum Familienstand übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="familienstand" type="xauslaender:Code.Familienstand"/>
+                           <xs:element name="staatsangehoerigkeitEhegatteLebenspartner"
+                                       minOccurs="0"
+                                       maxOccurs="4"
+                                       type="xauslaender:AngabenZumStaat">
+                              <xs:annotation>
+                                 <xs:documentation>Dieses Element enthält Angaben zur Staatsangehörigkeit des Ehegatten oder Lebenspartners.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="familienverband" minOccurs="0" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zum Familienverband übermittelt. Der Familienverband kann auch ohne AZR-Nummer angelegt werden. Eine Überprüfung der AZR-Nr. erfolgt in diesem Kontext nicht.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="familienbeziehungArt"
+                                       type="xauslaender:Code.AZR.FamilienbeziehungArt">
+                              <xs:annotation>
+                                 <xs:documentation>Legt die Art der Familienbeziehung fest, die mit diesem Familienverband beschrieben wird. Es wird angegeben, in welcher Beziehung der hier angegebene Datensatz (Element azrNummerFamilienmitglied) zum aktuellen Datensatz (Element azrNummer) steht. Beispiel: Wenn in familienbeziehungArt der Wert 01 (Kind ist ...) gespeichert ist, bedeutet dies, dass die Person des hier angegebenen Datensatzes (Element azrNummerFamilienmitglied) ein Kind der Person des beauskunfteten Datensatzes (Element azrNummer) ist.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="azrNummerFamilienmitglied"
+                                       minOccurs="0"
+                                       type="xiaz:AZRNummer">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die AZR-Nummer des Familienmitglieds übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="vornameFamilienmitglied"
+                                       minOccurs="0"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Dieses Element übermittelt den Vornamen des Familienmitglieds.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="familiennameFamilienmitglied"
+                                       minOccurs="0"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Dieses Element übermittelt den Familiennamen des Familienmitglieds.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="freiwilligeAngabenZurReligion" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden freiwillig gemachte Angaben zur Religion übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:complexContent>
+                           <xs:extension base="xauslaender:Religion">
+                              <xs:sequence>
+                                 <xs:any minOccurs="0"
+                                         maxOccurs="unbounded"
+                                         namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                         processContents="lax"/>
+                              </xs:sequence>
+                           </xs:extension>
+                        </xs:complexContent>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ausweispapier"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:ERSST.Ausweispapier">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu einem Ausweispapier übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="erkennungsdienstlicheMassnahme">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die GSAT-Daten der erkennungsdienstlichen Maßnahme und die zugehörige DQTransaction-ID übermittelt. Die GSAT-Datei kann unter anderem enthalten: flache oder rollend aufgenommene Fingerabdrücke für die Bestandsbildung beim BKA Lichtbilddaten im Format JPEGDiese werden im Register AZR gespeichert. Bilddaten in anderen Formaten werden bei Übergabe im GSAT ignoriert. personenbezogene Daten weitere Informationen zum Prozess</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="nISTBiometricInformationExchangePackage"
+                                       type="xauslaender:ERSST.GSAT">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die GSAT-Daten übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="transaktionsID" minOccurs="0" type="bn-uq-g2g:UUID">
+                              <xs:annotation>
+                                 <xs:documentation>Enthält die DQ-Transaction-ID für die Qualitätsbewertung der Fingerabdruckdaten. Dabei handelt es sich um einen eindeutigen Schlüssel eines TR-Logs zu einer Fingerabdruck-Datei.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="lichtbildTransaktionsID" minOccurs="0" maxOccurs="unbounded">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die DQ-Transaction-ID eines Lichtbilds im GSAT für die Zuordnung zum TR-Log übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="transaktionsID" minOccurs="0" type="bn-uq-g2g:UUID">
+                                       <xs:annotation>
+                                          <xs:documentation>Enthält die DQ-Transaction-ID für die Qualitätsbewertung der Lichtbilddaten. Dabei handelt es sich um einen eindeutigen Schlüssel eines TR-Logs zu einem Lichtbild.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="gSATBildreferenz" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Bildreferenz übermittelt, um die Bilddaten aus dem übermittelten GSAT zu extrahieren. Hinweis: Die Bildreferenz steht in GSAT unter /itl:NISTBiometricInformationExchangePackage/itl:PackageFacialAndSMTImageRecord/ansi-nist:ImageReferenceIdentification/nc:IdentificationID</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:any minOccurs="0"
+                                            maxOccurs="unbounded"
+                                            namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                            processContents="lax"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="speicherbegruendenderSachverhalt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der speicherbegründende Sachverhalt übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="unerlaubteEinreiseUndAufenthalt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die neuen Angaben zur unerlaubten Einreise oder des unerlaubten Aufenthalts übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="unerlaubteEinreiseUndAufenthaltArt"
+                                                type="xauslaender:Code.AZR.UnerlaubtEinreiseUndAufenthaltArt">
+                                       <xs:annotation>
+                                          <xs:documentation>Enthält die genaue Art der unerlaubten Einreise oder des unerlaubten Aufenthalts.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="einreisestaat"
+                                                minOccurs="0"
+                                                type="xauslaender:AngabenZumStaat">
+                                       <xs:annotation>
+                                          <xs:documentation>Dieses Element übermittelt den Staat, aus dem der Ausländer unmittelbar eingereist ist.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ereignisdatum" minOccurs="0" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Enthält das Ereignisdatum, zu dem die unerlaubte Einreise oder der unerlaubte Aufenthalt begann oder festgestellt wurde.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="eurodacverbindung" type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird mitgeteilt, ob die Meldung in Verbindung mit einer Abfrage gemäß EURODAC-VO durchgeführt wird.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="aktenzeichenMeldendeBehoerde"
+                                                minOccurs="0"
+                                                type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Enthält das Aktenzeichen der meldenden Behörde.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="eurodacnummer"
+                                                minOccurs="0"
+                                                type="xauslaender:ERSST.Eurodacnummer">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die EURODAC-Nummer übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:any minOccurs="0"
+                                            maxOccurs="unbounded"
+                                            namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                            processContents="lax"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="asylstatus">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die neuen Angaben zum Asylstatus eines Ausländers übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="asylstatusArt" type="xauslaender:Code.ERSST.Asylstatusart">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Asylstatus mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ereignisdatum" minOccurs="0" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird ein gültiges Ereignisdatum zum Sachverhalt Asylstatus übermittelt, z. B. das Datum der Äußerung des Asylgesuchs.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geschaeftszeichen" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Das mit diesem Element übermittelte Geschäftszeichen stammt vom BAMF.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="einreisestaat"
+                                                minOccurs="0"
+                                                type="xauslaender:AngabenZumStaat">
+                                       <xs:annotation>
+                                          <xs:documentation>In diesem Element wird der Staat übermittelt, aus dem die unmittelbare Einreise in das Bundesgebiet erfolgt ist.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:any minOccurs="0"
+                                            maxOccurs="unbounded"
+                                            namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                            processContents="lax"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="aufenthaltsstatus">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zum Aufenthaltsstatus übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="aufenthaltsstatusArt"
+                                                type="xauslaender:Code.AZR.AufenthaltsstatusArt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Aufenthaltsstatus mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ereignisdatum" minOccurs="0" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Ereignisdatum zum Sachverhalt Aufenthaltsstatus übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="sprache" minOccurs="0" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur Sprache übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="sprache" type="xauslaender:Code.Sprachenkatalog">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Sprache übermittelt. Es werden nur die AZR-relevanten Codes der Codeliste im allgemeinen Datenbestand des AZR gespeichert.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="gradDerSprachkenntnis"
+                                       type="xauslaender:Code.AZR.SprachkenntnisGrad">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Grad der Sprachkenntnis übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="volkszugehoerigkeit"
+                              minOccurs="0"
+                              type="xauslaender:Volkszugehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Volkszugehörigkeit übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.RegistrierungAntwort.140006">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Ergebnis der Registrierung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das BVA das Ergebnis einer teilweise oder vollständig erfolgreichen Erstregistrierung im AZR an den Kommunikationspartner.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="ergebnis" type="xauslaender:Code.ERSST.Registrierungsergebnis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird angezeigt, ob die Registrierung erfolgreich war.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="flueVeID" type="xauslaender:ERSST.FlueVeID">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die FlueVeID für den aktuellen Vorgang übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer des angelegten Datensatzes mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kennzeichenZuspeicherung" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird angezeigt, ob die Daten der Registrierung einem bestehenden AZR-Datensatz zugespeichert wurden (=wahr) oder ob ein neuer AZR-Datensatz angelegt wurde (=falsch).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="hintergrundaktivitaeten"
+                              minOccurs="0"
+                              type="xauslaender:ERSST.Hintergrundaktivitaet">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird über die durch das BVA angestoßenen Hintergrundaktivitäten informiert. Sofern keine Kommunikation mit dem BKA erfolgt ist (z. B. weil die Rechtsgrundlage im jeweiligen Fall dies nicht vorsieht), wird das Element nicht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="hinweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:ERSST.Hinweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit dem Element wird ein Hinweis nach einer nur teilweise erfolgreichen Registrierung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fehler"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:AZR.Fehler">
+                     <xs:annotation>
+                        <xs:documentation>Mit dem Element wird eine Fehlermeldung des AZR übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.Fingerabdruckmeldung.140008">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Fingerabdruckmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht werden alle Informationen zum Melden von Fingerabdrücken für vollziehbar ausreisepflichtige Ausländer an das BVA übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer übermittelt, der die Fingerabdruckdaten zugeordnet werden sollen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundpersonalien" type="xauslaender:ERSST.Grundpersonalien">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu Grundpersonalien übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenZurAusreiseverpflichtung"
+                              type="xauslaender:ERSST.AngabenZurAusreiseverpflichtung"/>
+                  <xs:element name="fingerabdruckdaten" type="xauslaender:ERSST.GSAT">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Fingerabdruckdaten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.FingerabdruckmeldungAntwort.140009">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Ergebnis der Fingerabdruckmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das BVA das Ergebnis zur Fingerabdruckmeldung.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="ergebnis" type="xauslaender:Code.ERSST.Registrierungsergebnis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird angezeigt, ob die Speicherung im AZR erfolgreich war oder ob sie ganz oder teilweise fehlgeschlagen ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="hintergrundaktivitaeten"
+                              type="xauslaender:ERSST.Hintergrundaktivitaet">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird über die durch das BVA angestoßenen Hintergrundaktivitäten informiert.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="flueVeID" type="xauslaender:ERSST.FlueVeID">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die FlüVe-ID des angelegten/verwendeten Vorgangs übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="hinweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:ERSST.Hinweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit dem Element wird ein Hinweis zu einer nur teilweise oder nicht erfolgreichen Registrierung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.BkaBestandskorrektur.140010">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Bestandskorrektur</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht werden Änderungen zu Grundpersonalien oder Fingerabdrücken einer Person übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="korrekturgrund" type="xauslaender:Code.ERSST.Korrekturgrund">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Grund für die Korrektur übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="korrekturgrundfreitext"
+                              minOccurs="0"
+                              type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden erläuternde Freitextangaben zum Korrekturgrund übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datenZumAltenGSAT">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Referenzen zu den beim BKA aktuell gespeicherten Daten übermittelt (Grundpersonalien und Fingerabdrücke).</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="azrNummer" minOccurs="0" type="xiaz:AZRNummer">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die AZR-Nummer des aktuellen Datensatzes übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="bkaEdVorgangsreferenz"
+                                       type="xauslaender:ERSST.BkaEdVorgangsreferenz">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die eindeutige Referenz auf einen BKA-ED-Vorgang des aktuellen Datensatzes übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="eurodacnummer"
+                                       minOccurs="0"
+                                       type="xauslaender:ERSST.Eurodacnummer">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die EURODAC-Nummer übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="bkaENummer" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Diese Nummer kennzeichnet die erkennungsdienstliche Maßnahme im BKA.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="stationskennung" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Stationskennung der aktuellen Arbeitsstation übermittelt. Stationskennungen werden vom BKA vergeben, siehe Leitfaden zur Einbindung der AZR- Erstregistrierungsschnittstelle (AZR-ER-SST) in das eigene Fachverfahren im Registerportal unter Arbeitshilfen.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="datenZumNeuenGSAT">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die neu zu speichernden Daten übermittelt (Grundpersonalien und Fingerabdrücke).</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="grundpersonalien">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zu Grundpersonalien übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="familienname" type="xian:AllgemeinerName"/>
+                                    <xs:element name="geburtsname" minOccurs="0" type="xian:AllgemeinerName"/>
+                                    <xs:element name="vorname" type="xian:AllgemeinerName"/>
+                                    <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+                                    <xs:element name="doktorgrad" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Die Angaben sollen entsprechend der Regelungen des DSMeld-Blattes 0401 vorgenommen werden.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="altersschaetzung"
+                                                minOccurs="0"
+                                                type="xauslaender:Code.ERSST.Altersschaetzung">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird eine Schätzung des Alters der ausländischen Person übermittelt. Dabei handelt es sich nicht um die offizielle Einschätzung durch das Jugendamt, sondern um eine Schätzung bei der Erstregistrierung. Dies wird unter Anderem verwendet um zu entscheiden, ob eine Recherche/Meldung in EURODAC durchgeführt werden darf.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtsangaben" type="xauslaender:Geburt"/>
+                                    <xs:element name="staatsangehoerigkeit"
+                                                maxOccurs="2"
+                                                type="xauslaender:AngabenZumStaat"/>
+                                    <xs:any minOccurs="0"
+                                            maxOccurs="unbounded"
+                                            namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                            processContents="lax"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="aliaspersonalien"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="xauslaender:ERSST.Aliaspersonalien">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die neuen Angaben zu Aliaspersonalien übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="ausweispapier"
+                                       minOccurs="0"
+                                       type="xauslaender:ERSST.Ausweispapier">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zu einem Ausweispapier übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="erkennungsdienstlicheMassnahme" type="xauslaender:ERSST.GSAT"/>
+                           <xs:element name="speicherbegruendenderSachverhalt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der speicherbegründene Sachverhalt übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:choice>
+                                    <xs:element name="unerlaubteEinreiseUndAufenthalt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die neuen Angaben zur unerlaubten Einreise oder einem unerlaubten Aufenthalt übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="kennung"
+                                                         type="xauslaender:Code.AZR.UnerlaubtEinreiseUndAufenthaltArt">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird die Art der unerlaubten Einreise oder des unerlaubten Aufenthalts übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="eurodacverbindung" type="xs:boolean">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird mitgeteilt, ob die Meldung in Verbindung mit einer Abfrage gemäß EURODAC-VO durchgeführt wird.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="eurodacnummer"
+                                                         minOccurs="0"
+                                                         type="xauslaender:ERSST.Eurodacnummer">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird die EURODAC-Nummer übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="angabenZurAusreiseverpflichtung"
+                                                type="xauslaender:ERSST.AngabenZurAusreiseverpflichtung"/>
+                                    <xs:element name="aufenthaltsstatus">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zum Aufenthaltsstatus übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="aufenthaltsstatusArt"
+                                                         type="xauslaender:Code.AZR.AufenthaltsstatusArt">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der Aufenthaltsstatus mitgeteilt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:any minOccurs="0"
+                                            maxOccurs="unbounded"
+                                            namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                            processContents="lax"/>
+                                 </xs:choice>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.BkaBestandskorrekturAntwort.140011">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Ergebnis der Bestandskorrektur</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert das BVA darüber, dass die Korrektur der Bestände für erkennungsdienstliche Maßnahmen entgegengenommen wurde.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="hintergrundaktivitaeten"
+                              type="xauslaender:ERSST.Hintergrundaktivitaet">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird über die durch das BVA angestoßenen Hintergrundaktivitäten informiert.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="hinweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:ERSST.Hinweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit dem Element wird ein Hinweis zu einer nur teilweise oder nicht erfolgreichen Registrierung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.BkaAktivitaetenAbruf.140012">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Abruf der BKA-ED-Aktivitäten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird der Status erkennungsdienstlicher Maßnahmen in INPOL/AFIS und/oder EURODAC beim BVA abgefragt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="bkaEdVorgangsreferenz"
+                              maxOccurs="unbounded"
+                              type="xauslaender:ERSST.BkaEdVorgangsreferenz">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die eindeutige Referenz auf einen BKA-ED-Vorgang übermittelt, dessen Status abgefragt werden soll.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.BkaAktivitaeten.140013">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Ergebnis zur BKA-ED-Aktivitätenanfrage</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das BVA das Aktivitätenergebnis bzw. Fehler zu jeder angefragten BKA-ED-Vorgangsreferenz.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="ergebnis" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Aktivitätenergebnis bzw. ein Fehler zu der angefragten BKA-ED-Vorgangsreferenz übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="bkaEdVorgangsreferenz"
+                                       type="xauslaender:ERSST.BkaEdVorgangsreferenz">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Refenz auf den angefragten BKA-ED-Vorgang übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="fehler"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="xauslaender:AZR.Fehler">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine Fehlerrückmeldung zur angefragten BKA-ED-Vorgangsreferenz übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="eurodacBestandsbildungsstatus"
+                                       type="xauslaender:Code.ERSST.Aktivitaetenstatus">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der aktuelle Status der Bestandsbildung in EURODAC übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="eurodacRecherchestatus"
+                                       type="xauslaender:Code.ERSST.Aktivitaetenstatus">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der aktuelle Status der EURODAC-Auskunft übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="bkaENummer" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Diese Nummer kennzeichnet die erkennungsdienstliche Maßnahme im BKA.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="inpolAfisBestandsbildungsstatus"
+                                       type="xauslaender:Code.ERSST.Aktivitaetenstatus">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der aktuelle Status der Bestandsbildung in INPOL/AFIS übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="loeschstatus" type="xauslaender:Code.ERSST.Aktivitaetenstatus">
+                              <xs:annotation>
+                                 <xs:documentation>Dieses Element wird in der Antwort auf eine Bestandskorrektur verwendet. Es übermittelt den aktuellen Status der Löschung in dem jeweils angesprochenen Bestand (INPOL/AFIS, EURODAC, je nach der ursprünglichen Bestandsbildung).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="eurodacTreffer" minOccurs="0" maxOccurs="unbounded">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die EURODAC-Auskunft übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="datumAsylantragstellung"
+                                                minOccurs="0"
+                                                type="xida:TeilbekanntesDatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Datum der Asylantragstellung in einem anderen Mitgliedstaat übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="datumVerlassenAblehnung"
+                                                minOccurs="0"
+                                                type="xida:TeilbekanntesDatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Datum der Ausreise aufgrund einer Ablehnung übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="datumVerlassenEu"
+                                                minOccurs="0"
+                                                type="xida:TeilbekanntesDatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Datum der Ausreise ohne Ausreiseaufforderung aus dem Hoheitsgebiet der Mitgliedstaaten übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="datumBewilligungSchutz"
+                                                minOccurs="0"
+                                                type="xida:TeilbekanntesDatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Datum der Bewilligung von internationalem Schutz übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="datumEdMassnahme"
+                                                minOccurs="0"
+                                                type="xida:TeilbekanntesDatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Datum der Abnahme des Fingerabdruckes übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="datumRueckueberstellung"
+                                                minOccurs="0"
+                                                type="xida:TeilbekanntesDatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Datum der Rücküberstellung übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="datumUebernahmeVerfahren"
+                                                minOccurs="0"
+                                                type="xida:TeilbekanntesDatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Datum der freiwilligen Übernahme des Asylverfahrens übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="eurodacnummer" type="xauslaender:ERSST.Eurodacnummer">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die EURODAC-Nummer übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+                                    <xs:element name="markierung" minOccurs="0" type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird mitgeteilt, ob einer Person internationaler Schutz in einem anderen Mitgliedstaat gewährt wurde. Die Angabe unterbleibt, wenn keine Informationen zur Gewährung internationalen Schutzes vorliegen.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ortAntragstellung" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Ort der Asylantragstellung im Mitgliedstaat übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:any minOccurs="0"
+                                            maxOccurs="unbounded"
+                                            namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                            processContents="lax"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.AbgleichergebnisseUebersichtAbruf.140014">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Anfrage der Übersicht zu Abgleichergebnissen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht an das BVA wird mit der AZR-Nummer das Vorliegen von Abgleichergebnissen angefragt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="azrNummer" maxOccurs="unbounded" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer übermittelt, für die ein Abgleichergebnis angefragt werden soll.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.AbgleichergebnisseUebersicht.140015">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Übersicht der Abgleichergebnisse</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das BVA zu den angefragten AZR-Nummern jeweils die Information über das Vorhandensein eines Abgleichergebnisses oder Fehlermeldung(en).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="ergebnis" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Information über das Vorhandensein eines Abgleichergebnisses bzw. Fehlers zu einer angefragten AZR-Nummer übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die AZR-Nummer übermittelt, für die ein Abgleichergebnis angefragt wurde.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="ergebnisLiegtVor" minOccurs="0" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird angegeben, ob ein Abgleichergebnis abgerufen werden kann.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="fehler"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="xauslaender:AZR.Fehler">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine Fehlerrückmeldung zur angefragten AZR-Nummer übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.AnkunftsnachweisDruckansichtAbruf.140016">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Abruf der Druckansicht für Ankunftsnachweis</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird eine Druckansicht für den Ankunftsnachweis angefordert.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer übermittelt, für die ein Ankunftsnachweis angefragt werden soll.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aknNummer" type="xauslaender:ERSST.AKNNummer"/>
+                  <xs:element name="gueltigBis" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Befristungsdatum übermittelt, das auf dem Ankunftsnachweis vermerkt werden soll.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="mitreisendesKind" minOccurs="0" maxOccurs="4">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der vollständige Name eines mitreisenden Kindes übermittelt. Bei mehr als vier Kindern sind die vollständigen Namen der weiteren Kinder im Element amtlicherVermerk zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                     <xs:simpleType>
+                        <xs:restriction base="din91379:datatypeC">
+                           <xs:maxLength value="28"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="amtlicherVermerk" minOccurs="0" maxOccurs="8">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird jeweils eine Zeile eines amtlichen Vermerks übermittelt, die auf dem Ankunftsnachweis aufgedruckt werden soll.</xs:documentation>
+                     </xs:annotation>
+                     <xs:simpleType>
+                        <xs:restriction base="din91379:datatypeC">
+                           <xs:maxLength value="27"/>
+                        </xs:restriction>
+                     </xs:simpleType>
+                  </xs:element>
+                  <xs:element name="eigeneAngaben" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, ob die ausländische Person die Angaben zum Zeitpunkt der Erzeugung des Ankunftsnachweises selbst gemacht hat.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="druckansicht" type="xauslaender:Code.ERSST.Druckansicht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, ob die Außenseite, die Innenseite oder der Barcode des Ankunftsnachweises erzeugt werden sollen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gesichtsbild" minOccurs="0" type="xilb:Lichtbild">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Gesichtsbild übermittelt. Dieses muss beim Druck der Innenseite angegeben werden. Das Bild sollte genau 413 mal 531 Pixel groß sein. Größere Bilder sind zulässig, werden dann auf die genannte Größe verkleinert und dabei ggf. zugeschnitten. Das Gesichtsbild muss die Anforderungen der Ankunftsnachweisverordnung (Anlage 2 Abschnitt 2) bezüglich biometrischer Eigenschaften erfüllen (ICAO-Konformität). Dies wird vor dem Erzeugen des PDFs geprüft. Falls zu der Person kein Gesichtsbild mit den geforderten biometrischen Eigenschaften aufgenommen werden kann, ist das Kennzeichen gesichtsbildNichtBiometrisch zu setzen, um die automatische Prüfung zu übersteuern.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gesichtsbildNichtBiometrisch" minOccurs="0" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, dass die im Element gesichtsbild übermittelte Aufnahme nicht die geforderten biometrischen Eigenschaften aufweist. Somit wird die Prüfung übersteuert.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.AnkunftsnachweisDruckansicht.140017">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Druckansicht für Ankunftsnachweis</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das BVA die angeforderte Druckansicht für den Ankunftsnachweis.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="rueckgabe">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine Dokumentseite oder der Barcode für den Ankunftsnachweis übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="dokumentseite" type="xs:base64Binary">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird ein PDF-Dokument für die Außen- oder Innenseite des Ankunftsnachweises übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="barcode" type="xs:base64Binary">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Barcode für den Ankunftsnachweis übermittelt. Der erzeugte Barcode hat die folgenden Eigenschaften: Data Matrix Barcode JPEG Format Pixelgröße 202 x 202 (+/-5 Pixel) Ränder: 0 Pixel Auflösung: 72dpi und muss auf einer Fläche von 20,2 x 20,2 Millimeter gedruckt werden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.AfisBestandsanfrage.140018">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Anfrage an den AFIS-Bestand</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird angefragt, ob Fingerabrücke im AFIS-Bestand vorliegen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="azrNummer" minOccurs="0" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer übermittelt, für die Fingerabdrücke abgerufen werden sollen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bkaENummer" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die E-Nummer übermittelt, für die Fingerabdrücke abgerufen werden sollen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="rueckgabeformat" type="xauslaender:Code.ERSST.Rueckgabeformat">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, welches Rückgabeformat gewünscht ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.AfisBestandsanfrageAntwort.140019">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Erfolgsmeldung zur AFIS-Bestandsanfrage</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das BVA die FlüVe-ID zu einem vorhandenen AFIS-Abrufergebnis.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="flueVeID" type="xauslaender:ERSST.FlueVeID">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die FlüVe-ID übermittelt, zu der ein AFIS-Bestand abgefragt werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.AfisBestandAbruf.140020">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Abruf des AFIS-Bestandsergebnisses</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird mittels FlüVe-ID das AFIS-Bestandsergebnis abgerufen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="flueVeID" type="xauslaender:ERSST.FlueVeID">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die FlüVe-ID übermittelt, zu der ein AFIS-Bestand abgefragt werden soll.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.AfisBestand.140021">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Ergebnis des AFIS-Abrufs</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das BVA das AFIS-Abrufergebnis.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="azrNummer" minOccurs="0" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer übermittelt, für die Fingerabdrücke abgerufen wurden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bkaENummer" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die E-Nummer übermittelt, für die Fingerabdrücke abgerufen wurden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="flueVeID" type="xauslaender:ERSST.FlueVeID">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die FlüVe-ID übermittelt, die zu dem Ergebnis gehört.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="rueckgabe">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Fingerabdruckdaten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="gsat" type="xauslaender:ERSST.GSAT">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Fingerabdruckdaten im GSAT-Format übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="pdf" type="xs:base64Binary">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Fingerabdruckdaten im PDF-Format übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:any minOccurs="0"
+                                   maxOccurs="unbounded"
+                                   namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                                   processContents="lax"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="status" type="xauslaender:Code.ERSST.Fingerabdruckabrufstatus">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Ergebnisstatus des Fingerabdruckabrufs übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="AnERSST.AbgleichergebnisAbruf.140022">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</autor>
+            <leser>Bundesverwaltungsamt (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Anfrage der Übersicht zu Abgleichergebnissen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht an das BVA wird mit der AZR-Nummer ein Abgleichergebnis abgerufen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.AnERSST">
+               <xs:sequence>
+                  <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer übermittelt, für die ein Abgleichergebnis abgerufen werden soll.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.Abgleichergebnis.140023">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Abgleichergebnis</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das BVA ein Abgleichergebnis zu einer AZR-Nummer.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="abgleichergebnis" type="xs:base64Binary">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Abgleichergebnis als PDF übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="relevant" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird angegeben, ob es Treffer bei einem der Abgleiche gab.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vorlaeufig" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird angegeben, ob ein Teil der Abgleiche noch in Arbeit ist. Wenn der Wert wahr ist, sind noch nicht alle Abgleiche im Abgleichdokument bewertet. Das Dokument muss zu einem späteren Zeitpunkt erneut abgerufen werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="VonERSST.Fehlernachricht.140099">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesverwaltungsamt (kein Präfix festgelegt)</autor>
+            <leser>Kommunikationspartner der Erstregistrierungsschnittstelle (kein Präfix festgelegt)</leser>
+            <rechtsgrundlage/>
+            <title>Fehlernachricht der Erstregistrierungsschnittstelle</title>
+         </xs:appinfo>
+         <xs:documentation>Die Nachricht wird im Fehlerfall durch das BVA versendet und enthält die genaue Beschreibung des Fehlers.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="fehler" maxOccurs="unbounded" type="xauslaender:AZR.Fehler">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine Fehlerrückmeldung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:any minOccurs="0"
+                          maxOccurs="unbounded"
+                          namespace="http://www.osci.de/xauslaender2611/ersst-erweiterung"
+                          processContents="lax"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>PEB Dokumentformat</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Die Codeliste beschreibt das Format des Dokuments.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Die Codeliste beschreibt das Format des Dokuments.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2026-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>peb.dokumentformat</ShortName>
+      <LongName>PEB Dokumentformat</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:bamf:codeliste:peb.dokumentformat</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:bamf:codeliste:peb.dokumentformat_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>BAMF</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>pdf</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>jpg </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>xls</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>xlsx </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>doc</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>docx</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>odt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>ods</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>jpeg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>png</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>gif</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>nist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>nst</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>msg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>eml</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>txt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>xml</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

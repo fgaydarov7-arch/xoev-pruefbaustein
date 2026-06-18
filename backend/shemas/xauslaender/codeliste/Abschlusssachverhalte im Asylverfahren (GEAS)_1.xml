@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Abschlusssachverhalte im Asylverfahren (GEAS)</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Beschreibt die möglichen Abschlusssachverhalte, die nach Beendigung des Asylverfahrens übermittelt werden können.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>XAuslaender</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Beschreibt die möglichen Abschlusssachverhalte, die nach Beendigung des Asylverfahrens übermittelt werden können.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2026-06-12</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>geas.asylabschlusssachverhalt</ShortName>
+      <LongName>Abschlusssachverhalte im Asylverfahren (GEAS)</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:geas.asylabschlusssachverhalt</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:geas.asylabschlusssachverhalt_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Asylverfahren</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="optional">
+         <ShortName>Wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Anerkennung als Asylberechtigte/r</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Zuerkennung der Flüchtlingseigenschaft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Zuerkennung des subsidiären Schutzes</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Abschiebungsverbot nach § 60 Abs. 5 oder 7 AufenthG liegt vor</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ablehnung als Asylberechtigte/r (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>unanfechtbar kein Asylrecht (§ 26a AsylG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ablehnung der Flüchtlingseigenschaft (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ablehnung des subsidiären Schutzes (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Abschiebungsverbot nach § 60 Abs. 5 oder 7 AufenthG liegt nicht vor</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>unzulässig gem. § 29 Nr. 1 AsylG (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>unzulässig gem. § 29 Nr. 2 AsylG (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>unzulässig gem. § 29 Nr. 3 AsylG (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>unzulässig gem. § 29 Nr. 4 AsylG (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>unzulässig gem. § 29 Nr. 5 AsylG (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>unzulässig gem. § 29 Nr. 6 AsylG (unanfechtbar)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Stillschweigende Rücknahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ausdrückliche Rücknahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>30</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Keine Rückkehrentscheidung ergangen bzw. (durch Gerichtsentscheidung) aufgehoben</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Einreise- und Aufenthaltsverbot gem. § 11 Abs. 1 oder 7 AufenthG (durch Gerichtsentscheidung) aufgehoben</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>50</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Unanfechtbare Aberkennung der Anerkennung als Asylberechtigte/r</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>51</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Unanfechtbare Aberkennung der Zuerkennung des Flüchtlingsschutzes</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>52</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Unanfechtbare Aberkennung der Zuerkennung des subsidiären Schutzes</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>53</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Unanfechtbare Aberkennung der Feststellung des Abschiebungsverbots gem. § 60 Abs. 5 oder 7 AufenthG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>54</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Anerkennung als Asylberechtigte/r nicht aberkannt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>55</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Zuerkennung des Flüchtlingsschutzes nicht aberkannt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>56</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Zuerkennung des subsidiären Schutzes nicht aberkannt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>57</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Feststellung des Abschiebungsverbots gem. § 60 Abs. 5 oder 7 AufenthG nicht aberkannt</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

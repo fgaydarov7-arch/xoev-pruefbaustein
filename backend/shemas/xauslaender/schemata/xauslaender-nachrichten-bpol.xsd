@@ -1,0 +1,873 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xauslaender="http://www.osci.de/xauslaender2611"
+           xmlns:bn-uq-g2g="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xiaz="http://www.osci.de/xinneres/azrnummer/3"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xipa="http://www.osci.de/xinneres/postanschrift/5"
+           targetNamespace="http://www.osci.de/xauslaender2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XAusländer</nameLang>
+            <nameKurz>XAusländer</nameKurz>
+            <nameTechnisch>xinneres.xauslaender</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xauslaender</kennung>
+            <beschreibung>Das Fachmodul XAusländer des Standards XInneres beschreibt die Datenübermittlung im Ausländerwesen.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xauslaender-nachrichten-azr.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/azrnummer/3/xinneres-azrnummer.xsd"
+              namespace="http://www.osci.de/xinneres/azrnummer/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/postanschrift/5"/>
+   <xs:import schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+              namespace="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="BPOL.AbweichendeNamensschreibweise">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Abweichende Namensschreibweise</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird eine von den Führungspersonalien abweichende Namensschreibweise übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname" type="xian:AllgemeinerName"/>
+         <xs:element name="vorname" type="xian:AllgemeinerName"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.Aliaspersonalien">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Aliaspersonalien</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Aliaspersonalien übermittelt.Aliaspersonalien sind per Definition unzulässigerweise benutzte Personalien mit der Absicht, die Identität zu verschleiern.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname" type="xian:AllgemeinerName"/>
+         <xs:element name="vorname" type="xian:AllgemeinerName"/>
+         <xs:element name="geburt" type="xauslaender:Geburt"/>
+         <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+         <xs:element name="staatsangehoerigkeit" type="xauslaender:AngabenZumStaat">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Staatsangehörigkeit des Ausländers übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.AnlagenAufgriff">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Anlagen zum Aufgriff</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Anlagen zu Aufgriffen übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="anlage" type="xauslaender:BPOL.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Anlage und weitere Informationen dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anlageArt" type="xauslaender:Code.BPOL.AnlageAufgriff">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Art der Anlage näher spezifiziert.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.BegleitungUM">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Personalien eines Familienangehörigen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben zu Personen ohne Sorgerecht übermittelt, die den Minderjährigen begleiten.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:BPOL.Grundpersonalien">
+            <xs:sequence>
+               <xs:element name="azrnummer" minOccurs="0" type="xiaz:AZRNummer"/>
+               <xs:element name="beziehung" type="xs:boolean">
+                  <xs:annotation>
+                     <xs:documentation>Das Element gibt an, ob eine familiäre Beziehung zwischen der unbegleiteten minderjährigen Person und der begleitenden Person festgestellt wurde.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="BPOL.Dokument">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Dokumentenanhang</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird ein Dokument übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dokumentID" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Dokumenten-ID der BPOL übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dokument" type="xs:base64Binary">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Dokument übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dokumententyp" type="xauslaender:Code.Dokumentformat">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Format des Dokumentes übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="bezeichnung" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird eine Dokumentbezeichnung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.DokumenteUndMobiltelefone">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Dokumente und Mobiltelefone bei Aufgriffsfällen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zu Dokumenten und Mobiltelefonen übermittelt, die bei einem Aufgriffsfall bei der aufgegriffenen Person gefunden wurden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ausweisdokument"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:Ausweisdokument"/>
+         <xs:element name="sonstigesDokument"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zu Dokumenten übermittelt, die der Klärung der Identität dienen sowie Beweise und Indizien, die auf die Zuständigkeit anderer Mitgliedsstaaten hinweisen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="mobileDatentraeger" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zu einem mobilen Datenträger übermittelt, welcher im Rahmen eines Strafverfahrens als Beweismittel sichergestellt wurde.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="marke" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Marke des mobilen Datenträgers übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="modell" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Modell des mobilen Datenträgers übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikationsnummer"
+                              minOccurs="0"
+                              type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Identifikationsnummer (bei Mobiltelefonen die IMEI) des mobilen Datenträgers übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="entsperrhinweise" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Hinweise zum Entsperren des mobilen Datenträgers übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="beweismittel"
+                              minOccurs="0"
+                              fixed="true"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob der mobile Datenträger im Rahmen eines Strafverfahrens als Beweismittel sichergestellt wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.Familienangehoeriger">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Personalien eines Familienangehörigen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Personalien eines Familienangehörigen übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:BPOL.Grundpersonalien">
+            <xs:sequence>
+               <xs:element name="azrnummer" minOccurs="0" type="xiaz:AZRNummer"/>
+               <xs:element name="identitaetsnachweis" type="xs:boolean">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird übermittelt, ob die erhobenen Personalien auf einem zum Identitäsnachweis geeigneten Dokumenten basieren. Ist dies nicht der Fall, handelt es sich um eigene Angaben der Person.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="BPOL.Grundpersonalien">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Grundpersonalien</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Grundpersonalien eines Ausländers übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname" type="xian:AllgemeinerName"/>
+         <xs:element name="vorname" type="xian:AllgemeinerName"/>
+         <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+         <xs:element name="geburt" type="xauslaender:AZR.Geburt"/>
+         <xs:element name="staatsangehoerigkeit"
+                     maxOccurs="4"
+                     type="xauslaender:AngabenZumStaat"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.IdentifikationPerson">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikation einer Person im Fachverfahren</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden in diesem Kontext Personen identifiziert.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="azrnummer" minOccurs="0" type="xiaz:AZRNummer"/>
+         <xs:element name="vorname" type="xian:AllgemeinerName"/>
+         <xs:element name="familienname" type="xian:AllgemeinerName"/>
+         <xs:element name="geburt" type="xauslaender:Geburt"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.Kontaktperson">
+      <xs:annotation>
+         <xs:documentation>Mit diesem Element werden Kontaktdaten für einen Ansprechpartner beschrieben, welcher bezogen auf den Sachverhalt einer Nachricht Auskunft geben kann. In der Regel dürfte dies die Person sein, die die Nachricht ausgelöst hat.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname" minOccurs="0" type="xian:AllgemeinerName"/>
+         <xs:element name="vorname" minOccurs="0" type="xian:AllgemeinerName"/>
+         <xs:element name="kontaktdaten"
+                     maxOccurs="unbounded"
+                     type="xauslaender:Kommunikation"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.Metainformationen">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Metainformationen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden grundlegende Metadaten zum Vorgang der BPOL übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dienststelle" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Bezeichnung, der für den Vorgang zuständigen Dienststelle, der BPOL übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vorgangsnummer" type="xauslaender:BPOL.Vorgangsnummer"/>
+         <xs:element name="vorgangsdatum" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum der Feststellung des Vorgangs übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="erreichbarkeit"
+                     maxOccurs="unbounded"
+                     type="xauslaender:Kommunikation">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zur Erreichbarkeit, der für den Vorgang zuständigen Dienststelle, der BPOL übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.Reiseschritt">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Information zum Reiseschritt</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben zum Transportmittel und Reiseverlauf übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="reiseschritt" type="xs:integer">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Reihenfolge der Reiseschritte durchnummeriert.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="identifikationTransportmittel"
+                     minOccurs="0"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden identifizierende Kennzeichnungen des Transportmittels übermittelt (z. B. Flugnummer).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ort" type="xs:token">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zu betroffenen Reisestationen übermittelt (z. B. Abflugort oder Ankunftsort). Hinweis: Codeliste wird noch hinterlegt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="datum" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum eines Reiseschrittes übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="uhrzeit" type="xs:time">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Uhrzeit eines Reiseschrittes übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="BPOL.VerbleibDerPersonHaft">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Verbleib einer Person in Haft</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zum Verbleib einer Person in Haft übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="bezeichnung" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Bezeichnung der Einrichtung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ortDerEinrichtung"
+                     minOccurs="0"
+                     type="xipa:PostalischeInlandsanschrift">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift der Einrichtung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="behoerdenkennzeichen"
+                     minOccurs="0"
+                     type="xauslaender:AZR.Behoerdenkennzeichen">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Behördenkennzeichen übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="entlassungsdatum" type="xs:date">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das geplante Entlassungsdatum übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="BPOL.Vorgangsnummer">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Vorgangsnummer der BPOL</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird die interne Vorgangsnummer der BPOL übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC"/>
+   </xs:simpleType>
+   <xs:element name="BPOL.Aufgriff.160008">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundespolizei (dbs)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <title>Asylantrag und Aufgriff ohne Asylantrag</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die BPOL Informationen zu einem Asylantrag gemäß § 16 AsylG bzw. zu einem Aufgriff ohne Asylantrag gemäß § 49 AufenthG.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="metainformationen" type="xauslaender:BPOL.Metainformationen"/>
+                  <xs:element name="asylantrag" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, ob bei dem Aufgriff ein Asylantrag gestellt wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aufgriff">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden allgemeine Informationen zum Aufgriff übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="ort" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zu dem Ort an dem der Ausländer aufgegriffen wurde übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datum" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Aufgriffs übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="identitaetsnachweis" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob die erhobenen Personalien auf einem zum Identitäsnachweis geeigneten Dokumenten basieren. Ist dies nicht der Fall, handelt es sich um eigene Angaben der Person.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundpersonalien" type="xauslaender:BPOL.Grundpersonalien"/>
+                  <xs:element name="anzahlBegleitetDurch" type="xs:nonNegativeInteger">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesen Element wird die Anzahl der Familienangehörigen (Ehepartner, minderjährige Kinder) übermittelt, die die Person begleiten.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="sprache" type="xauslaender:Code.Sprachenkatalog">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Sprache übermittelt, in der mit der Person kommuniziert wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="azrnummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur AZR-Nummer übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="azrnummer" type="xiaz:AZRNummer"/>
+                           <xs:element name="begruendung" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Begründung übermittelt, warum eine AZR-Nummer ggf. nicht vorhanden ist.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="edauswertung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur Auswertung der Fingerabdrucknahme übermittelt, sofern die Fingerabdrucknahme möglich und auswertbar war.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="bkaDNummer" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Diese Nummer kennzeichnet die Zuordnung einer erkennungsdienstlichen Maßnahme zu einer Person im BKA.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="eurodac-treffer"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Sofern EURODAC-Treffer zur betroffenen Person ermittelt wurden, sind diese mit diesem Element zu übermitteln. Der EURODAC-Treffer wird durch eine, von der EURODAC VO standardisierte, Eurodac-Nummer dargestellt, die von einem Mitgliedsstaat vergeben wurde.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="visbestand"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Sofern ein VIS Eintrag gefunden wurde, wird die Antragsnummer mit diesem Element übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="aliaspersonalien"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.Aliaspersonalien"/>
+                  <xs:element name="abweichendeNamensschreibweise"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.AbweichendeNamensschreibweise"/>
+                  <xs:element name="eheOderLebenspartner"
+                              minOccurs="0"
+                              type="xauslaender:BPOL.Familienangehoeriger">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Personalien eines Ehe- oder Lebenspartners übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="minderjaehrigeKinder"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.Familienangehoeriger">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Personalien minderjähriger Kinder übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="zusatzinformationenZurIdentitaet" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden im Falle eines Asylantrags zusätzliche Informationen zur Identitätsfeststellung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="zusatzZurIdentitaetsfeststellung"
+                                       type="xauslaender:Code.BPOL.ZusatzZurIdentitaetsfeststellung">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die zusätzliche Information zur Identitätsfeststellung übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="erklaerung" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden weitere Informationen zu dem Sachverhalt übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="dokumenteUndMobiltelefone"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.DokumenteUndMobiltelefone"/>
+                  <xs:element name="verbleibDerPerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, wo die aufgegriffene Person verblieben ist.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="transitaufenthalt" type="xauslaender:BPOL.VerbleibDerPersonHaft">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird mitgeteilt, dass die Person nicht eingereist ist, sondern sich im Transitbereich in Sicherungshaft befindet.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="sicherungshaft" type="xauslaender:BPOL.VerbleibDerPersonHaft">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird mitgeteilt, dass die Person sich in einer Hafteinrichtung befindet.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="weitergeleitet">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird mitgeteilt, dass die Person eingereist ist und an die nächstgelegene (d. h. örtlich zuständige) ABH oder AE weitergeleitet wurde.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="bezeichnung" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Bezeichnung der ABH oder AE übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="behoerdenkennzeichen" type="xauslaender:Code.Auslaenderbehoerde">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Behördenkennzeichen übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ortDerEinrichtung"
+                                                minOccurs="0"
+                                                type="xipa:PostalischeInlandsanschrift">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Anschrift der AE übermittelt, zu der die Person weitergeleitet wurde.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="befristung" minOccurs="0" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Termin bis wann sich die Person in der ABH oder AE vorstellen muss.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="sprachmittelndePerson" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, ob eine sprachmittelnde Person eingesetzt wurde.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="vorOrt" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird mitgeteilt, ob eine sprachmittelnde Person vor Ort eingesetzt wurde.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="telefonisch" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird mitgeteilt, ob eine sprachmittelnde Person telefonisch eingesetzt wurde.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="bemerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden sachdienliche Hinweise übermittelt, die für das weitere Verfahren bedeutsam sind, z. B. körperliche Beeinträchtigungen oder Krankheiten, Hinweise auf die Zuständigkeit eines anderen Mitgliedstaats wie z. B. dessen Währung.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlage"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.AnlagenAufgriff">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Anlagen zum Aufgriff übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="BPOL.AufgriffUM.160009">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundespolizei (dbs)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs), Ausländerbehörde (azr)</leser>
+            <title>Aufgriffsfall unbegleiteter Minderjähriger</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die BPOL Informationen zum Aufgriffsfall eines unbegleiteten Minderjährigen (uM).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="metainformationen" type="xauslaender:BPOL.Metainformationen"/>
+                  <xs:element name="aufgriff">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden allgemeine Informationen zum Aufgriff übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="ort" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zu dem Ort an dem der Ausländer aufgegriffen wurde übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datum" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Aufgriffs übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="identitaetsnachweis" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob die erhobenen Personalien auf einem zum Identitäsnachweis geeigneten Dokumenten basieren. Ist dies nicht der Fall, handelt es sich um eigene Angaben der Person.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundpersonalien" type="xauslaender:BPOL.Grundpersonalien"/>
+                  <xs:element name="sprache" type="xauslaender:Code.Sprachenkatalog">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Sprache übermittelt, in der mit der Person kommuniziert wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="azrnummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur AZR-Nummer übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="azrnummer" type="xiaz:AZRNummer"/>
+                           <xs:element name="begruendung" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Begründung übermittelt, warum eine AZR-Nummer ggf. nicht vorhanden ist.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="edauswertung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur Auswertung der Fingerabdrucknahme übermittelt, sofern die Fingerabdrucknahme möglich und auswertbar war.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="bkaDNummer" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Diese Nummer kennzeichnet die Zuordnung einer erkennungsdienstlichen Maßnahme zu einer Person im BKA.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="eurodac-treffer"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Sofern EURODAC-Treffer zur betroffenen Person ermittelt wurden, sind diese mit diesem Element zu übermitteln. Der EURODAC-Treffer wird durch eine, von der EURODAC VO standardisierte, Eurodac-Nummer dargestellt, die von einem Mitgliedsstaat vergeben wurde.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="visbestand"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Sofern ein VIS Eintrag gefunden wurde, wird die Antragsnummer mit diesem Element übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="aliaspersonalien"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.Aliaspersonalien"/>
+                  <xs:element name="abweichendeNamensschreibweise"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.AbweichendeNamensschreibweise"/>
+                  <xs:element name="begleitpersonOhneSorgerecht"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.BegleitungUM"/>
+                  <xs:element name="dokumenteUndMobiltelefone"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.DokumenteUndMobiltelefone"/>
+                  <xs:element name="uebergebenAn">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, an welches Jugendamt die Person übergeben wurde.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="bezeichnung" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Bezeichnung der Einrichtung übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="behoerdenkennzeichen"
+                                       minOccurs="0"
+                                       type="xauslaender:AZR.Behoerdenkennzeichen">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Behördenkennzeichen übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="ortDerEinrichtung" type="xipa:PostalischeInlandsanschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Anschrift der Einrichtung übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="aBHinformiert"
+                              minOccurs="0"
+                              type="xauslaender:AZR.Behoerdenkennzeichen">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Behördenkennzeichen der informierten ABH übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="sprachmittelndePerson" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, ob eine sprachmittelnde Person eingesetzt wurde.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="vorOrt" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird mitgeteilt, ob eine sprachmittelnde Person vor Ort eingesetzt wurde.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="telefonisch" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird mitgeteilt, ob eine sprachmittelnde Person telefonisch eingesetzt wurde.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="bemerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden sachdienliche Hinweise übermittelt, die für das weitere Verfahren bedeutsam sind, z. B. körperliche Beeinträchtigungen oder Krankheiten , Hinweise auf die Zuständigkeit eines anderen Mitgliedstaats wie z. B. dessen Währung.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlage"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.AnlagenAufgriff">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Anlagen zum Aufgriff übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="BPOL.EinzelfallinformationVonBPOL.160101">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundespolizei (dbs), Landespolizei (lpo)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs), Ausländerbehörde (azr), Aufnahmeeinrichtung (ane)</leser>
+            <title>Einzelfallinformation von der BPOL</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die BPOL Informationen, welche nicht über eine der strukturierten anderen Nachrichten abgebildet werden können.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="metainformationen" type="xauslaender:BPOL.Metainformationen"/>
+                  <xs:element name="betreff"
+                              type="xauslaender:Code.BPOL.BetreffEinzelfallinformation">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, um welche Angelegenheit es geht.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation" type="xauslaender:BPOL.IdentifikationPerson"/>
+                  <xs:element name="anlageEinzelfallinformation"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Anlagen zum Einzelfall übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="freitext" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Informationen zu einem besonderen Einzelfall in Textform übermittelt, welche nicht über eine der strukturierten anderen Nachrichten abgebildet werden können.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="BPOL.EinzelfallinformationAnBPOL.160102">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs), Ausländerbehörde (azr), Aufnahmeeinrichtung (ane)</autor>
+            <leser>Bundespolizei (dbs), Landespolizei (lpo)</leser>
+            <title>Einzelfallinformation an die BPOL</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt ABH / ZAB / AE / BAMF Informationen, welche nicht über eine der strukturierten anderen Nachrichten abgebildet werden können an die BPOL.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="dienststelle" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die angefragte Dienststelle der BPOL übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vorgangsnummer"
+                              minOccurs="0"
+                              type="xauslaender:BPOL.Vorgangsnummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Vorgangsnummer der BPOL übermittelt, auf die sich die Einzelfallinformation bezieht.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="betreff" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, um welche Angelegenheit es geht.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation" type="xauslaender:BPOL.IdentifikationPerson"/>
+                  <xs:element name="anlageEinzelfallinformation"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:BPOL.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Anlagen zum Einzelfall übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="freitext" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Informationen zu einem besonderen Einzelfall in Textform übermittelt, welche nicht über eine der strukturierten anderen Nachrichten abgebildet werden können.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

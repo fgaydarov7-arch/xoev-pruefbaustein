@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>BAMFABH-InformationBerechtigungsschein</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Informationstexte zum Berechtigungsschein</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2022-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Neuer Code 17564 aufgenommen</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>BAMFABH-InformationBerechtigungsschein</ShortName>
+      <LongName>BAMFABH-InformationBerechtigungsschein</LongName>
+      <Version>3</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:bamfabh:int:informationberechtigungsschein</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:bamfabh:int:informationberechtigungsschein_3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="optional">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17560</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Zur angegebenen Person liegt keine Berechtigung/Verpflichtung zur Teilnahme am Integrationskurs vor.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17561</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Zur angegebenen Person liegt eine Berechtigung zur Teilnahme am Integrationskurs mit folgenden Daten vor:</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17562</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Person hat bereits am Integrationskurs teilgenommen. Es besteht nur eine einmalige Teilnahmeberechtigung. Eine nochmalige geförderte Teilnahme ist daher nicht zulässig. Für weitere Informationen setzen Sie sich bitte ggf. mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17564</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Person ist nach im BAMF vorliegenden Informationen verstorben. Für weitere Informationen setzen Sie sich bitte ggf. mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

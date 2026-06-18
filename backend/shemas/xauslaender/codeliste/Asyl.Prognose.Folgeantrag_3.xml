@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Asyl.Prognose.Folgeantrag</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Beschreibt die Prognosegründe im Falle einer Folgeantragstellung im Asylverfahren.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF-XAusländer</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Update zum 01.05.2024 aufgrund einer Gesetzesänderung. Mit dem Rückführungsverbesserungsgesetz haben sich inhaltliche Veränderungen bei Folgeanträgen ergeben. Diese Codeliste wurde von BAMF, 61C angepasst.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2024-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Die vier alten Codes (Code 01-04) wurden gelöscht und fünf neue Codes (Code 05-09) wurden hinzugefügt.</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>asyl.prognosefolgeantrag</ShortName>
+      <LongName>Asyl.PrognoseFolgeantrag</LongName>
+      <Version>3</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:asyl.prognosefolgeantrag</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:asyl.prognosefolgeantrag_3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Ausländerwesen</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Auf den Folgeantrag des/der Ausländer/-in wird ein weiteres Asylverfahren durchgeführt. Dem/der/den Ausländer/in/n ist eine Aufenthaltsgestattung zu bescheinigen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Der Folgeantrag wurde nur zur Verzögerung oder Behinderung der Aufenthaltsbeendigung gestellt (§ 71 Abs. 5 Satz 2 AsylG). Ein weiteres Asylverfahren wird nicht durchgeführt. Der/Die Ausländer/in erhält/erhalten noch einen förmlichen Bescheid. Im vorliegenden Fall ist der noch ergehende Bescheid nicht Voraussetzung für eine Abschiebung (§ 71 Abs. 5 Satz 1 AsylG).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Es handelt sich um einen erneuten Folgeantrag nach unanfechtbarer Ablehnung eines Folgeantrags (§ 71 Abs. 5 Satz 2 AsylG). Ein weiteres Asylverfahren wird nicht durchgeführt. Der/Die Ausländer/in erhält/erhalten noch einen förmlichen Bescheid. Im vorliegenden Fall ist der noch ergehende Bescheid nicht Voraussetzung für eine Abschiebung (§ 71 Abs. 5 Satz 1 AsylG).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Der Folgeantrag des/der Ausländer/-in führt nicht zur Durchführung eines weiteren Asylverfahrens. Im Hinblick auf § 60 Abs. 5 und 7 AufenthG wird jedoch ein weiteres Verfahren durchgeführt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Der Folgeantrag des/der Ausländer/-in führt nicht zur Durchführung eines weiteren Asylverfahrens. Die Voraussetzungen des § 71 Abs. 5 AsylG liegen hingegen nicht vor.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

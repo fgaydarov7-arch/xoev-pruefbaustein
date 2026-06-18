@@ -1,0 +1,5262 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Int.Aufenthaltstitel</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Beschreibt die Arten der Aufenthaltstitel, die durch die Ausländerbehörden (ABH) bzw. Träger der Grundsicherung (TGS) im Rahmen der Integration an das BAMF übermittelt werden</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF-Integration</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Beschreibt die Arten der Aufenthaltstitel, die durch die Ausländerbehörden (ABH) bzw. Träger der Grundsicherung (TGS) im Rahmen der Integration an das BAMF übermittelt werden</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2026-05-06</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Schlüssel ENTF-STAT-01 geändert auf ENTF</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>aufenthaltstitel</ShortName>
+      <LongName>Aufenthaltstitel, die im Rahmen der Integration an das BAMF übermittelt werden</LongName>
+      <Version>19</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:integration:aufenthaltstitel</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:integration:aufenthaltstitel_19</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Fachbereich Integration</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="optional">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="abh" Use="optional">
+         <ShortName>abh</ShortName>
+         <LongName>ABH</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="bamf" Use="optional">
+         <ShortName>bamf</ShortName>
+         <LongName>BAMF</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="tgs" Use="optional">
+         <ShortName>tgs</ShortName>
+         <LongName>TGS</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="tgs-ueb" Use="optional">
+         <ShortName>tgs-ueb</ShortName>
+         <LongName>TGS-Üb</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="tla" Use="optional">
+         <ShortName>tla</ShortName>
+         <LongName>TLA</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-001</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 16 Abs. 1 AufenthG (Studium) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-002</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 16 Abs. 5 AufenthG (Arbeitsplatzsuche nach Studium) (alter SV: § 16 Abs. 4 AufenthG) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-003</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 16 Abs. 1 AufenthG (Sprachkurse, Schulbesuch) (alter SV: § 16 Abs. 5 AufenthG) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-004</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 17 Abs. 1 (sonstige betriebliche Ausbildungszwecke) AufenthG - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-005</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 16 Abs. 6 AufenthG (innergemeinschaftlich mobiler Student aus [Staatsangehörigkeitsschlüssel des EU-Mitgliedstaates]) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-103</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16 Abs. 6 AufenhtG (bedingte Zulassung, bedingte oder unbedingte ZulassungTeilzeitstudium, studienvorbereitender Sprachkurs ohne Zulassung zum Studium, studienvorbereitendes Praktikum ohne Zulassung zum Studium) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-104</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 16 Abs. 9 AufenthG (Studium für in einem anderen Mitgliedsstaat Schutzberechtigte) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-006</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 16 Abs. 7 AufenthG (Studienbewerbung) (alter SV: § 16 Abs. 1a AufenthG) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-007</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 16 Abs. 3 AufenthG (Arbeitsplatzsuche nach schulischer Berufsausbildung) (alter SV: § 16 Abs. 5b AufenthG) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-008</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 17 Abs. 3 AufenthG (Arbeitsplatzsuche nach betrieblicher Berufsausbildung) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-100</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 17a Abs. 1 AufenthG (Durchführung einer Bildungsmaßnahme) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-101</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 17a Abs. 4 AufenthG (Arbeitsplatzsuche nach Anerkennung ausländischer Berufsqualifikationen) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-102</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 17a Abs. 5 AufenthG (Ablegung einer Prüfung) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-105</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 17b Abs. 1 AufenthG (Studienbezogenes Praktikum EU) (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-011</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18 AufenthG (Beschäftigung) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-012</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 21 AufenthG (selbstständige Tätigkeit) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-013</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 20 Abs. 1 AufenthG (Forscher) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-510</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Abs. 1 Nr. 1 AufenthG (Arbeitsplatzsuche nach Studium in Deutschland)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-511</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Absatz 1 Nummer 2 AufenthG (Arbeitsplatzsuche nach Forschungstätigkeit)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-512</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Absatz 1 Nummer 3 AufenthG (Arbeitsplatzsuche nach qualifizierter Berufsausbildung in Deutschland)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-513</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Absatz 1 Nummer 4 AufenthG (Arbeitsplatzsuche nach Feststellung der Gleichwertigkeit der Berufsqualifikation oder Erteilung der Berufsausübungserlaubnis)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-514</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue> § 20 Absatz 1 Nummer 5 AufenthG (Arbeitsplatzsuche nach Abschluss einer Assistenz- oder Helferausbildung im Bundesgebiet)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-014</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 20 Abs. 5 AufenthG (innergemeinschaftlicher zugelassener Forscher) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-204</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 20 Abs. 8 AufenthG (in einem anderen Mitgliedsstaat als international Schutzberechtigte anerkannte Forscher) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-205</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 20b Abs. 1 AufenthG (mobiler Forscher) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-206</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 20 Abs. 7 AufenthG (Arbeitsplatzsuche nach Abschluss der Forschungstätigkeit) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-015</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18 Abs. 3 AufenthG (keine qualifizierte Beschäftigung) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-016</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18 Abs. 4 Satz 1 AufenthG (qualifizierte Beschäftigung nach Rechtsverordnung) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-017</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18 Abs. 4 Satz 2 AufenthG (qualifizierte Beschäftigung im öffentlichen Interesse) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-200</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18 Abs. 4a AufenthG (Beamtenverhältnis zu einem deutschen Dienstherren) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-018</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18a Abs. 1 Nr.1 Buchstabe a) AufenthG (Aufenthaltserlaubnis für qualifizierte Geduldete mit Abschluss in Deutschland) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-019</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18a Abs. 1 Nr.1 Buchstabe b) AufenthG (für qualifzierte Geduldete mit einem anerkanntem oder einem deutschen Hochschulabschluss vergleichbaren Hochschulabschluss und zwei Jahren ununterbrochener eine dem Abschluss angemessenen Beschäftigung) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-020</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18a Abs. 1 Nr. 1 Buchstabe c) AufenthG (für qualizifierte Geduldete als Fachkraft mit seit drei Jahren ununterbrochener eine Beschäftigung ausgeübt hat, die eine qualifizierte Berufsausbildung voraussetzt) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-106</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18a Abs. 1a AufenthG (für qualifiziert Geduldede im Anschluss an eine Ausbildungsduldung nach § 60a Abs. 2 Satz 4 AufenthG) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-107</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18a Abs. 1a AufenthG widerrufen (für qualifiziert Geduldede im Anschluss an eine Ausbildungsduldung nach § 60a Abs. 2 Satz 4 AufenthG) (meldbar bis 29.02.2020)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-515</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue> § 20a Absatz 3 AufenthG (Chancenkarte)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-516</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20a Absatz 5 Satz 2 AufenthG (Chancenkarte Verlängerung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-080</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 21 Abs. 1 AufenthG (selbstständige Tätigkeit – wirtschaftliches Interesse)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-081</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 21 Abs. 2 AufenthG (selbstständige Tätigkeit – völkerrechtliche Vergünstigung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-082</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 21 Abs. 5 AufenthG (freiberufliche Tätigkeit)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-083</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18c AufenthG (Aufenthaltserlaubnis zur Arbeitsplatzsuche) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-201</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18d Abs. 1 AufenthG (europäischer Freiwilligendienst) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-084</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19a AufenthG i. V. m.§ 2 Abs. 1 Nr. 2 Bst. a) BeschV (Blaue Karte EU, Regelberufe) (nur noch Bestandskennung) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-085</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19a AufenthG i. V. m. § 2 Abs. 1 Nr. 2 Bst. b) oder § 2 Abs. 2 BeschV (Blaue Karte EU, Mangelberufe) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-087</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19a AufenthG i. V. m. § 2 Abs. 1 Nr. 2 Bst. a) BeschV (Blaue Karte EU, Voraufenthalt mit Blauer Karte EU, Regelberufe)  (nur noch Bestandskennung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-088</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19a AufenthG i. V. m. § 2 Abs. 1 Nr. 2 Bst. a) BeschV (Blaue Karte EU, Voraufenthalt mit Blauer Karte EU, Regelberufe) abgelehnt (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-090</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19a AufenthG i. V. m. § 2 Abs. 1 Nr. 2 Bst. b) oder § 2 Abs. 2 BeschV (Blaue Karte EU, Voraufenthalt mit Blauer Karte EU in MS, Mangelberufe) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-091</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19a AufenthG i. V. m. § 2 Abs. 1 Nr 2 Bst. b) oder § 2 Abs. 2 BeschV (Blaue Karte EU, Voraufenthalt mit Blauer Karte EU, Regelberufe) abgelehnt (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-202</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19b Abs. 1 AufenthG (ICT-Karte) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-203</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19d Abs. 1 AufenthG (Mobiler-ICT-Karte) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-086</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 21 Abs. 2a AufenthG (selbständige Tätigkeit - Absolvent inländischer Hochschule oder vormaliger Forscher)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-517</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 21 Abs. 2b AufenthG (Gründungsstipendium)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-021</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 22 Satz 1 AufenthG (Aufnahme aus dem Ausland)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-022</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 22 Satz 2 AufenthG (Aufnahme durch BMI)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-023</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 23 Abs. 1 AufenthG (Aufnahme durch Land)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-024</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 23a AufenthG (Härtefallaufnahme durch Länder)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-025</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 24 AufenthG (vorübergehender Schutz)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-026</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25 Abs. 1 AufenthG (Asyl) anerkannt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-027</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25 Abs. 2 AufenthG (GfK) gewährt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-028</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25 Abs. 3 AufenthG (Abschiebungsverbot)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-029</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25 Abs. 4 Satz 1 AufenthG (dringende persönliche oder humanitäre Gründe)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-030</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25 Abs. 5 AufenthG (rechtliche oder tatsächliche Gründe)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-031</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 23 Abs. 2 AufenthG (besondere Fälle)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-032</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25 Abs. 4 Satz 2 AufenthG (Verlängerung wegen außergewöhnlicher Härte)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-033</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 25a Abs. 1 AufenthG (Aufenthaltsgewährung bei gut integrierten Jugendlichen und jungen Volljährigen</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-034</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25a Abs. 2 Satz 1 AufenthG (Aufenthaltsgewährung bei gut integrierten Jugendlichen und jungen Volljährigen: Eltern)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-035</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25a Abs. 2 Satz 2 AufenthG (Aufenthaltsgewährung bei gut integrierten Jugendlichen und und jungen Volljährigen: Geschwister)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-301</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 25a Abs. 2 S. 3 AufenthG (Aufenthaltsgewährung bei gut integrierten Jugendlichen und jungen Volljährigen: Ehegatte/Lebenspartner)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-302</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 25a Abs. 2 S. 5 AufenthG (Aufenthaltsgewährung bei gut integrierten Jugendlichen und jungen Volljährigen: minderjährige ledige Kinder)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-078</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25 Absatz 4b AufenthG (Aufenthaltsrecht für Drittstaatsangehörige, die Opfer einer Straftat nach § 10 Absatz 1 oder § 11 Absatz 1 Nummer 3 des Schwarzarbeitsbekämpfungsgesetzes sind)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-036</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25 Abs. 2 AufenthG (subsidiärer Schutz) gewährt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-300</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 23 Abs. 4 AufenthG (Resettlement)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-303</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25b Abs. 1 S. 1 AufenthG (Aufenthaltsgewährung bei nachhaltiger Integration: integrierter Ausländer)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-304</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25b Abs. 4 AufenthG (Aufenthaltsgewährung bei nachhaltiger Integration: Ehegatte/Lebenspartner)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-305</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 25b Abs. 4 AufenthG (Aufenthaltsgewährung bei nachhaltiger Integration: Minderjähriges Kind)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-041</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 28 Abs. 1 Satz 1 Nr. 1 AufenthG (Familiennachzug zu Deutschen: Ehegatte)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-042</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 28 Abs. 1 Satz 1 Nr. 2 AufenthG (Familiennachzug zu Deutschen: Kinder)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-043</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 28 Abs. 1 Satz 1 Nr. 3 AufenthG (Familiennachzug zu Deutschen: Elternteil)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-044</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 28 Abs. 4 AufenthG (Familiennachzug zu Deutschen: Sonstige)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-406</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 30 AufenthG (Ehegattennachzug) ohne § 30 Abs. 1 Satz 1 Nr. 3c Var. 3, 4 und Nr. 3g Var. 1 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-403</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 30 Abs. 1 Satz 1 Nr. 3c Var. 3 AufenthG (Ehegattennachzug zu Asylberechtigten)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-404</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 30 Abs. 1 Satz 1 Nr. 3c Var.4 AufenthG (Ehegattennachzug zu anerkanntem Flüchtling)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-045</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 30 AufenthG (Ehegattennachzug) ohne § 30 Abs. 1 S. 1 Nr 3g AufenthG (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-046</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 1 AufenthG (Kindesnachzug zu Asylberechtigten) (NUR NOCH BESTANDSKENNUNG)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-047</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 2 AufenthG (Kindesnachzug im Familienverband) (NUR NOCH BESTANDSKENNUNG)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-048</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 i. V. m. Abs. 2 Satz 1 AufenthG (Kindesnachzug über 16 Jahre zu einem Inh. einer AERL, NE o. Erlaubnis z. Daueraufenth.-EU)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-049</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 3 AufenthG (Kindesnachzug unter 16 Jahren) (NUR NOCH BESTANDSKENNUNG)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-050</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 4 AufenthG (Kindesnachzug im Härtefall)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-051</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 33 AufenthG (Geburt im Bundesgebiet)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-052</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 36 Abs. 2 AufenthG (Nachzug sonstiger Familienangehörige)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-053</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 36 Abs. 1 AufenthG (Nachzug eines Elternteils)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-518</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 36 Absatz 3 Satz 1 erster Halbsatz AufenthG (Nachzug Eltern zu Inhabern von Erwerbstiteln)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-519</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 36 Absatz 3 Satz 1 zweiter Halbsatz AufenthG (Nachzug Schwiegereltern zu Inhabern von Erwerbstiteln)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-400</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 36a Abs. 1 Satz 1 Variante 1 AufenthG (Ehegattennachzug zu subsidiär Schutzberechtigten)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-401</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 36a Abs. 1 Satz 1 Variante 2 AufenthG (Kindesnachzug zu subsidiär Schutzberechtigten)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-402</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 36a Abs. 1 Satz 2 AufenthG (Elternnachzug zu minderjährigen subsidiär Schutzberechtigten)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-054</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 2a AufenthG (Kind eines langfristig Aufenthaltsberechtigten (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-055</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 30 Abs. 1 Satz 1 Nr. 3g Var. 1 AufenthG (Ehegattennachzug zu einem Inhaber einer Blauen Karte EU)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-407</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 1 AufenthG (Kindesnachzug zu einem Inhaber einer Aufenthaltserlaubnis nach § 7 Abs. 1 Satz 3 oder Kapitel 2 Abschnitt 3 oder 4 AufenthG)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-408</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 2 AufenthG (Kindesnachzug zu Asylberechtigtem oder anerkanntem Flüchtling)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-409</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 3 AufenthG (Kindesnachzug zu einem Inhaber einer Aufenthaltserlaubnis nach §§ 28, 30, 31, 36 oder 36a AufenthG)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-410</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 4 AufenthG (Kindesnachzug zu einem Inhaber einer Aufenthaltserlaubnis nach sonstigen Vorschriften des AufenthG)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-411</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 5 Alt. 1 AufenthG (Kindesnachzug zu einem Inhaber einer Blauen Karte EU)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-413</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 6 AufenthG (Kindesnachzug zu einem Inhaber einer Niederlassungserlaubnis)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-414</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 Nr. 7 AufenthG (Kindesnachzug zu einem Inhaber einer Erlaubnis zum Daueraufenthalt - EU)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-056</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 AufenthG (Kindesnachzug zu einem Inhaber einer Blauen Karte EU) (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-057</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 28 Abs. 1 Satz 4 AufenthG (Familiennachzug zu Deutschen: nicht sorgeberechtigter Elternteil)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-058</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 32 Abs. 1 AufenthG (Kindesnachzug zu einem Inhaber einer AERL, NE oder Daueraufenth.-EU) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-061</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 7 Abs. 1 Satz 3 AufenthG (sonstige begründete Fälle)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-062</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 31 Abs. 1, 2, 4 AufenthG (eigenständiges Ehegattenaufenthaltsrecht)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-063</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 34 Abs. 2 AufenthG (eigenständiges Aufenthaltsrecht für Kinder)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-064</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 37 Abs. 1 AufenthG (Wiederkehr)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-065</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 37 Abs. 5 AufenthG (Wiederkehr Rentner)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-066</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 38 Abs. 1 Nr. 2, Abs. 2 und 5 AufenthG (ehemaliger Deutscher)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-484</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 4 Abs. 2 AufenthG (Assoziationsrecht EWG/Türkei)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-067</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 4 Abs. 5 AufenthG (Assoziationsrecht EWG/Türkei) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-069</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 25 Abs. 4a AufenthG (Aufenthaltsrecht f. Ausländer, die Opfer einer Straftat nach den §§ 232 bis 233a StGB wurden)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-071</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach dem Freizügigkeitsabkommen EG/Schweiz für freizügigkeitsberechtigte Schweizerische Bürger - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-072</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach dem Freizügigkeitsabkommen EG/Schweiz für Angehörige von freizügigkeitsberechtigten Schweizerischen Bürgern - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-070</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 38a AufenthG (langfristig Aufenthaltsberechtigter)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-073</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 104a Abs. 1 Satz 1 AufenthG (Aufenthaltserlaubnis auf Probe)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-074</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 23 Abs. 1 Satz 1 i. V. m. § 104a Abs. 1 Satz 2 AufenthG (Altfallregelung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-075</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 23 Abs. 1 Satz 1 i.V. m. § 104a Abs. 2 Satz 1 AufenthG (Altfallregelung für volljährige Kinder von Geduldeten) </SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-076</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 23 Abs. 1 Satz 1 i.V.m. § 104a Abs. 2 Satz 2 AufenthG (Altfallregelung für unbegleitete Flüchtlinge) </SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-077</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 23 Abs. 1 Satz 1 i.V.m. § 104b AufenthG (integrierte Kinder von Geduldeten)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-416</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16a Abs. 1 AufenthG (betriebliche Berufsausbildung /Weiterbildung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-417</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16a Abs. 2 AufenthG (schulische Berufsausbildung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-418</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16b Abs. 1 AufenthG (Studium) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-419</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16b Abs. 5 AufenthG (bedingte Zulassung Studium, Zulassung Teilzeitstudium) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-420</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16b Abs. 5 AufenthG (studienvorbereitender Sprachkurs ohne Zulassung zum Studium) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-421</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16b Abs. 5 AufenthG (studienvorbereitender Praktikum ohne Zulassung zum Studium) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-422</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16b Abs. 7 AufenthG (Studium bei/in einem anderen Mitgliedstaat international Schutzberechtigten) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-423</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16d Abs. 1 AufenthG (Durchführung einer Qualifizierungsmaßnahme) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-424</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16d Abs. 1 i.V.m. Abs. 2 AufenthG (Durchführung einer Qualifizierungsmaßnahme mit Beschäftigung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-425</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16d Abs. 3 AufenthG (Anerkennung der Berufsqualifikation während einer Beschäftigung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-498</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>16d Abs.3 AufenthG (Anerkennungspartnerschaft)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-426</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16d Abs. 4 Nr. 1 AufenthG (Anerkennung der Berufsqualifikation aufgrund einer Absprache der Bundesagentur für Arbeit bei reglementierten Berufen im Pflege- und Gesundheitsbereich) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-427</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16d Abs. 4 Nr. 2 AufenthG (Anerkennung der Berufsqualifikation aufgrund einer Absprache der Bundesagentur für Arbeit bei sonstigen Berufen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-428</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16d Abs. 5 AufenthG (Ablegung einer Prüfung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-499</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16d Abs. 6 AufenthG (Aufenthalt zur Qualifikationsanalyse)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-429</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16e Abs. 1 AufenthG (Studienbezogenes Praktikum EU) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-430</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16f Abs. 1 AufenthG (Sprachkurse, Schüleraustausch) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-431</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16f Abs. 2 AufenthG (Schulbesuch, allgemeinbildend) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-500</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16g Abs. 1 AufenthG (Aufenthaltserlaubnis zur Berufsausbildung für ausreisepflichtige Ausländer, Anspruch)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-501</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16g Abs. 5 S. 1 AufenthG (Aufenthaltserlaubnis zur Berufsausbildung für ausreisepflichtige Ausländer, Suche nach weiterem Ausbildungsplatz)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-502</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16g Abs. 5 S. 2 AufenthG (Aufenthaltserlaubnis für ausreisepflichtige Ausländer, Arbeitsplatzsuche nach Ausbildungsabschluss)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-503</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16g Abs. 6 AufenthG (Aufenthaltserlaubnis zur Berufsausbildung für ausreisepflichtige Ausländer, Ermessen)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-504</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 16g Abs. 8 AufenthG (Aufenthaltserlaubnis für ausreisepflichtige Ausländer zur Beschäftigung im Anschluss an eine Ausbildung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-432</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 17 Abs. 1 AufenthG (Ausbildungsplatzsuche) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-433</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 17 Abs. 2 AufenthG (Studienbewerbung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-434</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18a AufenthG (Fachkraft mit Berufsausbildung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-435</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18b Abs. 1 AufenthG (Fachkraft mit akademischer Ausbildung) erteilt - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-436</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18b Abs. 2 S. 1 AufenthG (Blaue Karte EU, Fachkräfte mit akademischer Ausbildung, Regelberufe) erteilt - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-437</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18b Abs. 2 S. 2 AufenthG (Blaue Karte EU, Fachkräfte mit akademischer Ausbildung, Mangelberufe) erteilt - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-438</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18d Abs. 1 (Forscher) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-439</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18d Abs. 6 AufenthG (in einem anderen Mitgliedstaat als international Schutzberechtigte anerkannte Forscher) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-440</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18f Abs. 1 (mobile Forscher) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-441</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19 Abs. 1 (ICT-Karte) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-442</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19b Abs. 1 (Mobiler-ICT-Karte) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-443</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 3 BeschV (Leitende Angestellte, Führungskräfte und Spezialisten) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-444</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 5 Nr. 1 und 2 BeschV (Wissenschaft und Forschung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-445</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 5 Nr. 3 bis 5 BeschV (Wissenschaft, Forschung und Entwicklung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-446</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 10 Abs. 1 Nr. 1 BeschV (internationaler Personalaustausch)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-505</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i.V.m. § 10 Abs. 1 Nr.2 u. Abs. 2 BeschV (Internationaler Personalaustausch)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-447</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 10 Abs. 1 Nr. 2 und Abs. 2 BeschV (Auslandsprojekte) (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-448</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 11 Abs. 1 BeschV (Sprachlehrer) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-449</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 11 Abs. 2 BeschV (Spezialitätenköche) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-450</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 12 BeschV (Au pair) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-451</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 14 Abs. 1 Nr. 1 BeschV (Freiwilligendienst) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-452</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 14 Abs. 1 Nr. 2. BeschV (Beschäftigung aus karitativen Gründen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-453</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 14 Abs. 1a. BeschV (Beschäftigung aus religiösen Gründen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-454</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 15 Nr. 3 und Nr. 5 BeschV (öffentlich geförderte Praktika) (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-455</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 15 Nr. 4 und Nr. 6 BeschV (Praktika) (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-506</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i.V.m. § 15d BeschV (Kurzzeitige kontigentierte Beschäftigung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-456</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 19 Abs. 2 BeschV (Beschäftigung im Rahmen von Werklieferungsverträgen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-457</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 21 BeschV (vorübergehende Dienstleistungserbringung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-458</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 22 Nr. 4 BeschV (Berufssportler und -trainer) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-507</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i.V.m. § 22a BeschV (Beschäftigung von Pflegehilfskräften)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-459</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 24 Nr. 3 BeschV (Personal auf Binnenschiffen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-460</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 24 Nr. 4 BeschV (Besatzungen von Luftfahrzeugen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-461</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 25 BeschV (Kultur, Unterhaltung, Gastspiele, Film- und Fernsehproduktionen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-478</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 26 Abs. 1 BeschV (bestimmte Staatsangehörige) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-479</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 26 Abs. 2 BeschV (bestimmte Staatsangehörige) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-462</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 29 Abs. 3 BeschV (zwischenstaatliche Vereinbarungen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-463</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 29 Abs. 5 BeschV (Freihandelsabkommen) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-464</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 2 AufenthG (non-formale qualifizierte Beschäftigung i. V. m. § 6 BeschV) (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-465</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 3 AufenthG (Beschäftigung im öffentlichen Interesse) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-466</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 4 AufenthG (Beamtenverhältnis zu einem deutschen Dienstherrn) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-467</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19d Abs. 1 Nr. 1 a AufenthG (für qualifizierte Geduldete mit Berufsausbildung oder inländischem Hochschulabschluss in Deutschland) </SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-468</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19d Abs. 1 Nr. 1 b AufenthG ( für qualifizierte Geduldete mit einem ausländischen Hochschulabschluss)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-469</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19d Abs. 1 Nr. 1 c AufenthG (für qualifizierte Geduldete, die seit drei Jahren ununterbrochen eine Beschäftigung ausgeübt haben) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-470</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19d Abs. 1a AufenthG (für qualifizierte Geduldete im Anschluss an eine Ausbildungsduldung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-485</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19d Abs. 1a AufenthG widerrufen (Aufenthaltserlaubnis für qualifizierte Geduldete im Anschluss an eine Ausbildungsduldung) - meldbar ab 01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-509</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19d Abs. 4 AufenthG (Aufenthaltserlaubnis nach Aufenthaltserlaubnis nach Kapitel 2 Abschn. 5 AufenthG)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-471</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19e Abs. 1 AufenthG (europäischer Freiwilligendienst) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-472</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Abs. 1 AufenthG (Arbeitsplatzsuche für Fachkraft mit Berufsausbildung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-520</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Absatz 1 Nummer 5 AufenthG alte Fassung (Arbeitsplatzsuche nach Abschluss einer Assistenz- oder Helferausbildung im Bundesgebiet)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf"/>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-473</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Abs. 2 AufenthG (Arbeitsplatzsuche für Fachkraft mit akademischer Ausbildung) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-474</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Abs. 3 Nr. 1 AufenthG (Arbeitsplatzsuche nach Studium in Deutschland) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-475</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Abs. 3 Nr. 2 AufenthG (Arbeitsplatzsuche nach Forschungstätigkeit) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-476</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Abs. 3 Nr. 3 AufenthG (Arbeitsplatzsuche nach qualifizierter Berufsausbildung in Deutschland) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-477</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 20 Abs. 3 Nr. 4 AufenthG (Arbeitsplatzsuche nach Feststellung der Gleichwertigkeit der Berufsqualifikation) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-480</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 22 Nr. 5 BeschV (eSportler)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-481</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG i. V. m. § 24a BeschV (Berufskraftfahrerinnen und Berufskraftfahrer)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-482</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 1 AufenthG (übrige Beschäftigungssachverhalte der BeschV)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-483</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 2 AufenthG i. V. m. § 6 BeschV (Beschäftigung in ausgewählten Berufen bei ausgeprägter Berufspraktischer Erfahrung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-508</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 19c Abs. 2 AufenthG i. V. m. § 6 Abs. 1 S. 3 BeschV (Beschäftigung in IT-Berufen bei ausgeprägter berufspraktischer Erfahrung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-486</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue> Artikel 20 AEUV (Unionsrechtliches Aufenthaltsrecht sui generis eines drittstaatsangehörigen Elternteils eines deutschen Kindes)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-487</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Artikel 20 und 21 AEUV (Unionsrechtliches Aufenthaltsrecht sui generis eines drittstaatsangehörigen Elternteils eines Kindes mit Unionsbürgerschaft) </SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-488</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 104c Absatz 1 Satz 1 AufenthG (Chancen-Aufenthaltsrecht für langjährig geduldete Ausländer)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-489</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 104c Absatz 2 Satz 1 AufenthG (Chancen-Aufenthaltsrecht für Ehegatten/Lebenspartner)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-490</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 104c Absatz 2 Satz 1 AufenthG (Chancen-Aufenthaltsrecht für minderjährige ledige Kinder)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-491</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 104c Absatz 2 Satz 2 AufenthG (Chancen-Aufenthaltsrecht für volljährige ledige Kinder)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-492</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18b AufenthG (Fachkraft mit akademischer Ausbildung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-493</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18g Abs. 1 S.1 AufenthG (Blaue Karte EU - Regelberufe) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-494</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18g Abs. 1 S.2 Nr. 1 AufenthG (Blaue Karte EU - Mangelberufe) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-495</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18g Abs. 1 S.2 Nr. 2 AufenthG (Blaue Karte EU - Berufsanfänger) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-496</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18g Abs. 2 AufenthG (Blaue Karte EU - IT-Spezialisten) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AERL-STAT-497</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 18g i.V.m. § 18i AufenthG (Blaue Karte EU mit Voraufenthalt) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-04</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Vom Erfordernis eines Aufenthaltstitels befreit</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-17</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Antrag auf einen Aufenthaltstitel (ab 01.07.2014) gestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-18</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Antrag auf Verlängerung eines Aufenthaltstitels gestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-19</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bescheinigung über die Wirkung der Antragstellung (Fiktionsbescheinigung) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-28</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bescheinigung Einreise und Aufenthalt nach § 16a AufenthG. Bescheinigung ausgestellt - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-30</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Einreise und Aufenthalt nach § 19c Abs. 1 AufenthG. Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-32</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Einreise und Aufenthalt nach § 20a AufenthG. Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-33</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit Visum nach § 20 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-35</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Einreise und Aufenthalt nach § 16c AufenthG, Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-37</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Einreise und Aufenthalt nach § 19a Absatz 1 AufenthG, Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-39</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Einreise und Aufenthalt nach § 30 Absatz 5 AufenthG (Ehegattennachzug zu kurzfristig mobilen Forschern), Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE-STAT-41</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Einreise und Aufenthalt nach § 32 Absatz 5 AufenthG (Kindesnachzug zu kurzfristig mobilen Forschern), Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 9 AufenthG (allgemein)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-02</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19 AufenthG (Hochqualifizierte) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-03</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 21 Abs. 4 AufenthG (3 Jahre selbstständige Tätigkeit)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-04</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 23 Abs. 2 AufenthG (besondere Fälle)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>x</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>x</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-05</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 26 Abs. 3 S. 1 AufenthG (Asyl/GfK nach 3 Jahren) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-06</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 26 Abs. 4 AufenthG (aus humanitären Gründen nach 7 Jahren) (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-07</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 28 Abs. 2 AufenthG (Familienangehörige von Deutschen)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-08</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 31 Abs. 3 AufenthG (eigenständiges Aufenthaltsrecht der ausländischen Ehegatten)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-09</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 35 AufenthG (Kinder)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-10</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 38 Abs. 1 Nummer 1 (ehemalige Deutsche)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-11</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 9a AufenthG (Daueraufenthalt-EU) erteilt am</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-12</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltsrecht nach dem Freizügigkeitsabkommen EG/Schweiz für freizügigkeitsberechtigte Schweizerische Bürger - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-13</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltsrecht nach dem Freizügigkeitsabkommen EG/Schweiz für Angehörige von freizügigkeitsberechtigten Schweizerischen Bürgern - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-14</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18b AufenthG (Niederlassungserlaubnis für Absolventen deutscher Hochschulen) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-15</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19 Abs. 1 AufenthG (Hochqualifizierter ohne Zuordnung nach Abs. 2) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-16</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19 Abs. 2 Nr. 1 AufenthG (Hochqualifizierter Wissenschaftler) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-17</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19 Abs. 2 Nr. 2 AufenthG (Hochqualifizierte Lehrperson) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-18</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19a Abs. 6 AufenthG (Inhaber Blaue Karte EU) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-19</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19a Abs. 6 Satz 1 AufenthG (Inhaber Blaue Karte EU nach frühestens 33 Monaten) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-20</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 19a Abs. 6 Satz 3 AufenthG (Inhaber Blaue Karte EU nach frühestens 21 Monaten) - (nur noch Bestandskennung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-21</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bescheinigung nach § 51 Abs. 2 Satz 3 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-22</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 26 Abs. 3 S. 2 AufenthG (Resettlement nach 3 Jahren)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-23</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>§ 23 Abs. 4 AufenthG (Resettlement)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-24</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 26 Abs. 3 Satz 3 AufenthG (Asyl-GfK nach 3 Jahren)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-28</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 26 Abs. 3 Satz 5 i. V. m. § 35 AufenthG (Kinder mit Einreise vor Vollendung des 18. Lebensjahres)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-26</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 26 Abs. 3 Satz 6 i. V. m. Satz 3 AufenthG (Resettlement nach 3 Jahren)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-27</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 26 Abs. 3 Satz 6 i. V. m. Satz 1 AufenthG (Resettlement nach 5 Jahren)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-29</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 26 Abs. 4 AufenthG (aus humanitären Gründen nach 5 Jahren)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-30</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18c Abs. 1 AufenthG (Fachkräfte) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-31</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18c Abs. 2 S. 1 AufenthG (Inhaber einer Blauen Karte EU)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-32</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18c Abs. 2 S. 3 AufenthG (Inhaber einer Blauen Karte EU mit ausreichenden Kenntnissen der deutschen Sprache)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE-STAT-33</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18c Abs. 3 AufenthG (besonders hochqualifizierte Fachkräfte) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>DUL-STAT-12</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 Satz 3 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AGE-STAT-01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltsgestattung</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AKN</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Ankunftsnachweis</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>RST-STAT-01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Heimatloser Ausländer</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>ENTF</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Entfällt</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>EU-10</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltsdokument GB nach § 16 Abs. 2 S. 1 FreizügigG/ EU (Art. 18 Abs. 4 des Austrittsabkommens)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>Eu-11</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltsdokument für Grenzgänger GB nach § 16 Abs. 3 FreizügG/ EU (nach Teil 2 Titel II Kap. 2 des Austrittsabkommens)</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>EU-Angehörige-01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Freizügigkeitsberechtigte Familienangehörige eines EU-Bürgers nach § 5 Abs. 1 bzw. § 5 Abs. 5 Satz 2 FreizügG/EU</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>EU-Angehörige-02</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Nahestehende Person eines EU-Bürgers nach § 3a Abs. 1 FreizügG / EU</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="bamf">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tgs-ueb"/>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>STAT-01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Blaue Card EU</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf"/>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>STAT-02</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltserlaubnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf"/>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>STAT-03</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Niederlassungserlaubnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf"/>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tla"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>STAT-04</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Sonstiges</SimpleValue>
+         </Value>
+         <Value ColumnRef="abh"/>
+         <Value ColumnRef="bamf"/>
+         <Value ColumnRef="tgs"/>
+         <Value ColumnRef="tgs-ueb">
+            <SimpleValue>X</SimpleValue>
+         </Value>
+         <Value ColumnRef="tla"/>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

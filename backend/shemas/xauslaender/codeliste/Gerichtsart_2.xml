@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>Gerichtsart</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Liste der Gerichtsarten.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2021-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>gericht</ShortName>
+      <LongName>Gerichtsart</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:gericht</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:gericht_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Arbeitsgericht (ArbG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Landesarbeitsgericht (LArbG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Bundesarbeitsgericht (BArbG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Finanzgericht (FG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Bundesfinanzhof (BFH)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Amtsgericht (AG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Landgericht (LG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Oberlandesgericht (OLG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Bundesgerichtshof (BGH)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>30</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sozialgericht (SG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Landessozialgericht (LSG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>32</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Bundessozialgericht (BSG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>40</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Verfassungsgerichte der Länder</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>41</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Bundesverfassungsgericht (BVerfG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>50</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Verwaltungsgericht (VG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>51</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Oberverwaltungsgericht (OVG) / Verwaltungsgerichtshof (VGH)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>52</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Bundesverwaltungsgericht (BVerwG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>60</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Europäischer Gerichtshof (EuGH)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>61</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Europäischer Gerichtshof für Menschenrechte (EuGHMR)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

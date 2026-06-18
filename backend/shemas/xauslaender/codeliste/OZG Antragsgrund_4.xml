@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>OZG Antragsgrund</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Eine Liste der Gründe für die Beantragung eines Aufenthaltstitels über ein Eingabeverfahren.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2022-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>ozg.antragsgrund</ShortName>
+      <LongName>OZG Antragsgrund</LongName>
+      <Version>4</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:ozg.antragsgrund</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:ozg.antragsgrund_4</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Beschreibung" Use="required">
+         <ShortName>Beschreibung</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Erstbeantragung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>d. h. erstmalige Beantragung eines Aufenthaltstitels oder Beantragung eines Aufenthaltstitels zu einem anderen als dem bisherigen Aufenthaltszweck; erstmalige Beantragung eines Dokuments nach dem Freizügigkeitsgesetz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Verlängerung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>d. h. Beantragung der Verlängerung des bestehenden Aufenthaltstitels unter Beibehaltung des bisherigen Aufenthaltszwecks; Verlängerung einer Aufenthaltskarte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Änderung von Nebenbestimmungen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>d. h. Beantragung der Änderung von Auflagen und/oder Bedingungen zum Aufenthaltstitel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Niederlassungserlaubnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>d. h. Beantragung einer Niederlassungserlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Beschäftigungserlaubnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>d. h. Beantragung einer Beschäftigungserlaubnis für Personen mit Aufenthaltsgestattung oder Duldung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Beschäftigungsduldung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>d. h. Beantragung einer Beschäftigungsduldung für Personen mit Duldung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ausbildungsduldung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>d. h. Beantragung einer Ausbildungsduldung für Personen mit Duldung oder Personen, deren Asylantrag abgelehnt wurde</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

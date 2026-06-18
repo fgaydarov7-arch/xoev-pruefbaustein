@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Ausreisenachweis</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Die Ausländerbehörden und die mit grenzpolizeilichen Aufgaben betrauten Behörden erheben zur Feststellung der Wirksamkeit der Förderung der Ausreisen Angaben zum Nachweis der Ausreise, zum Staat der Ausreise und zum Zielstaat. Diese Angaben sind u.a. erforderlich, um die tatsächlichen Ausreisen nachzuhalten und die Wirksamkeit der Rückkehrprogramme festzustellen. Gemeint ist mit „Nachweis der Ausreise“ primär die Grenzübertrittsbescheinigung, die an die Ausländerbehörde zurückgesandt werden muss. Allerdings sollen die Ausländerbehörden und auch die mit grenzpolizeilichen Aufgaben betrauten Behörden befähigt werden, auch andere Umstände, die die Ausreise belegen, erfassen zu können.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2022-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Neues Attribut - Zielstaat</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.AusreisenachweisArt</ShortName>
+      <LongName>Art des Ausreisenachweis</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:artdesausreisenachweis</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:artdesausreisenachweis_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Kurzbeschreibung" Use="optional">
+         <ShortName>Kurzbeschreibung</ShortName>
+         <LongName>Kurzbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Grenzübertrittsbescheinigung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Grenzübertrittsbescheinigung für Ausreise nach &lt;ausreisestaat&gt; am &lt;ausreisedatum&gt;, Zielstaat &lt;zielstaat&gt;,  Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>sonstiges Dokument</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>sonstiges Dokument als Ausreisenachweis für Ausreise nach &lt;ausreisestaat&gt; am &lt;ausreisedatum&gt;, Zielstaat &lt;zielstaat&gt;,  Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

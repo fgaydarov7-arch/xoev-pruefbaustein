@@ -1,0 +1,31 @@
+{
+  "schema_id": "xmeld_basic",
+  "schema_name": "XMeld Basisdaten (Bürgeramt)",
+  "version": "1.0.0",
+  "xoev_standard": "XMeld",
+  "description": "Validierungsregeln für das Meldewesen gemäß XMeld-Standard. Zuständig: Bürgeramt / Einwohnermeldeamt.",
+  "fields": [
+    {
+      "name": "Identifikationsnummer",
+      "required": true,
+      "type": "steuer_id",
+      "description": "Steuerliche Identifikationsnummer (11-stellig, BZSt-Prüfziffer-Algorithmus).",
+      "fix_suggestion": "Bitte prüfen Sie die 11-stellige Steuer-ID gemäß BZSt-Vorgaben (kein führendes 0, keine Wiederholung einer Ziffer mehr als 3-mal an Position 1-3)."
+    },
+    {
+      "name": "Geburtsdatum",
+      "required": true,
+      "type": "date",
+      "description": "Geburtsdatum der Person im Format TT.MM.JJJJ oder JJJJ-MM-TT.",
+      "fix_suggestion": "Bitte das Datum im Format TT.MM.JJJJ (z. B. 01.04.1985) oder JJJJ-MM-TT (z. B. 1985-04-01) angeben."
+    },
+    {
+      "name": "Anschrift_PLZ",
+      "required": true,
+      "type": "plz",
+      "regex": "^[0-9]{5}$",
+      "description": "Deutsche Postleitzahl, genau 5 Ziffern.",
+      "fix_suggestion": "Die PLZ muss exakt 5 Ziffern umfassen (z. B. 04109). Führende Nullen müssen erhalten bleiben."
+    }
+  ]
+}

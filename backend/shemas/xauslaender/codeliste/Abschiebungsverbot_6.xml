@@ -1,0 +1,218 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Abschiebungsverbot</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Ein Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG verbietet die Abschiebung eines Ausländers in ein bestimmtes Zielland. Es handelt sich um eine Mehrfachentität, welche parallel zur Ablehnung eines Asylantrags speicherbar ist.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2026-06-12T00:00:00Z</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>neue Kennungen 08-10</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.AbschiebungsverbotArt</ShortName>
+      <LongName>Art des Abschiebungsverbots</LongName>
+      <Version>6</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:artdesabschiebungsverbots</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:artdesabschiebungsverbots_6</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Kurzbeschreibung" Use="optional">
+         <ShortName>Kurzbeschreibung</ShortName>
+         <LongName>Kurzbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="neu-ab" Use="optional">
+         <ShortName>neu-ab</ShortName>
+         <LongName>neu ab</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-bis" Use="optional">
+         <ShortName>meldbar-bis</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG festgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG festgestellt am &lt;ereignisdatum&gt; für den Zielstaat &lt;zielstaat&gt;, bestandskräftig seit &lt;bestandskraftdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen  &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen am &lt;ereignisdatum&gt; für den Zielstaat &lt;zielstaat&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen  &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG zurückgenommen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG zurückgenommen am &lt;ereignisdatum&gt; für den Zielstaat &lt;zielstaat&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen  &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen (zugestellt)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen (zugestellt) am &lt;ereignisdatum&gt; für den Zielstaat &lt;zielstaat&gt;, zugestellt am &lt;zustelldatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>11.06.2026</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen (unanfechtbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen (unanfechtbar) am &lt;ereignisdatum&gt; für den Zielstaat &lt;zielstaat&gt;, unanfechtbar seit &lt;bestandskraftdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>11.06.2026</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG zurückgenommen (zugestellt)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG zurückgenommen (zugestellt) am &lt;ereignisdatum&gt; für den Zielstaat &lt;zielstaat&gt;, zugestellt am &lt;zustelldatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>11.06.2026</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG zurückgenommen (unanfechtbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG zurückgenommen (unanfechtbar) am &lt;ereignisdatum&gt; für den Zielstaat &lt;zielstaat&gt;, unanfechtbar seit &lt;bestandskraftdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>11.06.2026</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Abschiebungsverbote nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen/zurückgenommen (zugestellt)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Abschiebungsverbote nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen/zurückgenommen (zugestellt) am &lt;ereignisdatum&gt;, zugestellt am &lt;zustelldatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>12.06.2026</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Abschiebungsverbote nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen/zurückgenommen (unanfechtbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Abschiebungsverbote nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG widerrufen/zurückgenommen (unanfechtbar) am &lt;ereignisdatum&gt;, unanfechtbar seit &lt;bestandskraftdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>12.06.2026</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Abschiebungsverbot nach § 60 Absatz 5 oder Absatz 7 Satz 1 AufenthG erloschen am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>12.06.2026</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

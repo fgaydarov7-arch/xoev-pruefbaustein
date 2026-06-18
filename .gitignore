@@ -1,0 +1,14 @@
+
+
+# Игнорируем зависимости бэкенда
+backend/.venv/
+
+# Игнорируем зависимости фронтенда
+frontend/node_modules/
+frontend/.env
+frontend/dist/
+frontend/build/
+
+# Системные файлы
+.DS_Store
+.vscode/

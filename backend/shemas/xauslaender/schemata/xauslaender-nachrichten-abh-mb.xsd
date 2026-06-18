@@ -1,0 +1,553 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xauslaender="http://www.osci.de/xauslaender2611"
+           xmlns:bn-uq-g2g="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xiaz="http://www.osci.de/xinneres/azrnummer/3"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xima="http://www.osci.de/xinneres/meldeanschrift/5"
+           xmlns:xink="http://www.osci.de/xinneres/basisnachricht/7"
+           targetNamespace="http://www.osci.de/xauslaender2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XAusländer</nameLang>
+            <nameKurz>XAusländer</nameKurz>
+            <nameTechnisch>xinneres.xauslaender</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xauslaender</kennung>
+            <beschreibung>Das Fachmodul XAusländer des Standards XInneres beschreibt die Datenübermittlung im Ausländerwesen.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xauslaender-allgemeine-datentypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/azrnummer/3/xinneres-azrnummer.xsd"
+              namespace="http://www.osci.de/xinneres/azrnummer/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/basisnachricht/7/xinneres-basisnachricht.xsd"
+              namespace="http://www.osci.de/xinneres/basisnachricht/7"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/meldeanschrift/5"/>
+   <xs:import schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+              namespace="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="IdentifikationNachricht.ABHMB">
+      <xs:annotation>
+         <xs:documentation>Dieses Element hilft eine vorangegangene Nachricht zu identifizieren.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nachrichtentyp" type="xauslaender:Code.Nachrichtentyp">
+            <xs:annotation>
+               <xs:documentation>Die Identifizierungsnummer der zu identifizierenden Nachricht.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="erstellungszeitpunkt" type="xs:dateTime">
+            <xs:annotation>
+               <xs:documentation>Der Erstellungszeitpunkt der zu identifizierenden Nachricht.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausloeserUUID" minOccurs="0" type="bn-uq-g2g:UUID">
+            <xs:annotation>
+               <xs:documentation>Sofern diese Nachricht als Reaktion (Antwort, Quittung, Erinnerung) auf eine andere Nachricht versendet wird, ist hier der Universally Unique Identifier (UUID) derjenigen Nachricht einzutragen, auf die sie sich bezieht.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="IdentifikationPerson.ABHMB">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikation einer Person</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element dient der Identifikation der betroffenen natürlichen Person auf die sich das Handeln zwischen Ausländerbehörde und Meldebehörde bezieht.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Das Element wird für die Übermittlung des Familiennamens nach Pass oder ähnlichen Nachweisdokumenten oder sofern diese nicht vorhanden sind, nach eigenen Angaben verwendet.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtsname" minOccurs="0" type="xian:AllgemeinerName"/>
+         <xs:element name="vorname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Das Element wird für die Übermittlung des Vornamens nach Pass oder ähnlichen Nachweisdokumenten oder sofern diese nicht vorhanden sind, nach eigenen Angaben verwendet.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburt" type="xauslaender:Geburt"/>
+         <xs:element name="staatsangehoerigkeit"
+                     maxOccurs="4"
+                     type="xauslaender:AngabenZumStaat"/>
+         <xs:element name="ordnungsmerkmalMB" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Ordnungsmerkmal der Meldebehörde (§ 4 BMG) übermittelt. Das Ordnungsmerkmal darf nicht als alleiniges Identifikationsmerkmal herangezogen werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="familiennameNachDeutschemRecht"
+                     minOccurs="0"
+                     type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Sofern ein Ausländer einen Namen nach deutschem Recht führt, der von dem Namen nach Pass abweicht, ist dieser mit diesem Element zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vornameNachDeutschemRecht"
+                     minOccurs="0"
+                     type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Sofern ein Ausländer Vornamen nach deutschem Recht führt, die von den Vornamen nach Pass abweichen, sind diese mit diesem Element zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" minOccurs="0" type="xauslaender:Geschlecht"/>
+         <xs:element name="azrNummer" minOccurs="0" type="xiaz:AZRNummer">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die AZR-Nummer für den Zeitraum gemäß § 10 Abs. 4 AZR-Gesetz übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="IdentifikationPersonAnschrift.ABHMB">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikation einer Person mit Anschrift</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element dient der Identifikation der betroffenen natürlichen Person auf die sich das Handeln zwischen Ausländerbehörde und Meldebehörde bezieht. Das Element beschreibt dabei auch die Anschrift.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:IdentifikationPerson.ABHMB">
+            <xs:sequence>
+               <xs:element name="anschriftHwaw" type="xima:Meldeanschrift">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Daten der Haupt- oder alleinigen Wohnung übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Nachricht.G2G.XA.ABHMB">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>XAusländer erweiterte Basisnachricht für Nachrichten zwischen Ausländerbehörden und Meldebehörden</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element beschreibt die Nachrichtenstruktur für die Kommunikation von Ausländerbehörden an Meldebehörden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+            <xs:sequence>
+               <xs:element name="identifikation.ereignis" type="xink:Identifikation.Ereignis">
+                  <xs:annotation>
+                     <xs:documentation>Das Element benennt den Zeitpunkt des technischen Ereignisses der Speicherung bzw. der Verarbeitung im System. Es ist also nicht der Moment der Erstellung bzw. des Versandes der Nachricht gemeint, der später liegen kann. Es ist auch nicht der Zeitpunkt des fachlichen Ereignisses, der in der Regel vorher liegt, gemeint.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="erinnerung" type="xs:boolean">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird gekennzeichnet, ob es sich bei dieser Nachricht um eine Erinnerung handelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Nachweise">
+      <xs:annotation>
+         <xs:documentation>Mit diesem Element sind die Angaben zu einem vorhandenen Ausweisdokument zu übermitteln, das die Grundlage der Änderungen darstellt. Zusätzlich können dies auch Angaben zu anderen Änderungsgrundlagen wie z. B. ausländische Urkunden sein.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nachweis" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Sofern Angaben vorliegen, die die Änderung belegen, können sie mit diesem Element mitgeteilt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausweis" minOccurs="0" type="xauslaender:Ausweisdokument"/>
+         <xs:element name="anlageNachweisdokument" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element können (gescannte) Nachweisdokumente als Anlagen übermittelt werden.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="inhalt" type="xs:base64Binary">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Inhalt binärkodiert übermittelt. Die Größe der Datei darf vor der base64-Kodierung nicht 3 MB überschreiten.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="format" type="xauslaender:Code.Dokumentformat">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Format übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="ABHMB.Anmeldung.020101">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Anmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Wird ein Ausländer im Laufe seines Aufenthaltes meldepflichtig (z. B. wenn ein Tourist einen dauerhaften Aufenthalt anstrebt) oder wird persönlich meldepflichtig (Person im Asylverfahren), gibt die Ausländerbehörde der Meldebehörde mit dieser Nachricht einen Hinweis, dass der Ausländer in ihrem Zuständigkeitsbereich wohnt. (gem. § 90 a Abs. 1, S. 2, Nr. 1 AufenthG)</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPerson.ABHMB"
+                              type="xauslaender:IdentifikationPerson.ABHMB"/>
+                  <xs:element name="anschriftHwaw" type="xima:Meldeanschrift">
+                     <xs:annotation>
+                        <xs:documentation>Diese Anschrift ist die aktuelle Anschrift, unter der der Ausländer wohnhaft ist und angemeldet werden soll.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.AenderungFamilienstand.020104">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Änderung des Familienstandes</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht teilt die ABH der Meldebehörde eine Familienstandsänderung mit.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="aenderungFamilienstand" type="xauslaender:Familienstand">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der neue Familienstand mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aenderungName"
+                              minOccurs="0"
+                              type="xauslaender:NameNatuerlichePerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur Änderung des Namens übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerAenderung" minOccurs="0" type="xida:TeilbekanntesDatum">
+                     <xs:annotation>
+                        <xs:documentation>Sofern Informationen über das Ereignisdatum vorliegen sind diese mitzuteilen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis" type="xauslaender:Nachweise">
+                     <xs:annotation>
+                        <xs:documentation>Sofern Angaben vorliegen die die Änderung belegen, wie z. B. ausländische Personenstandsurkunden usw., sind sie mit diesem Element zu übermitteln. Wenn keine elektronische Übermittlung des Nachweisdokuments im Element anlageNachweisdokument möglich ist, ist die Übermittlung auf einem anderen Weg in dem Element nachweis anzukündigen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.AenderungName.020105">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Änderung des Namens</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird der Meldebehörde eine Namensänderung nach ausländischem Personaldokument bzw. Feststellung im Ausländerwesen übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="aenderungName" type="xauslaender:NameNatuerlichePerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element kann die Änderung eines Namens übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aenderungsart" type="xauslaender:Aenderungsart"/>
+                  <xs:element name="nachweis" type="xauslaender:Nachweise">
+                     <xs:annotation>
+                        <xs:documentation>Wenn keine elektronische Übermittlung des Nachweisdokuments im Element anlageNachweisdokument möglich ist, ist die Übermittlung auf einem anderen Weg in dem Element nachweis anzukündigen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.AenderungStaatsangehoerigkeit.020106">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Änderung der Staatsangehörigkeit</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht werden der Meldebehörde die bei der Ausländerbehörde geprüften derzeitigen Staatsangehörigkeiten zur Fortschreibung des Melderegisters mitgeteilt. Deshalb ist ein Kindelement "nachweis" nicht erforderlich.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="aenderungStaatsangehoerigkeit"
+                              maxOccurs="4"
+                              type="xauslaender:AngabenZumStaat"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.AenderungGeburt.020107">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Änderung von Geburtsdaten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird eine Änderung der Geburtsdaten mitgeteilt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="aenderungGeburt" type="xauslaender:Geburt.Aenderung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden geänderte Geburtsdaten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis" type="xauslaender:Nachweise">
+                     <xs:annotation>
+                        <xs:documentation>Wenn keine elektronische Übermittlung des Nachweisdokuments im Element anlageNachweisdokument möglich ist, ist die Übermittlung auf einem anderen Weg in dem Element nachweis anzukündigen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.AenderungGeschlecht.020108">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Änderung des Geschlechts</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird die Korrektur des Geschlechts mitgeteilt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="aenderungGeschlecht" type="xauslaender:Geschlecht"/>
+                  <xs:element name="nachweis" type="xauslaender:Nachweise">
+                     <xs:annotation>
+                        <xs:documentation>Wenn keine elektronische Übermittlung des Nachweisdokuments im Element anlageNachweisdokument möglich ist, ist die Übermittlung auf einem anderen Weg in dem Element nachweis anzukündigen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.Todesfall.020109">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Meldung zum Todesfall</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird der Todesfall mitgeteilt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="angabenTodesfall" type="xauslaender:Tod"/>
+                  <xs:element name="aenderungsart" type="xauslaender:Aenderungsart"/>
+                  <xs:element name="angabenEntsprechenRegisterinhalt" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Dieses Element übermittelt true, wenn zum Zeitpunkt des Versands das Register bereits geändert wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis" minOccurs="0" type="xauslaender:Nachweise">
+                     <xs:annotation>
+                        <xs:documentation>Sofern Angaben vorliegen, die die Änderung belegen, wie z. B. ausländische Sterbeurkunde, sind sie mit diesem Element zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.Dublettenhinweis.020111">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Hinweis auf Dublette im Melderegister</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird der Meldebehörde ein Hinweis mitgeteilt, dass nach Auffassung der Ausländerbehörde im Melderegister ein Datensatz zu einer Person mehrfach vorhanden ist. Sollte die Ausländerbehörde eine Dublette durch den Empfang einer nachricht.030101 festgestellt haben, kann die UUID der nachricht.030101 im Element ausloeserUUID übermittelt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="vermuteteMehrfacherfassungen"
+                              minOccurs="2"
+                              maxOccurs="unbounded"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element sind die Identifikationsdaten der betroffenen Datensätze zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="hinweis" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element sind der Meldebehörde weitere Hinweise zur Klärung mitzuteilen. Insbesondere sind Hinweise auf die Quelle hilfreich (z. B. Geburtsdatum xx.xx.xxx laut vorliegenden Pass).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.NachgewieseneAusreise.020112">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Nachgewiesene Ausreise</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht teilt die bisher zuständige ABH der Meldebehörde den Wegzug einer Person mit, wenn ein Ausländer aus dem Bundesgebiet ausgereist ist, ohne sich abzumelden (insbesondere bei Abschiebungen). Das gilt auch für in der Vergangenheit liegende und nachträglich (z.B.: nach Wiedereinreise) festgestellte Ausreisen. Nachweisdaten sind nicht erforderlich. Die Angaben sind im Melderegister zu übernehmen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="tagDerAusreise" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Über dieses Element wird der Tag der Ausreise mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatDerAusreise" type="xauslaender:Code.Staat">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Zielstaat der Ausreise übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aenderungsart" type="xauslaender:Aenderungsart"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.ErkenntnisseHwAw.020113">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Erkenntnisse zur Hauptwohnung bzw. alleinigen Wohnung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die ABH der zuständigen Meldebehörde ihre Erkenntnisse hinsichtlich der abweichenden Haupt- oder alleinigen Wohnung eines Ausländers.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="neueHwaw">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Anschrift der neuen Hauptwohnung oder alleinigen Wohnung übermittelt oder angegeben, dass der Wohnort nicht bekannt ist.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="anschrift" type="xima:Meldeanschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Anschrift der neuen Hauptwohnung oder alleinigen Wohnung übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nichtBekannt" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird übermittelt, dass die Anschrift der Haupt- oder alleinigen Wohnung nicht bekannt ist.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="angabenEntsprechenRegisterinhalt" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Dieses Element übermittelt true, wenn zum Zeitpunkt des Versands das Register bereits geändert wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="hinweis" minOccurs="0" type="xauslaender:Nachweise">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die Ausländerbehörde die ihr vorliegenden Nachweise/Informationen zum Verbleib des Ausländers.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="ABHMB.MitteilungAZRNummer.020114">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 90a AufenthG</rechtsgrundlage>
+            <title>Mitteilung der AZR-Nummer</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird der Meldebehörde übermittelt, dass eine AZR-Nummer in das Melderegister einzutragen oder im Melderegister zu ändern bzw. zu löschen ist.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.ABHMB">
+               <xs:sequence>
+                  <xs:element name="anlass" type="xauslaender:Code.ABHMB.Anlass.MitteilungAZRNummer"/>
+                  <xs:element name="identifikationPersonAnschrift.ABHMB"
+                              type="xauslaender:IdentifikationPersonAnschrift.ABHMB"/>
+                  <xs:element name="azrNummerGeaendert" minOccurs="0" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Nur im Falle einer Änderung wird in diesem Element die neue AZR-Nummer übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

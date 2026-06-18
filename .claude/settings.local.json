@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Path \"c:\\\\xampp\\\\htdocs\\\\xoevpruefbaustein.local\" -Recurse -File | Where-Object { $_.FullName -notmatch \"node_modules|\\\\.git\" } | Select-Object -ExpandProperty FullName | ForEach-Object { $_.Replace\\(\"c:\\\\xampp\\\\htdocs\\\\xoevpruefbaustein.local\\\\\", \"\"\\) })"
+    ]
+  }
+}
