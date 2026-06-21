@@ -1,0 +1,239 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Datenabruf nach § 34a BMG Nichterstellung Grund</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden für den Kontext der Datenabrufe nach § 34a BMG die Gründe definiert, die aufgrund rechtlicher und/oder verfahrenstechnischer Prüfungen zur Nichtbeantwortung einer Suchanfrage führen können.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2023-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>datenabruf.nichterstellung.grund</ShortName>
+      <LongName>Datenabruf nach § 34a BMG Nichterstellung Grund</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:xoev-de:xmeld:codeliste:datenabruf.nichterstellung.grund</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xmeld:codeliste:datenabruf.nichterstellung.grund_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Das in der Suchanfrage angegebene Identifikationsmerkmal ist ungültig.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Für die in den Auswahldaten angegebene Straße wird keine passende Straßenbezeichnung im Melderegister gefunden.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Im Element sicherheitsbehoerde wurde der Wert „true“ übermittelt, obwohl es sich tatsächlich nicht um eine Sicherheits- bzw. Strafermittlungsbehörde handelt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die abrufende Stelle ist zur Nutzung des Auswahldatums waffenrechtlicheErlaubnis nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die abrufende Stelle ist zur Nutzung des Auswahldatums waffenbesitzverbot nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die abrufende Stelle ist zur Nutzung des Auswahldatums sprengstoffrechtlicheErlaubnis nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die abrufende Stelle ist zum Abruf von Daten zu Ausweis- und Passdokumenten nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die abrufende Stelle ist zum Abruf von Tatsachen nach § 3 Absatz 2 Nummer 4 BMG zu den Pass- und Ausweisdaten nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die abrufende Stelle ist zum Abruf von Daten für waffen- und sprengstoffrechtliche Verfahren nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die abrufende Stelle ist zum Abruf von Daten zum Wohnungsgeber nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die abrufende Stelle ist zum Abruf des Einzugsdatums nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Trefferliste überschreitet die maximale Größe von 1000 Treffern.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Ergebnisliste überschreitet die maximale Größe von 1000 Ergebnissen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Angaben zum AGS des Lesers der Suchanfrage stimmen nicht mit dem AGS in den Auswahldaten überein.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wenn in der Suchanfrage der Einsatz einer phonetischen Suche bestimmt ist, dürfen keine Platzhalter verwendet werden.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Es liegt ein interner technischer Fehler vor. Die Präzisierung erfolgt durch eine Freitextangabe im Element freitext.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Es liegt ein sonstiger fachlicher Fehler vor. Die Präzisierung erfolgt durch eine Freitextangabe im Element freitext.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>In den Auswahldaten sind die Mindestangaben gemäß § 38 Abs. 1 BMG für die Personensuche nach § 34a Abs. 2 BMG nicht erfüllt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>In dem in den Auswahldaten der Suchanfrage angegebenen Hausnummernbereich ist die Ende-Angabe kleiner als die oder gleich der Beginn-Angabe.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>In dem in den Auswahldaten der Suchanfrage angegebenen Geburtszeitraum liegt das Ende-Datum am oder vor dem Beginn-Datum.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>In den Auswahldaten der Suchanfrage wurde auf aktuelle oder inaktuelle Anschriften eingeschränkt, jedoch für die Anschrift keine Straße angegeben.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Der in der Suchanfrage bestimmte Suchbereich liegt nicht im Zuständigkeitsbereich der angefragten Stelle.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Das Element landesspezifischeErweiterungen wurde im länderübergreifenden Datenabruf übermittelt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die AZR-Nummer ist in dieser Anfrage als Auswahldatum unzulässig.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,1612 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xiaz="http://www.osci.de/xinneres/azrnummer/3"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           xmlns:xiid="http://www.osci.de/xinneres/idnr/2"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/azrnummer/3/xinneres-azrnummer.xsd"
+              namespace="http://www.osci.de/xinneres/azrnummer/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+              namespace="http://www.osci.de/xinneres/geschlecht/1"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/idnr/2/xinneres-idnr.xsd"
+              namespace="http://www.osci.de/xinneres/idnr/2"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="type.Partnerrueckmeldung.PersonUndPartner">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Rückmeldung von Partnerdaten</title>
+         </xs:appinfo>
+         <xs:documentation>Diese Struktur enthält die Daten einer in die zuzugs_mb zuziehenden betroffenen_person und die Daten über den in der partner_mb gemeldeten partner.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="partner" type="xmeld:type.PartnerOhneSterbedatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten des in der partner_mb gemeldeten Ehegatten oder Lebenspartners übermittelt, die entsprechend der Angaben der zuziehenden betroffenen_person in der zuzugs_mb gespeichert werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zuzugsperson"
+                     type="xmeld:type.rueckmeldung.anmeldungauswaertigereglp.zuzugsperson">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten der in der zuzugs_mb zuziehenden betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="identifikation.ereignis"
+                     type="xmeld:type.Identifikation.Ereignis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.Rueckmeldung.Identifikation">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikationsdaten der betroffenen Person für Fortschreibung und Rückmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Identifikationsdaten der betroffenen Person für das Rückmeldeverfahren abgebildet. Die Identifikation erfolgt durch Namen, Geburtsdaten und der auswärtigen Anschrift beim Leser der Nachricht. Sofern für die betroffene Person eine AZR-Nummer eingetragen ist, ist diese zusätzlich zur Identifikation zu verwenden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.identifikation.fortschreibung">
+            <xs:sequence>
+               <xs:element name="azrNummer" minOccurs="0" type="xiaz:AZRNummer">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die AZR-Nummer der Person übermittelt. Die AZR-Nummer darf nur in den Nachrichten 0201 bis 0206 und nur zwischen Zuzugsmeldebehörde und Wegzugsmeldebehörde bzw. alter und neuer Meldebehörde der Hauptwohnung übermittelt werden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Rueckmeldung.Nachweisdaten">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachweisdaten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit den Nachweisdaten wird auf die Quelle verwiesen, bei der Dokumente zur Begründung des Vorliegens eines bestimmten Sachverhalts zu finden sind.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.Nachweisdaten">
+            <xs:sequence>
+               <xs:element name="datum" minOccurs="0" type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum der Entscheidung, Ausstellung oder Beurkundung übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.rueckmeldung.anmeldungauswaertigereglp.zuzugsperson">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die zuziehende betroffene_person</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp wird verwendet, um die Daten der in der zuzugs_mb zuziehenden betroffenen_person zu übermitteln.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="name" type="xmeld:type.NameNatuerlichePerson.Partner">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Daten zu Namen und Doktorgraden der betroffenen_person zur Identifikation übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburt" type="xmeld:type.Geburtsdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Tag der Geburt der betroffenen_person zur Identifikation übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Geschlecht der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="wohnung" type="xmeld:type.Wohnung.PartnerOhneAusland">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift inkl. des Wohnungsstatus der alleinigen Wohnung oder der Hauptwohnung der betroffenen Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="steueridentifikation"
+                     minOccurs="0"
+                     type="xmeld:type.Steueridentifikation">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Steueridentifikation der betroffenen_person übermittelt. Die Angabe ist für Ehegatten und Lebenspartner zulässig.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="auskunftssperre"
+                     minOccurs="0"
+                     type="xmeld:type.Auskunftssperre">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Auskunftssperren der betroffenen_person übermittelt. Es werden nur die Schlüssel 3 und 11 übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.rueckmeldung.auswertungauswaertigereglp.abweichungen">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Mitteilung von Abweichungen bei Partnerdaten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element wird über Abweichungen beim Datenabgleich zwischen Melderegister und Informationen in der empfangenen partnerrueckmeldung informiert. Dazu besteht dieses Element aus einer Reihe von Kindelementen, von denen die meisten ein Abweichungspaar repräsentieren. Ein Abweichungspaar besteht aus zwei Komponenten: es enthält die Daten der auswertenden und die Daten der rückmeldenden Meldebehörde. Es sind jeweils nur die Abweichungspaare zu übermitteln, zu denen Abweichungen vorliegen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname.unstrukturiert" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Familiennamen einer Person übermittelt (siehe DSMeld-Blatt 0101a).</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="familienname.unstrukturiert.rueckmelder"
+                              minOccurs="0"
+                              type="xmeld:type.FamiliennameUnstrukturiert">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Familienname aus der Rückmeldenachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienname.unstrukturiert.auswerter"
+                              minOccurs="0"
+                              type="xmeld:type.FamiliennameUnstrukturiert">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zum Familiennamen, wie im Melderegister gespeichert, übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="geburtsname.unstrukturiert" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Geburtsnamen einer Person übermittelt (siehe DSMeld-Blatt 0201a).</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="geburtsname.unstrukturiert.rueckmelder"
+                              minOccurs="0"
+                              type="xian:AllgemeinerName">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Geburtsname aus der Rückmeldenachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsname.unstrukturiert.auswerter"
+                              minOccurs="0"
+                              type="xian:AllgemeinerName">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zum Geburtsnamen, wie im Melderegister gespeichert, übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="vornamen" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Vornamen mitgeteilt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="vornamen.rueckmelder" type="xian:AllgemeinerName">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Vornamen aus der Rückmeldenachricht mitgeteilt (siehe DSMeld-Blätter 1503 und 1519).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vornamen.auswerter" type="xian:AllgemeinerName">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zum Vornamen, wie im Melderegister gespeichert, mitgeteilt (siehe DSMeld-Blätter 1503 und 1519).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="doktorgrad" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Doktorgrad mitgeteilt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="doktorgrad.rueckmelder"
+                              minOccurs="0"
+                              type="xmeld:type.Doktorgrad">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Doktorgrad aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="doktorgrad.auswerter"
+                              minOccurs="0"
+                              type="xmeld:type.Doktorgrad">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zum Doktorgrad, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="geburtsdatum" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Geburtsdatum mitgeteilt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="geburtsdatum.rueckmelder" type="xmeld:type.Geburtsdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geburtsdatum, wie es rückgemeldet wurde, übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsdatum.auswerter" type="xmeld:type.Geburtsdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geburtsdatum, wie im Melderegister gespeichert, übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="geschlecht" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Geschlecht mitgeteilt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="geschlecht.rueckmelder"
+                              minOccurs="0"
+                              type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geschlecht aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht.auswerter"
+                              minOccurs="0"
+                              type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zum Geschlecht, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="wohnung" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen in Bezug auf Informationen zur Wohnung mitgeteilt. Sofern die Partnermeldebehörde festgestellt hat, dass die bei ihr gemeldete betroffene Person unbekannt verzogen ist, so kennzeichnet sie dies entsprechend unterhalb des Elementes wohnung.auswerter.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="wohnung.rueckmelder"
+                              minOccurs="0"
+                              type="xmeld:type.Wohnung.PartnerOhneAusland">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Wohnung aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="wohnung.auswerter"
+                              minOccurs="0"
+                              type="xmeld:type.Wohnung.Partner">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur Wohnung, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="steueridentifikation" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen der Informationen zur Steueridentifikation (Identifikationsnummer nach § 139b AO oder vorläufiges Bearbeitungsmerkmal) des Ehegatten oder Lebenspartners mitgeteilt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="steueridentifikation.rueckmelder"
+                              minOccurs="0"
+                              type="xmeld:type.Steueridentifikation">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Steueridentifikation aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="steueridentifikation.auswerter"
+                              minOccurs="0"
+                              type="xmeld:type.Steueridentifikation">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur Steueridentifikation, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="auskunftssperre" minOccurs="0" maxOccurs="2">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zu Auskunftssperren mitgeteilt. Erlaubt sind in diesem Zusammenhang nur die Schlüssel 3 und 11.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="uebermittlungssperre.rueckmelder"
+                              minOccurs="0"
+                              type="xmeld:type.Auskunftssperre">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Auskunftssperre aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="uebermittlungssperre.auswerter"
+                              minOccurs="0"
+                              type="xmeld:type.Auskunftssperre">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur Auskunftssperre, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.rueckmeldung.betroffener.ausland">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Rückmeldung einer aus dem Ausland zuziehenden betroffenen Person</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp kann die rueckmeldung einer aus dem Ausland wieder zuziehenden betroffenen_person dargestellt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="identifikation.betroffener"
+                     type="xmeld:type.Rueckmeldung.Identifikation">
+            <xs:annotation>
+               <xs:appinfo>
+                  <implementationHint>Das Element identifikation.betroffener/anschrift.empfaenger ist mit der letzten Inlandswohnung zu befüllen.</implementationHint>
+               </xs:appinfo>
+               <xs:documentation>Dieses Element dient ausschließlich zur Identifikation der betroffenen_person beim Leser.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zuzugsperson" type="xmeld:type.rueckmeldung.natuerlicheperson">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten von der rueckmeldung betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vertreter"
+                     minOccurs="0"
+                     maxOccurs="4"
+                     type="xmeld:type.GesetzlicherVertreterOhneSterbedatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Informationen zu gesetzlichen Vertretern einer betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="partner.und.kinder"
+                     minOccurs="0"
+                     type="xmeld:type.PartnerUndKinder">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zum Partner (Ehegatte, Lebenspartner) und zu Kindern der betroffenen_person mitgeteilt. Da hier ein Containerelement aggregiert wird, kann das Element maximal einmal vorhanden sein.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="letzte.inlandswohnung"
+                     type="xmeld:type.WohnungLetzteInlandswohnung">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Informationen zur letzten Inlandswohnung vor dem Wegzug ins Ausland übermittelt. Die letzte Inlandswohnung MUSS angeben werden, da ansonsten keine rueckmeldung möglich ist. Das Datum des Wegzugs ins Ausland (DSMeld 1314) ist identisch mit dem Auszugsdatum der letzten Inlandswohnung. Es ist in das Element letzte.inlandswohnung/datumLetzterWegzugAusland in die jeweilige Nachricht einzutragen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweis.familienstand"
+                     minOccurs="0"
+                     type="xmeld:type.Nachweisdaten">
+            <xs:annotation>
+               <xs:documentation>Falls die betroffene_person verheiratet ist oder sich in einer Lebenspartnerschaft befindet, sind hier die entsprechenden Nachweisdaten zu übermitteln, da nur aus diesen der Ort der Eheschließung bzw. die Eintragung der Lebenspartnerschaft zu entnehmen ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="identifikation.ereignis"
+                     type="xmeld:type.Identifikation.Ereignis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.rueckmeldung.natuerlicheperson">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Der Datentyp für die betroffene_person im rueckmeldeverfahren</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten zur betroffenen Person abgebildet, die im Kontext der Rückmeldung zu übermitteln sind.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="AUSKUNFTSSPERRE"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.Auskunftssperre">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zu Auskunftssperren der betroffenen_person übermittelt. Übermittelt werden in diesem Zusammenhang nur die Schlüssel 1, 3 und 11 für Auskunftssperren gemäß § 51 BMG.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="NAMENATUERLICHEPERSON"
+                     type="xmeld:type.NameNatuerlichePersonMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zum Namen der betroffenen Person übermittelt. Im Element frueherer.familienname darf das Kindelement nachweisdaten nicht übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="FAMILIENSTAND" type="xmeld:type.FamilienstandNurBegruendung">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zum Familienstand der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="GEBURT" type="xmeld:type.GeburtMitHistorie">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zur Geburt der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="RELIGION" type="xmeld:type.Religion">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zur Religion der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="STAATSANGEHOERIGKEIT"
+                     maxOccurs="4"
+                     type="xmeld:Code.Staatsangehoerigkeit">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zur Staatsangehörigkeit der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="AUSWEISDOKUMENT"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.AusweisdokumentOhneSperrinformationen">
+            <xs:annotation>
+               <xs:documentation>Angaben zu Ausweisdokumenten der natürlichen Person.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="WOHNUNG"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.WohnungOhneZusatzdaten">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Angaben zu den Wohnungen der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="GESCHLECHT" type="xmeld:type.Geschlechtseintrag">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zum Geschlechtseintrag der betroffenen_person übermittelt (siehe DSMeld-Blätter 0701 bis 0704).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtseintragOhneGeburtsurkunde"
+                     minOccurs="0"
+                     fixed="true"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass zur betroffenen Person ein Eintrag im Geburtenregister erfolgt ist, aber keine Geburtsurkunde ausgestellt wurde.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="passversagung"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.PassversagungMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Vorliegen von Pass-, Personalausweis- oder Vorläufiger Personalausweisversagungsgründen sowie Nachweisdaten dazu übermittelt. Die Übermittlung erfolgt, sofern eine bestehende Meldebehörde der Nebenwohnung im Anschluss an ein Rückmeldeverfahren informiert werden muss.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="idNr" minOccurs="0" type="xiid:Identifikationsnummer">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Identifikationsnummer nach § 139b AO übermittelt, sofern die Übermittlung in den Prozessbeschreibungen nicht ausgeschlossen wird.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.rueckmeldung.umzugsverband">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Umzugsverband im Rückmeldeverfahren</title>
+         </xs:appinfo>
+         <xs:documentation>Diese Struktur bildet genau einen umzugsverband ab.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="betroffener" maxOccurs="unbounded">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird genau eine betroffene_person innerhalb des Umzugsverbandes identifiziert und beschrieben.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffener"
+                              type="xmeld:type.Rueckmeldung.Identifikation">
+                     <xs:annotation>
+                        <xs:documentation>Dieses Element dient ausschließlich der Identifikation der betroffenen Person.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="zuzugsperson" type="xmeld:type.rueckmeldung.natuerlicheperson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vertreter"
+                              minOccurs="0"
+                              maxOccurs="4"
+                              type="xmeld:type.GesetzlicherVertreterOhneSterbedatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Informationen zu gesetzlichen Vertretern einer betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="partner.und.kinder"
+                              minOccurs="0"
+                              type="xmeld:type.PartnerUndKinder">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Informationen zum Partner (Ehegatte, Lebenspartner) und zu Kindern der betroffenen_person mitgeteilt. Da hier ein Containerelement aggregiert wird, kann das Element maximal einmal vorhanden sein.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis.familienstand"
+                              minOccurs="0"
+                              type="xmeld:type.Rueckmeldung.Nachweisdaten">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Nachweisdaten zur Eheschließung oder Begründung einer Lebenspartnerschaft mitgeteilt, sofern die betroffene_person verheiratet ist oder sich in einer Lebenspartnerschaft befindet.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.rueckmeldungsauswertung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Basistyp für die Rückmeldungsauswertung</title>
+         </xs:appinfo>
+         <xs:documentation>Dies ist der Basistyp zur auswertung_rueckmeldung.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.Nachricht.G2G">
+            <xs:sequence>
+               <xs:element name="betroffener" type="xmeld:type.Rueckmeldung.Identifikation">
+                  <xs:annotation>
+                     <xs:documentation>Identifikation zur Rückmeldungsauswertung.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:element name="rueckmeldung.anmeldunginland.0201">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 1 und 2 BMG, § 6 1. BMeldDÜV</rechtsgrundlage>
+            <title>Rückmeldung (Inland)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde, in der die Anmeldung erfolgt ist, die Leser der Nachricht über die Tatsache und die Details zum Zuzug der betroffenen_personen. Diese Nachricht wird versendet von der zuzugs_mb im Falle eines zuzugs_inland (Prozess siehe ), nebenwohnungs_mb im Falle eines bezugs_nebenwohnung außerhalb des zustaendigkeitsbereichs_mb (Prozess siehe ), vermeintlichen wegzugs_mb im Falle einer ruecknahme eines zuzugs_inland (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="umzugsverband"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.rueckmeldung.umzugsverband">
+                     <xs:annotation>
+                        <xs:documentation>Da die Nachricht 0201 als Sammelnachricht definiert ist, ist die Rückmeldung von 1 bis n Umzugsverbänden mit einer einzigen Nachricht möglich.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="rueckmeldung.anmeldungausland.0202">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 1 und 2 BMG, § 6 1. BMeldDÜV</rechtsgrundlage>
+            <title>Rückmeldung (Ausland)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die zuzugs_mb die Leser der Nachricht über die Tatsache und die Details zum Wiederzuzug der betroffenen_personen aus dem Ausland. Diese Nachricht wird versendet von der zuzugs_mb im Falle eines wiederzuzugs_ausland (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="betroffener"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.rueckmeldung.betroffener.ausland">
+                     <xs:annotation>
+                        <xs:documentation>Da die Nachricht 0202 als Sammelnachricht definiert ist, ist die Rückmeldung von 1 bis n aus dem Ausland zuziehenden betroffenen_personen mit einer einzigen Nachricht möglich.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="rueckmeldung.auswertung.0203">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags))</leser>
+            <rechtsgrundlage>§ 33 Abs. 1 und 2 BMG, § 7 1. BMeldDÜV</rechtsgrundlage>
+            <title>Auswertung der Rückmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde, den Leser der Nachricht über die ausgewertete rueckmeldung. Sie teilt in dieser Nachricht sowohl abweichende als auch ergänzende Daten mit. Diese Nachricht wird versendet von der wegzugs_mb im Falle eines zuzugs_inland (Prozess siehe ), der hauptwohnungs_mb oder alleinigewohnungs_mb im Falle eines bezugs_nebenwohnung außerhalb des zustaendigkeitsbereichs_mb (Prozess siehe ), der letzten_inlands_mb im Falle eines wiederzuzugs_ausland (Prozess siehe ), bisherigen Meldebehörde der Hauptwohnung im Falle eines Wohnungsstatuswechsels mit Wechsel des Zuständigkeitsbereichs (Prozess siehe ), der vermeintlichen zuzugs_mb im Falle einer ruecknahme des zuzugs_inland (Prozess siehe ), der vermeintlichen zuzugs_mb im Falle eine ruecknahme des fortschreibung.wohnungsstatuswechsels (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.rueckmeldungsauswertung">
+               <xs:sequence>
+                  <xs:element name="hauptwohnung.ergaenzungen">
+                     <xs:annotation>
+                        <xs:documentation>Die bisher für die Haupt- oder alleinige Wohnung zuständige Meldebehörde informiert die neu für die Haupt- oder alleinige Wohnung zuständige Meldebehörde der betroffenen Person über ergänzende Daten zur betroffenen Person.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="wahlausschluss"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="xmeld:type.WahlausschlussMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird ein Ausschluss vom Wahlrecht oder von der Wählbarkeit zur betroffenen Person übermittelt. Falls dazu Nachweisdaten vorliegen, können diese ebenfalls mit übermittelt werden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="staatsangehoerigkeit.glaubhaftmachung"
+                                       minOccurs="0"
+                                       maxOccurs="2"
+                                       type="xmeld:type.Staatsangehoerigkeit.Glaubhaftmachung">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Angaben zum Erwerb bzw. zum Verlust der deutschen Staatsangehörigkeit übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="vorherigeAbmeldungNachUnbekannt"
+                                       minOccurs="0"
+                                       fixed="true"
+                                       type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine vorherige Abmeldung nach unbekannt übermittelt. Dieses Element dient dazu, bei der Übermittlung des Inlandszuzugs an die Statistik durch die Zuzugsmeldebehörde, eine durch die Wegzugsmeldebehörde bereits nach unbekannt abgemeldete Person zu identifizieren und so einen Doppelabzug der Person bei der Wegzugsmeldebehörde zu vermeiden. Das Element ist zu übermitteln, wenn bei der Wegzugsmeldebehörde die betroffene Person zum Zeitpunkt der Einarbeitung der Nachricht 0201 nach unbekannt abgemeldet ist und durch die Wegzugsmeldebehörde die Statistik hierüber mit der Nachricht 0810 (Schlüssel 8) informiert wurde und durch die Wegzugsmeldebehörde keine Rücknahme der Nachricht 0810 mit Schlüssel 8 erfolgt ist.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="unionsbuerger" minOccurs="0" type="xmeld:type.Unionsbuerger">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Eigenschaft Unionsbürger der betroffenen Person übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="waffenrechtliche.erlaubnis"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="xmeld:type.WaffenrechtlicheErlaubnisMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Daten zur waffenrechtlichen Erlaubnis der betroffenen Person übermittelt. Falls dazu Nachweisdaten vorliegen, können diese ebenfalls mit übermittelt werden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="waffenbesitzverbot"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="xmeld:type.WaffenbesitzverbotPflichtMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Daten zum Waffenbesitzverbot der betroffenen Person übermittelt. Falls dazu Nachweisdaten vorliegen, können diese ebenfalls mit übermittelt werden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="azrKommunikation"
+                                       minOccurs="0"
+                                       fixed="true"
+                                       type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass die Nutzung der AZR-Nummer der betroffenen Person ausschließlich im Verkehr mit der Registerbehörde für das Ausländerzentralregister erfolgt (DSMeld-Blatt 1712a).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="sprengstoffrechtliche.erlaubnis"
+                                       minOccurs="0"
+                                       maxOccurs="unbounded"
+                                       type="xmeld:type.SprengstoffrechtlicheErlaubnisMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Daten zur sprengstoffrechtlichen Erlaubnis der betroffenen Person übermittelt. Falls dazu Nachweisdaten vorliegen, können diese ebenfalls mit übermittelt werden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="vbm" minOccurs="0" type="xmeld:type.BZSt.VBM">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird bis zur Bekanntgabe der eindeutigen Identifikationsnummer durch das BZSt das von der Meldebehörde bei Erstanmeldung (Geburt, Zuzug ohne Identifikationsnummer) vergebene Vorläufige Bearbeitungsmerkmal (VBM) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="vbm.ehegatteOderLebenspartner"
+                                       minOccurs="0"
+                                       type="xmeld:type.BZSt.VBM">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das vorläufige Bearbeitungsmerkmal des Ehegatten oder Lebenspartners der betroffenen_person übermittelt (siehe DSMeld-Blätter 2705, 2708).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="zuzugBund" minOccurs="0" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Zuzugs in die Bundesrepublik Deutschland übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="abweichungen">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird über Abweichungen beim Datenabgleich zwischen Melderegister und Informationen in der empfangenen Rückmeldenachricht informiert. Dazu besteht dieses Element aus einer Reihe von Kindelementen, von denen jedes jeweils ein Abweichungspaar repräsentiert. Ein Abweichungspaar besteht dabei immer aus beiden Komponenten: Auswerter- und Rückmelderdaten. Es sind jeweils immer nur die Abweichungspaare zu übermitteln, zu denen Abweichungen vorliegen. Unterschiedliche Reihenfolgen in der Speicherung von Informationen (z. B. Wohnungen) stellen keine Abweichungen dar.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="familienname.unstrukturiert" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Familiennamen einer Person übermittelt (siehe DSMeld-Blatt 0101a).</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="familienname.unstrukturiert.rueckmelder"
+                                                minOccurs="0"
+                                                type="xmeld:type.FamiliennameUnstrukturiert">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Familienname aus der Rückmeldenachricht übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="familienname.unstrukturiert.auswerter"
+                                                minOccurs="0"
+                                                type="xmeld:type.FamiliennameUnstrukturiert">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Familiennamen, wie im Melderegister gespeichert, übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="ehename.unstrukturiert" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Ehenamen einer Person übermittelt (siehe DSMeld-Blatt 0103a).</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="ehename.unstrukturiert.rueckmelder"
+                                                minOccurs="0"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Ehename aus der Rückmeldenachricht übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ehename.unstrukturiert.auswerter"
+                                                minOccurs="0"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Ehenamen, wie im Melderegister gespeichert, übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="lebenspartnerschaftsname.unstrukturiert" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Lebenspartnerschaftsamen einer Person übermittelt (siehe DSMeld-Blatt 0105a).</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="lebenspartnerschaftsname.unstrukturiert.rueckmelder"
+                                                minOccurs="0"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Lebenspartnerschaftsname aus der Rückmeldenachricht übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="lebenspartnerschaftsname.unstrukturiert.auswerter"
+                                                minOccurs="0"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Lebenspartnerschaftsnamen, wie im Melderegister gespeichert, übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="geburtsname.unstrukturiert" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Geburtsnamen einer Person übermittelt (siehe DSMeld-Blatt 0201a).</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="geburtsname.unstrukturiert.rueckmelder"
+                                                minOccurs="0"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Geburtsname aus der Rückmeldenachricht übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtsname.unstrukturiert.auswerter"
+                                                minOccurs="0"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Geburtsnamen, wie im Melderegister gespeichert, übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="fruehererFamilienname.unstrukturiert" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum früheren Familiennamen mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="fruehererFamilienname.unstrukturiert.rueckmelder"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der frühere Familienname aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="fruehererFamilienname.unstrukturiert.auswerter"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum früheren Familiennamen, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="vornamen" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Vornamen mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="vornamen.rueckmelder" type="xmeld:type.Vornamen">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Vornamen aus der Rückmeldenachricht mitgeteilt (siehe DSMeld-Blatt 0301).</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="vornamen.auswerter" type="xmeld:type.Vornamen">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Vornamen, wie im Melderegister gespeichert, mitgeteilt (siehe DSMeld-Blatt 0301).</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="gebraeuchlicherVorname" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum gebräuchlichen Vornamen mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="gebraeuchlicherVorname.rueckmelder"
+                                                minOccurs="0"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der gebräuchliche Vorname aus der Rückmeldenachricht übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="gebraeuchlicherVorname.auswerter"
+                                                minOccurs="0"
+                                                type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum gebräuchlichen Vornamen, wie im Melderegister gespeichert, übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="fruehereVornamen" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zu früheren Vornamen mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="fruehereVornamen.rueckmelder"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.FruehereVornamenMitNachweis">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der frühere Vorname aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="fruehereVornamen.auswerter"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.FruehereVornamenMitNachweis">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zu früheren Vornamen, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="doktorgrad" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Doktorgrad mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="doktorgrad.rueckmelder"
+                                                minOccurs="0"
+                                                type="xmeld:type.Doktorgrad">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Doktorgrad aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="doktorgrad.auswerter"
+                                                minOccurs="0"
+                                                type="xmeld:type.Doktorgrad">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Doktorgrad, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="ordensname" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Ordensnamen mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="ordensname.rueckmelder"
+                                                minOccurs="0"
+                                                type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Ordensname aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ordensname.auswerter" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Ordensnamen, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="kuenstlername" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Künstlernamen mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="kuenstlername.rueckmelder"
+                                                minOccurs="0"
+                                                type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Künstlername aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="kuenstlername.auswerter"
+                                                minOccurs="0"
+                                                type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Künstlernamen, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="geburtsdatum" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Tag der Geburt mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="geburtsdatum.rueckmelder"
+                                                type="xmeld:type.GeburtsdatumMitHistorie">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Geburtsdatum, wie es rückgemeldet wurde, übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtsdatum.auswerter" type="xmeld:type.GeburtsdatumMitHistorie">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Geburtsdatum, wie im Melderegister gespeichert, übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="ortundstaatdergeburt" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Ort und/oder Staat der Geburt mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="geburtsort.rueckmelder" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Ort der Geburt aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtsort.auswerter" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Geburtsort, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtsortstaat.rueckmelder"
+                                                minOccurs="0"
+                                                type="xmeld:Code.Gebiet">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Staat des Geburtsortes aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtsortstaat.auswerter"
+                                                minOccurs="0"
+                                                type="xmeld:Code.Gebiet">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Staat des Geburtsortes, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="staatsangehoerigkeit" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zur Staatsangehörigkeit mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="staatsangehoerigkeit.rueckmelder"
+                                                maxOccurs="4"
+                                                type="xmeld:Code.Staatsangehoerigkeit">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Staatsangehörigkeit aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="staatsangehoerigkeit.auswerter"
+                                                maxOccurs="4"
+                                                type="xmeld:Code.Staatsangehoerigkeit">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Staatsangehörigkeit, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="familienstand" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Familienstand mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="familienstand.rueckmelder"
+                                                type="xmeld:type.FamilienstandNurBegruendung">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Familienstand aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="familienstand.rueckmelder.nachweis"
+                                                type="xmeld:type.Rueckmeldung.Nachweisdaten">
+                                       <xs:annotation>
+                                          <xs:documentation>Falls der Betroffene verheiratet ist oder sich in einer Lebenspartnerschaft befindet, sind hier die rückgemeldeten Nachweisdaten zu übermitteln.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="familienstand.auswerter"
+                                                type="xmeld:type.FamilienstandNurBegruendung">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Familienstand, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="familienstand.auswerter.nachweis" type="xmeld:type.Nachweisdaten">
+                                       <xs:annotation>
+                                          <xs:documentation>Falls die betroffene Person verheiratet ist oder sich in einer eingetragenen Lebenspartnerschaft befindet, werden mit diesem Element sowohl Abweichungen zu den von der Zuzugsmeldebehörde übermittelten Nachweisdaten zum Familienstand übermittelt, als auch Ergänzungen.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="religion" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zur Religionszugehörigkeit mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="religion.rueckmelder" type="xmeld:type.Religion">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Religionszugehörigkeit aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="religion.auswerter" type="xmeld:type.Religion">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Religionszugehörigkeit, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="hauptwohnung.bisher" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zur Hauptwohnung mitgeteilt. Sofern Abweichungen beim Datum des Wegzugs ins Ausland zu übermitteln sind, erfolgt dies in hauptwohnung.bisher.rueckmelder/datumDesAuszugs und/oder in hauptwohnung.bisher.auswerter/datumDesAuszugs.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="hauptwohnung.bisher.rueckmelder"
+                                                type="xmeld:type.WohnungOhneZusatzdaten">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die bisherige Wohnung aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="hauptwohnung.bisher.auswerter"
+                                                type="xmeld:type.WohnungOhneZusatzdaten">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur bisherigen Hauptwohnung, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="wohnung.weitere" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zu weiteren Wohnungen mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="wohnung.weitere.rueckmelder"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.WohnungOhneZusatzdaten">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die weitere Wohnung aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="wohnung.weitere.auswerter"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.WohnungOhneZusatzdaten">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur weiteren Wohnung, wie im Melderegister gespeichert, mitgeteilt. Im Wohnungsbild 0203 sollen nur aktuelle Wohnungen erscheinen. Ausnahmen sind in der Rückmeldung angegebene aktuelle Wohnungen aus der Rückmeldung, die beim Auswerter als abgemeldet gespeichert sind. Die einzige mit zu liefernde Datumsangabe zu dieser Wohnung ist das Auszugsdatum.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="ausweisdokument" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zu Ausweisdokumenten mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="ausweisdokument.rueckmelder"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.AusweisdokumentOhneSperrinformationen">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Ausweisdokument aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ausweisdokument.auswerter"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.Ausweisdokument">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Ausweisdokument, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="geschlecht" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zum Geschlechtseintrag mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="geschlecht.rueckmelder"
+                                                minOccurs="0"
+                                                type="xmeld:type.Geschlechtseintrag">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Geschlechtseintrag aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geschlecht.auswerter"
+                                                minOccurs="0"
+                                                type="xmeld:type.Geschlechtseintrag">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Geschlechtseintrag, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="gesetzlichervertreter" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zu gesetzlichen Vertretern mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="gesetzlichervertreter.rueckmelder"
+                                                minOccurs="0"
+                                                maxOccurs="5"
+                                                type="xmeld:type.GesetzlicherVertreterOhneSterbedatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum gesetzlichen Vertreter aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="gesetzlichervertreter.auswerter"
+                                                minOccurs="0"
+                                                maxOccurs="5"
+                                                type="xmeld:type.GesetzlicherVertreterOhneSterbedatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum gesetzlichen Vertreter, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="auskunftssperre" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zu Auskunftssperren mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="auskunftssperre.rueckmelder"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.Auskunftssperre">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Auskunftssperre aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="auskunftssperre.auswerter"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.Auskunftssperre">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Auskunftssperre, wie im Melderegister gespeichert, mitgeteilt, sofern deren Befristungsdatum nicht in der Vergangenheit liegt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="partner" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zu Ehegatten oder Lebenspartnern mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="partner.rueckmelder"
+                                                minOccurs="0"
+                                                type="xmeld:type.PartnerOhneSterbedatumUndVBM">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Ehegatten oder Lebenspartner aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="partner.auswerter"
+                                                minOccurs="0"
+                                                type="xmeld:type.PartnerOhneSterbedatumUndVBM">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Ehegatten oder Lebenspartner, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="kinder" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zu Informationen zu Kindern mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="kind.rueckmelder"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.KindOhneSterbedatumUndVBM">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Kind aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="kind.auswerter"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.KindOhneSterbedatumUndVBM">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Kind, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="geburtseintragOhneGeburtsurkunde" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass zur betroffenen Person ein Eintrag im Geburtenregister erfolgt ist, aber keine Geburtsurkunde ausgestellt wurde.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="geburtseintragOhneGeburtsurkunde.rueckmelder"
+                                                minOccurs="0"
+                                                fixed="true"
+                                                type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Vorliegen eines Geburtseintrags ohne Geburtsurkunde aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtseintragOhneGeburtsurkunde.auswerter"
+                                                minOccurs="0"
+                                                fixed="true"
+                                                type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zum Vorliegen eines Geburtseintrags ohne Geburtsurkunde, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="idNr" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Abweichungen zur Identifikationsnummer nach § 139b AO mitgeteilt. Die Identifikationsnummer nach § 139b AO wird im Element idNr.rueckmelder übermittelt, sofern sie in der ursprünglichen Nachricht 0201, Nachricht 0202 oder Nachricht 0206 enthalten war und ein davon abweichender Stand im Melderegister gespeichert ist. In diesem Fall ist die abweichende Identifikationsnummer nach § 139b AO im Element idNr.auswerter zu übermitteln. Die Identifikationsnummer nach § 139b AO wird im Element idNr.auswerter übermittelt, wenn die ursprüngliche Nachricht 0201, Nachricht 0202 oder Nachricht 0206 keine Identifikationsnummer nach § 139b AO enthält. In diesem Fall ist das Element idNr.rueckmelder nicht zu übermitteln. Ausnahmen dieser Regeln werden in den Prozessbeschreibungen geregelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="idNr.rueckmelder"
+                                                minOccurs="0"
+                                                type="xiid:Identifikationsnummer">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Identifikationsnummer nach § 139b AO aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="idNr.auswerter"
+                                                minOccurs="0"
+                                                type="xiid:Identifikationsnummer">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Identifikationsnummer nach § 139b AO, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="passversagung" minOccurs="0">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Abweichungen zur Passversagung mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="passversagung.rueckmelder"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.PassversagungMitNachweis">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Passversagung aus der Rückmeldenachricht mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="passversagung.auswerter"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.PassversagungMitNachweis">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Passversagung, wie im Melderegister gespeichert, mitgeteilt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der die Rückmeldung mitgeteilt wurde. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0201, 0202 oder 0206 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsereignis" type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur Identifikation des Ereignisses aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="rueckmeldung.unplausibel.0204">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 1 und 2 BMG, § 7 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung unplausibler Meldeverhältnisse</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde, den Leser der Nachricht über rueckweisung der rueckmeldung durch Feststellung unplausibler Meldeverhältnisse. Diese Nachricht wird versendet von der Meldebehörde im Falle einer rueckweisung aufgrund fehlender identifikation (Prozess siehe ), wegzugs_mb im Falle einer rueckweisung eines zuzugs_inland (Prozess siehe ), der nebenwohnungs_mb im Falle einer rueckweisung eines zuzugs_inland (Prozess siehe ), der hauptwohnungs_mb oder der alleinigewohnungs_mb im Falle einer rueckweisung eines bezugs_nebenwohnung (Prozess siehe ), der letzten_inlands_mb im Falle einer rueckweisung eines wiederzuzugs_ausland (Prozess siehe ), wegzugs_mb im Falle einer rueckweisung eines fortschreibung.wohnungsstatuswechsels (Prozess siehe), der nebenwohnungs_mb im Falle einer rueckweisung eines fortschreibung.wohnungsstatuswechsels (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.rueckmeldungsauswertung">
+               <xs:sequence>
+                  <xs:element name="grund" type="xmeld:Code.Melderegister.Abweichung">
+                     <xs:annotation>
+                        <xs:documentation>In diesem Element wird der Grund für die aus Sicht der rückweisenden Meldebehörde nicht plausible Rückmeldung mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleAnschrift"
+                              minOccurs="0"
+                              type="xmeld:type.AnschriftMelderechtOhneAusland">
+                     <xs:annotation>
+                        <xs:documentation>Sofern die betroffene Person bereits im Inland verzogen ist, teilt die Wegzugsmeldebehörde hier die Anschrift mit, in die sie laut Rückmeldung verzogen ist (im Fall von Schlüssel 4 im Element grund), oder in der sie mit alleiniger oder Hauptwohnung gemeldet ist (im Fall von Schlüssel 5 im Element grund).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="auszugsdatum" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element kann das Auszugsdatum übermittelt werden. Sofern die betroffene Person in das Inland verzogen ist (Schlüssel 4 im Element grund), wird mit diesem Element zwingend das Datum des Auszugs übermittelt. Sofern die betroffene Person in das Ausland verzogen ist (Schlüssel 2 im Element grund), ist die Übermittlung des Auszugsdatums optional.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tod" minOccurs="0" type="xmeld:type.Tod">
+                     <xs:annotation>
+                        <xs:documentation>Sofern die betroffene Person verstorben ist, werden hier die Sterbedaten eingetragen (Schlüssel 1 im Element grund).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der die unplausible Rückmeldung mitgeteilt wurde. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0201, 0202 oder 0206 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsereignis" type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur Identifikation des Ereignisses aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="rueckmeldung.statuswechsel.0206">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 1 und 2 BMG, § 6 1. BMeldDÜV</rechtsgrundlage>
+            <title>Rückmeldung (Wohnungsstatuswechsel)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde, in der der fortschreibung.wohnungsstatuswechsel erfolgt ist, die Leser der Nachricht über die Tatsache und die Details zum fortschreibung.wohnungsstatuswechsel der betroffenen_personen. Diese Nachricht wird versendet von der neuen Meldebehörde der Hauptwohnung im Falle eines Wohnungsstatuswechsels mit Wechsel des Zuständigkeitsbereichs (Prozess siehe ), vermeintlichen wegzugs_mb im Falle einer ruecknahme eines fortschreibung.wohnungsstatuswechsel (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="umzugsverband"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.rueckmeldung.umzugsverband">
+                     <xs:annotation>
+                        <xs:documentation>Da die Nachricht 0206 als Sammelnachricht definiert ist, ist der fortschreibung.wohnungsstatuswechsel von 1 bis n Umzugsverbänden mit einer einzigen Nachricht möglich.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="rueckmeldung.anmeldungauswaertigereglp.0221">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 BMG, § 6 1. BMeldDÜV</rechtsgrundlage>
+            <title>partnerrueckmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die zuzugs_mb Daten über die betroffene_person und über deren in der partner_mb gemeldeten partner an die partner_mb. Diese Nachricht wird versendet von der zuzugs_mb im Falle eines zuzugs_inland (Prozess siehe ) oder der zuzugs_mb im Falle eines erstmaligen_zuzugs_ausland (Prozess siehe ) oder der zuzugs_mb im Falle eines wiederzuzugs_ausland (Prozess siehe ) oder der neuen hauptwohnungs_mb im Falle eines fortschreibung.wohnungsstatuswechsels mit Wechsel des Zuständigkeitsbereichs (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="personmitauswaertigempartner"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.Partnerrueckmeldung.PersonUndPartner"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="rueckmeldung.auswertungauswaertigereglp.0223">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 BMG, § 7 1. BMeldDÜV</rechtsgrundlage>
+            <title>auswertung_partnerrueckmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht teilt die partner_mb das Ergebnis der auswertung_partnerrueckmeldung mit. Diese Nachricht wird versendet von der partner_mb im Falle eines zuzugs_inland (Prozess siehe ) oder der partner_mb im Falle eines erstmaligen_zuzugs_ausland (Prozess siehe ) oder der partner_mb im Falle eines wiederzuzugs_ausland (Prozess siehe ) oder der partner_mb im Falle eines fortschreibung.wohnungsstatuswechsels mit Wechsel des Zuständigkeitsbereichs (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.rueckmeldungsauswertung">
+               <xs:sequence>
+                  <xs:element name="partner.abweichungen"
+                              type="xmeld:type.rueckmeldung.auswertungauswaertigereglp.abweichungen"/>
+                  <xs:element name="personmitauswaertigempartner"
+                              type="xmeld:type.Partnerrueckmeldung.PersonUndPartner">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die durch die zuzugs_mb in der Nachricht 0221 übermittelten Daten zur betroffenen_person und zu deren partner in unverändertem Zustand übermittelt, um eine Zuordnung der Nachricht in der zuzugs_mb zu ermöglichen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der die Partnerrückmeldung mitgeteilt wurde. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0221 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="rueckmeldung.unplausibelauswaertigereglp.0224">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 BMG, § 7 1. BMeldDÜV</rechtsgrundlage>
+            <title>Rückweisung der Partnerrückmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde, den Leser der Nachricht über rueckweisung der partnerrueckmeldung. Diese Nachricht wird versendet von der Meldebehörde im Falle einer Rückweisung einer partnerrueckmeldung aufgrund fehlender identifikation (Prozess siehe ) oder Meldebehörde im Falle einer Rückweisung einer partnerrueckmeldung aufgrund unplausibler Meldeverhältnisse (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.rueckmeldungsauswertung">
+               <xs:sequence>
+                  <xs:element name="grund" type="xmeld:Code.Melderegister.Abweichung">
+                     <xs:annotation>
+                        <xs:documentation>Die Partnermeldebehörde teilt der Zuzugsmeldebehörde den Grund für die aus ihrer Sicht nicht plausible Rückmeldung in diesem Element mit.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="personmitauswaertigempartner"
+                              type="xmeld:type.Partnerrueckmeldung.PersonUndPartner">
+                     <xs:annotation>
+                        <xs:documentation>Hier werden die durch die Zuzugsmeldebehörde in der 0221 übermittelten Daten zur Zuzugsperson und zu deren Partner in unverändertem Zustand übermittelt, um eine Zuordnung der Nachricht in der Zuzugsmeldebehörde zu ermöglichen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleAnschrift"
+                              minOccurs="0"
+                              type="xmeld:type.AnschriftMelderechtOhneAusland">
+                     <xs:annotation>
+                        <xs:documentation>Sofern der Partner bereits verzogen ist, teilt die Meldebehörde die aktuelle Anschrift der betroffenen Person mit. Ist der Partner nur mit Nebenwohnung gemeldet ist, teilt die Meldebehörde die aktuelle Hauptwohnungsanschrift Anschrift der betroffenen Person mit.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der die unplausible Partnerrückmeldung mitgeteilt wurde. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0221 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

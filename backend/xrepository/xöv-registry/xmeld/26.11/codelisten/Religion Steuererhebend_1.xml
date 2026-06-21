@@ -1,0 +1,210 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gc:CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0" xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ http://docs.oasis-open.org/codelist/cs-genericode-1.0/xsd/genericode.xsd http://xoev.de/schemata/genericode/1_0 http://xoev.de/schemata/genericode/1_0/xoev-cl-attributes.xsd">
+  <Annotation>
+    <Description>
+      <xoev-cl:beschreibung>Mit dieser Schlüsseltabelle werden die Schlüssel zur rechtlichen Zugehörigkeit zu einer öffentlich-rechtlichen Religionsgesellschaft gemäß § 3 Abs. 1 Nr. 11 BMG abgebildet. Es ist die in Anlage 2 des DSMeld veröffentlichte Liste 1 zu nutzen.</xoev-cl:beschreibung>
+      <xoev-cl:datumgueltigkeitab>2015-05-01</xoev-cl:datumgueltigkeitab>
+    </Description>
+  </Annotation>
+  <Identification>
+    <ShortName>Religion Steuererhebend</ShortName>
+    <LongName>Codeliste Zugehörigkeit zu einer Steuer erhebenden Religion</LongName>
+    <Version>1</Version>
+    <CanonicalUri>urn:de:dsmeld:schluesseltabelle:religion.steuererhebend</CanonicalUri>
+    <CanonicalVersionUri>urn:de:dsmeld:schluesseltabelle:religion.steuererhebend_1</CanonicalVersionUri>
+    <Agency>
+      <ShortName>KoSIT</ShortName>
+      <LongName>Koordinierungsstelle für IT-Standards</LongName>
+    </Agency>
+  </Identification>
+  <ColumnSet>
+    <Column Id="key" Use="required">
+      <ShortName>key</ShortName>
+      <Data Type="string"/>
+    </Column>
+    <Column Id="name" Use="required">
+      <ShortName>name</ShortName>
+      <Data Type="string"/>
+    </Column>
+    <Key Id="codeKey">
+      <Annotation>
+        <AppInfo>
+          <xoev-cl:xoev-code/>
+        </AppInfo>
+      </Annotation>
+      <ShortName>CodeKey</ShortName>
+      <ColumnRef Ref="key"/>
+    </Key>
+  </ColumnSet>
+  <SimpleCodeList>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>rk</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Römisch-katholisch</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>ak</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Alt-katholisch</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>fa</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Freie Religionsgemeinschaft Alzey</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>fb</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Freireligiöse Landesgemeinde Baden</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>fg</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Freireligiöse Landesgemeinde Pfalz</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>fm</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Freireligiöse Gemeinde Mainz</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>fs</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Frei-religiöse Gemeinde Offenbach</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>--</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>keiner steuererhebenden Religionsgesellschaft angehörend</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>ev</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Evangelisch</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>lt</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Evangelisch-lutherisch</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>rf</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Evangelisch-reformiert</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>fr</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>französisch-reformiert</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>ib</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>israelitische Religionsgemeinschaft Baden	</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>iw</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>israelitische Religionsgemeinschaft Württemberg	</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>isby</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Landesverband der israelitischen Kultusgemeinden in Bayern 	</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>jh</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Jüdische Gemeinde Hamburg	</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>ishe</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Jüdische Gemeinde Frankfurt 	</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>il</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Jüdische Gemeinden im Landesverband Hessen	</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>isnw</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Nordrhein-Westfalen: israelitisch (jüdisch)	</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>isrp</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Jüdische Kultusgemeinden Bad Kreuznach und Koblenz	</SimpleValue>
+      </Value>
+    </Row>
+    <Row>
+      <Value ColumnRef="key">
+        <SimpleValue>issl</SimpleValue>
+      </Value>
+      <Value ColumnRef="name">
+        <SimpleValue>Saarland: israelitisch</SimpleValue>
+      </Value>
+    </Row>
+  </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Int.Behoerdentyp</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Die Codeliste beschreibt die Behördentypen, die Berechtigungen / Verpflichtungen zur Teilnahme an Integrationskursen aussprechen können.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2023-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Textliche Erweiterung in der Beschreibung der Codeliste auf "Berechtigung". Textliche Änderung in Code 3. Neuen Code 4 hinzugefügt.</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>int.behoerdentyp</ShortName>
+      <LongName>Int.Behoerdentyp</LongName>
+      <Version>3</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:int:behoerdentyp</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:int:behoerdentyp_3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ausländerbehörde</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Träger der Grundsicherung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>3</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Träger der Leistungen nach dem AsylbLG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>4</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Bundesamt für Migration und Flüchtlinge</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

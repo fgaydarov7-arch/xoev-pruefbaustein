@@ -1,0 +1,328 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>DSMeld Religion nicht Steuer erhebend (DSMeld-Blatt 1104)</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden die Schlüssel zur rechtlichen Zugehörigkeit zu einer nicht Steuer erhebenden Religionsgesellschaft gemäß § 3 Abs. 1 Nr. 11 BMG abgebildet. Es ist die in Anlage 2 des DSMeld veröffentlichte Liste 2 zu nutzen.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Der Wert des Schlüssels "oa" wurde redaktionell angepasst.</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>religion.nicht.steuererhebend</ShortName>
+      <LongName>DSMeld Religion nicht Steuer erhebend (DSMeld-Blatt 1104)</LongName>
+      <Version>5</Version>
+      <CanonicalUri>urn:de:dsmeld:schluesseltabelle:religion.nicht.steuererhebend</CanonicalUri>
+      <CanonicalVersionUri>urn:de:dsmeld:schluesseltabelle:religion.nicht.steuererhebend_5</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>al</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Selbständige Evangelisch-Lutherische Kirche</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>ap</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Apostelamt Jesu Christi</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>av</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freikirche der Siebenten-Tags-Adventisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>bg</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bund für Geistesfreiheit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>bk</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Evangelische Brüdergemeinde Korntal (außerhalb des Bereichs der Stadt Korntal-Münchingen: EV)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>bw</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Evangelische Brüdergemeinde Wilhelmsdorf (außerhalb des Bereichs der Gemeinde Wilhelmsdorf: EV)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>cg</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Christengemeinschaft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>cw</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Christliche Wissenschaft, Christian Science</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>dk</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Dänische Kirche in Schleswig</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>ea</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>evangelisch-altreformiert</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>ef</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Evangelische Freikirche</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>em</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Evangelisch-methodistisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>fd</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>(übrige) Freireligiöse Gemeinden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>fw</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Freireligiöse Landesgemeinde Württemberg</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>go</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Griechisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>ha</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Heilsarmee</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>hb</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Evangelische Brüder-Unität – Herrnhuter Brüdergemeine (falls nicht gleichzeitig Mitglied der Evang. Landeskirche)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>hgnw</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Hinduistische Gemeinde Nordrhein-Westfalen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>ishb</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Jüdische Gemeinde im Lande Bremen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>ismv</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Mecklenburg-Vorpommern: Jüdische Gemeinde (israelitisch)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>issh</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Schleswig- Holstein: israelitisch und sonstige jüdische Religionsgemeinschaften</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>isth</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Thüringen: Jüdische Landesgemeinde</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>js</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Landesverband Sachsen der jüdischen Gemeinden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>jz</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Jehovas Zeugen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>lb</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>evangelisch-lutherische Kirche in Baden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>mt</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Mennoniten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>na</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Neuapostolische Kirche</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>oa</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ohne Angabe einer öffentlich-rechtlichen Religionsgesellschaft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>pf</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pfingstgemeinden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>rg</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>evangelisch-reformierte Gemeinden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>ro</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Russisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>rx</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rumänisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>so</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Hugenotten, Kirche Jesu Christi der Heiligen der letzten Tage (Mormonen), Johannische Kirche, sonstige</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>sx</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erzdiözese der Syrisch-Orthodoxen Kirche von Antiochien in Deutschland</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>un</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Unitarier</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

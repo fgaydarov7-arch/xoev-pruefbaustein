@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:simpleType name="type.Doktorgrad">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Doktorgrad</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp erlaubt die Angabe von Doktorgraden. Es sind nur diejenigen Doktorgrade anzugeben, die in Pässe eingetragen werden dürfen. Sind mehrere Doktorgrade anzugeben, so sind sie durch ein Leerzeichen zu trennen.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC"/>
+   </xs:simpleType>
+   <xs:simpleType name="type.bzst.konfliktkennzeichen">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für schemakonforme Konfliktkennzeichen im BZSt-Kontext</title>
+         </xs:appinfo>
+         <xs:documentation>Durch die Verwendung dieses Datentyps wird gewährleistet, dass nur noch schemakonforme Werte für das BZSt-Konfliktkennzeichen verwendet werden.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:pattern value="\d{9}"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

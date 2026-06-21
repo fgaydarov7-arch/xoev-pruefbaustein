@@ -1,0 +1,952 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Religion</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Beschreibt die Religionszugehörigkeit, wie sie im Asylverfahren verwendet wird.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Beschreibt die Religionszugehörigkeit, wie sie im Asylverfahren verwendet wird.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2026-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Folgende Codes hinzugefügt: A29, J04, S19
+</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>religion</ShortName>
+      <LongName>Religion</LongName>
+      <Version>4</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:religion</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:religion_4</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Adventisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Ahmadiyya</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Schiiten / Aleviten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Naturreligionen / Animisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Arabisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Armenisch-orthodox (gregorianisch)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Assyrisch-evangelisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Assyrisch-katholisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Attabligh Oua Daoua Ila Allah</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A18</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen / Aum-Sekte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A19</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen / Aramäer-Religion</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A20</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Armenisch-katholisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A21</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Armenisch-protestantisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A22</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Anglikanische Kirchengemeinschaft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A23</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Ali Ilahi</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A24</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Russisch-orthodox / Altgläubige</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A25</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Orientalisch-katholisch / Armenisch-uniert</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A26</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Alt-katholisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A27</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Adventisten / Adventisten des 7. Tages</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A28</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Schiiten / Alawiten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>A29</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ahl-e-haqq / Yaresan / Kakai</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>B02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Baptisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>B03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Baha´i</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>B06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Buddhismus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>B07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Buddhismus / Buddh. Glaubensgemeinschaften/Vereinigungen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>B08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Batini</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>B09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Baktaschi</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>B10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Anglikanische Kirchengemeinschaft / Board Church</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>C01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Buddhismus / Buddh. Glaubensgemeinschaften/Vereinigungen / Cao Dai</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>C02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Chaldäisch-katholisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>C04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>C06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>D01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Hinduismus / Hind. Glaubensgemeinschaften/Vereinigungen / Sikhismus / Dal Khalsa</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>D03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen / Dini ya Musambwa</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>D04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Djamaa</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>D05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Schiiten / Drusen (Druzen)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>D06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Russisch-orthodox / Durchoborzen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>E03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>E04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Evangelisch-Uniert</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>G02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Griechisch-katholisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>G03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Griechisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>H01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Haidi Nursi</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>H02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen / Hanifi</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>H05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Hinduismus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>H06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Hinduismus / Hind. Glaubensgemeinschaften/Vereinigungen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>H07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen / Hare-Krishna</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>H08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Anglikanische Kirchengemeinschaft / High Church</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>I03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Schiiten / Ismailiten (Siebener-Schiiten)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>I04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>I05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>I06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Schiiten / Ithne´-aschari (Zwölfer-Schiiten)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>J01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Hinduismus / Hind. Glaubensgemeinschaften/Vereinigungen / Jainismus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>J02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Jamia Rashidia</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>J03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Zarathustra-Anhänger / Jesiden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>J04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Jesus Only</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>J05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Judentum</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>J06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Judentum / Jüd. Glaubensgemeinschaften/Vereinigungen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>K01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Kadiri Tarikati</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>K02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>K03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Sufi / Khatmiya-Sekte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>K04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Kimbanguisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>K05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Konfuzianer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>K06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Koptisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>K07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Pfingstbewegung / Kosciol Zielono Swiatkowych</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>K99</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Konfessionslos</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>L02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Lutherisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>L03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Buddhismus / Mahayana-Buddhismus / Lamaismus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>L04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Anglikanische Kirchengemeinschaft / Low Church</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Lutherisch / Mekane-Jesuiten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Methodisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Moslembruderschaft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Mormonen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Buddhismus / Mahayana-Buddhismus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen / Mun-Sekte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen / Mandäer-Religion</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Mennoniten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Russisch-orthodox / Molokanen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>M14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Orientalisch-katholisch / Maroniten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>N01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Naksibendis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>N02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Nestorianer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>N04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Nurculuk</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>N05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Naturreligionen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>N06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Hinduismus / Hind. Glaubensgemeinschaften/Vereinigungen / Sikhismus / Nirankari</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>O02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Pfingstbewegung / Open Door Assembly of Good Church</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>O04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>O05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Orientalisch-katholisch (unierten)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>P01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Pfingstbewegung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>P02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Presbyterianisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>R01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Römisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>R02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Russisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>R03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Römisch-katholisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Schiiten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Hinduismus / Hind. Glaubensgemeinschaften/Vereinigungen / Sikhismus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Sunniten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Katholische Christen / Syrisch-katholisch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Syrisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Süleymancilar</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Naturreligionen / Spiritisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Naturreligionen / Schamaismus</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Glaubensgemeinschaften/Vereinigungen / Scientology</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Serbisch-orthodox</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Orthodoxe Christen / Syrisch-orthodoxe Kirche d. Ostens</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S18</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Islam. Glaubensgemeinschaften/Vereinigungen / Sufi (Sufismus)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S19</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Schabak</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>S99</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>T02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Tokoisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>U01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Protestantische Christen / Unitarier</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>U99</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Unbekannt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>V01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Naturreligionen / Voodoo-Anhänger</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>Z01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Zarathustra-Anhänger</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>Z02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Christentum / Christl. Glaubensgemeinschaften/Vereinigungen / Zeugen Jehovas</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>Z06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Islam / Schiiten / Zaiditen</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

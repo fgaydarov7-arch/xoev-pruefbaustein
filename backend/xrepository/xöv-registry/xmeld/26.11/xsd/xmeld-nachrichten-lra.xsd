@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+         <title>Datenübermittlung an die Landesrundfunkanstalten</title>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:complexType name="type.LRA.Person.Bestandsdatenlieferung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Bestandsdatensatz der betroffenen Person für die Übermittlung an die Landesrundfunkanstalten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Informationen zur Person für die Bestandsdatenlieferung an die Landesrundfunkanstalten abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.lra.person">
+            <xs:sequence>
+               <xs:element name="familienstand" type="xmeld:Code.Familienstand">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Familienstand der betroffenen Person übermittelt (siehe DSMeld-Blatt 1401).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="aktuelleWohnung"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.LRA.WohnungOhneAuszugsdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die aktuelle Wohnung der betroffenen Person übermittelt. Es sind alle aktuellen Wohnungen (sowohl lokale als auch auswärtige) der betroffenen Person zu berücksichtigen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="letzteFruehereWohnung"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.LRA.WohnungOhneAuszugsdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die letzte frühere Wohnung der betroffenen Person übermittelt. Gemeint ist von den früheren Wohnungen diejenige mit dem jüngsten Auszugsdatum. Dabei kann es sich um die letzte frühere Wohnung innerhalb des Zuständigkeitsbereichs der Meldebehörde oder die letzte Wohnung außerhalb handeln. Sollte es mehrere Wohnungen mit identischem letzten Auszugsdatum geben, so sind alle Wohnungen mit diesem Auszugsdatum zu übermitteln.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.LRA.Wohnung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Wohnungsinformationen der gemeldeten Person</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zur Wohnung im Kontext der Datenübermittlung an die Landesrundfunkanstalten abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.Wohnung">
+            <xs:sequence>
+               <xs:element name="anschrift" type="xmeld:type.AnschriftMelderechtMitSperrvermerk"/>
+               <xs:element name="datumDesAuszugs"
+                           minOccurs="0"
+                           type="xida:TeilbekanntesDatumMitUnbekannt">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <implementationHint>Der DSMeld erlaubt für dieses Datum keine nur teilweise bekannte oder unbekannte Angabe eines Auszugsdatums. Die Möglichkeit der Angabe eines teilweise bekannten oder unbekannten Datums für inaktuelle Wohnungen, zu denen das Auszugsdatum fehlt oder nur nicht vollständig vorliegt, wird in XMeld aber geschaffen, da in der Praxis nicht immer ein vollständiges Datum vorliegt.</implementationHint>
+                     </xs:appinfo>
+                     <xs:documentation>Mit diesem Element wird das Datum des Auszugs aus der Wohnung übermittelt. Besteht nach dem Auszug aus der Wohnung keine Wohnung mehr im Zuständigkeitsbereich der Meldebehörde, so ist das Auszugsdatum identisch mit dem Wegzugsdatum aus dem Zuständigkeitsbereich der Meldebehörde (siehe auch DSMeld-Blatt 1306).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumDesBeziehens"
+                           minOccurs="0"
+                           type="xida:TagesdatumMitUnbekannt">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum des Beziehens der Wohnung übermittelt; vgl. Blatt 1301.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="statusderwohnung"
+                           minOccurs="0"
+                           type="xmeld:Code.Wohnungsstatus">
+                  <xs:annotation>
+                     <xs:documentation>Es ist anzugeben, ob es sich bei der Wohnung um die alleinige bzw. die Haupt- oder eine Nebenwohnung handelt. Da in der Regel beim Wiederzuzug aus dem Ausland der Status der letzten Inlandswohnung nicht bekannt ist, muss dieser nicht übermittelt werden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="artderwohnung" minOccurs="0" type="xmeld:Code.Wohnungsart">
+                  <xs:annotation>
+                     <xs:documentation>Die Art der Wohnung; vgl. Blatt 1213a. Einzutragen bei Wohnungen, die sich außerhalb des Zuständigkeitsbereichs der Meldebehörde befinden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.LRA.WohnungOhneAuszugsdatum">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Wohnungsinformationen der gemeldeten Person (ohne Auszugsdatum)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zur Wohnung im Kontext der Datenübermittlung an die Landesrundfunkanstalten abgebildet, in denen kein Auszugsdatum enthalten sein darf.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.LRA.Wohnung">
+            <xs:sequence>
+               <xs:element name="anschrift" type="xmeld:type.AnschriftMelderechtMitSperrvermerk"/>
+               <xs:element name="datumDesBeziehens"
+                           minOccurs="0"
+                           type="xida:TagesdatumMitUnbekannt">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum des Beziehens der Wohnung übermittelt; vgl. Blatt 1301.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="statusderwohnung"
+                           minOccurs="0"
+                           type="xmeld:Code.Wohnungsstatus">
+                  <xs:annotation>
+                     <xs:documentation>Es ist anzugeben, ob es sich bei der Wohnung um die alleinige bzw. die Haupt- oder eine Nebenwohnung handelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="artderwohnung" minOccurs="0" type="xmeld:Code.Wohnungsart">
+                  <xs:annotation>
+                     <xs:documentation>Die Art der Wohnung; vgl. Blatt 1213a. Einzutragen bei Wohnungen, die sich außerhalb des Zuständigkeitsbereichs der Meldebehörde befinden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.lra.identifikation.person">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Einheitliche Struktur für die Identifikation einer Person bei der Datenübermittlung an die lra</title>
+         </xs:appinfo>
+         <xs:documentation>Durch die hier übermittelten Daten soll die lra in die Lage versetzt werden, eine eindeutige Identifikation des Betroffenen auf Basis der im eigenen Register vorliegenden Daten vorzunehmen. Bei Änderungsmitteilungen enthält diese Struktur die Personendaten vor Änderung (alter Datenzustand), während im Nutzdatenblock der jeweiligen Nachricht die neuen Daten nach Änderung enthalten sind. Zu Änderungsmitteilungen zählt auch die Korrektur der unvollständig oder unrichtig übermittelten Daten. Dieser Typ wird nur als Hilfstyp benötigt, da man mit den Mitteln von XML Schema nicht in einem Schritt eine Einschränkung und eine Erweiterung realisieren kann. Er ist Basis des Typs type.lra.identifikation.personanschrift, der als konkreter Identifikationstyp verwendet wird.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.lra.person">
+            <xs:sequence>
+               <xs:element name="familienname.unstrukturiert"
+                           type="xmeld:type.FamiliennameUnstrukturiert">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Familienname einer Person übermittelt (siehe DSMeld-Blatt 0101a). Wenn es sich bei dem Namen um einen Blocknamen handelt, wird der vollständige Name als Nachname der Person übermittelt, während für den Vornamen statt einer Zeichenkette das Kindelement nichtVorhanden verwendet wird, um auszudrücken, dass die Person zu Recht keinen Vornamen führt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="frueherer.familienname.unstrukturiert"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der frühere Familienname einer Person übermittelt (siehe DSMeld-Blatt 0203a). Die Änderung eines Geburtsnamens durch Adoption wird nicht als Namensänderung behandelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="vornamen" type="xmeld:type.Vornamen">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Vornamen einer Person übermittelt (siehe DSMeld-Blatt 0301).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="gebraeuchlicherVorname"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der gebräuchliche Vorname der betroffenen Person übermittelt (siehe DSMeld-Blatt 0302).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="fruehereVornamen"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Es sind die Vornamen anzugeben, die der Einwohner vor Änderung des Vornamens (falls es eine solche gegeben hat) geführt hat.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="geburtsdatum" type="xmeld:type.Geburtsdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Geburtsdatum der betroffenen Person übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.lra.identifikation.personanschrift">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Einheitliche Struktur für die Identifikation einer Person bei der Datenübermittlung an die lra unter Berücksichtigung ihrer Anschrift</title>
+         </xs:appinfo>
+         <xs:documentation>Dies ist der Identifikationstyp, der bei An- und Abmeldungen sowie in Sterbefällen zu verwenden ist, da er neben den persönlichen Daten auch Informationen zur Anschrift des Betroffenen enthält. Durch die hier übermittelten Daten soll die lra in die Lage versetzt werden, eine eindeutige Identifikation des Betroffenen auf Basis der im eigenen Register vorliegenden Daten vorzunehmen. Bei Änderungsmitteilungen enthält diese Struktur die Personendaten inkl. der Anschrift vor Änderung (alter Datenzustand), während im Nutzdatenblock der jeweiligen Nachricht die neuen Daten nach Änderung enthalten sind. Die Übermittlung der Kindelemente richtet sich nach Landesrecht.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.lra.identifikation.person">
+            <xs:sequence>
+               <xs:element name="geburtsname.unstrukturiert"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Geburtsname einer Person übermittelt (siehe DSMeld-Blatt 0201a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="anschrift" type="xmeld:type.AnschriftMelderecht">
+                  <xs:annotation>
+                     <xs:documentation>Hier soll die Anschrift vor Änderung eingetragen werden. Ist eine bisherige Wohnung bekannt, ist also diese einzutragen; ist das nicht der Fall, dann ersatzweise die aktuelle Wohnung. Von der Anschrift müssen genau die Felder gemeindeschluessel (dsm-Feld 1201) postleitzahl (dsm-Feld 1202) wohnort (dsm-Feld 1203) wohnortfrueherergemeindename (dsm-Feld 1204) strasse (dsm-Feld 1205) hausnummer (dsm-Feld 1206) hausnummerbuchstabezusatzziffer (dsm-Feld 1208) teilnummerderhausnummer (dsm-Feld 1209) stockwerkswohnungsnummer (dsm-Feld 1210) zusatzangaben (dsm-Feld 1211) übermittelt werden, soweit vorhanden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.lra.person">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Basisdatentyp zur gemeldeten Person</title>
+         </xs:appinfo>
+         <xs:documentation>Dies sind die Basisdaten zur gemeldeten Person. Dieser Datentyp wird als Basis für die Personendaten der jeweiligen Nachricht an die lraen verwendet.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienname.unstrukturiert"
+                     type="xmeld:type.FamiliennameUnstrukturiert">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Familienname einer Person übermittelt (siehe DSMeld-Blatt 0101a). Wenn es sich bei dem Namen um einen Blocknamen handelt, wird der vollständige Name als Nachname der Person übermittelt, während für den Vornamen statt einer Zeichenkette das Kindelement nichtVorhanden verwendet wird, um auszudrücken, dass die Person zu Recht keinen Vornamen führt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="frueherer.familienname.unstrukturiert"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der frühere Familienname einer Person übermittelt (siehe DSMeld-Blatt 0203a). Die Änderung eines Geburtsnamens durch Adoption wird nicht als Namensänderung behandelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vornamen" type="xmeld:type.Vornamen">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Vornamen einer Person übermittelt (siehe DSMeld-Blatt 0301).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="gebraeuchlicherVorname"
+                     minOccurs="0"
+                     type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der gebräuchliche Vorname der betroffenen Person übermittelt (siehe DSMeld-Blatt 0302).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fruehereVornamen"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Es sind die Vornamen anzugeben, die der Einwohner vor Änderung des Vornamens (falls es eine solche gegeben hat) geführt hat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="doktorgrad" minOccurs="0" type="xmeld:type.Doktorgrad"/>
+         <xs:element name="geburtsdatum" type="xmeld:type.Geburtsdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Geburtsdatum der betroffenen Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.lra.person.1400">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für Personendaten in Nachricht lra.aenderung.1400</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Container umfasst alle Daten genau einer Person, die im Rahmen einer Änderungsmitteilung an die lra mitzuteilen sind. Die Übermittlung der Kindelemente richtet sich nach dem jeweiligen Landesrecht. Im Sterbefall wird die letzte Wohnung des Verstorbenen als aktuelle Wohnung übermittelt, da kein Auszug vorliegt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.lra.person">
+            <xs:sequence>
+               <xs:element name="geburtsname.unstrukturiert"
+                           minOccurs="0"
+                           type="xmeld:type.FamiliennameUnstrukturiert">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Geburtsname einer Person übermittelt (siehe DSMeld-Blatt 0201a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="familienstand" minOccurs="0">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element ist als CHOICE definiert, da entweder der Familienstand oder eine Information über das Verheiratetsein oder eine Information über eine Verpartnerung mitgeteilt wird. In welcher Ausprägung das Kindelement mitgeteilt werden darf, ist abhängig vom jeweiligen Landesrecht.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element name="familienstand" type="xmeld:Code.Familienstand">
+                           <xs:annotation>
+                              <xs:documentation>Es ist der personenstandsrechtliche Familienstand anzugeben (dsm-Blatt 1401).</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                        <xs:element name="verheiratet" type="xs:boolean">
+                           <xs:annotation>
+                              <xs:documentation>Dieses Flag ist true, wenn der Betroffene verheiratet ist. In allen anderen Fällen ist false mitzuteilen.</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                        <xs:element name="verpartnert" type="xs:boolean">
+                           <xs:annotation>
+                              <xs:documentation>Dieses Flag ist true, wenn der Betroffene verheiratet ist oder in einer Lebenspartnerschaft lebt. In allen anderen Fällen ist false mitzuteilen.</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="aktuelle.wohnung"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.LRA.WohnungOhneAuszugsdatum">
+                  <xs:annotation>
+                     <xs:documentation>Hier werden alle gespeicherten aktuellen Wohnungen (sowohl lokale als auch auswärtige) der betroffenen Person eingetragen. Im Zusammenhang mit einem Sterbefall werden hier alle am Sterbetag aktuellen Wohnungen des Verstorbenen übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="letzte.fruehere.wohnung"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.LRA.Wohnung">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die letzte frühere Wohnung der betroffenen Person, das ist von den früheren Wohnungen diejenige mit dem jüngsten Auszugsdatum, übermittelt. Dabei kann es sich um die letzte frühere Wohnung innerhalb des Zuständigkeitsbereichs der Meldebehörde oder die letzte Wohnung außerhalb handeln. Sollte es mehrere Wohnungen mit identischem letzten Auszugsdatum geben, so sind alle Wohnungen mit diesem Auszugsdatum zu übermitteln.Im Falle eines Wiederzuzugs aus dem Ausland ist diesem Element mit der letzten früheren Inlandwohnung der betroffenen Person zu befüllen. Bei einem erstmaligen Zuzug aus dem Ausland wird, je nach Landesrecht, entweder der Zuzugsstaat im Element staat oder das Flag zurechtnichtuebermittelt übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="sterbetag" minOccurs="0" type="xmeld:type.Sterbetag">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum des Sterbetages übermittelt. Ist im Sterbeeintrag für den Zeitpunkt des Todes ein Zeitraum eingetragen (Nr. 31.2 der Allgemeinen Verwaltungsvorschrift zum Personenstandsgesetz (PStG-VwV) in der jeweils gültigen Fassung), so ist hier das zweite (spätere) Datum anzugeben. Ggf. ist der Zeitpunkt des Todes, einer Todeserklärung oder einer gerichtlichen Feststellung der Todeszeit anzugeben.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:element name="lra.aenderung.1400">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Landesrundfunkanstalten (dbs:490010020000)</leser>
+            <rechtsgrundlage>landesrechtliche Regelungen</rechtsgrundlage>
+            <title>Änderungsnachricht der Meldebehörde an die lra</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde die Landesrundfunkanstalt über relevante Änderungen bei den Daten der betroffenen Person.Die Nachricht ist bei An- und Abmeldungen, im Sterbefall sowie den jeweiligen Korrekturen zu übermitteln. Diese Nachricht wird versendet von der Zuzugsmeldebehörde im Falle eines zuzugs_inland (Prozess siehe ), Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle eines umzugs (Prozess siehe ), Meldebehörde der Hauptwohnung im Falle eines bezugs_nebenwohnung innerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ), nebenwohnungs_mb im Falle eines bezugs_nebenwohnung außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ), Zuzugsmeldebehörde im Falle eines erstmaligen_zuzugs_ausland (Prozess siehe ), Zuzugsmeldebehörde im Falle eines wiederzuzugs_ausland (Prozess siehe ), alleinigewohnungs_mb im Falle eines wegzug_ausland (Prozess siehe ), alleinigewohnungs_mb im Falle des wegzugs_unbekannt (Prozess siehe ), nebenwohnungs_mb im Falle der aufgabe_nebenwohnung (Prozess siehe ) oder Meldebehörde der Hauptwohnung oderMeldebehörde der alleinigen Wohnung im Falle einer Fortschreibung von Namen und Doktorgraden (Prozess siehe ) Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle einer Fortschreibung von Geburtsdaten (Prozess siehe ) Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle einer Fortschreibung von Daten zum Geschlechtseintrag und zu den Vornamen nach § 2 SBGG (Prozess siehe ) Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle einer Fortschreibung von Daten zur Anschrift (Prozess siehe ) Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle einer Fortschreibung von Daten zum Familienstand (Prozess siehe ) der für die Hauptwohnung oder alleinige Wohnung zuständigen Meldebehörde im Falle eines fortschreibung.sterbefalls (Prozess siehe ) Meldebehörde, die den ursprünglichen Anlass übermittelt hat im Falle einer ruecknahme (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="aenderungsdatensatz">
+                     <xs:annotation>
+                        <xs:documentation>Für jede betroffene Person, zu der es eine relevante Änderung gegeben hat, wird ein Änderungsdatensatz übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="anlass" type="xmeld:Code.LRA.Aenderung.Anlass">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element ist zu übermitteln, aus welchem Anlass die Übermittlung der Daten des Betroffenen an die lra erfolgt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="identifikation.betroffener"
+                                       type="xmeld:type.lra.identifikation.personanschrift"/>
+                           <xs:element name="bruttodaten" type="xmeld:type.lra.person.1400"/>
+                           <xs:element name="identifikation.ereignis"
+                                       type="xmeld:type.Identifikation.Ereignis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="lra.bestandsdatenlieferung.1499">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Landesrundfunkanstalten (dbs:490010020000)</leser>
+            <rechtsgrundlage>§ 11 Abs. 5 Satz 1 RBStV</rechtsgrundlage>
+            <title>LRA-Bestandsdatenlieferungsmitteilung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht liefert die Meldebehörde die Bestandsdaten an die Landesrundfunkanstalt. Diese Nachricht wird versendet von der hauptwohnungs_mb oder alleinigewohnungs_mb oder nebenwohnungs_mb im Falle einer bestandsdatenlieferung und quittierung (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="paketierung" type="xmeld:type.paketierung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Paketierungsinformationen zur Nachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bestandsdatensatz" minOccurs="0" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Bestandsdatensatz der betroffenen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="person" type="xmeld:type.LRA.Person.Bestandsdatenlieferung">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten der betroffenen Person übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="identifikation.ereignis"
+                                       type="xmeld:type.Identifikation.Ereignis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind. Im Rahmen von Bestandsdatenlieferungen ist im Element ereignis.zeitpunkt der Zeitpunkt des Datenabzugs zum Stichtag zu verwenden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

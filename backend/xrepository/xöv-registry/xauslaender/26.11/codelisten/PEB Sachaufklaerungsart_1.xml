@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>PEB Sachaufklaerungsart</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Codeliste wird die ID der Sachaufklärung übermittelt.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Mit dieser Codeliste wird die ID der Sachaufklärung übermittelt.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2026-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>peb.sachaufklaerungsart</ShortName>
+      <LongName>PEB Sachaufklaerungsart</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:bamf:codeliste:peb.sachaufklaerungsart</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:bamf:codeliste:peb.sachaufklaerungsart_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>BAMF</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Vor-Ort-Prüfung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Personenfeststellungsverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Recherche</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Visa-Recherche</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sicherheitsüberprüfung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Befragung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Übersetzung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>EMLO / EURLO - Anfrage</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Verbalnote</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Botschaftsbesuch/ -kontakt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Datenträgerauswertung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Vertrauensanwalt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>AA/ dt. Botschaft Anfrage</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Eigene Erklärung des Betroffenen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>SIS 3.0</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>OSINT Recherche</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sprachanalyse</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

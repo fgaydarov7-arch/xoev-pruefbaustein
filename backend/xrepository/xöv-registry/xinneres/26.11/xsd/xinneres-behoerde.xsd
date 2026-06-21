@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xibehoerde="http://www.osci.de/xinneres/behoerde/7"
+           xmlns:bn-uq-g2g="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xipa="http://www.osci.de/xinneres/postanschrift/5"
+           targetNamespace="http://www.osci.de/xinneres/behoerde/7"
+           version="7"
+           elementFormDefault="unqualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XInneres-Basismodul</nameLang>
+            <nameKurz>XInneres-Basismodul</nameKurz>
+            <nameTechnisch>xinneres.basismodul</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.basismodul</kennung>
+            <beschreibung>Im Auftrag des AK I hat die PG Standard bisher unter anderem die fachlichen Vorgaben und die Struktur der Meldeanschrift für die Bereiche Ausländer-, Melde- und Personenstandswesen harmonisiert. Der vorliegende Standard XInneres bildet auf technischer Ebene eine Klammer vor den Standards der Innenverwaltung. An dieser Stelle können gemeinsam genutzte Komponenten definiert werden. In der ersten Version von XInneres definiert der Standard die Datentypen für die Darstellung der Meldeanschrift.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>3.0.2</versionXOEVHandbuch>
+            <versionXGenerator>3.2.4</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/postanschrift/5"/>
+   <xs:import schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+              namespace="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="Behoerde.Erreichbar">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Erreichbare Behörde</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp bildet die Angaben zur Identifikation einer Behörde / öffentlichen Stelle in einem Verzeichnisdienst sowie ihrer Erreichbarkeit ab. Eine Behörde im Sinne des Verwaltungsverfahrensgesetzes ist jede Stelle, die Aufgaben der öffentlichen Verwaltung wahrnimmt. Der Datentyp entspricht dem Datentyp BehoerdeType bis auf die Tatsache, dass die Daten zur Erreichbarkeit der Behörde verpflichtend sind.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="bn-uq-g2g:BehoerdeType">
+            <xs:sequence>
+               <xs:element name="verzeichnisdienst" type="bn-uq-g2g:Code.VerzeichnisdienstType">
+                  <xs:annotation>
+                     <xs:documentation>Angabe des Verzeichnisdienstes, in welchem die Behörde / öffentliche Stelle unter der nachfolgend angegebenen Kennung eingetragen ist. Im Kindelement code muss der Code DVDV übermittelt werden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="kennung" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Kindelement enthält den eindeutigen Organisationsschlüssel der Behörde / öffentlichen Stelle innerhalb des Verzeichnisdienstes DVDV. Der Organisationsschlüssel enthält das Präfix (gem. der Codeliste mit der Kennung urn:xoev-de:bund:bmi:bit:codeliste:dvdv.praefix) und die Organisations-ID getrennt durch einen Doppelpunkt, also bspw. psw:01003110. Die für die Organisations-ID zu verwendende Codeliste ergibt sich aus dem Nachrichtenkontext. Zum Beispiel ist bei der Datenübermittlung an ein Standesamt die Codeliste der Standesamtsnummern und somit eine Standesamtsnummer als Organisations-ID zu verwenden. In der Regel stehen die Codelisten im XRepository zur Verfügung. Sie liegen jedoch aufgrund unterschiedlicher Pflegeprozesse nicht immer in der aktuellsten Fassung vor.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element enthält den Namen der Behörde / öffentlichen Stelle.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="erreichbarkeit"
+                           maxOccurs="unbounded"
+                           type="bn-uq-g2g:KommunikationType">
+                  <xs:annotation>
+                     <xs:documentation>In diesem Element werden Angaben zur Erreichbarkeit übermittelt, mit denen die Behörde / öffentliche Stelle über Telefon, E-Mail etc. erreicht werden kann. Diese Angaben können z. B. verwendet werden, um in Einzelfällen Rückfragen zu stellen oder Problemklärungen durchzuführen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="Behoerde.ErreichbarMitAnschrift">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Erreichbare Behörde mit Anschrift</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp bildet die Angaben zur Identifikation einer Behörde / öffentlichen Stelle in einem Verzeichnisdienst sowie ihrer Erreichbarkeit ab. Eine Behörde im Sinne des Verwaltungsverfahrensgesetzes ist jede Stelle, die Aufgaben der öffentlichen Verwaltung wahrnimmt. Der Datentyp entspricht dem Datentyp Behoerde.Erreichbar bis auf die Tatsache, dass die Daten zur Anschrift der Behörde enthalten sind.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xibehoerde:Behoerde.Erreichbar">
+            <xs:sequence>
+               <xs:element name="anschrift" type="xipa:PostalischeInlandsanschrift">
+                  <xs:annotation>
+                     <xs:documentation>Die Anschrift dieser Behörde (für persönliches Erscheinen oder die Zusendung von Dokumenten per Briefpost an die Behörde).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="BehoerdeMitAnschrift">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Behörde mit Anschrift</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp bildet die Angaben zur Identifikation einer Behörde / öffentlichen Stelle in einem Verzeichnisdienst sowie ihrer Erreichbarkeit ab. Eine Behörde im Sinne des Verwaltungsverfahrensgesetzes ist jede Stelle, die Aufgaben der öffentlichen Verwaltung wahrnimmt. Der Datentyp entspricht dem Datentyp BehoerdeType bis auf die Tatsache, dass die Daten zur Anschrift der Behörde enthalten sind. Für die Vorgaben zu den geerbten Strukturen siehe .</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="bn-uq-g2g:BehoerdeType">
+            <xs:sequence>
+               <xs:element name="anschrift"
+                           minOccurs="0"
+                           type="xipa:PostalischeInlandsanschrift">
+                  <xs:annotation>
+                     <xs:documentation>Die Anschrift dieser Behörde (für persönliches Erscheinen oder die Zusendung von Dokumenten per Briefpost an die Behörde).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema>

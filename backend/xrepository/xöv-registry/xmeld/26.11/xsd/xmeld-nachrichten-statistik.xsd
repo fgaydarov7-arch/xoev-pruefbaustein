@@ -1,0 +1,1161 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xicgvz="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           xmlns:xima="http://www.osci.de/xinneres/meldeanschrift/5"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+         <title>Datenübermittlung an die Statistischen Landesämter</title>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3/xinneres-codes-gemeindeverzeichnis.xsd"
+              namespace="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+              namespace="http://www.osci.de/xinneres/geschlecht/1"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/meldeanschrift/5"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="type.Statistik.Anschrift.Inland">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Übermittlung der Inlandsanschrift</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird die Inlandsanschrift einer Statistik relevanten Person abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.AnschriftMelderecht.Inland">
+            <xs:sequence>
+               <xs:element name="gemeindeschluessel"
+                           type="xicgvz:Code.GemeindeVZ.AmtlicherGemeindeschluessel"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <implementationHint>Solange die Aktualität der verwendeten Schlüsseltabelle nicht gegeben ist, wird vollständig auf die Plausibilisierung der listVersionID verzichtet.</implementationHint>
+                     </xs:appinfo>
+                     <xs:documentation>Mit diesem Element wird der vom Statistischen Bundesamt herausgegebene bundeseinheitliche Gemeindeschlüssel der Gemeinde übermittelt, in der die Wohnung liegt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="hausnummer"
+                           minOccurs="0"
+                           type="xima:Meldeanschrift.Hausnummer"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Ziffern einer Hausnummer übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="hausnummerBuchstabeZusatzziffer"
+                           minOccurs="0"
+                           type="xima:Meldeanschrift.HausnummerBuchstabeZusatzziffer"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Es sind die Buchstaben oder die Zusatzziffern zur Hausnummer gemäß der amtlichen Festlegung der Gemeinde zur Hausnummer anzugeben. Beispiel: 124 a, 124 A, 109.5, 135.44, 116/1</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="postleitzahl"
+                           type="xima:Meldeanschrift.Postleitzahl"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die Postleitzahl übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="strasse"
+                           type="xima:Meldeanschrift.Strasse"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Es ist die Bezeichnung der Straße anzugeben. Die Feldlänge ist auf 55 Zeichen beschränkt. Bei Überschreitung einer Länge von 25 Zeichen darf sinnvoll abgekürzt werden. Ist keine Straßenbezeichnung - wohl aber eine Hausnummer - vorhanden, so ist die Zeichenkette Hausnummer anzugeben. Sind weder Straßenbezeichnung noch Hausnummer vorhanden, so ist die Zeichenkette ohne Hausnummer anzugeben.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="wohnort"
+                           type="xima:Meldeanschrift.Wohnort"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Es ist die postalische Wohnortsbezeichnung anzugeben. Die Feldlänge ist auf 40 Zeichen beschränkt. Des Weiteren gelten die Regelungen des DSMeld-Blattes 1203.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Statistik.Anschrift.InlandOhneAGS">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Übermittlung der Inlandsanschrift ohne AGS</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird die Inlandsanschrift einer Statistik relevanten Person ohne den amtlichen Gemeindeschlüssel abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xima:Meldeanschrift">
+            <xs:sequence>
+               <xs:element name="hausnummer"
+                           minOccurs="0"
+                           type="xima:Meldeanschrift.Hausnummer"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Ziffern einer Hausnummer übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="hausnummerBuchstabeZusatzziffer"
+                           minOccurs="0"
+                           type="xima:Meldeanschrift.HausnummerBuchstabeZusatzziffer"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Es sind die Buchstaben oder die Zusatzziffern zur Hausnummer gemäß der amtlichen Festlegung der Gemeinde zur Hausnummer anzugeben. Beispiel: 124 a, 124 A, 109.5, 135.44, 116/1</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="postleitzahl"
+                           type="xima:Meldeanschrift.Postleitzahl"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die Postleitzahl übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="strasse"
+                           type="xima:Meldeanschrift.Strasse"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Es ist die Bezeichnung der Straße anzugeben. Die Feldlänge ist auf 55 Zeichen beschränkt. Bei Überschreitung einer Länge von 25 Zeichen darf sinnvoll abgekürzt werden. Ist keine Straßenbezeichnung - wohl aber eine Hausnummer - vorhanden, so ist die Zeichenkette Hausnummer anzugeben. Sind weder Straßenbezeichnung noch Hausnummer vorhanden, so ist die Zeichenkette ohne Hausnummer anzugeben.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="wohnort"
+                           type="xima:Meldeanschrift.Wohnort"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Es ist die postalische Wohnortsbezeichnung anzugeben. Die Feldlänge ist auf 40 Zeichen beschränkt. Des Weiteren gelten die Regelungen des DSMeld-Blattes 1203.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Statistik.Ausland">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Übermittlung der Auslandsanschrift</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird eine ausländische Anschrift nur durch den entsprechenden Staatenschlüssel abgebildet. Sofern eine ausländische Anschrift unbekannt ist, wird anstelle des Staatenschlüssels das Element ausland.unbekannt übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:choice>
+         <xs:element name="staat" type="xmeld:Code.Gebiet">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Staat übermittelt, aus dem die Statistik relevante Person in das Inland zugezogen ist, oder in den die Statistik relevante Person aus dem Inland weggezogen ist. Aus der Schlüsseltabelle Gebiet sind alle Staaten-Codes zugelassen (Spalte DESTATIS_Schluessel_Staat). Zusätzlich sind von den Gebiets-Codes (Spalte DESTATIS_Schluessel_Gebiet) die beiden Einträge zugelassen: Schlüssel 459 Palästinensische Gebiete und 465 Taiwan. Bei der Abmeldung von Amts wegen ist zusätzlich von den Gebiets-Codes (Spalte DESTATIS_Schluessel_Gebiet) der Ersatzwert 910 für interne Zwecke verwendet (gemäß DSMeld-Blatt 1232) zugelassen, soweit es sich um Bereinigungen von Übererfassungen von Flüchtlingen handelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausland.unbekannt" fixed="true" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass der Wegzugsstaat unbekannt ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="type.Statistik.Kohortenmerkmale">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Kohortenmerkmale in der Korrekturmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die für die Identifikation der von einer Korrektur betroffenen Kohorte wichtigen Kohortenmerkmale abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Geschlecht der Statistik relevanten Person übermittelt. Im Kontext des Kohortenmerkmales dient das Geschlecht zur Identifikation der zuzuordnenden Kohorten.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtsdatum" type="xida:TeilbekanntesDatumMitUnbekannt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Geburtsdatum übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt. Im Kontext des Kohortenmerkmales dient das Geburtsdatum zur Identifikation der zugeordneten Kohorten.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="staatsangehoerigkeit" type="xmeld:Code.Staatsangehoerigkeit">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Staatsangehörigkeit der Statistik relevanten Person übermittelt. Im Kontext des Kohortenmerkmales dient die Staatsangehörigkeit zur Identifikation der zuzuordnenden Kohorten.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="familienstand" type="xmeld:Code.Familienstand">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Familienstand der Statistik relevanten Person übermittelt. Im Kontext des Kohortenmerkmales dient der Familienstand zur Identifikation der zuzuordnenden Kohorten.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.Statistik.Wohnung.Inland">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Übermittlung von Daten zur Wohnung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten zur Wohnung einer Statistik relevanten Person abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="anschrift" type="xmeld:type.Statistik.Anschrift.Inland">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift der Wohnung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="statusDerWohnung" type="xmeld:Code.Wohnungsstatus">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Status der Wohnung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.Statistik.Wohnung.InlandOhneAGS">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Übermittlung von Daten zur Wohnung ohne AGS</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten zur Wohnung einer Statistik relevanten Person ohne den amtlichen Gemeindeschlüssel abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="anschrift" type="xmeld:type.Statistik.Anschrift.InlandOhneAGS">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift der Wohnung ohne den amtlichen Gemeindeschlüssel übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="statusDerWohnung" type="xmeld:Code.Wohnungsstatus">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Status der Wohnung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.statistik.von.amts.wegen">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur Kennzeichnung einer An- oder Abmeldung von Amts wegen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird die Tatsache einer An- oder Abmeldung von Amts wegen mitgeteilt.</xs:documentation>
+      </xs:annotation>
+      <xs:choice>
+         <xs:element name="anmeldung" fixed="true" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Tatsache, dass eine Anmeldung von Amts wegen vorliegt, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="abmeldung" fixed="true" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Tatsache, dass eine Abmeldung von Amts wegen vorliegt, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:choice>
+   </xs:complexType>
+   <xs:element name="statistik.wanderung.0810">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Statistische Landesämter (dbs:090030010000)</leser>
+            <rechtsgrundlage>§ 4 BevStatG</rechtsgrundlage>
+            <title>Wanderungsmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde das Statistische Landesamt über einen für die Wanderungsstatistik relevanten Vorgang. Diese Nachricht wird von der: alleinigewohnungs_mb im Falle eines wegzugs_ausland (Prozess siehe ) oder alleinigewohnungs_mb im Falle eines wegzugs_unbekannt (Prozess siehe ) oder alleinigewohnungs_mb oder hauptwohnungs_mb im Falle eines umzugs (Prozess siehe ) oder neuen hauptwohnungs_mb im Falle eines fortschreibung.wohnungsstatuswechsels mit Wechsel des Zuständigkeitsbereichs (Prozess siehe ) hauptwohnungs_mb im Falle eines fortschreibung.wohnungsstatuswechsels ohne Wechsel des Zuständigkeitsbereichs mit Änderung des AGS (Prozess siehe ) zuzugs_mb im Falle eines zuzugs_inland (Prozess siehe ) oder zuzugs_mb im Falle eines zuzugs_ausland (Prozess siehe ) hauptwohnungs_mb oder alleinigewohnungs_mb im Falle der Rücknahme eines Umzugs mit Wechsel des AGS (Prozess siehe ) hauptwohnungs_mb oder alleinigewohnungs_mb im Falle der Rücknahme eines Wiederzuzugs aus dem Ausland in dieselbe Gemeinde (Prozess siehe ) hauptwohnungs_mb oder alleinigewohnungs_mb im Falle der Rücknahme eines Wegzugs in das Ausland (Prozess siehe ) hauptwohnungs_mb oder alleinigewohnungs_mb im Falle der Rücknahme eines Wegzugs nach Unbekannt (Prozess siehe ) hauptwohnungs_mb oder alleinigewohnungs_mb im Falle der Rücknahme eines Wohnungsstatuswechsels ohne Wechsel des Zuständigkeitsbereichs mit Änderung des AGS (Prozess siehe ) alleinigewohnungs_mb im Falle der stornierung_person (Prozess siehe ) versendet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass für die Übermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ruecknahme" minOccurs="0" fixed="true" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob es sich um eine Rücknahme handelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ordnungsmerkmal" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Ordnungsmerkmal übermittelt, welches zu der Statistik relevanten Person assoziiert ist, deren Daten in dieser Nachricht übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bezeichnungDerMeldebehoerde" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Bezeichnung der Meldebehörde in Klartext (z.B. Stadtamt Bremen) übermittelt, in deren Zuständigkeitsbereich die Statistik relevante Person registriert ist, deren Daten in dieser Nachricht übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datumDesEinzugsOderAuszugs">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird entweder das Datum des Beziehens der Wohnung übermittelt, das Datum des Auszugs aus der Wohnung, oder, bei Änderung des Wohnungsstatus, das Datum des Wohnungsstatuswechsels.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="datumDesBeziehens" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Beziehens der Wohnung übermittelt; vgl. Blatt 1301.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datumDesWohnungsstatuswechsels" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Wirksamwerdens des neuen Wohnungsstatus übermittelt (siehe DSMeld-Blatt 1301a).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datumDesAuszugs" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Auszugs aus der Wohnung übermittelt. Besteht nach dem Auszug aus der Wohnung keine Wohnung mehr im Zuständigkeitsbereich der Meldebehörde, so ist das Auszugsdatum identisch mit dem Wegzugsdatum aus dem Zuständigkeitsbereich der Meldebehörde (siehe auch DSMeld-Blatt 1306).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="bisherigeWohnung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur bisherigen Wohnung im Inland oder die bisherige Anschrift im Ausland, übermittelt. Bei einem Wohnungsstatuswechsel wird die bisherige Hauptwohnung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="inland" type="xmeld:type.Statistik.Wohnung.Inland">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur Wohnung im Inland (alleinige oder Hauptwohnung) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="ausland" type="xmeld:type.Statistik.Ausland">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Anschrift im Ausland übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="aktuelleWohnung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur aktuellen Wohnung im Inland, der aktuellen Anschrift im Ausland oder der aktuellen unbekannten Anschrift übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="inland" type="xmeld:type.Statistik.Wohnung.Inland">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur Wohnung im Inland übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="ausland" type="xmeld:type.Statistik.Ausland">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Anschrift im Ausland übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="anschrift.unbekannt" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass die Anschrift der aktuellen Wohnung nicht bekannt ist.Als einziger Wert ist true erlaubt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geschlecht entsprechend Schlüsseltabelle Geschlecht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsdatum" type="xida:TeilbekanntesDatumMitUnbekannt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geburtsdatum übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienstand" type="xmeld:Code.Familienstand">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der personenstandsrechtliche Familienstand der Statistik relevanten Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit" type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die erste der nach DSMeld-Blatt 1001 im Melderegister zu speichernden Staatsangehörigkeiten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsort" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Geburtsort der Statistik relevanten Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsortstaat" minOccurs="0" type="xmeld:Code.Gebiet">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Geburtsstaat der Person übermittelt (siehe DSMeld-Blatt 0603).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="religion" type="xmeld:type.Religion">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Informationen zur Religionszugehörigkeit einer natürlichen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datumLetzterZuzugAusland"
+                              minOccurs="0"
+                              type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird, bei Abmeldungen in das Ausland oder ohne Angaben zum Zielgebiet, das Datum des letzten Zuzugs in die Bundesrepublik Deutschland übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vonamtswegen"
+                              minOccurs="0"
+                              type="xmeld:type.statistik.von.amts.wegen">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Tatsache einer An- oder Abmeldung von Amts wegen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datumLetzterWegzugAusland"
+                              minOccurs="0"
+                              type="xida:TeilbekanntesDatumMitUnbekannt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird bei Zuzug aus dem Ausland das Datum des letzten Wegzugs in das Ausland übermittelt. Das Datum ist identisch mit dem bei der Wegzugsmeldebehörde der letzten Wohnung im Inland erfassten Auszugdatum. Sofern das vollständige Datum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Datum fehlen, das Element unbekannt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="zuzugNachAbmeldungNachUnbekannt"
+                              minOccurs="0"
+                              fixed="true"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Information, dass ein Zuzug nach Abmeldung nach unbekannt (Inland) stattfindet, übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datumDesAuszugs" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird gemäß § 4 Absatz 3 Nummer 4 BevStatG das Datum des Auszugs aus der bisherigen Wohnung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="zuzugGemeinde" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird gemäß § 4 Absatz 3 Nummer 5 BevStatG das Datum des Zuzugs in die Gemeinde übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="statistik.staatsangehoerigkeitswechsel.0811">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Statistische Landesämter (dbs:090030010000)</leser>
+            <rechtsgrundlage>§ 5 BevStatG</rechtsgrundlage>
+            <title>Staatsangehörigkeitsmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde das Statistische Landesamt über den Erwerb oder Verlust der deutschen Staatsangehörigkeit einer Statistik relevanten Person. Diese Nachricht wird von der alleinigewohnungs_mb bzw. hauptwohnungs_mb im Falle einer fortschreibung.staatsangehoerigkeit (Prozess siehe ) hauptwohnungs_mb oder alleinigewohnungs_mb im Falle der Rücknahme der Fortschreibung von Daten zur Staatsangehörigkeit (Prozess siehe ) versendet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass für die Übermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ruecknahme" minOccurs="0" fixed="true" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob es sich um eine Rücknahme handelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ordnungsmerkmal" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Ordnungsmerkmal übermittelt, welches zu der Statistik relevanten Person assoziiert ist, deren Erhebungsmerkmale in dieser Nachricht übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bezeichnungDerMeldebehoerde" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Bezeichnung der Meldebehörde in Klartext (z.B. Stadtamt Bremen) übermittelt, in deren Zuständigkeitsbereich die Statistik relevante Person registriert ist, deren Daten in dieser Nachricht übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleAnschrift" type="xmeld:type.Statistik.Anschrift.Inland">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die aktuelle Inlandsanschrift der Statistik relevanten Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geschlecht entsprechend Schlüsseltabelle Geschlecht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsdatum" type="xida:TeilbekanntesDatumMitUnbekannt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geburtsdatum übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsort" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Geburtsort der Statistik relevanten Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsortstaat" minOccurs="0" type="xmeld:Code.Gebiet">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Geburtsstaat der Person übermittelt (siehe DSMeld-Blatt 0603).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienstand" type="xmeld:Code.Familienstand">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der personenstandsrechtliche Familienstand der Statistik relevanten Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datumErwerbVerlustDeutscheStaatsangehoerigkeit"
+                              type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum des Erwerbs oder des Verlusts der deutschen Staatsangehörigkeit übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird entweder die neue Staatsangehörigkeit (bei Verlust der deutschen) im Element neu oder die bisherige Staatsangehörigkeit (bei Erwerb der deutschen) im Element bisher übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="bisher" type="xmeld:Code.Staatsangehoerigkeit">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird nach Erwerb der deutschen Staatsangehörigkeit die bisher als erste nach DSMeld-Blatt 1001 im Melderegister gespeicherte Staatsangehörigkeit übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="neu" type="xmeld:Code.Staatsangehoerigkeit">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird nach Verlust der deutschen Staatsangehörigkeit die erste der nach DSMeld-Blatt 1001 im Melderegister zu speichernden Staatsangehörigkeiten übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="statistik.familienstand.0812">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Statistische Landesämter (dbs:090030010000)</leser>
+            <rechtsgrundlage>§ 5 BevStatG</rechtsgrundlage>
+            <title>Familienstandsmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde das statistische_landesamt über die Scheidung einer Ehe und die Aufhebung einer Ehe bzw. Lebenspartnerschaft. Diese Nachricht wird von der: alleinigewohnungs_mb bzw. hauptwohnungs_mb im Falle einer fortschreibung.familienstand (Prozess siehe ) hauptwohnungs_mb oder alleinigewohnungs_mb im Falle der Rücknahme der Fortschreibung von Daten zum Familienstand (Prozess siehe ) versendet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass für die Übermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ruecknahme" minOccurs="0" fixed="true" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob es sich um eine Rücknahme handelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ordnungsmerkmal" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Ordnungsmerkmal übermittelt, welches zu der Statistik relevanten Person assoziiert ist, deren Daten in dieser Nachricht übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bezeichnungDerMeldebehoerde" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Bezeichnung der Meldebehörde in Klartext (z.B. Stadtamt Bremen) übermittelt, in deren Zuständigkeitsbereich die Statistik relevante Person registriert ist, deren Daten in dieser Nachricht übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="beendigungsgrund"
+                              type="xmeld:Code.Familienstand.Beendigungsgrund">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, ob eine Ehe geschieden, eine Ehe aufgehoben oder eine Lebenspartnerschaft aufgehoben worden ist. Es dürfen nur die Schlüssel 2, 3 oder 7 übermittelt werden. Im Falle der Rücknahme einer Beendigung der Ehe oder Lebenspartnerschaft ist dieses Element nicht zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleAnschrift" type="xmeld:type.Statistik.Anschrift.Inland">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die aktuelle Inlandsanschrift der Statistik relevanten Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geschlecht entsprechend Schlüsseltabelle Geschlecht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsdatum" type="xida:TeilbekanntesDatumMitUnbekannt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geburtsdatum übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit" type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die erste der nach DSMeld-Blatt 1001 im Melderegister zu speichernden Staatsangehörigkeiten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datumBeendigungEheOderLp" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum der Beendigung der Ehe oder Lebenspartnerschaft übermittelt. Im Falle der Rücknahme einer Beendigung der Ehe oder Lebenspartnerschaft ist dieses Element nicht zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="statistik.korrektur.0820">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Statistische Landesämter (dbs:090030010000)</leser>
+            <rechtsgrundlage>§§ 4, 5 BevStatG</rechtsgrundlage>
+            <title>Korrekturmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde das statistische_landesamt über die Korrektur der Daten einer Statistik relevanten Person. Diese Nachricht wird von der Meldebehörde der Hauptwohnung, Meldebehörde der alleinigen Wohnung oder letzten Inlandsmeldebehörde im Falle einer fortschreibung.geburtsdaten (Prozess siehe ), Meldebehörde der Hauptwohnung, Meldebehörde der alleinigen Wohnung oder letzten Inlandsmeldebehörde im Falle einer fortschreibung.geschlecht (Prozess siehe ), Meldebehörde der Hauptwohnung, Meldebehörde der alleinigen Wohnung oder letzten Inlandsmeldebehörde im Falle einer fortschreibung.religion (Prozess siehe ), Meldebehörde der Hauptwohnung, Meldebehörde der alleinigen Wohnung oder letzten Inlandsmeldebehörde im Falle einer fortschreibung.anschriften (Prozess siehe ), Meldebehörde der Hauptwohnung, Meldebehörde der alleinigen Wohnung oder letzten Inlandsmeldebehörde im Falle einer fortschreibung.staatsangehoerigkeit (Prozess siehe ), Meldebehörde der Hauptwohnung, Meldebehörde der alleinigen Wohnung oder letzten Inlandsmeldebehörde im Falle einer fortschreibung.familienstand (Prozess siehe ), Meldebehörde der Hauptwohnung, Meldebehörde der alleinigen Wohnung oder letzten Inlandsmeldebehörde im Falle einer fortschreibung.ordnungsmerkmal (Prozess siehe ). versendet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird in der Korrekturmeldung der Anlass der Datenübermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ordnungsmerkmal" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Ordnungsmerkmal der Statistik relevanten Person übermittelt. Falls das Ordnungsmerkmal in der Nachricht korrigiert wird, ist in diesem Element das Ordnungsmerkmal vor Änderung zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bezeichnungDerMeldebehoerde" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Bezeichnung der Meldebehörde in Klartext (z.B. Stadtamt Bremen) übermittelt, in deren Zuständigkeitsbereich die Statistik relevante Person registriert ist, deren Daten in dieser Nachricht übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kohortenmerkmale" type="xmeld:type.Statistik.Kohortenmerkmale">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die für die Identifikation der von einer Korrektur betroffenen Kohorten wichtigen Kohortenmerkmale übermittelt. Falls ein zu änderndes Erhebungsmerkmal als Kohortenmerkmal dient, ist der Stand des Melderegisters vor der Korrektur als Kohortenmerkmal zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="letzteBekannteAnschrift"
+                              type="xmeld:type.Statistik.Anschrift.Inland">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die letzte bekannte Anschrift im Zuständigkeitsbereich des Autors der Nachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="zuzugGemeinde" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird gemäß § 4 Absatz 3 Nummer 5 BevStatG das Datum des Zuzugs in die Gemeinde übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeitswechsel"
+                              minOccurs="0"
+                              fixed="true"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, dass zur Statistik relevanten Person im Melderegister Daten zum Erwerb oder Verlust der deutschen Staatsangehörigkeit vorliegen und der Erwerb bzw. Verlust nach dem Zuzug in die Gemeinde stattgefunden hat.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienstandsaenderung"
+                              minOccurs="0"
+                              fixed="true"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, dass zur Statistik relevanten Person im Melderegister Daten zur Scheidung einer Ehe oder der Aufhebung einer Ehe bzw. Lebenspartnerschaft vorliegen und die Scheidung bzw. Aufhebung nach dem Zuzug in die Gemeinde stattgefunden hat.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datumDesEinzugsOderAuszugs" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden entweder Korrekturen am Datum des Beziehens der Wohnung übermittelt, am Datum des Auszugs aus der Wohnung, oder am Datum des Wohnungsstatuswechsels.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="datumDesBeziehens">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Korrekturen am Datum des Beziehens der Wohnung übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="vorher" type="xida:TagesdatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das zu korrigierende Datum des Einzugs oder des Wohnungsstatuswechsels übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="nachher" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das korrigierte Datum des Einzugs oder des Wohnungsstatuswechsels übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="datumDesWohnungsstatuswechsels">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Korrekturen am Datum des Wohnungsstatuswechsels übermittelt (siehe DSMeld-Blatt 1301a).</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="vorher" type="xida:TagesdatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das zu korrigierende Datum des Wohnungsstatuswechsels übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="nachher" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das korrigierte Datum des Wohnungsstatuswechsels übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="datumDesAuszugs">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Korrekturen am Datum des Auszugs aus der Wohnung übermittelt. Besteht nach dem Auszug aus der Wohnung keine Wohnung mehr im Zuständigkeitsbereich der Meldebehörde, so ist das Auszugsdatum identisch mit dem Wegzugsdatum aus dem Zuständigkeitsbereich der Meldebehörde (siehe auch DSMeld-Blatt 1306).</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="vorher" type="xida:TagesdatumMitUnbekannt">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das zu korrigierende Datum des Auszugs übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="nachher" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das korrigierte Datum des Auszugs übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="bisherigeWohnung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen an den Daten der bisherigen Wohnung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur bisherigen Wohnung im Inland bzw. zur bisherigen Anschrift im Ausland vor der Korrektur übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:choice>
+                                    <xs:element name="inland" type="xmeld:type.Statistik.Wohnung.Inland">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Wohnung im Inland übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ausland" type="xmeld:type.Statistik.Ausland">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Anschrift im Ausland übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:choice>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="nachher">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur bisherigen Wohnung im Inland bzw. zur bisherigen Anschrift im Ausland nach der Korrektur übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:choice>
+                                    <xs:element name="inland" type="xmeld:type.Statistik.Wohnung.Inland">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Wohnung im Inland übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ausland" type="xmeld:type.Statistik.Ausland">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Anschrift im Ausland übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:choice>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="aktuelleWohnung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen an den Daten der aktuellen Wohnung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur aktuellen Wohnung im Inland, zur aktuellen Anschrift im Ausland oder zur unbekannten Anschrift vor der Korrektur übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:choice>
+                                    <xs:element name="inland" type="xmeld:type.Statistik.Wohnung.InlandOhneAGS">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Wohnung im Inland ohne den amtlichen Gemeindeschlüssel übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ausland" type="xmeld:type.Statistik.Ausland">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Anschrift im Ausland übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="anschrift.unbekannt" fixed="true" type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass die Anschrift der aktuellen Wohnung nicht bekannt ist.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:choice>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="nachher">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur aktuellen Wohnung im Inland, zur aktuellen Anschrift im Ausland oder zur unbekannten Anschrift nach der Korrektur übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:choice>
+                                    <xs:element name="inland" type="xmeld:type.Statistik.Wohnung.InlandOhneAGS">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten zur Wohnung im Inland ohne den amtlichen Gemeindeschlüssel übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ausland" type="xmeld:type.Statistik.Ausland">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Anschrift im Ausland übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="anschrift.unbekannt" fixed="true" type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass die Anschrift der aktuellen Wohnung nicht bekannt ist.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:choice>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="geschlecht" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zum Geschlecht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xig:Code.Geschlecht">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das zu korrigierende Geschlecht übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xig:Code.Geschlecht">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das korrigierte Geschlecht übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="geburtsdatum" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zum Tag der Geburt übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xida:TeilbekanntesDatumMitUnbekannt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das zu korrigierende Datum der Geburt übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xida:TeilbekanntesDatumMitUnbekannt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das korrigierte Datum der Geburt übermittelt. Sofern das vollständige Geburtsdatum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Geburtsdatum fehlen, das Element unbekannt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="familienstand" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zum Familienstand übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xmeld:Code.Familienstand">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der zu korrigierende Familienstand übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xmeld:Code.Familienstand">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der korrigierte Familienstand übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zur ersten der nach DSMeld-Blatt 1001 im Melderegister zu speichernden Staatsangehörigkeiten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xmeld:Code.Staatsangehoerigkeit">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die zu korrigierende Staatsangehörigkeit übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xmeld:Code.Staatsangehoerigkeit">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die korrigierte Staatsangehörigkeit übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="geburtsort" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zum Geburtsort übermittelt. Sofern der Geburtsort nicht korrigiert wird, im Rahmen einer Korrektur des Geburtsstaates aber zu übermitteln ist, sind die Elemente vorher und nachher mit gleichen Werten zu befüllen.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der zu korrigierende Geburtsort übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der korrigierte Geburtsort übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="geburtsortstaat" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zum Staat des Geburtsortes übermittelt. Sofern der Geburtsstaat nicht korrigiert wird, im Rahmen einer Korrektur des Geburtsortes aber zu übermitteln ist, sind die Elemente vorher und nachher mit gleichen Werten zu befüllen bzw., sofern keine Daten zum Geburtsstaat vorhanden sind, wegzulassen .</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" minOccurs="0" type="xmeld:Code.Gebiet">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der zu korrigierende Geburtsort (Staat) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" minOccurs="0" type="xmeld:Code.Gebiet">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der korrigierte Geburtsort (Staat) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="religionsteuererhebend" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zur Zugehörigkeit zu einer Steuer erhebenden Religionsgesellschaft übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xmeld:Code.Religion.Steuer.erhebend">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die zu korrigierende steuererhebende Religion übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xmeld:Code.Religion.Steuer.erhebend">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die korrigierte steuererhebende Religion übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="religionnichtsteuererhebend" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zur Zugehörigkeit zu einer nicht Steuer erhebenden Religionsgesellschaft übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher"
+                                       minOccurs="0"
+                                       type="xmeld:Code.Religion.nicht.Steuer.erhebend">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die zu korrigierende nicht steuererhebende Religion übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher"
+                                       minOccurs="0"
+                                       type="xmeld:Code.Religion.nicht.Steuer.erhebend">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die korrigierte nicht steuererhebende Religion übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="datumLetzterWegzugAusland" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen am Datum des letzten Wegzugs in das Ausland übermittelt. Das Datum ist identisch mit dem bei der Wegzugsmeldebehörde der letzten Wohnung im Inland erfassten Auszugdatum.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher"
+                                       minOccurs="0"
+                                       type="xida:TeilbekanntesDatumMitUnbekannt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das zu korrigierende Datum des letzten Wegzugs in das Ausland übermittelt.Sofern das vollständige Datum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Datum fehlen, das Element unbekannt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xida:TeilbekanntesDatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das korrigierte Datum des letzten Wegzugs in das Ausland übermittelt.Sofern das vollständige Datum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="datumLetzterZuzugAusland" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zum Tag des letzten Zuzugs in die Bundesrepublik Deutschland übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das zu korrigierende Datum des letzten Zuzugs aus dem Ausland übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das korrigierte Datum des letzten Zuzugs aus dem Ausland übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="datumErwerbVerlustDeutscheStaatsangehoerigkeit" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen am Datum des Erwerbes oder Verlustes der deutschen Staatsangehörigkeit übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das zu korrigierende Datum des Erwerbs oder Verlustes der deutschen Staatsangehörigkeit übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das korrigierte Datum des Erwerbs oder Verlustes der deutschen Staatsangehörigkeit übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="beendigungsgrund" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen zum Grund der Beendigung der letzten Ehe oder der letzten Lebenspartnerschaft übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xmeld:Code.Familienstand.Beendigungsgrund">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der zu korrigierende rechtliche Grund einer Beendigung des Familienstandes übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xmeld:Code.Familienstand.Beendigungsgrund">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der korrigierte rechtliche Grund einer Beendigung des Familienstandes übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="datumBeendigungEheOderLp" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen am Datum der Beendigung einer Ehe oder Lebenspartnerschaft übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das zu korrigierende Datum der Beendigung einer Ehe oder Lebenspartnerschaft übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das korrigierte Datum der Beendigung einer Ehe oder Lebenspartnerschaft übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ordnungsmerkmal.korrektur" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen am Ordnungsmerkmal der Statistik relevanten Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zum Ordnungsmerkmal vor der Korrektur übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zum Ordnungsmerkmal nach der Korrektur übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="datumDesAuszugs" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird gemäß § 4 Absatz 3 Nummer 4 BevStatG das Datum des Auszugs aus der bisherigen Wohnung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Melderegisterauskunft Nichterstellung Grund</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden die rechtlichen und/oder verfahrenstechnischen Gründe abgebildet, aus denen ggf. einem Auskunftsersuchen nicht nachgekommen werden kann.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>melderegisterauskunft.nichterstellung.grund</ShortName>
+      <LongName>Melderegisterauskunft Nichterstellung Grund</LongName>
+      <Version>5</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:melderegisterauskunft.nichterstellung.grund</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:melderegisterauskunft.nichterstellung.grund_5</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Angaben zum gewerblichen Zweck in der Anfrage sind fehlerhaft.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die zu protokollierenden Daten sind nicht vollständig.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Der Gemeindename, der Amtliche Gemeindeschlüssel oder die Straße innerhalb der Gemeinde existiert nicht.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Berechtigung für diese Einzelanfrage fehlt oder ist nicht ausreichend.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sonstiger technischer Fehler dieser Einzelanfrage (z. B. korrupte Daten)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Das Suchprofil dieser Einzelanfrage ist ungültig oder wird nicht unterstützt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die gemeindeübergreifende Suche wurde abgebrochen. Die in der Steuerungsinformation angegebenen Restriktionen sind eingetreten.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>In der Anfrage fehlt die Erklärung, dass die Daten nicht zum Zweck der Werbung oder des Adresshandels verwendet werden. Es darf daher keine Auskunft erfolgen.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

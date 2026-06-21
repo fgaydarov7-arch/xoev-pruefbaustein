@@ -1,16 +1,18 @@
-import { CheckCircle, AlertTriangle, FileText } from "lucide-react";
+import { CheckCircle, AlertTriangle, FileText, Info } from "lucide-react";
 
 interface Props {
   totalRows: number;
   errorCount: number;
+  warningCount: number;
   successRate: number;
 }
 
-export function StatsCard({ totalRows, errorCount, successRate }: Props) {
-  const hasErrors = errorCount > 0;
+export function StatsCard({ totalRows, errorCount, warningCount, successRate }: Props) {
+  const hasErrors   = errorCount   > 0;
+  const hasWarnings = warningCount > 0;
 
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-3 gap-4 my-6">
+    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 my-6">
       {/* Zeilen Gesamt */}
       <div className="flex items-center gap-4 rounded-lg border border-slate-700 bg-slate-800 px-5 py-4">
         <FileText className="h-8 w-8 text-blue-400 shrink-0" aria-hidden="true" />
@@ -52,6 +54,37 @@ export function StatsCard({ totalRows, errorCount, successRate }: Props) {
             }`}
           >
             {errorCount.toLocaleString("de-DE")}
+          </p>
+        </div>
+      </div>
+
+      {/* Gefundene Hinweise */}
+      <div
+        className={`flex items-center gap-4 rounded-lg border px-5 py-4 ${
+          hasWarnings
+            ? "border-amber-700 bg-amber-950"
+            : "border-slate-700 bg-slate-800"
+        }`}
+        aria-live="polite"
+      >
+        <Info
+          className={`h-8 w-8 shrink-0 ${hasWarnings ? "text-amber-400" : "text-slate-500"}`}
+          aria-hidden="true"
+        />
+        <div>
+          <p
+            className={`text-xs font-medium uppercase tracking-wider ${
+              hasWarnings ? "text-amber-400" : "text-slate-400"
+            }`}
+          >
+            Gefundene Hinweise
+          </p>
+          <p
+            className={`mt-1 text-2xl font-bold ${
+              hasWarnings ? "text-amber-300" : "text-slate-100"
+            }`}
+          >
+            {warningCount.toLocaleString("de-DE")}
           </p>
         </div>
       </div>

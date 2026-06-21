@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>NKS-Art der deutschen Aufenthaltstitel</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Diese externe Codeliste enthält die gültigen deutschen Aufenthaltstitel im Themenbereich der Nationalen Kontaktstelle. Es ist die jeweils aktuelle Version zu verwenden, die im XRepository veröffentlicht ist. Die Liste basiert hauptsächlich auf der AZR-Codeliste „AufenthaltserlaubnisArt“ mit der urn:de:xauslaender:codelist:azr:aufenthaltserlaubnis. Die Schlüsselwerte entsprechen dieser Liste und haben das Präfix „AE:“ vorangestellt. Daneben wird die AZR-Codeliste „Art der Niederlassung“ mit der urn:de:xauslaender:codelist:azr:niederlassungserlaubnis verwendet. Die Schlüsselwerte entsprechen dieser Liste und haben das Präfix „NE:“ vorangestellt.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF-XAusländer</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Durch das Gesetz zur Weiterentwicklung der Fachkräfteeinwanderung werden bisherige Regelungen zu Aufenthaltserlaubnissen für die Blaue Karte EU § 18b AufenthG durch den neuen Paragraphen § 18g AufenthG ersetzt und treten ab dem 18. November 2023 in Kraft.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2023-11-18</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Folgende Codes werden ab dem 17.11.2023 ungültig: AE:087, AE:090 Folgende Codes sind neu und ab dem 18.11.2023 gültig: AE:493, AE:494, AE:495, AE:496, AE:497</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>aufenthaltstiteldeutsch</ShortName>
+      <LongName>NKS-Art der deutschen Aufenthaltstitel</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:nks:aufenthaltstiteldeutsch</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:nks:aufenthaltstiteldeutsch_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Ausländerwesen</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="optional">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:001</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltserlaubnis zum Studium (§ 16b Abs. 1)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:013</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltserlaubnis für Forscher (§ 18d) (+ ggf. Familienangehörige (§§ 30 Abs. 1 und 32 Abs. 1))</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:070</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltserlaubnis für in anderen Mitgliedstaaten der EU langfristig Aufenthaltsberechtigte (§ 38a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:087</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Altfall - nach § 18b Abs. 2 Satz 1 (Blaue Karte EU, Voraufenthalt mit Blauer Karte EU, Regelberufe) erteilt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:090</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Altfall - nach § 18b Abs. 2 Satz 2 (Blaue Karte EU, Voraufenthalt mit Blauer Karte EU, Mangelberufe) erteilt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:493</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18g Abs. 1 S. 1 AufenthG (Blaue Karte EU - Regelberufe) erteilt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:494</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18g Abs. 1 S. 2 Nr. 1 AufenthG (Blaue Karte EU - Mangelberufe) erteilt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:495</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18g Abs. 1 S. 2 Nr. 2 AufenthG (Blaue Karte EU - Berufsanfänger) erteilt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:496</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18g Abs. 2 AufenthG (Blaue Karte EU - IT-Spezialisten) erteilt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:497</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>nach § 18g i. V. m. § 18i AufenthG (Blaue Karte EU mit Voraufenthalt) erteilt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:105</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltserlaubnis für studienbezogenes Praktikum EU (§ 16e)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:201</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltserlaubnis für Teilnahme am europäischen Freiwilligendienst (§ 19e)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:202</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>ICT-Karte (§ 19)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:203</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Mobiler-ICT-Karte (§ 19b)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>AE:205</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Aufenthaltserlaubnis für langfristig mobile Forscher (§ 18f) (+ ggf. Familienangehörige (§§ 30 Abs. 1 und 32 Abs. 1))</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>NE:11</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Daueraufenthalt - EU (§ 9a)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

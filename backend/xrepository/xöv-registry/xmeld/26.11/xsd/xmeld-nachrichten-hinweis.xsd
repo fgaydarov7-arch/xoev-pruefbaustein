@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+         <title>Hinweisnachrichten nach § 6 BMG</title>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+              namespace="http://www.osci.de/xinneres/geschlecht/1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="type.Hinweisnachricht.Religion">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für Informationen zur Religionszugehörigkeit in Hinweisnachrichten</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp wird verwendet, wenn Informationen zur Religionszugehörigkeit im Rahmen von Hinweisnachrichten übermittelt werden müssen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.Religion">
+            <xs:sequence>
+               <xs:element name="eintrittsdatum" minOccurs="0" type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element kann das Datum des Eintritts in eine Steuer ehebende Religionsgesellschaft übermittelt werden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="austrittsdatum" minOccurs="0" type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum des Austritts aus einer Steuer erhebenden Religionsgesellschaft übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.identifikation.hinweisnachricht">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur Identifikation der betroffenen Person in Hinweisnachrichten</title>
+         </xs:appinfo>
+         <xs:documentation>Die Identifikationsdaten dienen dem Zweck, die betroffene Person gegenüber einem der beteiligten Kommunikationspartner eindeutig zu identifizieren. Dazu übermittelt der Autor die Daten in einem Informationsstand, den er für die Identifikation auf der Seite des Lesers für geeignet hält. Es wird keine Aussage darüber gemacht, wie die enthaltenen Kindelemente innerhalb eines Identifikationsverfahrens genutzt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.identifikation.personanschrift">
+            <xs:sequence>
+               <xs:element name="steueridentifikation"
+                           minOccurs="0"
+                           type="xmeld:type.Steueridentifikation">
+                  <xs:annotation>
+                     <xs:documentation>In der Kommunikation zwischen BZSt und Meldebehörde können Steueridentifikationsdaten übermittelt werden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:element name="hinweisnachricht.mitteilung.1500">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Alle XMeld-Kommunikationspartner (ags, dbs, rel)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 6 Abs. 2 BMG</rechtsgrundlage>
+            <title>Hinweisnachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht teilt eine Behörde einen Hinweis auf vermutete Unrichtigkeiten oder Unvollständigkeiten bzgl. der gespeicherten Daten der betroffenen Person mit. In der Hinweisnachricht sind für die Standard-Abweichungen dedizierte Abweichungspaare definiert worden, während für eher selten auftretende Abweichungen eine generische Struktur zum Einsatz kommt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation" type="xmeld:type.identifikation.hinweisnachricht"/>
+                  <xs:element name="hinweis">
+                     <xs:annotation>
+                        <xs:documentation>Dieses Element übermittelt genau einen Hinweis. Die häufig vorkommenden Hinweise sind in verschiedene fachlich zusammenhängende Container aufgeteilt. So sind z. B. alle Angaben zum Namen im Container name zusammengefasst. Sofern eine Angabe innerhalb eines Containers als unrichtig vermutet wird, sind sämtliche Angaben des Containers in zwei verschiedenen Ständen (als Abweichungspaar) zu übermitteln. Dies ist einerseits der Stand der Daten, wie er aus Sicht des Autors letztmalig von der Meldebehörde übermittelt worden ist (DATEN.letzterStandMR), andererseits der Stand der Daten, wie er aus Sicht des Autors als aktuell vermutet wird (DATEN.abweichend). Wenn Listen (z. B. Wohnungen) übermittelt werden, stellen unterschiedliche Reihenfolgen natürlich keine vermutete Unrichtigkeit dar.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="name">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit beim Namen.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="name.abweichend" type="xmeld:type.NameNatuerlichePerson">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktueller Name</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="name.letzterStandMR" type="xmeld:type.NameNatuerlichePerson">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermittelter Name</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="familienstand">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit beim Familienstand.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="familienstand.abweichend" type="xmeld:type.Familienstand">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktueller Familienstand</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="familienstand.letzterStandMR" type="xmeld:type.Familienstand">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermittelter Familienstand</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="geschlecht">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit beim Geschlecht.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="geschlecht.abweichend" type="xig:Code.Geschlecht">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktuelles Geschlecht.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geschlecht.letzterStandMR" type="xig:Code.Geschlecht">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermitteltes Geschlecht.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="geburt">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit bei den Geburtsdaten.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="geburt.abweichend" type="xmeld:type.Geburt">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktuelle Geburtsdaten.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburt.letzterStandMR" type="xmeld:type.Geburt">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermittelte Geburtsdaten.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="tod">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit bei den Sterbedaten.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="tod.abweichend" minOccurs="0" type="xmeld:type.Tod">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktuelle Sterbedaten.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="tod.letzterStandMR" minOccurs="0" type="xmeld:type.Tod">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermittelte Sterbedaten.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="religion">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit bei den Daten zur Religionszugehörigkeit.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="religion.abweichend" type="xmeld:type.Hinweisnachricht.Religion">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktuelle Daten zur Religionszugehörigkeit.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="religion.letzterStandMR"
+                                                type="xmeld:type.Hinweisnachricht.Religion">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermittelte Daten zur Religionszugehörigkeit.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="wohnung.aktuelle">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit bei den aktuellen Wohnungen.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="wohnung.aktuelle.abweichend"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.Wohnung">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktuelle Wohnung.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="wohnung.aktuelle.letzterStandMR"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.Wohnung">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermittelte aktuelle Wohnung.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="partner">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit bei den Partnerdaten.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="partner.abweichend" minOccurs="0" type="xmeld:type.Partner">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktuelle Partnerdaten.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="partner.letzterStandMR"
+                                                minOccurs="0"
+                                                type="xmeld:type.Partner">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermittelte Partnerdaten.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="kind">
+                              <xs:annotation>
+                                 <xs:documentation>Vermutete Unrichtigkeit bei den Daten zu den Kindern.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="kind.abweichend"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.Kind">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktuelle Daten zum Kind.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="kind.letzterStandMR"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xmeld:type.Kind">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors letztmalig von der Meldebehörde übermittelte Daten zum Kind.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="anderer.hinweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Kindelement können andere Hinweise auf vermutete Unrichtigkeiten oder Unvollständigkeiten übermittelt werden. Das Element ist ausschließlich für Hinweise zu verwenden, die nicht bereits in den anderen, strukturiert definierten Abweichungspaaren abgebildet sind.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="hinweis.beschreibung" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Kindelement wird das Element oder die Struktur beschrieben, für die eine vermutete Unrichtigkeit übermittelt wird, z. B. Gesetzlicher Vertreter.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="element.abweichend" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Aus Sicht des Autors aktuelle Daten zum beschriebenen Element / Struktur in Freitextform.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="element.letzterStandMR"
+                                                minOccurs="0"
+                                                type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Au Sicht des Autors letztmalig von der Meldebehörde übermittelte Daten zum beschriebenen Element / Struktur. Es kann hier auch mehr als ein Datenfeld in Freitextform übermittelt werden, z. B. alle Angaben zum gesetzlichen Vertreter.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="erlaeuterung" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>In diesem Element ist eine Begründung / Erläuterung zur übermittelten Abweichung zu geben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fallkennzeichen" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Wenn zu einem Personensatz mehrere Abweichungen in verschiedenen Containern mitgeteilt werden müssen, so ist jeweils eine eigene Nachricht hinweisnachricht.mitteilung.1500 zu schicken. Bei allen Nachrichten ist dasselbe Fallkennzeichen zu verwenden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="hinweisnachricht.antwort.1501">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Alle XMeld-Kommunikationspartner (ags, dbs, rel)</leser>
+            <rechtsgrundlage>§ 6 Abs. 2 BMG</rechtsgrundlage>
+            <title>Antwortnachricht der Meldebehörde auf die erhaltene Hinweisnachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde, die eine Hinweisnachricht erhalten hat, den Autor der Hinweisnachricht darüber, ob sich die Richtigkeit des Hinweises bestätigt hat.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="hinweis.bestaetigt" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Wenn mindestens eine Abweichung im übermittelten Container DATEN.abweichend bestätigt werden kann, ist damit die Abweichung des gesamten Containers mit dem Wert true zu bestätigen. Wenn alle mitgeteilten Informationen aus dem Container DATEN.letzterStandMR korrekt sind, ist der Wert false zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fallkennzeichen" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Anhand des zurück übermittelten Fallkennzeichens kann der Autor der Hinweisnachricht die Antwortnachricht unmittelbar zuordnen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, in der der Hinweis mitgeteilt wurde. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 1500 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

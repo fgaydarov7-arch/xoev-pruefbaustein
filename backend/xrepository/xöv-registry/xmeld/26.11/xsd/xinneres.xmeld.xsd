@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:include schemaLocation="xmeld-basistypen.xsd"/>
+   <xs:include schemaLocation="xmeld-baukasten.xsd"/>
+   <xs:include schemaLocation="xmeld-codes.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-administration.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-anmeldung.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-auslaenderzentralregister.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-datenabrufe.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-datenuebermittlung.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-ergbevstat.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-fortschreibung.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-hinweis.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-kirche.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-lra.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-melderegisterauskunft.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-onlinedienste.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-rueckmeldung.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-statistik.xsd"/>
+   <xs:include schemaLocation="xmeld-nachrichten-xmeldit.xsd"/>
+</xs:schema>

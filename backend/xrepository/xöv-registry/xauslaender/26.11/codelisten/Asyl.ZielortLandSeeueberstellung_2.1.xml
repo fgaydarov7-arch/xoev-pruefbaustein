@@ -1,0 +1,445 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Asyl.ZielortLandSeeueberstellung</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit diesem Element wird der Zielort übermittelt</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF-XAusländer</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2022-11-18</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Implementierung neuer Codes 27 u. 28</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Asyl.ZielortLandSeeueberstellung</ShortName>
+      <LongName>Asyl.ZielortLandSeeueberstellung</LongName>
+      <Version>2.1</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:asyl.zielortlandseeueberstellung</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:asyl.zielortlandseeueberstellung_2.1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Asylverfahren</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Code" Use="required">
+         <ShortName>Code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="HKL-Schluessel" Use="required">
+         <ShortName>HKL-Schluessel</ShortName>
+         <LongName>HKL-Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Partnerstaat" Use="required">
+         <ShortName>Partnerstaat</ShortName>
+         <LongName>Partnerstaat</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Grenzuebergang" Use="required">
+         <ShortName>Grenzuebergang</ShortName>
+         <LongName>Grenzübergang</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="CodeKey">
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="Code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>124</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Belgien</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Aachen-Süd</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>129</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Frankreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Kehl</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>129</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Frankreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Saarbrücken</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>141</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Liechtenstein</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Kreuzlingen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>143</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Luxemburg</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Wasserbilligerbrück</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>148</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Niederlande</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Aachen-Nord</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>148</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Niederlande</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Bad-Bentheim</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>148</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Niederlande</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Goch</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>148</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Niederlande</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Bunde</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>151</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Österreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Freilassing</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>151</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Österreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Passau</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>151</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Österreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Füssen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>151</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Österreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Mittenwald</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>151</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Österreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Kiefersfelden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>151</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Österreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Lindau</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>152</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Polen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Forst</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>152</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Polen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Frankfurt/Oder</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>152</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Polen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Görlitz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>152</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Polen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Guben</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>152</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Polen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Pomellen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>157</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Schweden</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Trelleborg (Fähre)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>158</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Schweiz</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Basel </SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>158</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Schweiz</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Konstanz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>158</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Schweiz</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Waldshut</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>164</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Tschechische Republik</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Bahratal</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>26</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>164</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Tschechische Republik</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Furth im Wald</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>27</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>129</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Frankreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Kehl II ( in geraden KK nur dienstags; in ungeraden KW nur donnerstags)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>28</SimpleValue>
+         </Value>
+         <Value ColumnRef="HKL-Schluessel">
+            <SimpleValue>129</SimpleValue>
+         </Value>
+         <Value ColumnRef="Partnerstaat">
+            <SimpleValue>Frankreich</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grenzuebergang">
+            <SimpleValue>Saarbrücken II (in geraden KW nur donnerstags; in ungeraden KW nur dienstags)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

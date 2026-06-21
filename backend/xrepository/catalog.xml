@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  OASIS XML Catalog 1.1 — XÖV / XAusländer 26.11
+  =================================================
+  Zweck : Leitet externe xs:import-Anfragen (http://, https://)
+          auf lokale Dateien im xöv-registry-Verzeichnis um,
+          damit der Parser vollständig offline / air-gapped arbeitet.
+
+  Standort  : xrepository/catalog.xml
+  Alle Pfade: relativ zu DIESEM Verzeichnis (xrepository/).
+
+  Regelpriorität im Parser:
+    1. <system>-Einträge   — exakte systemId-Übereinstimmung (höchste Priorität)
+    2. <rewriteSystem>     — Präfix-Umschreibung für systemId
+    3. Dateiname-Fallback  — Parser sucht nach dem Dateinamen in Fallback-Verzeichnissen
+
+  HINWEIS zum bestehenden Fehler:
+    Die alten Einträge (rewriteURI auf xoev.de/schemata/xinneres/) deckten NICHT
+    die tatsächlich genutzten Import-URLs (www.osci.de/xinneres/) ab.
+    Diese Datei ersetzt den alten Stand vollständig.
+-->
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog" prefer="system">
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       ABSCHNITT 1 — XInneres-Schemata
+       Alle <xs:import schemaLocation="http://www.osci.de/xinneres/..."> aus
+       den XAusländer 26.11 XSDs werden hier lokal aufgelöst.
+       ═══════════════════════════════════════════════════════════════════════ -->
+
+  <!--
+    Präfix-Regel: www.osci.de/xinneres/** → lokales XSD-Verzeichnis.
+    Der Parser extrahiert nach dem Stripping des Präfix nur den Dateinamen
+    (flat fallback), da die lokale Struktur flach ist (keine Unterordner).
+  -->
+  <rewriteSystem
+    systemIdStartString="http://www.osci.de/xinneres/"
+    rewritePrefix="xöv-registry/xinneres/26.11/xsd/"/>
+
+  <!-- Exakte Einträge für alle bekannten XInneres-Imports (Priorität über rewrite) -->
+
+  <system
+    systemId="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-geschlecht.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-name.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/azrnummer/3/xinneres-azrnummer.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-azrnummer.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/basisnachricht/7/xinneres-basisnachricht.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-basisnachricht.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/behoerde/7/xinneres-behoerde.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-behoerde.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-datum.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-postanschrift.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/auslandsanschrift/5/xinneres-auslandsanschrift.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-auslandsanschrift.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-meldeanschrift.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/lichtbild/3/xinneres-lichtbild.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-lichtbild.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/rueckweisung/6/xinneres-rueckweisung.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-rueckweisung.xsd"/>
+
+  <system
+    systemId="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3/xinneres-codes-gemeindeverzeichnis.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-codes-gemeindeverzeichnis.xsd"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       ABSCHNITT 2 — XÖV-Querschnittskomponenten
+       Diese Dateien sind im aktuellen Paket NICHT lokal vorhanden.
+       Der Parser behandelt fehlende Auflösungen als Warnung und fährt fort.
+       Sobald die Dateien lokal verfügbar sind, Einträge hier einkommentieren.
+       ═══════════════════════════════════════════════════════════════════════ -->
+
+  <!--
+  <system
+    systemId="http://xoev.de/schemata/code/1_0/xoev-code.xsd"
+    uri="xöv-registry/xoev-code/1_0/xoev-code.xsd"/>
+
+  <system
+    systemId="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+    uri="xöv-registry/xbasisnachricht/xsd/xoev-basisnachricht-unqualified-g2g_1.1.xsd"/>
+
+  <system
+    systemId="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+    uri="xöv-registry/din91379/xsd/din-norm-91379-datatypes.xsd"/>
+  -->
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       ABSCHNITT 3 — Untergeordneter Katalog (falls vorhanden)
+       ═══════════════════════════════════════════════════════════════════════ -->
+  <!-- <nextCatalog catalog="xöv-registry/catalog.xml"/> -->
+
+</catalog>

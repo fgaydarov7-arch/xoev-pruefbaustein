@@ -189,6 +189,7 @@ export default function App() {
             <StatsCard
               totalRows={report.total_rows}
               errorCount={report.error_count}
+              warningCount={report.warning_count ?? 0}
               successRate={report.success_rate}
             />
             <ResultTable report={report} originalFile={selectedFile} />

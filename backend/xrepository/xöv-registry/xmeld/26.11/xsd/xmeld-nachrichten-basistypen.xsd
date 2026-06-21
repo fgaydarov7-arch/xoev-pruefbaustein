@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:bn-uq-g2g="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xibehoerde="http://www.osci.de/xinneres/behoerde/7"
+           xmlns:xicgvz="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           xmlns:xink="http://www.osci.de/xinneres/basisnachricht/7"
+           xmlns:xint="http://www.osci.de/xinneres/nachrichtentypen/7"
+           xmlns:xipa="http://www.osci.de/xinneres/postanschrift/5"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-baukasten.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/basisnachricht/7/xinneres-basisnachricht.xsd"
+              namespace="http://www.osci.de/xinneres/basisnachricht/7"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/behoerde/7/xinneres-behoerde.xsd"
+              namespace="http://www.osci.de/xinneres/behoerde/7"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3/xinneres-codes-gemeindeverzeichnis.xsd"
+              namespace="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+              namespace="http://www.osci.de/xinneres/geschlecht/1"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/nachrichtentypen/7/xinneres-nachrichtentypen.xsd"
+              namespace="http://www.osci.de/xinneres/nachrichtentypen/7"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/postanschrift/5"/>
+   <xs:import schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+              namespace="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="type.Fortschreibung.Identifikation.NameNatuerlichePerson">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Name zur Identifikation in der Fortschreibung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Informationen zum Namen einer Person zur Identifizierung im Rückmeldeverfahren sowie in bei der Übermittlung von Fortschreibungsnachrichten abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.NameNatuerlichePerson">
+            <xs:sequence>
+               <xs:element name="familienname.unstrukturiert"
+                           minOccurs="0"
+                           type="xmeld:type.FamiliennameUnstrukturiert">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Familienname einer Person übermittelt (siehe DSMeld-Blatt 0101a). Wenn es sich bei dem Namen um einen Blocknamen handelt, wird der vollständige Name als Nachname der Person übermittelt, während für den Vornamen statt einer Zeichenkette das Kindelement nichtVorhanden verwendet wird, um auszudrücken, dass die Person zu Recht keinen Vornamen führt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="ehename.unstrukturiert"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Ehename einer Person übermittelt (siehe DSMeld-Blatt 0103a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="lebenspartnerschaftsname.unstrukturiert"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Lebenspartnerschaftsame einer Person übermittelt (siehe DSMeld-Blatt 0105a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="geburtsname.unstrukturiert"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Geburtsname einer Person übermittelt (siehe DSMeld-Blatt 0201a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="vornamen" type="xmeld:type.Vornamen">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Vornamen einer Person übermittelt (siehe DSMeld-Blatt 0301).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="gebraeuchlicherVorname"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der gebräuchliche Vorname der betroffenen Person übermittelt (siehe DSMeld-Blatt 0302).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Identifikation.Ereignis">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikation Ereignis</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Typ enthält Angaben, die ein Ereignis eindeutig identifizieren und es dem Leser einer Nachricht ermöglichen, die Reihenfolge von Ereignissen beim Autor nachzuvollziehen. Sofern dieses Element in einer Nachricht mit mehreren Datensätzen verwendet wird (Sammelnachricht), dient es der Identifikation des Einzelfalls. Es muss dann entsprechend für jeden Einzelfall in der Sammelnachricht übermittelt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xink:Identifikation.Ereignis">
+            <xs:sequence>
+               <xs:element name="ereignis.zeitpunkt" type="xs:dateTime" form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element wird verwendet, um beim Leser die ursprüngliche Chronologie der Ereignisse beim Autor der Nachricht zu rekonstruieren. Es ist der Zeitpunkt zu übermitteln, zu dem das Ereignis im Verfahren gespeichert wurde. Der Ereigniszeitpunkt muss neben einer Angabe zum Datum eine zeitliche Information beinhalten. Diese ist mit einer Genauigkeit auf Ebene von Millisekunden und der Angabe zur Zeitzone zu übermitteln. Der hier übermittelte Zeitpunkt kann von dem Erstellungszeitpunkt der Nachricht, in der das Ereignis übermittelt wird, abweichen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="ereignis.zeichen"
+                           type="xink:Identifikation.Ereignis.Zeichen"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird ein (Geschäfts-)Zeichen zu dem Ereignis übermittelt, das das Ereignis innerhalb einer Nachricht eindeutig identifiziert. Das (Geschäfts-)Zeichen kann durch den Autor der Nachricht beliebig gestaltet werden, es muss nur sichergestellt werden, dass ein Ereignis innerhalb einer Nachricht eindeutig identifiziert (nur relevant bei Sammelnachrichten) wird und dass der Autor einer Nachricht in der Lage ist, das übermittelte Ereignis mithilfe des (Geschäfts-)Zeichens und den identifizierenden Angaben zur Nachricht wieder aufzufinden. Ein solches Zeichen darf maximal 100 Zeichen umfassen. Außer den Zeichen A..Z, a..z sowie den Ziffern 0..9 sind maximal acht Sonderzeichen erlaubt. Umlaute und das ß gelten ebenfalls als Sonderzeichen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Identifikation.Nachricht">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikation einer Nachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Typ enthält die für die Identifikation einer Nachricht erforderlichen Informationen. Er kann verwendet werden, um Identifizierungsmerkmale zu setzen, auf die sich ein Leser beziehen kann (Verwendung im Nachrichtenkopf) oder sich auf Identifizierungsmerkmale einer übermittelten Nachricht zu beziehen (Verwendung im Nachrichteninhalt von Reaktions- oder RtS-Nachrichten). Darüber hinaus enthält der Typ den Erstellungszeitpunkt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="bn-uq-g2g:Identifikation.NachrichtType">
+            <xs:sequence>
+               <xs:element name="nachrichtenUUID" type="bn-uq-g2g:UUID" form="unqualified"/>
+               <xs:element name="nachrichtentyp"
+                           type="xmeld:Code.XMeld.Nachrichten"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Die eindeutige Identifizierungsnummer für einen Nachrichtentyp.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="erstellungszeitpunkt" type="xs:dateTime" form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Der Zeitpunkt, an dem die Nachricht erstellt wurde. Dieses Feld wird durch das Fachverfahren beim Erstellen der Nachricht gefüllt. Hier ist explizit nicht der Sende- und Empfangszeitpunkt festgehalten, denn die können in der Regel der Transportschicht entnommen werden. Der Erstellungszeitpunkt muss neben einer Angabe zum Datum eine zeitliche Information beinhalten. Diese ist mit einer Genauigkeit auf Ebene von Millisekunden und der Angabe zur Zeitzone zu übermitteln.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Identifikation.NachrichtMitBasismodul">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikation einer XMeld- oder Basismodul-Nachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Typ enthält die für die Identifikation einer XMeld-Nachricht oder einer Basismodul-Nachricht erforderlichen Informationen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nachrichtenUUID" type="bn-uq-g2g:UUID"/>
+         <xs:element name="nachrichtentyp">
+            <xs:annotation>
+               <xs:documentation>Die eindeutige Identifizierungsnummer für einen Nachrichtentyp.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:choice>
+                  <xs:element name="xmeld" type="xmeld:Code.XMeld.Nachrichten">
+                     <xs:annotation>
+                        <xs:documentation>Die eindeutige Identifizierungsnummer für einen XMeld-Nachrichtentyp.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="basismodul" type="xint:Code.Nachrichtentyp">
+                     <xs:annotation>
+                        <xs:documentation>Die eindeutige Identifizierungsnummer für einen Basismodul-Nachrichtentyp.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:choice>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="erstellungszeitpunkt" type="xs:dateTime">
+            <xs:annotation>
+               <xs:documentation>Der Zeitpunkt, an dem die Nachricht erstellt wurde. Dieses Feld wird durch das Fachverfahren beim Erstellen der Nachricht gefüllt. Hier ist explizit nicht der Sende- und Empfangszeitpunkt festgehalten, denn die können in der Regel der Transportschicht entnommen werden. Der Erstellungszeitpunkt muss neben einer Angabe zum Datum eine zeitliche Information beinhalten. Diese ist mit einer Genauigkeit auf Ebene von Millisekunden und der Angabe zur Zeitzone zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.Nachricht.G2G">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Allgemeiner Datenübermittlungstyp für Behörden und andere öffentliche Stellen</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Typ wurde als Ableitung des entsprechenden Datentyps des xinneres-basismoduls erstellt. Er realisiert die Oberklasse für alle Nachrichten zwischen Behörden und anderen (öffentlichen) Stellen. Jede in XMeld definierte konkrete Nachricht erbt von diesem Typ. Auf diese Weise wird für alle Nachrichten eine einheitliche Grundstruktur gewährleistet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xink:Nachricht.G2G">
+            <xs:sequence>
+               <xs:element name="nachrichtenkopf.g2g"
+                           type="xmeld:type.Nachrichtenkopf.G2G"
+                           form="unqualified"/>
+               <xs:element name="anschrift.leser"
+                           minOccurs="0"
+                           type="xipa:PostalischeInlandsanschrift"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Die Anschrift des Lesers (für persönliches Erscheinen oder die Zusendung von Dokumenten per Briefpost an die Behörde).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="anschrift.autor"
+                           type="xipa:PostalischeInlandsanschrift"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Die Anschrift des Autors (für persönliches Erscheinen oder die Zusendung von Dokumenten per Briefpost an die Behörde).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+            <xs:attribute name="produkt" type="din91379:datatypeC" use="required">
+               <xs:annotation>
+                  <xs:documentation>In diesem Attribut ist der Name des Produktes (der Software) einzutragen, mit dem diese Nachricht erstellt worden ist.</xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="produkthersteller" type="din91379:datatypeC" use="required">
+               <xs:annotation>
+                  <xs:documentation>In diesem Attribut ist der Name der Firma oder der Organisation einzutragen, die für das DV-Verfahren verantwortlich ist, mit dem diese Nachricht erstellt worden ist.</xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="produktversion" type="din91379:datatypeC" use="optional">
+               <xs:annotation>
+                  <xs:documentation>In diesem Attribut sollen ergänzende Hinweise zu dem Produkt, mit dem diese Nachricht erstellt worden ist, eingetragen werden. Dies sind Angaben, die für eine möglichst präzise Identifikation im Fehlerfall hilfreich sind, wie zum Beispiel Version und Patchlevel.</xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="standard"
+                          type="din91379:datatypeC"
+                          use="required"
+                          fixed="XMeld">
+               <xs:annotation>
+                  <xs:documentation>In diesem Attribut wird der Name des xinneres-fachmoduls übermittelt, aus dem die Nachricht stammt. Im Kontext des xinneres-fachmoduls xmeld ist immer der Wert XMeld zu übermitteln. Hinweis: Der Wert ist auf der XML Schema-Ebene über das fixed-Attribut festgelegt.</xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="test" type="din91379:datatypeC" use="optional">
+               <xs:annotation>
+                  <xs:documentation>Dieses Attribut ist optional. Ist es vorhanden, so sagt dies aus, dass es sich um eine Nachricht handelt, die (aus Sicht des Autors der Nachricht) nicht im normalen Produktivbetrieb behandelt werden soll. Über den Inhalt des Attributes wird nichts weiter ausgesagt, dies kann bilateral zwischen den Kommunikationspartnern vereinbart werden.</xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
+            <xs:attribute name="version"
+                          type="din91379:datatypeC"
+                          use="required"
+                          fixed="26.11">
+               <xs:annotation>
+                  <xs:documentation>In diesem Attribut wird die Version des xinneres-fachmoduls übermittelt, aus dem die Nachricht stammt. Die Versionsbezeichnung wird durch das xinneres-fachmodul als fixed-Value auf Schemaebene festgelegt (z. B. 1.5.0).</xs:documentation>
+               </xs:annotation>
+            </xs:attribute>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Nachrichtenkopf.G2G">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachrichtenkopf für die Kommunikation zwischen Behörden und anderen öffentlichen Stellen</title>
+         </xs:appinfo>
+         <xs:documentation>Nachrichtenkopf für Nachrichten zwischen Behörden und anderen öffentlichen Stellen. Der Nachrichtenkopf umfasst Angaben zur eindeutigen Identifikation des Autors und des Lesers der Nachricht sowie der Nachricht selbst.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xink:Nachrichtenkopf.G2G">
+            <xs:sequence>
+               <xs:element name="identifikation.nachricht"
+                           type="xmeld:type.Identifikation.Nachricht"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Identifizierungsmerkmale der Nachricht übermittelt, auf die sich der Leser der Nachricht beziehen kann.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="leser" type="bn-uq-g2g:BehoerdeType" form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element enthält Angaben zum Leser der Nachricht. Der Leser ist die fachlich zuständige Behörde / öffentliche Stelle, der die Nachricht zugestellt werden soll und die die Nachricht fachlich verarbeiten soll. In dem Kindelement verzeichnisdienst wird der Verzeichnisdienst angegeben, in welchem die Behörde / öffentliche Stelle unter der nachfolgend angegebenen Kennung (Kindelement kennung) eingetragen ist. In dem Element verzeichnisdienst/code muss der Code DVDV übermittelt werden. Das Kindelement kennung enthält den eindeutigen Organisationsschlüssel des Lesers innerhalb des Verzeichnisdienstes DVDV. Der Organisationsschlüssel enthält das Präfix (gem. der Codeliste mit der Kennung urn:xoev-de:bund:bmi:bit:codeliste:dvdv.praefix) und die Organisations-ID getrennt durch einen Doppelpunkt, also bspw. „psw:01003110“. Die für die Organisations-ID zu verwendende Codeliste ergibt sich aus dem Nachrichtenkontext. Zum Beispiel ist bei der Datenübermittlung an ein Standesamt die Codeliste der Standesamtsnummern und somit eine Standesamtsnummer als Organisations-ID zu verwenden. In der Regel stehen die Codelisten im XRepository zur Verfügung. Sie liegen jedoch aufgrund unterschiedlicher Pflegeprozesse nicht immer in der aktuellsten Fassung vor. Der im Kindelement name übermittelte Name dient auch dazu, eine ggfs. erforderliche manuelle Klärung zu beschleunigen, indem bspw. der Autor einer Nachricht im Klartext übermittelt, an welche Behörde er die Nachricht schicken wollte.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="autor"
+                           type="xibehoerde:Behoerde.Erreichbar"
+                           form="unqualified">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element enthält Angaben zum Autor der Nachricht, die es dem Leser ermöglichen, bei Bedarf mit dem Autor in Verbindung zu treten. Der Autor ist die fachlich zuständige Behörde / öffentliche Stelle, die die Nachricht erstellt, also bspw. eine Meldebehörde oder ein Standesamt. Der im Kindelement kennung übermittelte Organisationsschlüssel muss es dem Leser einer Nachricht ermöglichen, den Autor einer Nachricht im DVDV zu ermitteln um diesem ggf. erforderliche elektronische Mitteilungen senden zu können (bspw. Quittungen oder Fehlernachrichten). Der Organisationsschlüssel enthält das Präfix (gem. der Codeliste mit der Kennung urn:xoev-de:bund:bmi:bit:codeliste:dvdv.praefix) und die Organisations-ID getrennt durch einen Doppelpunkt, also bspw. „psw:01003110“. Die für die Organisations-ID zu verwendende Codeliste ergibt sich aus dem Nachrichtenkontext. Zum Beispiel ist bei der Datenübermittlung an ein Standesamt die Codeliste der Standesamtsnummern und somit eine Standesamtsnummer als Organisations-ID zu verwenden. In der Regel stehen die Codelisten im XRepository zur Verfügung. Sie liegen jedoch aufgrund unterschiedlicher Pflegeprozesse nicht immer in der aktuellsten Fassung vor. Für die sendende Behörde wird im Kindelement kennung immer die Kennung der für den Betroffenen zuständigen Gemeinde bzw. Ausländerbehörde oder die Kennung des für den Personenstandsfall zuständigen Standesamtes übermittelt. Sofern die sendende Behörde für einen Gemeindeverbund oder im Auftrag einer anderen Behörde handelt, ist in diesen Fällen deshalb die Angabe der zuständigen Stelle (Gemeinde oder Behörde) verpflichtend. Daraus ergibt sich auch die Konsequenz, dass Sammelnachrichten nur für die einzelnen Gemeinden bzw. Behörden zulässig sind. Sofern es keine dem obigen Sinn nach zuständige Gemeinde oder Behörde gibt (bspw. bei der Beantragung eine Führungszeugnisses in einer nicht für den Wohnort des Beantragenden zuständigen Meldebehörde), ist in dem Kindelement kennung eine beliebige Kennung zu übermitteln, mit der der Autor im DVDV adressiert werden kann.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.basisnachricht" abstract="true">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Basisnachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Diese Klasse bildet die Basis für die in der xmeld-eigenen asynchronen rts-nachricht sowie in den Nachrichten der einfachen Melderegisterauskunft eingesetzten Nachrichtenköpfe. Sie dient der leichteren programmtechnischen Verarbeitung von Nachrichten. Außerdem enthält diese Klasse Informationen, die für jede Nachricht relevant sind. Dies sind im Einzelnen: Angaben zum xmeld-Release (Attribute version und fassung) eine optionale Angabe, ob es sich bei der Nachricht um eine Testnachricht handelt Angaben über die zur Erstellung der Nachricht verwendete Software und deren Hersteller eine optionale ID zur eindeutigen Identifizierung der Nachricht</xs:documentation>
+      </xs:annotation>
+      <xs:attribute name="fassung"
+                    type="din91379:datatypeC"
+                    use="required"
+                    fixed="2026-01-31">
+         <xs:annotation>
+            <xs:documentation>Dieses Attribut kennzeichnet das Datum, an dem die diesen Schemata zu Grunde liegende Spezifikation von der xmeld-Gruppe im Status final produziert wurde. Format: YYYY-MM-DD.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="id" type="xs:ID" use="optional">
+         <xs:annotation>
+            <xs:documentation>Dieses optionale ID-Attribut kann verwendet werden, um innerhalb von Nachrichten eine Referenzierung auf Nachrichten bzw. Nachrichtenfragmente zu ermöglichen.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="produkt" type="din91379:datatypeC" use="required">
+         <xs:annotation>
+            <xs:documentation>In diesem Attribut ist der Name des Produktes (der Software) einzutragen, mit dem diese xmeld-Nachricht erstellt worden ist.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="produkthersteller" type="din91379:datatypeC" use="required">
+         <xs:annotation>
+            <xs:documentation>In diesem Attribut ist der Name der Firma oder der Organisation einzutragen, die für das DV-Verfahren verantwortlich ist, mit dem diese xmeld- Nachricht erstellt worden ist.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="produktversion" type="din91379:datatypeC" use="optional">
+         <xs:annotation>
+            <xs:documentation>In diesem Attribut sollen ergänzende Hinweise zu dem Produkt, mit dem diese xmeld-Nachricht erstellt worden ist, eingetragen werden. Dies sind Angaben, die für eine möglichst präzise Identifikation im Fehlerfall hilfreich sind, wie zum Beispiel Version und Patchlevel.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="test" type="din91379:datatypeC" use="optional">
+         <xs:annotation>
+            <xs:documentation>Dieses Attribut ist optional. Ist es vorhanden, so sagt dies aus, dass es sich um eine Nachricht handelt, die (aus Sicht des Autors der Nachricht) nicht im normalen Produktivbetrieb behandelt werden soll. Über den Inhalt des Attributes wird nichts weiter ausgesagt, dies kann bilateral zwischen den Kommunikationspartnern vereinbart werden.</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+      <xs:attribute name="version"
+                    type="din91379:datatypeC"
+                    use="required"
+                    fixed="26.11">
+         <xs:annotation>
+            <xs:documentation>Dieses Attribut kennzeichnet die xmeld-Version, z. B. "1.3.0", "1.3.1".</xs:documentation>
+         </xs:annotation>
+      </xs:attribute>
+   </xs:complexType>
+   <xs:complexType name="type.datenuebermittlung.b2b">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Allgemeiner Datenübermittlungstyp: Behörde an Behörde</title>
+         </xs:appinfo>
+         <xs:documentation>Allgemeines Schema für die Nachrichtenübermittlung zwischen zwei Behörden. Hinweis: Dieser Datentyp wird ausschließlich in der xmeld-eigenen asynchronen rts-nachricht eingesetzt und wird mit dieser zusammen zu einem späteren xmeld-Release entfallen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.basisnachricht">
+            <xs:sequence>
+               <xs:element name="nachrichtenkopf" type="xmeld:type.nachrichtenkopf.b2b">
+                  <xs:annotation>
+                     <xs:documentation>Allgemeine Angaben über diese Nachricht. (Welches Ereignis ist der Auslöser, wer ist der Autor, wer ist der Leser, wann wurde gesendet?)</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.datenuebermittlung.b2privat">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Allgemeiner Datenübermittlungstyp: Behörde an Privat</title>
+         </xs:appinfo>
+         <xs:documentation>Allgemeines Schema für die Nachrichtenübermittlung von einer Behörde an einen Bürger.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.basisnachricht">
+            <xs:sequence>
+               <xs:element name="nachrichtenkopf" type="xmeld:type.nachrichtenkopf.b2privat">
+                  <xs:annotation>
+                     <xs:documentation>Allgemeine Angaben über diese Nachricht. (Welches Ereignis ist der Auslöser, wer ist der Autor, wer ist der Leser, wann wurde gesendet?)</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.datenuebermittlung.privat2b">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Allgemeiner Datenübermittlungstyp: Privat an Behörde</title>
+         </xs:appinfo>
+         <xs:documentation>Allgemeines Schema für die Nachrichtenübermittlung von einem Bürger an die Behörde.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.basisnachricht">
+            <xs:sequence>
+               <xs:element name="nachrichtenkopf" type="xmeld:type.nachrichtenkopf.privat2b">
+                  <xs:annotation>
+                     <xs:documentation>Allgemeine Angaben über diese Nachricht. (Welches Ereignis ist der Auslöser, wer ist der Autor, wer ist der Leser, wann wurde gesendet?)</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.identifikation.fortschreibung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikationsdaten der betroffenen Person für Fortschreibung und Rückmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Identifikationsdaten der betroffenen Person für das Rückmeldeverfahren sowie die Übermittlung von Fortschreibungsnachrichten abgebildet. Die Identifikation erfolgt durch Namen, Geburtsdaten und der auswärtigen Anschrift beim Leser der Nachricht.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="name"
+                     type="xmeld:type.Fortschreibung.Identifikation.NameNatuerlichePerson">
+            <xs:annotation>
+               <xs:documentation>Dieses Element enthält Identifizierungsdaten der betroffenen Person. In diesem Element müssen entweder mindestens Vor- und Nachname des Betroffenen oder der Nachname mit der Kennzeichnung, dass er zu Recht nicht vorhanden ist. Weitere Namensangaben sind optional.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburt" type="xmeld:type.Geburt">
+            <xs:annotation>
+               <xs:documentation>Dient dazu, den Betroffenen anhand von Angaben zu seiner Geburt zu identifizieren.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="wohnung.autor"
+                     minOccurs="0"
+                     type="xmeld:type.WohnungOhneDatum.Inland">
+            <xs:annotation>
+               <xs:appinfo>
+                  <implementationHint>Dieses Element muss bei allen Rückmeldungs- und Fortschreibungsnachrichten vorhanden und gefüllt sein, mit der Ausnahme der Nachricht 0204. (Hierzu wird auf den entsprechenden Kommentar in der Nachricht verwiesen.)</implementationHint>
+               </xs:appinfo>
+               <xs:documentation>Die Anschrift und der Wohnungsstatus des Betroffenen beim Autor der Nachricht. Wenn diese Angabe vorhanden ist (obligatorisch innerhalb aller Fortschreibungen), kann sie ebenfalls zur Identifikation des Betroffenen in dem EWO-System des Lesers der Nachricht herangezogen werden. In keinem Fall wird zur Anschrift die Tatsache des Vorliegens eines bedingten Sperrvermerks übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="wohnung.leser" type="xmeld:type.WohnungOhneDatum.Inland">
+            <xs:annotation>
+               <xs:documentation>Die Anschrift und der Wohnungsstatus des Betroffenen im Zuständigkeitsbereich des Lesers. In keinem Fall wird zur Anschrift die Tatsache des Vorliegens eines bedingten Sperrvermerks übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.identifikation.nachricht.alt">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikation einer Nachricht (alt)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Identifikationsdaten einer Nachricht abgebildet. Dieser Typ kann verwendet werden, um Identifizierungsmerkmale zu setzen, auf die sich ein Leser beziehen kann (Verwendung im Nachrichtenkopf) oder sich auf Identifizierungsmerkmale einer übermittelten (Einzel- oder Sammel-) Nachricht zu beziehen (Verwendung im Nachrichteninhalt von Reaktions- oder RtS-Nachrichten). Hinweis: Für eine Übergangszeit wird dieser Datentyp als Alternative zu dem entsprechenden Datentyp des xinneres-basismoduls nutzbar sein, damit auf Nachrichten mit Identifikationsdaten aus dem vorhergehenden xmeld-Release verwiesen werden kann. Nach der Übergangszeit wird dieser Datentyp ausschließlich in der einfachen Melderegisterauskunft genutzt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nachrichtennummer" type="xmeld:Code.XMeld.Nachrichten">
+            <xs:annotation>
+               <xs:documentation>xmeld-Bezeichnung der referenzierten Nachricht.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="erstellungszeitpunkt" type="xs:dateTime">
+            <xs:annotation>
+               <xs:documentation>Der Zeitpunkt, an dem die Nachricht erstellt wurde. Dieses Feld wird durch das Fachverfahren beim Erstellen der Nachricht gefüllt. Hier ist explizit nicht der Sende- und Empfangszeitpunkt festgehalten, denn die können in der Regel der Transportschicht entnommen werden. Der Erstellungszeitpunkt muss neben einer Angabe zum Datum eine zeitliche Information beinhalten. Diese ist mit einer Genauigkeit auf Ebene von Millisekunden und der Angabe zur Zeitzone zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="tagesvorgangszaehler" type="xs:unsignedLong">
+            <xs:annotation>
+               <xs:appinfo>
+                  <implementationHint>Es besteht keine Pflicht oder Notwendigkeit, den Tagesvorgangszähler im sendenden System lückenlos zu vergeben. Die Belegung der Felder Erstellungsdatum und Tagesvorgangszähler ist so vorzunehmen, dass für die Reihenfolge zweier Nachrichten F (frühere Nachricht) und S (spätere Nachricht) im Zusammenhang mit dem Tagesvorgangszähler (TVZ), dem Tag (aus dem Erstellungsdatum) und der Uhrzeit (aus dem Erstellungsdatum) folgende Aussagen immer gelten: Die Tatsache ((Tag(F) ist kleiner Tag(S)) oder ((Tag(F) ist gleich Tag(S)) und (TVZ(F) ist kleiner TVZ(S)))) gilt genau dann, wenn folgende Tatsache gilt: (Die Nachricht F kommt vor der Nachricht S) Aus den Tatsachen ((Tag(F) ist gleich Tag(S)) und (Uhrzeit(F) ist kleiner Uhrzeit(S))) folgt die Tatsache (TVZ(F) ist kleiner TVZ(S)) Aus den Tatsachen ((Tag(F) gleich Tag(S)) und (TVZ(F) kleiner TVZ(S))) folgt die Tatsache (Uhrzeit(F) ist kleiner oder gleich Uhrzeit(S))</implementationHint>
+               </xs:appinfo>
+               <xs:documentation>Der Tagesvorgangszähler dient zusammen mit dem Erstellungsdatum dazu, die erzeugten Nachrichten eines Autors beim Leser in der Reihenfolge ihrer Erzeugung verarbeiten zu können. Dieser Zähler wird um 0:00 Uhr eines jeden Tages (bzw. mit der ersten Nachricht eines Tages) auf den Startwert 1 gesetzt. Für jede Nachricht des Autors innerhalb des Tages wird der Zähler erhöht. Der Tagesvorgangszähler ermöglicht lediglich, zwei vom gleichen Autor bereits vorliegende Nachrichten logisch in der Reihenfolge der Erstellung zu verarbeiten. Der Tagesvorgangszähler lässt keine Rückschlüsse auf möglicherweise verlorengegangene Nachrichten zu. Der Tagesvorgangszähler ermöglicht keine Entscheidung über die notwendige Verarbeitungsreihenfolge eingegangener Nachrichten unterschiedlicher Autoren.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.identifikation.person">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Einheitliche Struktur für die Identifikation einer Person ohne Anschrift</title>
+            <implementationHint>Eine der Angaben aktueller Familienname oder Geburtsname muss mindestens enthalten sein. Es muss zumindest einer der aktuellen Vornamen enthalten sein.</implementationHint>
+         </xs:appinfo>
+         <xs:documentation>Durch die hier übermittelten Daten soll der Leser der Nachricht in die Lage versetzt werden, eine eindeutige Identifikation des Betroffenen auf Basis der im eigenen Register vorliegenden Daten vorzunehmen. Bei Änderungsmitteilungen enthält diese Struktur die Personendaten vor Änderung (alter Datenzustand), während im Nutzdatenblock der jeweiligen Nachricht die neuen Daten nach Änderung enthalten sind. Der Datentyp type.identifikation.person kann genutzt werden, um Melde- und andere Register synchron zu halten.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="aktueller.familienname.unstrukturiert"
+                     minOccurs="0"
+                     type="xmeld:type.FamiliennameUnstrukturiert">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Familienname einer Person übermittelt (siehe DSMeld-Blatt 0101a). Wenn es sich bei dem Namen um einen Blocknamen handelt, wird der vollständige Name als Nachname der Person übermittelt, während für den Vornamen statt einer Zeichenkette das Kindelement nichtVorhanden verwendet wird, um auszudrücken, dass die Person zu Recht keinen Vornamen führt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtsname.unstrukturiert"
+                     minOccurs="0"
+                     type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Geburtsname einer Person übermittelt (siehe DSMeld-Blatt 0201a).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="frueherer.familienname.unstrukturiert"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der frühere Familienname einer Person übermittelt (siehe DSMeld-Blatt 0203a). Die Änderung eines Geburtsnamens durch Adoption wird nicht als Namensänderung behandelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vornamen" minOccurs="0" type="xmeld:type.Vornamen">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Vornamen einer Person übermittelt (siehe DSMeld-Blatt 0301).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="gebraeuchlicherVorname"
+                     minOccurs="0"
+                     type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der gebräuchliche Vorname der betroffenen Person übermittelt (siehe DSMeld-Blatt 0302).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fruehere.vornamen" minOccurs="0" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mir diesem Element werden die Vornamen übermittelt, die die betroffene Person vor Änderung des Vornamens (falls es eine solche gegeben hat) geführt hat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburt" type="xmeld:type.Geburt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Geburtsinformationen einer Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" minOccurs="0" type="xig:Code.Geschlecht">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Geschlecht der betroffenen Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.identifikation.personanschrift">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Einheitliche Struktur für die Identifikation einer Person unter Berücksichtigung ihrer Anschrift</title>
+         </xs:appinfo>
+         <xs:documentation>Durch die hier übermittelten Daten soll der Leser der Nachricht in die Lage versetzt werden, eine eindeutige Identifikation des Betroffenen auf Basis der im eigenen Register vorliegenden Daten vorzunehmen. Bei Änderungsmitteilungen enthält diese Struktur die Personendaten inkl. der Anschrift vor Änderung (alter Datenzustand), während im Nutzdatenblock der jeweiligen Nachricht die neuen Daten nach Änderung enthalten sind. Der Datentyp type.identifikation.personanschrift kann genutzt werden, um Melde- und andere Register synchron zu halten.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.identifikation.person">
+            <xs:sequence>
+               <xs:element name="anschrift" type="xmeld:type.AnschriftMelderecht">
+                  <xs:annotation>
+                     <xs:documentation>Von der Anschrift müssen genau die Felder gemeindeschluessel (dsm-Feld 1201) postleitzahl (dsm-Feld 1202) wohnort (dsm-Feld 1203) wohnort - früherer gemeindename (dsm-Feld 1204) strasse (dsm-Feld 1205) hausnummer (dsm-Feld 1206) hausnummerbuchstabezusatzziffer (dsm-Feld 1208) teilnummerderhausnummer (dsm-Feld 1209) stockwerkswohnungsnummer (dsm-Feld 1210) zusatzangaben (dsm-Feld 1211) übermittelt werden, soweit vorhanden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.nachrichtenkopf.b2b">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachrichtenkopf für die Kommunikation zwischen Behörden</title>
+         </xs:appinfo>
+         <xs:documentation>Nachrichten dieses Typs werden stets von einer Behörde an eine andere Behörde gesandt. Hinweis: Dieser Datentyp wird ausschließlich in der xmeld-eigenen asynchronen rts-nachricht eingesetzt und wird mit dieser zusammen zu einem späteren xmeld-Release entfallen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="identifikation.nachricht"
+                     type="xmeld:type.identifikation.nachricht.alt"/>
+         <xs:element name="anwenderkennung" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Die Anwenderkennung stellt Informationen über die anfragende Person zur Verfügung und dient der Protokollierung. Anhand dieser Kennung kann die anfragende Person eindeutig identifiziert werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="absender" type="xmeld:type.Erreichbare.Behoerde">
+            <xs:annotation>
+               <xs:documentation>Die sendende Behörde. Für eine Meldebehörde wird in der behoerdenkennung immer der AGS der für den Betroffenen zuständigen Gemeinde übermittelt. Sofern die Meldebehörde für einen Gemeindeverbund handelt, ist deshalb die Angabe des AGS der für den Betroffenen zuständigen Gemeinde verpflichtend. Daraus ergibt sich die Konsequenz, dass Sammelnachrichten eines Gemeindeverbundes immer nur für die einzelnen Gemeinden zulässig sind. Sofern es keine für den Bürger zuständige Gemeinde gibt (bspw. bei der Beantragung eine Führungszeugnisses in einer nicht für den Wohnort des Beantragenden zuständigen Meldebehörde oder bei Rücksendung wegen Nichtzuständigkeit wie bei 0198, 0204, 0513), ist in dem Kindelement behoerdenkennung ein beliebiger AGS zu übermitteln, mit dem der Autor der xmeld-Nachricht im DVDV adressiert werden kann. Im Folgenden werden die Zusammenhänge zwischen der Behördenkennung, der Postleitzahl und möglichen Inhalten der Organisationseinheit illustriert. Stadt mit Bezirksämtern, Servicestellen, Außenstellen Behördenkennung: ags:11000000 (Stadt Berlin) Anschrift/PLZ: 10178 Berlin Organisationseinheit Stadtverwaltung Berlin Bezirksamt Mitte von Berlin Stadt oder (Einzel-)Gemeinde Behördenkennung: ags:07111000 (Stadt Koblenz) Anschrift/PLZ: 56068 Koblenz Organisationseinheit Stadtverwaltung Koblenz Bürgeramt (Amt 12) Gemeindeverbund mit Sitz in Mitgliedsgemeinde Behördenkennung: ags:09180114 (Gemeinde Eschenlohe) Anschrift/PLZ: 82441 Ohlstadt Organisationseinheit Verwaltungsgemeinschaft Ohlstadt Gemeindeverbund mit Sitz außerhalb des Gemeindeverbunds / in einem anderen AGS-Bereich Behördenkennung: ags:01060097(Gemeinde Wensin) Anschrift/PLZ: 23795 Bad Segeberg Organisationseinheit Amt Trave-Land</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="empfaenger" type="xmeld:type.Behoerde">
+            <xs:annotation>
+               <xs:documentation>Die adressierte Behörde.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.nachrichtenkopf.b2privat">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachrichtenkopf für die Kommunikation zwischen Behörde und Betroffenem</title>
+         </xs:appinfo>
+         <xs:documentation>Nachrichten dieses Typs werden stets zwischen einer Behörde und einem Bürger ausgetauscht (Behörde an Bürger).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="identifikation.nachricht"
+                     type="xmeld:type.identifikation.nachricht.alt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element können die Identifikationsdaten einer Nachricht in der früher in xmeld genutzten Struktur übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anwenderkennung" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Die Anwenderkennung stellt Informationen über die anfragende Person zur Verfügung und dient der Protokollierung. Anhand dieser Kennung kann die anfragende Person eindeutig identifiziert werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="absender" type="xmeld:type.Erreichbare.Behoerde">
+            <xs:annotation>
+               <xs:documentation>Die sendende Behörde.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="empfaenger" type="xmeld:type.Kunde">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Kunde näher bezeichnet. Neben der Bezeichnung des Kunden kann eine nähere Spezifikation zu Kundennummer, Organisationseinheit und Erreichbarkeit erfolgen. Kundenanschrift, Lieferanschrift und Rechnungsanschrift können hinterlegt werden. Auch können zum Kunden Rechnungsdaten mitgegeben werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.nachrichtenkopf.dienstleister2kunde">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachrichtenkopf für die Kommunikation zwischen Dienstleister und Kunde</title>
+         </xs:appinfo>
+         <xs:documentation>Nachrichten, die auf diesem Typ basieren, werden von einem Dienstleister an einen Kunden geschickt, z. B. von einem Broker an einen Endkunden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="identifikation.nachricht"
+                     type="xmeld:type.identifikation.nachricht.alt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element können die Identifikationsdaten einer Nachricht in der früher in xmeld genutzten Struktur übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anwenderkennung" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Die Anwenderkennung stellt Informationen über die anfragende Person zur Verfügung und dient der Protokollierung. Anhand dieser Kennung kann die anfragende Person eindeutig identifiziert werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dienstleister" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der die Nachricht als Autor erstellende Dienstleister bezeichnet, z. B. durch den Firmennamen, eine Vertragsnummer, etc.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kunde" type="xmeld:type.Kunde">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten zum Kunden übermittelt, der den Auftrag für die Anfrage erteilt hat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.nachrichtenkopf.kunde2dienstleister">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachrichtenkopf für die Kommunikation zwischen Kunde und Dienstleister</title>
+         </xs:appinfo>
+         <xs:documentation>Nachrichten, die auf diesem Typ basieren, werden von einem Kunden an einen Dienstleister geschickt, z. B. von einem Endkunden an einen Broker.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="identifikation.nachricht"
+                     type="xmeld:type.identifikation.nachricht.alt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element können die Identifikationsdaten einer Nachricht in der früher in xmeld genutzten Struktur übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anwenderkennung" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Die Anwenderkennung stellt Informationen über die anfragende Person zur Verfügung und dient der Protokollierung. Anhand dieser Kennung kann die anfragende Person eindeutig identifiziert werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kunde" type="xmeld:type.Kunde">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Objekt wird der die Nachricht als Autor erstellende Kunde dargestellt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dienstleister" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten zum Dienstleister übermittelt, der den Auftrag des Kunden entgegengenommen hat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.nachrichtenkopf.privat2b">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachrichtenkopf für die Kommunikation zwischen Betroffenem und Behörde</title>
+         </xs:appinfo>
+         <xs:documentation>Nachrichten dieses Typs werden stets zwischen einer Behörde und einem Bürger ausgetauscht (Bürger an Behörde).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="identifikation.nachricht"
+                     type="xmeld:type.identifikation.nachricht.alt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element können die Identifikationsdaten einer Nachricht in der früher in xmeld genutzten Struktur übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anwenderkennung" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Die Anwenderkennung stellt Informationen über die anfragende Person zur Verfügung und dient der Protokollierung. Anhand dieser Kennung kann die anfragende Person eindeutig identifiziert werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="absender" type="xmeld:type.Kunde">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Kunde näher bezeichnet. Neben der Bezeichnung des Kunden kann eine nähere Spezifikation zu Kundennummer, Organisationseinheit und Erreichbarkeit erfolgen. Kundenanschrift, Lieferanschrift und Rechnungsanschrift können hinterlegt werden. Auch können zum Kunden Rechnungsdaten mitgegeben werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="empfaenger" type="xmeld:type.Behoerde">
+            <xs:annotation>
+               <xs:documentation>Die adressierte Behörde.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.paketierung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Paketierungsinformationen</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element ist zur Sicherstellung der korrekten Abfolge aller Pakete (paketnummer) einer Lieferung (laufende.nummer.der.lieferung) sowie der Vollständigkeitskontrolle (Kennzeichen letztes.paket) vorgesehen. Ein Paket ist eine xmeld-Nachricht, die in der Regel 1 - n Datensätze enthält. Nachfolgend ein Beispiel für die Verwendung des Elementes type.paketierung zur Markierung der korrekten Reihenfolge der Lieferungen und Pakete: laufende.nummer.der.lieferung paketnummer letztes.paket 1 1 false 1 2 false 1 3 true 2 1 false 2 2 true 3 1 true 4 1 true</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="laufende.nummer.der.lieferung" type="xs:positiveInteger">
+            <xs:annotation>
+               <xs:documentation>Nummer der Lieferung. Bei einer Lieferung aus mehreren Paketen hat jedes zur Lieferung gehörende Paket dieselbe laufende Nummer. Für aufeinanderfolgende Lieferungen muss die laufende Nummer vom sendenden System fortlaufend, aufsteigend und lückenlos vergeben werden. Die empfangende Stelle (Leser) prüft anhand dieser Nummer, dass keine Lieferung verlorengegangen ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="paketnummer" type="xs:positiveInteger">
+            <xs:annotation>
+               <xs:documentation>Dieses Element wird innerhalb der Lieferung fortlaufend durchnummeriert (jedes Paket einer Lieferung erhält so eine eindeutige Nummer).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="letztes.paket" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Kennzeichen für das letzte Paket einer Lieferung.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.quittierung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Quittierungsinformationen</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element ist zur Verwendung in Quittierungsnachrichten vorgesehen. Es enthält die laufende Nummer der Lieferung, einen Antwortstatus, eine (optionale) Fehlermeldung sowie zwei Elemente mit Fehlerstatistiken zu der quittierten Lieferung. Die Fehlerstatistik teilt mit, wie viele Datensätze in der Lieferung erkannt wurden (saetze.gelesen) und wie viele davon zurückgewiesen wurden (saetze.zurueckgewiesen).</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="laufende.nummer.der.lieferung" type="xs:positiveInteger">
+            <xs:annotation>
+               <xs:documentation>Dieses Element identifiziert die zugehörige Datenlieferung.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="antwortstatus" type="xmeld:Code.Antwortstatus">
+            <xs:annotation>
+               <xs:documentation>Dieses Element gibt darüber Aufschluss, ob eine Lieferung am System des Lesers bearbeitet wurde oder nicht. Ein antwortstatus mit dem Wert 00 - Leistung wurde erbracht - bedeutet, dass die Lieferung vom System des Lesers erfolgreich bearbeitet wurde. Eine neue Lieferung muss dann mit einer neuen, um 1 erhöhten laufendenummer geliefert werden. Ein antwortstatus mit dem Wert 00 sagt aber nichts darüber aus, wie viele Sätze erfolgreich bearbeitet wurden; diese Information kann nur aus den Fehlerstatistik-Elementen entnommen werden. Ein antwortstatus mit einem Wert ungleich 00 bedeutet, dass die gesamte Lieferung vom System des Lesers abgelehnt worden ist. Eine neue Lieferung - in der Regel wird dies ein Wiederholversuch sein - muss die alte laufendenummer wieder verwenden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fehlermeldung" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>In diesem Element kann eine textuelle Fehlermeldung mit Bezug auf die gesamte Datenlieferung mitgeliefert werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="saetze.gelesen" type="xs:nonNegativeInteger">
+            <xs:annotation>
+               <xs:documentation>Die Anzahl der vom System des Lesers erkannten Datensätze.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="saetze.zurueckgewiesen" type="xs:nonNegativeInteger">
+            <xs:annotation>
+               <xs:documentation>Die Anzahl der vom System des Lesers zurückgewiesenen und nicht übernommenen Sätze.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.technische.einzelidentifikation">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Technische Einzelidentifikation</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element erlaubt die Identifikation der einzelnen Einträge, die in einem Sammelnachrichten-Container übermittelt werden. Damit ist sowohl die eindeutige Identifizierung als auch die chronologische Zuordnung des Einzelfalles möglich.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ereigniszeitpunkt" type="xs:dateTime">
+            <xs:annotation>
+               <xs:documentation>Dieses Element kennzeichnet den Zeitpunkt der Protokollierung des Ereignisses im (Melde-)Register, der zur Übermittlung des Einzelfalles innerhalb der Sammelnachricht geführt hat. Dabei handelt es sich nicht um den Zeitpunkt der Erstellung der Sammelnachricht. Mit diesem Feld ist die chronologische Reihenfolge der Ereignisse im (Melde-)Register durch den Leser der Nachricht nachvollziehbar.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zeicheneinzelfall" type="xmeld:type.zeicheneinzelfall">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Einzelfall innerhalb der Sammelnachricht identifiziert.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="type.zeicheneinzelfall">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Kennzeichen für einen Einzelfall</title>
+         </xs:appinfo>
+         <xs:documentation>Ein konkreter Zeicheneinzelfall darf maximal 100 Zeichen umfassen. Außer den Zeichen A..Z, a..z sowie den Ziffern 0..9 sind maximal acht Sonderzeichen erlaubt. Umlaute und das ß gelten als Sonderzeichen.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:pattern value=".{1,100}"/>
+      </xs:restriction>
+   </xs:simpleType>
+</xs:schema>

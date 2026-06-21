@@ -1,0 +1,1183 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>XMeld-Nachrichten</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden die XMeld-Nachrichten (alle definierten Nachrichtenelemente) abgebildet.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2026-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>xmeld.nachrichten</ShortName>
+      <LongName>XMeld-Nachrichten</LongName>
+      <Version>26.11</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:xmeld.nachrichten</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:xmeld.nachrichten_26.11</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0001</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.geschlecht.0001 (Dieser Code entfällt zum nächsten Release)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0002</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.geschlecht.0002 (Dieser Code entfällt zum nächsten Release)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0003</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.geburt.0003</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0006</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.dokument.0006</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0014</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.geburt.0014</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0040</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.tod.0040</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0063</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.dokument.0063</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0064</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.dokument.0064</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0065</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.dokument.0065</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0066</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.religion.0066</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0067</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.staatsangehoerigkeit.0067</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0068</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.staatsangehoerigkeit.0068</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0069</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.staatsangehoerigkeit.0069</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0070</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.staatsangehoerigkeit.0070</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0074</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.todBerichtigung.0074</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0075</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.stornoperson.0075</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0081</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.anschrift.0081</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0085</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.beigeschriebenerpartner.0085</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0088</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.wohnungsbild.0088</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0089</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.wohnungsbild.0089</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0090</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.anschrift.0090</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0091</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.name.0091</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0092</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.name.0092</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0093</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.auskunftssperre.0093</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0094</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.auskunftssperre.0094</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0095</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.gesetzlicherVertreter.0095</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0096</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.gesetzlicherVertreter.0096</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0097</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.partner.0097</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0098</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.partner.0098</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0099</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.kind.0099</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.kind.0100</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0103</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.waffenUndSprengstoff.0103</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0104</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.waffenUndSprengstoff.0104</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0105</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.passversagung.0105</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0106</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.passversagung.0106</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0107</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.sbgg.0107</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0108</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.sbgg.0108</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0109</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.geschlecht.0109</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0110</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.geschlecht.0110</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0197</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.BeigeschriebenePersonAbweichung.0197</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0198</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>fortschreibung.keineeinwohnerschaft.0198</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0201</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rueckmeldung.anmeldunginland.0201</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0202</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rueckmeldung.anmeldungausland.0202</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0203</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rueckmeldung.auswertung.0203</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0204</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rueckmeldung.unplausibel.0204</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0206</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rueckmeldung.statuswechsel.0206</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0221</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rueckmeldung.anmeldungauswaertigereglp.0221</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0223</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rueckmeldung.auswertungauswaertigereglp.0223</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0224</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rueckmeldung.unplausibelauswaertigereglp.0224</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0300</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>anmeldung.datenanforderung.0300</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0301</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>anmeldung.datenbereitstellung.0301</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0430</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.bzranfrage.0430</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0500</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.anforderungIdNr.0500</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0501</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.antwortidnr.0501</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0502</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.aenderungSteuerpflichtiger.0502</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0503</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.konfliktmitteilungAnAusloeser.0503</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0504</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.zustaendigkeitSteuerpflichtiger.0504</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0507</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.stornierungperson.0507</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0508</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.fehlerhafteNachricht.0508</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0509</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.zustaendigkeit.0509</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0510</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.endeZustaendigkeitSteuerpflichtiger.0510</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0511</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.nichtzustaendigkeit.0511</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0512</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.zustaendigkeitnachdublette.0512</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0513</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.nichtMehrZustaendig.0513</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0515</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.mitteilungAufUndAbspaltung.0515</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0516</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.hinweisaufinkonsistenz.0516</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0518</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.anfrageidnrauswaertigerehegattelebenspartner.0518</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0519</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.antwortIdnrPartnerAuswaertig.0519</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0520</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.aussteuerungManuelleKlaerung.0520</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0521</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.nichtZustaendigFuerKonfliktklaerung.0521</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0522</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.aenderungIdNr.0522</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0523</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.datenNachAenderungIdNr.0523</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0524</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.zustaendigkeitMitIdNr.0524</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0526</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.verwaltungskontakt.0526</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0532</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.ruecknahmeWiederzuzug.ausland.0532</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0533</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.sterbefallmitteilung.0533</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0535</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.anfrage.0535</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0536</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.antwort.0536</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0545</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.registermitteilungkba.0545</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0550</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.zentralregistermitteilungbzr.0550</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0557</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.wehrverwaltungvolljaehrigkeit.0557</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0600</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>melderegisterauskunfteinfach.anforderung.0600</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0601</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>melderegisterauskunfteinfach.antwort.0601</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0602</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>melderegisterauskunfteinfach.anforderunggemeindeuebergreifend.0602</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0603</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>melderegisterauskunfteinfach.quittunggemeindeuebergreifend.0603</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0604</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>melderegisterauskunfteinfach.antwortgemeindeuebergreifend.0604</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0810</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>statistik.wanderung.0810</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0811</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>statistik.staatsangehoerigkeitswechsel.0811</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0812</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>statistik.familienstand.0812</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0820</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>statistik.korrektur.0820</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0855</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>ergBevStat.lieferung.0855</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0900</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>administration.returntosender.0900</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0905</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>administration.freitext.0905</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0910</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>administration.returntosender.0910</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0928</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>administration.quittierungbestandslieferung.0928</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>0930</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>administration.unplausibleMeldeverhaeltnisse.0930</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.bruttodaten.1000</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1001</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.aenderung.1001</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1002</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.geburtsmitteilung.1002</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1003</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.geburtsmitteilungaenderung.1003</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1004</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.stornierung.1004</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1005</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.sterbefall.1005</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1009</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.fehlerhaftenachricht.1009</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1010</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenuebermittlung.melderegisterkorrekt.1010</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>xmeldit.datenlieferung.1100</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1101</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>xmeldit.datenlieferungquittung.1101</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1104</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>xmeldit.ortsundstrassenverzeichnis.1104</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1322</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenabrufe.aussteuerung.suchanfrage.1322</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1330</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenabruf.personensuche.suchanfrage.1330</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1331</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenabruf.personensuche.antwort.1331</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1332</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenabruf.freieSuche.suchanfrage.1332</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1333</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>datenabruf.freieSuche.antwort.1333</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1400</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>lra.aenderung.1400</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1499</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>lra.bestandsdatenlieferung.1499</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1500</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>hinweisnachricht.mitteilung.1500</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1501</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>hinweisnachricht.antwort.1501</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1600</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>kirche.bestandslieferung.1600</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1601</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>kirche.fortschreibung.1601</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1603</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>kirche.zugang.1603</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1604</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>kirche.wegfall.1604</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1610</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>kirche.zugehoerigkeit.1610</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1612</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>kirche.austritt.1612</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1650</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>auslaenderzentralregister.auslaenderzentralregistermitteilung.1650</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1651</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>auslaenderzentralregister.mitteilungAnMeldebehoerde.1651</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1652</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>auslaenderzentralregister.fehlermitteilung.1652</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1653</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>auslaenderzentralregister.auslaenderzentralregistermitteilung.asp.1653</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1700</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.abrufanfrage.meldebescheinigung.1700</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1701</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.meldebescheinigungAntwort.1701</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1702</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.abrufanfrage.vorausgefuellterMeldeschein.1702</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1703</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.vorausgefuellterMeldescheinAntwort.1703</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1704</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.anmeldung.meldeschein.1704</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1705</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.anmeldung.statusmitteilung.1705</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1706</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.anmeldung.bestaetigungscode.1706</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1707</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.anmeldung.ergebnis.1707</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1708</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.abrufanfrage.selbstauskunftMelderegister.1708</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1709</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.selbstauskunftMelderegisterStatus.1709</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1710</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.selbstauskunftMelderegister.1710</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1711</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.abrufanfrage.widerspruecheUebermittlungssperren.1711</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1712</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.widerspruecheUebermittlungssperrenAntwort.1712</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1713</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.eintragungWiderspruecheUebermittlungssperren.1713</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1714</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.eintragungWiderspruecheUebermittlungssperren.1714</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1715</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>onlinedienste.widerspruecheUebermittlungssperrenAntwort.1715</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

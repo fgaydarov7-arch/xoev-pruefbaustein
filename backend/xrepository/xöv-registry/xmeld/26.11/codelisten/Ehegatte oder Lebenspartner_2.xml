@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>Ehegatte oder Lebenspartner</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Mit dieser Schlüsseltabelle werden die Partnerschaftstypen (Ehegatten oder Lebenspartner) abgebildet.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2017-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>ehegatte.oder.lebenspartner</ShortName>
+      <LongName>Ehegatte oder Lebenspartner</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:ehegatte.oder.lebenspartner</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:ehegatte.oder.lebenspartner_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>EG</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>LP</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

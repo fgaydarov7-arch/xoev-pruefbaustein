@@ -1,154 +1,118 @@
-from __future__ import annotations
-
 import json
 import logging
-import os
 import time
 from pathlib import Path
 
-from fastapi import FastAPI, File, Form, HTTPException, Request, UploadFile
+from fastapi import FastAPI, File, Form, HTTPException, UploadFile
 from fastapi.middleware.cors import CORSMiddleware
-from fastapi.responses import JSONResponse
 
-from .engine import XovValidator
-from .schemas import SchemaConfig, SchemaInfo, ValidationReport
+from .engine import load_schema, validate
 
-# ---------------------------------------------------------------------------
-# BSI-konformes Logging (kein PII)
-# ---------------------------------------------------------------------------
-
-class _PiiFilter(logging.Filter):
-    """Sicherheitsfilter: verhindert versehentliches Loggen von PII in Nachrichten."""
-    _BLOCKED_KEYS = frozenset({"value", "cell", "invalid_value", "row_content"})
-
-    def filter(self, record: logging.LogRecord) -> bool:
-        if isinstance(record.args, dict):
-            for key in self._BLOCKED_KEYS:
-                record.args.pop(key, None)
-        return True
-
-
+# ── Logging (BSI: no PII in log output) ──────────────────────────────────────
 logging.basicConfig(
     level=logging.INFO,
-    format='{"timestamp": "%(asctime)s", "level": "%(levelname)s", "message": %(message)s}',
+    format="%(asctime)s  %(levelname)-8s  %(message)s",
     datefmt="%Y-%m-%dT%H:%M:%S",
 )
-logger = logging.getLogger("xoev_validator")
-logger.addFilter(_PiiFilter())
+log = logging.getLogger("xoev")
 
-# ---------------------------------------------------------------------------
-# App & CORS
-# ---------------------------------------------------------------------------
-
+# ── FastAPI app ───────────────────────────────────────────────────────────────
 app = FastAPI(
     title="XÖV-Prüfbaustein API",
-    description="Datenschutzkonforme Offline-Validierungs-Engine für XÖV-Metadaten (BSI-Grundschutz).",
-    version="1.0.0",
+    description="Datenschutzkonforme Offline-Validierung für XÖV-Metadaten.",
+    version="2.0.0",
     docs_url="/api/docs",
-    redoc_url="/api/redoc",
+    redoc_url=None,
 )
 
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["http://localhost:5173", "http://127.0.0.1:5173", "http://localhost:4173"],
+    allow_origins=[
+        "http://localhost:5173",
+        "http://127.0.0.1:5173",
+        "http://localhost:4173",
+        "http://127.0.0.1:4173",
+    ],
     allow_methods=["GET", "POST", "OPTIONS"],
     allow_headers=["Content-Type"],
 )
 
-RULES_DIR = Path(__file__).parent.parent / "rules"
-MAX_UPLOAD_BYTES = 50 * 1024 * 1024  # 50 MB
-
-# ---------------------------------------------------------------------------
-# Helper: schema loader
-# ---------------------------------------------------------------------------
-
-def _load_schema(schema_id: str) -> SchemaConfig:
-    schema_file = RULES_DIR / f"{schema_id}.json"
-    if not schema_file.exists() or schema_file.name.startswith("_"):
-        raise HTTPException(status_code=404, detail=f"Schema '{schema_id}' nicht gefunden.")
-    try:
-        raw = json.loads(schema_file.read_text(encoding="utf-8"))
-        return SchemaConfig(**raw)
-    except Exception as exc:
-        logger.error('"Fehler beim Laden des Schemas: %s"', schema_id)
-        raise HTTPException(status_code=500, detail="Schema konnte nicht geladen werden.") from exc
+RULES_DIR  = Path(__file__).parent.parent / "rules"
+MAX_BYTES  = 50 * 1024 * 1024  # 50 MB – BSI DoS guard
 
 
-# ---------------------------------------------------------------------------
-# Routes
-# ---------------------------------------------------------------------------
+# ── GET /schemas ──────────────────────────────────────────────────────────────
 
-@app.get(
-    "/schemas",
-    response_model=list[SchemaInfo],
-    summary="Verfügbare XÖV-Schemata abrufen",
-    tags=["Schemata"],
-)
-def list_schemas() -> list[SchemaInfo]:
-    """Scannt das /rules-Verzeichnis dynamisch und gibt alle verfügbaren Schemata zurück."""
-    schemas: list[SchemaInfo] = []
+@app.get("/schemas")
+def list_schemas() -> list[dict]:
+    """
+    Scan the /rules directory and return metadata for every valid JSON schema.
+    Files starting with '_' (templates) are skipped.
+    """
+    result = []
     for path in sorted(RULES_DIR.glob("*.json")):
         if path.name.startswith("_"):
             continue
         try:
-            raw = json.loads(path.read_text(encoding="utf-8"))
-            cfg = SchemaConfig(**raw)
-            schemas.append(SchemaInfo(
-                schema_id=cfg.schema_id,
-                schema_name=cfg.schema_name,
-                version=cfg.version,
-                xoev_standard=cfg.xoev_standard,
-                description=cfg.description,
-            ))
+            with open(path, encoding="utf-8") as f:
+                data = json.load(f)
+            result.append({
+                "schema_id":     data["schema_id"],
+                "schema_name":   data.get("schema_name", ""),
+                "version":       data.get("version", ""),
+                "xoev_standard": data.get("xoev_standard", ""),
+                "description":   data.get("description"),
+            })
         except Exception:
-            logger.warning('"Ungültige Schemadatei übersprungen: %s"', path.name)
-    return schemas
+            log.warning("Schemadatei übersprungen (ungültig): %s", path.name)
+    return result
 
 
-@app.post(
-    "/validate",
-    response_model=ValidationReport,
-    summary="CSV/Excel-Datei gegen ein XÖV-Schema validieren",
-    tags=["Validierung"],
-)
-async def validate_file(
-    file: UploadFile = File(..., description="CSV- oder Excel-Datei (max. 50 MB)"),
-    schema_id: str = Form(..., description="ID des zu verwendenden XÖV-Schemas"),
-) -> ValidationReport:
-    t_start = time.perf_counter()
+# ── POST /validate ────────────────────────────────────────────────────────────
 
-    # --- Dateigrößenprüfung (DoS-Schutz) ---
-    file_bytes = await file.read(MAX_UPLOAD_BYTES + 1)
-    if len(file_bytes) > MAX_UPLOAD_BYTES:
-        raise HTTPException(
-            status_code=413,
-            detail="Datei überschreitet die maximale Größe von 50 MB.",
-        )
+@app.post("/validate")
+async def validate_endpoint(
+    file:      UploadFile = File(...),
+    schema_id: str        = Form(...),
+) -> dict:
+    """
+    Accept a multipart upload (file + schema_id), run in-memory validation,
+    and return a ValidationReport JSON object for the frontend.
+    """
+    # Read file bytes with size guard (one extra byte to detect over-limit)
+    file_bytes = await file.read(MAX_BYTES + 1)
+    if len(file_bytes) > MAX_BYTES:
+        raise HTTPException(status_code=413, detail="Datei überschreitet die maximale Größe von 50 MB.")
 
-    schema = _load_schema(schema_id)
-    filename = file.filename or "upload.csv"
-
+    # Load the JSON rules file
     try:
-        validator = XovValidator(schema)
-        report = validator.validate(file_bytes, filename)
-    except Exception as exc:
-        logger.error('"Validierungsfehler für Schema: %s"', schema_id)
-        raise HTTPException(status_code=422, detail="Datei konnte nicht verarbeitet werden.") from exc
+        schema = load_schema(schema_id)
+    except FileNotFoundError as exc:
+        raise HTTPException(status_code=404, detail=str(exc))
+
+    # Run validation engine
+    t0 = time.perf_counter()
+    try:
+        report = validate(file_bytes, schema)
+    except ValueError as exc:
+        raise HTTPException(status_code=422, detail=str(exc))
+    except Exception:
+        log.exception("Unerwarteter Validierungsfehler für schema_id=%s", schema_id)
+        raise HTTPException(status_code=500, detail="Interner Serverfehler bei der Validierung.")
     finally:
-        # Volatile bytes sofort dereferenzieren
-        del file_bytes
+        del file_bytes  # drop from volatile memory immediately
 
-    elapsed = round(time.perf_counter() - t_start, 4)
-    logger.info(
-        '{"schema_id": "%s", "rows_processed": %d, "error_count": %d, "duration_s": %s}',
+    log.info(
+        "schema=%s  rows=%d  errors=%d  time=%.3fs",
         schema_id,
-        report.total_rows,
-        report.error_count,
-        elapsed,
+        report["total_rows"],
+        report["error_count"],
+        time.perf_counter() - t0,
     )
-
     return report
 
+
+# ── GET /health ───────────────────────────────────────────────────────────────
 
 @app.get("/health", include_in_schema=False)
 def health() -> dict:

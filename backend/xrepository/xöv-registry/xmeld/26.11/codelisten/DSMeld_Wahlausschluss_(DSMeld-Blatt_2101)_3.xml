@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gc:CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0" xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ http://docs.oasis-open.org/codelist/cs-genericode-1.0/xsd/genericode.xsd http://xoev.de/schemata/genericode/1_0 https://xoev.de/schemata/genericode/1_0/xoev-cl-attributes.xsd">
+	<Annotation>
+		<Description>
+			<xoev-cl:beschreibung>Mit dieser Schlüsseltabelle wird der Ausschluss von der Wählbarkeit oder vom Wahlrecht abgebildet. Siehe Blatt 2101 des DSMeld.</xoev-cl:beschreibung>
+			<xoev-cl:datumgueltigkeitab>2017-11-01</xoev-cl:datumgueltigkeitab>
+		</Description>
+	</Annotation>
+	<Identification>
+		<ShortName>DSMeld_Wahlausschluss_(DSMeld-Blatt_2101)</ShortName>
+		<LongName>Wahlausschluss</LongName>
+		<Version>3</Version>
+		<CanonicalUri>urn:de:dsmeld:schluesseltabelle:wahlausschluss</CanonicalUri>
+		<CanonicalVersionUri>urn:de:dsmeld:schluesseltabelle:wahlausschluss_3</CanonicalVersionUri>
+		<Agency>
+			<ShortName>KoSIT</ShortName>
+			<LongName>Koordinierungsstelle für IT-Standards</LongName>
+		</Agency>
+	</Identification>
+	<ColumnSet>
+		<Column Id="key" Use="required">
+			<ShortName>key</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="required">
+			<ShortName>name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<Annotation>
+				<AppInfo>
+					<xoev-cl:xoev-code/>
+				</AppInfo>
+			</Annotation>
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="key"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>1</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ausschluss vom Wahlrecht</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>2</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ausschluss von der Wählbarkeit</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</gc:CodeList>

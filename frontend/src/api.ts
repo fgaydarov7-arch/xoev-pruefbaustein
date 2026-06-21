@@ -6,6 +6,11 @@ export interface SchemaInfo {
   description?: string;
 }
 
+export interface FieldMeta {
+  display_name_short: string;
+  display_name_long: string;
+}
+
 export interface ValidationError {
   row_index: number;
   column_name: string;
@@ -19,8 +24,13 @@ export interface ValidationReport {
   schema_name: string;
   total_rows: number;
   error_count: number;
+  warning_count: number;
   success_rate: number;
+  headers: string[];
+  rows: Record<string, string>[];
   errors: ValidationError[];
+  warnings: ValidationError[];
+  field_meta?: Record<string, FieldMeta>;
 }
 
 const BASE_URL = "http://127.0.0.1:8000";

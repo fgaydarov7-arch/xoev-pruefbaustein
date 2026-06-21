@@ -1,0 +1,452 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xiaz="http://www.osci.de/xinneres/azrnummer/3"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+         <title>Datenaustausch mit dem Ausländerzentralregister</title>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/azrnummer/3/xinneres-azrnummer.xsd"
+              namespace="http://www.osci.de/xinneres/azrnummer/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+              namespace="http://www.osci.de/xinneres/geschlecht/1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="type.AZR.Anschrift">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Anschriftsinformationen des Ausländerzentralregisters</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Anschriftsinformationen des Ausländerzentralregisters abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="anschrift" type="xmeld:type.AnschriftMelderechtOhneAusland">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift der § 18e AZRG relevanten Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="datum" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird, je nachdem, ob es sich um eine aktuelle oder frühere Anschrift handelt, das Einzugs- oder das Auszugsdatum übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="auslaenderzentralregister.auslaenderzentralregistermitteilung.1650">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Ausländerzentralregister (dbs:490030020000)</leser>
+            <rechtsgrundlage>§ 6 Abs. 1 Nr. 9 AZRG, § 11 Abs. 1 2. BMeldDÜV</rechtsgrundlage>
+            <title>Ausländerzentralregistermitteilung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde das auslaenderzentralregister über Fortschreibungen und weitere Änderungen zu den Daten von azr-relevanten_personen. Diese Nachricht wird versendet von der Zuzugsmeldebehörde im Falle eines Zuzugs aus dem Inland (Prozess siehe ), Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle eines Umzugs (Prozess siehe ), Meldebehörde der alleinigen Wohnung im Falle eines Wegzugs in das Ausland (Prozess siehe ). Meldebehörde der alleinigen Wohnung im Falle eines Wegzugs nach unbekannt (Prozess siehe ). Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle einer Fortschreibung von Daten zur Anschrift (Prozess siehe ). Zuzugsmeldebehörde im Falle eines Wohnungsstatuswechsel mit Wechsel des Zuständigkeitsbereichs (Prozess siehe ). Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle eines Wohnungsstatuswechsel ohne Wechsel des Zuständigkeitsbereichs (Prozess siehe ), vermeintlichen Wegzugsmeldebehörde im Falle einer Rücknahme eines Zuzugs aus dem Inland (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass für die Datenübermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="name" type="xmeld:type.NameNatuerlichePerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist der Name der betroffenen_person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburt" type="xmeld:type.Geburt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element sind die Angaben zur Geburt der betroffenen_person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist das Geschlecht der betroffenen_person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist die Staatsangehörigkeit der betroffenen_person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleWohnung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur aktuellen Haupt- oder alleinigen Wohnung der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="anschrift" type="xmeld:type.AnschriftMelderecht">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element ist die aktuelle Anschrift der Haupt- oder alleinigen Wohnung der betroffenen_person zu übermitteln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datumDesEinzugs"
+                                       minOccurs="0"
+                                       type="xida:TagesdatumMitUnbekannt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird je nach Anlass das Einzugsdatum in die Wohnung (vgl. Blatt 1301) oder das Datum des Wohnungsstatuswechsels (vgl. Blatt 1301a) übermittelt oder die Information wird nicht übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="letzteFruehereWohnung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur letzte früheren Haupt- oder alleinigen Wohnung der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="anschrift" type="xmeld:type.AnschriftMelderechtOhneAusland">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element ist die letzte frühere Anschrift der Haupt- oder alleinigen Wohnung der betroffenen_person zu übermitteln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datumDesAuszugs" type="xida:TeilbekanntesDatumMitUnbekannt">
+                              <xs:annotation>
+                                 <xs:appinfo>
+                                    <implementationHint>Der DSMeld erlaubt für dieses Datum keine nur teilweise bekannte oder unbekannte Angabe eines Auszugsdatums. Die Möglichkeit der Angabe eines teilweise bekannten oder unbekannten Datums für inaktuelle Wohnungen, zu denen das Auszugsdatum fehlt oder nur nicht vollständig vorliegt, wird in XMeld aber geschaffen, da in der Praxis nicht immer ein vollständiges Datum vorliegt.</implementationHint>
+                                 </xs:appinfo>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Auszugs aus der Wohnung übermittelt. Besteht nach dem Auszug aus der Wohnung keine Wohnung mehr im Zuständigkeitsbereich der Meldebehörde, so ist das Auszugsdatum identisch mit dem Wegzugsdatum aus dem Zuständigkeitsbereich der Meldebehörde (siehe auch DSMeld-Blatt 1306).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="anwender" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist vorzugsweise der Name der verantwortlichen Person (§ 9 Abs. 1 AZRG) zu übermitteln. Liegt dieser nicht vor, ist alternativ eine technische Kennung, mit der die verantwortliche Person bei der Meldebehörde eindeutig bestimmt werden kann, zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="auslaenderzentralregister.mitteilungAnMeldebehoerde.1651">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerzentralregister (dbs:490030020000)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 18e AZRG, §§ 6, 27 Abs. 3 Nr. 2 BMG</rechtsgrundlage>
+            <title>Mitteilung des Ausländerzentralregisters</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert das auslaenderzentralregister die Meldebehörde über Erstmeldungen von Personen im Asylverfahren, Fortschreibungen und weitere Änderungen zu den Daten von § 18e AZRG relevanten Personen. Diese Nachricht wird versendet vom: auslaenderzentralregister im Falle einer Erstmeldung des Ausländerzentralregisters (Prozess siehe ), auslaenderzentralregister im Falle einer Änderung der Anschrift im Ausländerzentralregister (Prozess siehe ), Ausländerzentralregister im Falle einer Änderung der Grundpersonalien oder der Übermittlungssperre im Ausländerzentralregister (Prozess siehe ), auslaenderzentralregister im Falle einer Änderung der AZR-Nummer (Prozess siehe ), auslaenderzentralregister im Falle einer Löschung der Anschrift im Ausländerzentralregister (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer der Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlass" type="xmeld:Code.AZR.Anlass">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass für die Datenübermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="azrNummer.neu" minOccurs="0" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird im Falle einer Änderung der AZR-Nummer, die neue AZR-Nummer übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="name" type="xmeld:type.NameNatuerlichePerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist der Name der betroffenen Person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburt" type="xmeld:type.Geburt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element sind die Angaben zur Geburt der betroffenen Person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist das Geschlecht der betroffenen Person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist die Staatsangehörigkeit der betroffenen Person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleAnschrift"
+                              minOccurs="0"
+                              type="xmeld:type.AZR.Anschrift">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist die aktuelle Anschrift der Haupt- oder alleinigen Wohnung der § 18e AZRG relevanten Person sowie das Einzugsdatum zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="letzteFruehereAnschrift"
+                              minOccurs="0"
+                              type="xmeld:type.AZR.Anschrift">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist die letzte frühere Anschrift der Haupt- oder alleinigen Wohnung der § 18e AZRG relevanten Person sowie das Auszugsdatum zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geloeschteAnschrift"
+                              minOccurs="0"
+                              type="xmeld:type.AZR.Anschrift">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die im Ausländerzentralregister gelöschte Anschrift der § 18e AZRG relevanten Person zu übermittelt. Das Kindelement datum ist in diesem Kontext nicht relevant.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="auskunftssperre" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Tatsache des Vorliegens einer Auskunftssperre nach § 4 Abs. 1 AZRG im Ausländerzentralregister übermittelt. Es sind die Werte true und false zulässig.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="auslaenderzentralregister.fehlermitteilung.1652">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerzentralregister (dbs:490030020000)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§§ 6 Abs. 1 Nr. 9, 18e AZRG</rechtsgrundlage>
+            <title>Fehlermitteilung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht werden Nachrichten vom auslaenderzentralregister gemäß Prüfungsebene II an die Meldebehörde zurückgewiesen, die eine Nachricht übermittelt hat, die im fachlichen Kontext des Ausländerzentralregisters nicht verarbeitet werden kann. Diese Nachricht wird versendet vom: auslaenderzentralregister im Falle einer Rückweisung aufgrund fehlender Identifikation der AZR-relevanten Person (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer der Person aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fehlergrund" type="xmeld:Code.AZR.Fehlercode.Fachlich">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Grund der Rückweisung in Form eines Schlüssels und eines Fehlertextes übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zum Anlass der Übermittlung aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="name" type="xmeld:type.NameNatuerlichePerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Name der betroffenen Person aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburt" type="xmeld:type.Geburt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zur Geburt der betroffenen Person aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zum Geschlecht der betroffenen Person aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zur Staatsangehörigkeit der betroffenen Person aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleWohnung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zur aktuellen Wohnung der Haupt- oder alleinigen Wohnung der betroffenen Person aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="anschrift" type="xmeld:type.AnschriftMelderecht">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element ist die aktuelle Anschrift der Haupt- oder alleinigen Wohnung der betroffenen_person zu übermitteln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datumDesEinzugs"
+                                       minOccurs="0"
+                                       type="xida:TagesdatumMitUnbekannt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird je nach Anlass das Einzugsdatum in die Wohnung (vgl. Blatt 1301) oder das Datum des Wohnungsstatuswechsels (vgl. Blatt 1301a) übermittelt oder die Information wird nicht übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="letzteFruehereWohnung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zur letzten früheren Wohnung der Haupt- oder alleinigen Wohnung der betroffenen Person aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="anschrift" type="xmeld:type.AnschriftMelderechtOhneAusland">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element ist die letzte frühere Anschrift der Haupt- oder alleinigen Wohnung der betroffenen_person zu übermitteln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datumDesAuszugs"
+                                       minOccurs="0"
+                                       type="xida:TeilbekanntesDatumMitUnbekannt">
+                              <xs:annotation>
+                                 <xs:appinfo>
+                                    <implementationHint>Der DSMeld erlaubt für dieses Datum keine nur teilweise bekannte oder unbekannte Angabe eines Auszugsdatums. Die Möglichkeit der Angabe eines teilweise bekannten oder unbekannten Datums für inaktuelle Wohnungen, zu denen das Auszugsdatum fehlt oder nur nicht vollständig vorliegt, wird in XMeld aber geschaffen, da in der Praxis nicht immer ein vollständiges Datum vorliegt.</implementationHint>
+                                 </xs:appinfo>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Auszugs aus der Wohnung übermittelt. Besteht nach dem Auszug aus der Wohnung keine Wohnung mehr im Zuständigkeitsbereich der Meldebehörde, so ist das Auszugsdatum identisch mit dem Wegzugsdatum aus dem Zuständigkeitsbereich der Meldebehörde (siehe auch DSMeld-Blatt 1306).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ursprungsereignis" type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur Identifikation des Ereignisses aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der die Ausländerzentralregistermitteilung übermittelt wurde. Als Schlüssel dürfen im Kindelement nachrichtentyp nur die Werte 1650 und 1653 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="auskunftssperre"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:Code.Auskunftssperre">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zu Auskunftssperren nach § 51 BMG der betroffenen Person aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="auslaenderzentralregister.auslaenderzentralregistermitteilung.asp.1653">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Ausländerzentralregister (dbs:490030020000)</leser>
+            <rechtsgrundlage>§ 6 Abs. 1 Nr. 9 AZRG, § 11 Abs. 2 2. BMeldDÜV</rechtsgrundlage>
+            <title>Ausländerzentralregistermitteilung zu Auskunftssperren</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde das auslaenderzentralregister über Eintragungen und Löschungen von Auskunftsperren der AZR-relevanten Person. Diese Nachricht wird versendet von der: Meldebehörde der Hauptwohnung oder Meldebehörde der alleinigen Wohnung im Falle einer fortschreibung.auskunfts_uebermittlungssperren (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="auskunftssperre"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:Code.Auskunftssperre">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Auskunftssperren gemäß § 51 BMG der azr-relevanten_person übermittelt Erlaubt sind in diesem Zusammenhang nur folgende Schlüssel für Auskunftssperren: 1 3 6 11</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="azrNummer" type="xiaz:AZRNummer">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die AZR-Nummer der azr-relevanten_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="name" type="xmeld:type.NameNatuerlichePerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist der Name der azr-relevanten_person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburt" type="xmeld:type.Geburt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element sind die Angaben zur Geburt der azr-relevanten_person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist das Geschlecht der azr-relevanten_person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist die Staatsangehörigkeit der azr-relevanten_person zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anwender" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist vorzugsweise der Name der verantwortlichen Person (§ 9 Abs. 1 AZRG) zu übermitteln. Liegt dieser nicht vor, ist alternativ eine technische Kennung, mit der die verantwortliche Person bei der Meldebehörde eindeutig bestimmt werden kann, zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

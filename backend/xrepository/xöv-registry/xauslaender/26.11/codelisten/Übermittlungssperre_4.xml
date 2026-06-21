@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Übermittlungssperre</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Diese Entität enthält eine Auskunfts-/Übermittlungssperre oder einen Sperrvermerk. Eine ("kleine") Übermittlungssperre nach § 4 Abs. 1 AZRG wird auf Antrag der betroffenen Person gespeichert, wenn diese oder eine andere Person durch die Weitergabe ihrer Informationen an nicht-öffentliche oder ausländische Stellen gefährdet werden könnte. Eine ("große") Übermittlungssperre nach § 4 Abs. 2 AZRG wird gespeichert, wenn auch eine Beauskunftung an öffentliche deutsche Stellen zu einer Gefährdung der betroffenen oder einer anderen Person führen könnte.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2026-04-21</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Spalte "Grosse-Sperre" wurde hinzugefügt. Keine Änderung der Codes oder Kurzbeschreibung</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.UebermittlungssperreArt</ShortName>
+      <LongName>Art der Übermittlungssperre</LongName>
+      <Version>4</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:uebermittlungssperre</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:uebermittlungssperre_4</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Kurzbeschreibung" Use="optional">
+         <ShortName>Kurzbeschreibung</ShortName>
+         <LongName>Kurzbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Grosse-Sperre" Use="optional">
+         <ShortName>Grosse-Sperre</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Übermittlungssperre nach § 4 Abs. 1 ggf. i.V.m. Abs. 2 S. 1 AZRG entschieden</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Übermittlungssperre nach § 4 Abs. 1 ggf. i.V.m. Abs. 2 S. 1 AZRG entschieden von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>false</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Übermittlungssperre nach § 4 Abs. 2 S. 4 oder 6 AZRG entschieden</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Übermittlungssperre nach § 4 Abs. 2 S. 4 AZRG entschieden von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>true</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Sperrvermerk nach § 37 AZRG entschieden</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Sperrvermerk nach § 37 AZRG entschieden von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>true</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Sperrung für provisorischen Datensatz aus Dubletten Bereinigung (Original-Datensätze existieren noch)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Sperrung für provisorischen Datensatz aus Dubletten Bereinigung (Original-Datensätze existieren noch) von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>false</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 5 Nr. 2 BMG (Adoptionspflegeverhältnis gem. § 1758 Abs. 2 BGB) entschieden </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 5 Nr. 2 BMG (Adoptionspflegeverhältnis gem. § 1758 Abs. 2 BGB) entschieden von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>false</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 1 BMG auf Antrag des Betroffenen oder von Amts wegen durch die Meldebehörde entschieden </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 1 BMG auf Antrag des Betroffenen oder von Amts wegen durch die Meldebehörde entschieden von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>false</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 5 Nr. 1 BMG (Annahme als Kind, § 63 Personenstandsgesetz)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 5 Nr. 1 BMG (Annahme als Kind, § 63 Personenstandsgesetz) entschieden von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>false</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 1 BMG i.V.m. § 51 Abs. 3 BMG auf Veranlassung einer Sicherheitsbehörde entschieden </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 1 BMG i.V.m. § 51 Abs. 3 BMG auf Veranlassung einer Sicherheitsbehörde entschieden von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>true</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 5 Nr. 1 BMG (Transsexuellengesetz, § 63 Abs. 2 Personenstandsgesetz) entschieden</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Auskunftssperre nach § 51 Abs. 5 Nr. 1 BMG (Transsexuellengesetz, § 63 Abs. 2 Personenstandsgesetz) entschieden  von &lt;meldendeBehoerde&gt; am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>false</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>97</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Auskunftssperre</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Auskunftssperre</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>true</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>98</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Sperrvermerk</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Sperrvermerk</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>true</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>99</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Übermittlungssperre</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Uebermittlungssperre</SimpleValue>
+         </Value>
+         <Value ColumnRef="Grosse-Sperre">
+            <SimpleValue>true</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

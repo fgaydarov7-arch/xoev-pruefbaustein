@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>ZurueckweisungZurueckschiebung</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Ausländer, die unerlaubt einreisen wollen, werden durch die Bundespolizei zurückzuweisen (Zurückweisung). Hingegen werden Ausländer, die unerlaubt eingereist sind, zurückgeschoben, wenn sie sich nicht länger als sechs Monate unerlaubt in Deutschland aufgehalten haben (Zurückschiebung).</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Neue Kennung - 20 sowie redaktionelle Anpassungen bei 04, 12, 13</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.ZurueckweisungZurueckschiebungArt</ShortName>
+      <LongName>Art der Zurückweisungen bzw. Zurückschiebungen</LongName>
+      <Version>5</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:artzurueckweisungzurueckschiebung</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:artzurueckweisungzurueckschiebung_5</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Kurzbeschreibung" Use="optional">
+         <ShortName>Kurzbeschreibung</ShortName>
+         <LongName>Kurzbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="neu-ab" Use="optional">
+         <ShortName>neu-ab</ShortName>
+         <LongName>neu ab</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="entfaellt-ab" Use="optional">
+         <ShortName>entfaellt-ab</ShortName>
+         <LongName>entfällt ab</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>zurückgeschoben (keine Sperrwirkung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>zurückgeschoben (keine Sperrwirkung) am &lt;ereignisdatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>zurückgewiesen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>zurückgewiesen am &lt;ereignisdatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Zurückweisung/Zurückschiebung löschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zurueckweisung/Zurueckschiebung loeschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>zurückgeschoben (befristet)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zurückgeschoben (befristet, mit Einreise- und Aufenthaltsverbot) am &lt;ereignisdatum&gt;, Wirkung befristet bis &lt;befristungsangabe.fristendatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>zurückgeschoben (unbefristet)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zurückgeschoben am &lt;ereignisdatum&gt;, Wirkung unbefristet, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Zurückschiebung vom ... löschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zurueckschiebung vom &lt;ereignisdatum&gt; loeschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Zurückweisung vom ... löschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zurueckweisung vom &lt;ereignisdatum&gt; loeschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Ausreiseaufforderung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Ausreiseaufforderung vom &lt;ereignisdatum&gt;, Frist bis &lt;befristungsangabe.fristendatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Abschiebung (§71 Absatz 3 Nr.  1a und 1b AufenthG) angedroht</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Abschiebung (§ 71 Abs. 3 Nr. 1a und 1b AufenthG) angedroht am &lt;ereignisdatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>abgeschoben (§ 71 Abs. 3 Nr. 1a, 1b AufenthG, befristet)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Abgeschoben (§ 71 Abs. 3 Nr. 1a und 1b AufenthG, befristet, mit Einreise- und Aufenthaltsverbot) am &lt;ereignisdatum&gt;, Wirkung befristet bis &lt;befristungsangabe.fristendatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>abgeschoben (§ 71 Abs. 3 Nr. 1a, 1b AufenthG, unbefristet)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Abgeschoben (§ 71 Abs. 3 Nr. 1a, 1b AufenthG, unbefristet) am &lt;ereignisdatum&gt;, Wirkung unbefristet, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Ausreiseaufforderung (noch nicht unanfechtbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Ausreiseaufforderung (noch nicht unanfechtbar) vom &lt;ereignisdatum&gt;, Frist bis &lt;befristungsangabe.fristendedatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Ausreiseaufforderung (unanfechtbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Ausreiseaufforderung (unanfechtbar) vom &lt;ereignisdatum&gt;, Frist bis &lt;befristungsangabe.fristendedatum&gt;, unanfechtbar seit &lt;unanfechtbarkeitsdatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Abschiebung nach § 71 Absatz 3 Nummer 1a und 1b AufenthG angedroht (noch nicht vollziehbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Abschiebung nach § 71 Abs. 3 Nr. 1a und 1b AufenthG angedroht (noch nicht vollziehbar) am &lt;ereignisdatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Abschiebung § 71 Absatz 3 Nummer 1a und 1b AufenthG angedroht (vollziehbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Abschiebung nach § 71 Abs. 3 Nr. 1a und 1b AufenthG angedroht (vollziehbar) am &lt;ereignisdatum&gt;, vollziehbar seit &lt;unanfechtbarkeitsdatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Ausreiseaufforderung (zugestellt)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Ausreiseaufforderung (zugestellt) vom &lt;ereignisdatum&gt;, zugestellt am &lt;zustelldatum&gt;, Frist bis &lt;befristungsangabe.fristendedatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Abschiebung nach § 71 Absatz 3 Nummer 1a und 1b AufenthG angedroht (zugestellt)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Abschiebung nach § 71 Abs. 3 Nr. 1a und 1b AufenthG angedroht (zugestellt) am &lt;ereignisdatum&gt;, zugestellt am &lt;zustelldatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>zurückgewiesen (befristet, mit Einreise- und Aufenthaltsverbot)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zurückgewiesen (befristet, mit Einreise- und Aufenthaltsverbot) am &lt;ereignisdatum&gt;, Wirkung befristet bis &lt;befristungsangabe.fristendatum&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, Aktenzeichen &lt;aktenzeichenMeldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab">
+            <SimpleValue>01.11.2024</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>99</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Vorgang zur Zurückweisung/Zurückschiebung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Vorgang bei Behoerde: &lt;meldendeBehoerde&gt; AZ: &lt;aktenzeichenMeldendeBehoerde&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="neu-ab"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

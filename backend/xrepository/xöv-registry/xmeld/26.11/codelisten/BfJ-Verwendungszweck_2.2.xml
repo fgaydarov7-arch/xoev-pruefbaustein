@@ -1,0 +1,2401 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>BfJ-Verwendungszweck</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden Angaben über den beabsichtigten Verwendungszweck eines beim Bundesamt für Justiz angeforderten Führungszeugnisses abgebildet. Die Schlüsseltabelle ist im XRepository (www.xrepository.de) unter Nennung ihrer Codelisten-URI auffindbar und kann von dort im XML-Format OASIS Genericode abgerufen werden. Die Codeliste ist ausschliesslich im Kontext XMeld zu sehen.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BfJ</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Aktualisierung vom Oktober 2024</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2024-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Verwendungszweck</ShortName>
+      <LongName>BfJ Führungszeugnis Verwendungszweck</LongName>
+      <Version>2.2</Version>
+      <CanonicalUri>urn:de:bund:bfj:schluesseltabelle:fuehrungszeugnis.verwendungszweck</CanonicalUri>
+      <CanonicalVersionUri>urn:de:bund:bfj:schluesseltabelle:fuehrungszeugnis.verwendungszweck_2.2</CanonicalVersionUri>
+      <AlternateFormatLocationUri>https://www.xrepository.de</AlternateFormatLocationUri>
+      <Agency>
+         <LongName>Bundesamt für Justiz, Bonn</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="verwendungscode" Use="required">
+         <ShortName>verwendungscode</ShortName>
+         <LongName>Verwendungscode</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="verwendungstext" Use="required">
+         <ShortName>verwendungstext</ShortName>
+         <LongName>Verwendungstext</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="verwendungscodeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>verwendungscodeKey</ShortName>
+         <ColumnRef Ref="verwendungscode"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Aufenthaltserlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Aufenthaltsbeendende Maßnahmen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Asylangelegenheit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Passersatzangelegenheit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ausweisung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ausweispflicht</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Abschiebung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung einer Aufenthaltserlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A16</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Duldungserteilung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A17</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Visumserteilung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A18</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Grenzgängerkarte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A19</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Niederlassungserlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A21</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung/Verlängerung Aufenthaltstitel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A22</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Festst. Verlust des Freizügigkeitsrechts</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>A23</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Prüfung Untersagung der Einreise</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>B01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Wehrüberwachung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>B03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Einberufung zur Wehrübung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>B04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Übernahme als Soldat auf Zeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>B05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Beorderungsverfahren für Reservisten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>B06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Wehrdienstverweigerung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>B07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Einstellung in die Bundeswehr</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>B08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Wiedereinstellung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>B09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Übernahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>C01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Disziplinarverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>C10</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Aufgaben der Jugendhilfe</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>C11</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Gefährdung des Kindeswohls</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>C12</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Gerichtl. Disziplinarverfahren nach WDO/BDG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>C13</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Disziplinare Vorermittlung nach § 92 WDO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Übernahme in Beamtenverhältnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Einstellung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ausbildung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ernennung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bewerbung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Juristischer Vorbereitungsdienst</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Referendardienst</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Einstellung in den Landesdienst</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Beschäftigungsverh. mit Kinderbezug</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>E10</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Beschäftigungsverh. mit Behindertenbezug</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>F01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Steuerstrafverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>F02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Steuerordnungswidrigkeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>F03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erfüllung der Aufgaben n. Geldwäschegesetz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>F04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Wirtschaftliche Sanktionsmaßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>F10</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Aufhebung einer Bußgeldentscheidung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Gewerbeuntersagung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Gewerbeerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Gewerbeerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Reisegewerbekarte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Reisegewerbekarte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Apothekenbetriebserlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Apothekenbetriebserlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Gaststättenerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Gaststättenerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G10</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung d.gewerberechtl. Zuverlässigkeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G11</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Gewerbeanmeldung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G14</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis nach § 34c GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G15</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zulassung als Steuerberater</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G16</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zulassung zur Steuerberaterprüfung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G17</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Heilpraktikerprüfung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G18</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Arbeitnehmerüberlassung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G19</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Marktfestsetzung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G20</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis zur Arbeitsvermittlung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G21</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Spielhallenkonzession</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G22</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Konzessionserteilung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G23</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Schankerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G24</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verfolgung einer Ordnungswidrigkeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G25</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung einer Reisegewerbekarte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G26</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Stellvertretererlaubnis nach §9 GastG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G27</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Transportgenehmigung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G28</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Erlaubnis nach § 34c GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G29</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>öffentliche Ausschreibung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G30</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Privatkrankenanstalt gemäß § 30 GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G31</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung Gemeinschaftslizenz Gütertransport</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G32</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Pfandleihgewerbe nach § 34 GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G33</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bewachungsgewerbe nach § 34a GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G34</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Versteigerergewerbe nach § 34b GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G35</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Genehmigung nach dem GüKG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G36</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Auskunft gem. § 38 GewO (Vertrauensgewerbe)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G37</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ausstellung von Werkstattkarten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G38</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Versicherungsvermittlung (§ 34 d GewO)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G39</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Vorbereitung vergaberechtl. Entscheidungen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G40</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verdacht gewerberechtl. Unzuverlässigkeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G41</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf/Rücknahme der Marktfestsetzung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G42</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf Gemeinschaftslizenz Güterkraftverk.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G43</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf Genehmigung nach § 3 GüKG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G44</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>ErteilGenehm.Dienstleist.f.Warenversteuerung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G45</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaub.Ein-/Ausfuhr geschützt.Pflanzen/Tiere</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G46</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis nach § 34f GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G47</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Erlaubnis nach § 34 f GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G48</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Erlaubnis nach § 34 d GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G49</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Erlaubnis nach § 34 e GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G50</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis nach § 34 i GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G51</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Erlaubnis nach § 34 i GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G52</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis nach § 12/§ 13 ProstSchG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G53</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Rücknahme/Widerruf nach § 23 ProstSchG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G54</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Genehmigung Ausgangsstoffe f. Explosivstoffe</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G55</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ausnahmegenehmigung § 40 Abs. 4 WaffG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G56</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis nach § 7 SprengG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G57</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Waffenhandelserlaubnis nach § 21 WaffG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G58</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Waffenherstellungserlaubnis nach § 21 WaffG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G59</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Versagung/Entziehung Waffenhandelserlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G60</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Versagung/Entziehung Waffenherstellungserl.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G61</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Versagung/Entziehung Erlaubnis § 7 SprengG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G62</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung Erlaubnis § 7 SprengG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G63</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Registrierung Inkassodienstleistung n. RDG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G64</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erl. nach § 34 h GewO - Finanzanlagenberater</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G65</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf Erl. nach § 34 h GewO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G66</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Aufgaben nach Kapitel 2 PostG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G67</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Vers./Löschung Anb.-Verz. Postdienstl.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>G68</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Eintragung Anbieterverz. Postdienstl.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>H01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verleihung von Orden und Ehrenzeichen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>H02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verleihung einer Lebensrettungsmedaille</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>H03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verleihung des Bundesverdienstkreuzes</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>H06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung von Passversagungsgründen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>H07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Prüfung Ausschließungsgründe n. HHG/StrRehaG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>H08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zulassung eines ausl. Konsuls (Exequatur)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>H09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Prüfung Versagungsgründe n. § 2 OEG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>I01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung d.Erlaubnis f.d.Bewachungsgewerbe</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>I02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung des Bewachungspersonals</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>I03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsprüfung Bewachungsgewerbe</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>J01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung eines Jagdscheins</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>J02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Einziehung eines Jagdscheins</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>J03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zulassung zur Jägerprüfung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>J04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Jagdrechtliche Zuverlässigkeitsprüfung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>J05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung eines Jagdscheins</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>J06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Versagung eines Jagdscheins</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>J07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Fischereischein</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Fahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Wiedererteilung einer Fahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ersatz der Fahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Neuerteilung einer Fahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Entziehung der Fahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf der Erlaubnis nach §25 PBefG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Fahrlehrererlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis zur Fahrgastbeförderung/Taxischein</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K10</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>rotes Dauerkennzeichen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K11</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Abgasuntersuchung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K12</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verkehrsangelegenheit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K13</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Anerkennung als Prüfstelle StVZO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K14</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung der Fahrgastbeförderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K16</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung rotes Dauerkennzeichen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K17</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Regelüberprüfung rotes Dauerkennzeichen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K18</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Umschreibung e. ausländischen Fahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K19</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Taxikonzession</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K20</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Fahrschulerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K21</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung einer Fahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K22</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung Kraftfahreignung FE-Inhaber</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K23</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verdacht der Fahruntauglichkeit - § 3 FeV</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K24</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf rotes Dauerkennz. n. § 6 III FZV</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K25</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Rücknahme/Widerruf einer Fahrlehrererlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K26</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf Gemeinschaftslizenz Personenverk.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K27</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Fahrprüfererlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>K28</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Risikoeinstufung GüKG/PBefG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ö01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Einbürgerung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ö02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Anspruchseinbürgerung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ö04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erklärungserwerb nach § 5 StAG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>P01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verfolgung einer Straftat</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>P02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verhütung einer Straftat</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überwachung einer Maßregel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bewährungsüberwachung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Straferlaß</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Schöffenwahl</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Privatklageverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bestellung zum Pfleger</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bestellung zum Vormund</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Betreuungsangelegenheit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bestellung zum Betreuer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R10</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Internationales Rechtshilfeersuchen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R11</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Berufung zum ehrenamtlichen Richter</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R12</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zulassung zur Rechtsanwaltschaft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R13</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Insolvenzverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R21</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Justizverwaltungsaufgabe (Nr. 185 RiStBV)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R22</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zulassung zur Patentanwaltschaft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R23</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung der Glaubwürdigkeit als Zeuge</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R24</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Vereidigung von Dolmetschern</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R25</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Sorgerechtsverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R26</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Handelsregistersache</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R27</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsüberprüfung n.d. RBerG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R28</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verwaltungsgerichtliches Verfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R29</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ernennung zur Schiedsperson</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R30</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Sozialgerichtliches Verfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R31</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Finanzgerichtliches Verfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R32</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Arbeitsgerichtliches Verfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R33</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bestellung zum Notar</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R34</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsprüfung nach RDG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R35</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bestellung zum Ortsgerichtsmitglied</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R36</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Aufnahme Vorauswahlliste Insolvenzverwalter</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>R37</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung sorgeberechtigte Person</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ermittlungsverf. gegen die betroffene Person</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Strafverfahren gegen die betroffene Person</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ermittlungsverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Strafverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Strafverfolgung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Gesamtstrafenbildung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Gnadenverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Strafvollstreckung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Strafverfolgung gegen die betroffene Person</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S12</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bedingte Entlassung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S13</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Strafvollzug</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S14</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ablauf der Bewährungszeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S15</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Bußgeldverfahren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S16</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Führungsaufsicht</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S17</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Glaubwürdigkeitsprüfung; Zeuge i. Strafverf.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S20</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ehrenamtliche Gefangenenbetreuung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S21</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Kriminaldiagnostische Untersuchung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S22</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Honorarkraft zur Gefangenenbetreuung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S23</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüf. v. im Strafvollzug tätigen Mitarb.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S24</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Vollzug freiheitsentz. Maßregel n. StGB</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>S25</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüf v. Besuch., Handwerk. u. Lieferant</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ü01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Sicherheitsüberprüfung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ü02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Sicherheitsaufgaben</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ü03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung der atomrechtl. Zuverlässigkeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ü05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsüberprüfung n. d. LuftSiG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ü06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnisverfahren nach BTMG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ü07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Sicherheitsanfrage § 2 Abs. 2 MADG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>Ü08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überpr. der strahlenschutzrechtl. Zuverl.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>V01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung für Wahlen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>V02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung der Amtsfähigkeit o. Wählbarkeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer waffenrechtlichen Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Versagung einer waffenrechtlichen Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung einer waffenrechtl. Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Rücknahme einer waffenrechtlichen Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer waffenrechtlichen Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer sprengstoffrechtl. Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Versagung einer sprengstoffrechtl. Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung e. sprengstoffrechtl. Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Rücknahme e. sprengstoffrechtl. Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W10</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf e. sprengstoffrechtl. Erlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W11</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsüberprüfung nach WaffG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W12</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Untersagung nach § 41 WaffG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W13</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsprüfung nach SprengG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W14</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ablehnung Befähigungsschein § 20 SprengG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W15</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf/Entz. Befähigungssch. § 20 SprengG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W16</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verlängerung Befähigungsschein § 20 SprengG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>W17</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung Befähigungsschein § 20 SprengG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X01</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ausstellung eines Reisepasses</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X02</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ausstellung eines Ausweises</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X03</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Namensänderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X04</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung von Wachpersonal</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X05</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung eines Bootsführerscheins</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X06</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Luftfahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X07</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Öffentliche Bestellung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X08</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Pflegeerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X09</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ablegung einer Prüfung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X10</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Adoption</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X11</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Kassenärztliche Zulassung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X12</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ausbildereignung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X13</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Berufsanerkennung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X14</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Anerkennung als staatlicher Tierarzt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X15</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Presseausweis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X16</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verdacht auf Scheinehe</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X17</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ehrenamtliche Tätigkeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X18</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsprüfung nach Vereinsgesetz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X19</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Approbation</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X20</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Promotion</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X21</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung eines Visums</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X22</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung eines Sichtvermerks</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X23</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Grenzgängerkarte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X24</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis zum Halten eines gefährl. Hundes</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X25</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis zum Halten gefährlicher Tiere</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X26</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsprüfung nach Heimgesetz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X27</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Schießstättenerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X28</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Überprüfung v. Umweltgutachtern n. § 15 UAG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X29</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zulassung als Psychotherapeut</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X30</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Approbation als Psychotherapeut</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X31</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erlaubnis nach HundehalterVO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X32</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Tätigkeit in Tages-/Vollzeitpflege, SGB VIII</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X33</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Persönliche Eignung nach § 72a SGB VIII</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X34</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Prüfung der weiteren Luftfahreignung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X35</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuerkennung fachlicher Eignung - § 30 BBiG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X36</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf der Wegerechtsübertr. n. § 69 TKG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X37</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Untersagung der Tätigkeit n. § 11 TSchG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X38</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf der Erlaubnis n. § 11 TSchG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X39</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf e. Genehmigung n. § 8 GenTG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X40</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verdacht der Unzuverlässigkeit n. § 11 GenTG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X41</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verdacht der Unzuverlässigkeit n. § 11 HeimG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X42</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Entziehung Bootsführerschein</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X43</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerruf einer Luftfahrerlaubnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X44</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verd. d. Ungeeignetheit n. § 29 BBiG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X45</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitsprüfung n. KWG/ZAG/KAGB</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X46</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Zuverlässigkeitspr. für Spielbankzulassung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X47</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Entzug des Befähigungszeugnisses</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X48</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Prüfung Widerruf d. Zuwendung StrRehaG/BEG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X49</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Eingriffsverwaltung nach BImSchG/KrW-/AbfG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X50</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Ablehnung des Namensänderungsantrags</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X51</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung einer Detektivgenehmigung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X52</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung Genehm. Leitung Privatuniversität</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X53</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Erteilung Genehmigung Wertpapierhandel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X54</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Verd. d. Unzuverläss. n. heimrechtl. Vorschr</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X55</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Anzeige nach § 18 KrWG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X56</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Gefahrenabwehr n. landesrechtl. HundeVO/-G</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X57</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Widerr. Erl. z. Führen e. Berufsbezeichnung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X58</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Entlassung als Prüfer nach SpFV</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X59</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Intern. Amtshilfe nach § 57 a Abs. 4 BZRG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="verwendungscode">
+            <SimpleValue>X60</SimpleValue>
+         </Value>
+         <Value ColumnRef="verwendungstext">
+            <SimpleValue>Intern. Amtshilfe nach § 150 c Abs. 3 GewO</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

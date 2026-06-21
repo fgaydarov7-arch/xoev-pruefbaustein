@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>BAMFABH-Ablehnungsgrund</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Beschreibt die möglichen Gründe für die Ablehnung einer Teilnahmeberechtigung in der Kommunikation von Ausländerbehörden (ABH), Trägern der Grundsicherung (TGS) und Trägern von Leistungen nach dem Asylbewerberleistungsgesetz (TLA) mit dem BAMF.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF, FB Integration</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Textliche Änderungen in Code 17109,17110, 17112
+Neuer Code 17119 und 17145 hinzugefügt</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>integration.ablehnungsgrund</ShortName>
+      <LongName>Gründe für die Ablehnung einer Teilnahmeberechtigung</LongName>
+      <Version>10</Version>
+      <CanonicalUri>urn:de:bund:bamf:codelist:integration:ablehnungsgrund</CanonicalUri>
+      <CanonicalVersionUri>urn:de:bund:bamf:codelist:integration:ablehnungsgrund_10</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Fachbereich Integration</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="optional">
+         <ShortName>Wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17050</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person hat bereits am Integrationskurs teilgenommen. Es besteht nur eine einmalige Teilnahmeberechtigung. Eine nochmalige geförderte Teilnahme ist daher nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17051</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person hat bereits am Integrationskurs teilgenommen. Es besteht nur eine einmalige Teilnahmeberechtigung. Eine nochmalige geförderte Teilnahme ist daher nicht zulässig. Für weitere Informationen setzen Sie sich ggf. mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17052</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person hat bereits am Integrationskurs teilgenommen. Es besteht nur eine einmalige Teilnahmeberechtigung. Eine nochmalige geförderte Teilnahme ist daher nicht zulässig. Für weitere Informationen setzen Sie sich ggf. mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17053</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person ist nach im BAMF vorliegenden Informationen verstorben. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17104</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person ist bereits zur Teilnahme am Integrationskurs berechtigt (&lt;Vorliegende Berechtigung&gt;). Eine nochmalige Teilnahmeberechtigung ist nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17107</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person wurde bereits durch {0} zur Teilnahme am Integrationskurs verpflichtet. Diese Verpflichtung ist insoweit vorrangig. Eine zusätzliche Teilnahmeberechtigung ist nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17108</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person wurde bereits durch {0} zur Teilnahme am Integrationskurs berechtigt/verpflichtet. Eine nochmalige Teilnahmeberechtigung ist nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17109</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person wurde bereits durch {0} (Bezeichnung der ABH, TGS oder TLA) zur Teilnahme am Integrationskurs verpflichtet. Die mehrfache Teilnahmeverpflichtung/Jobcenter-Zulassung einer Person ist nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17110</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person ist Spätaussiedler(in) bzw. dessen/deren Ehegatte oder Abkömmling und hat gemäß § 9 Abs. 1 BVFG Anspruch auf kostenlose Teilnahme an einem Integrationskurs; eine Verpflichtung/Jobcenter-Zulassung  dieser Personen zur Teilnahme ist nicht zulässig. Es liegt bereits eine Teilnahmeberechtigung durch das zuständige Bundesverwaltungsamt vor. Für weitere Informationen setzen Sie sich ggf. bitte mit dem für Sie zuständigen Regionalkoordinator des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17111</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person besitzt bereits eine noch gültige Berechtigung zur Teilnahme am Integrationskurs. Eine mehrfache Teilnahme am Integrationskurs ist nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17112</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person besitzt die deutsche Staatsangehörigkeit oder ist freizügigkeitsberechtigte/r EU-Bürger/in bzw. EWR-Staatler/in; eine Verpflichtung/Jobcenter-Zulassung zur Teilnahme am Integrationskurs ist nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17116</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ihre Nachricht konnte nicht zugeordnet werden, da der Vorgang zu dem Sie vorliegend antworten, nicht (mehr) vorhanden ist, oder nicht identifiziert werden kann. Bitte wenden Sie sich bei Rückfragen unter Nennung Ihrer Behördenkennung an support[at]bamf[dot]bund[dot]de.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17119</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person wurde bereits durch {0} zur Teilnahme am Integrationskurs zugelassen. Diese Jobcenter-Zulassung ist insoweit vorrangig. Eine zusätzliche Teilnahmeberechtigung ist nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17145</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Person wurde bereits durch {0} (Bezeichnung des TGS) zur Teilnahme am Integrationskurs zugelassen. Die mehrfache Teilnahmeverpflichtung/Jobcenter-Zulassung einer Person ist nicht zulässig. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17099</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Anderer Fehler. Die Beschreibung der Fehlerursache befindet sich im erläuternden Text.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

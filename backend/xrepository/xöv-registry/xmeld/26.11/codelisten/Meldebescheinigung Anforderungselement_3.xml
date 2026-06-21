@@ -1,0 +1,415 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Meldebescheinigung Anforderungselement</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden die Anforderungselemente für die Auswahl von Daten für eine Meldebescheinigung abgebildet.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2026-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>meldebescheinigung.anforderungselement</ShortName>
+      <LongName>Meldebescheinigung Anforderungselement</LongName>
+      <Version>3</Version>
+      <CanonicalUri>urn:xoev-de:xmeld:codeliste:meldebescheinigung.anforderungselement</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xmeld:codeliste:meldebescheinigung.anforderungselement_3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehename oder Lebenspartnerschaftsname (DSMeld 0103a, 0105a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Frühere Namen (DSMeld 0201a, 0203a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Vornamen vor Änderung (DSMeld 0303)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ordensname (DSMeld 0501)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Künstlername (DSMeld 0502)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geburtsort sowie bei Geburt im Ausland auch den Staat (DSMeld 0602, 0603)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geschlecht (DSMeld 0701)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum gesetzlichen Vertreter: Familienname (DSMeld 0001, 0902a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum gesetzlichen Vertreter: Vornamen (DSMeld 0001, 0904)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum gesetzlichen Vertreter: Doktorgrad (DSMeld 0001, 0905)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum gesetzlichen Vertreter: Anschrift (DSMeld 0001, 1200 bis 1212 oder 0907a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum gesetzlichen Vertreter: Geburtsdatum (DSMeld 0001, 0906)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum gesetzlichen Vertreter: Geschlecht (DSMeld 0001, 0917)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum gesetzlichen Vertreter: Sterbedatum (DSMeld 0001, 0915)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>derzeitige Staatsangehörigkeiten (DSMeld 1001)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>rechtliche Zugehörigkeit zu einer öffentlich-rechtlichen Religionsgesellschaft (DSMeld 1101, 1104)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschriften im Zuständigkeitsbereich der Meldebehörde (DSMeld 1200 bis 1213a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Anschrift der letzten alleinigen Wohnung oder Hauptwohnung und der letzten Nebenwohnungen außerhalb des Zuständigkeitsbereichs der Meldebehörde (DSMeld 1200 bis 1213a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>bei Wiederzuzug aus dem Ausland die letzte Anschrift im Inland (DSMeld 1200 bis 1213a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>bei Zuzug aus dem Ausland den Staat (DSMeld 1223)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>bei Wegzug in das Ausland den Staat (DSMeld 1232)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>bei Wegzug in das Ausland auch die Zuzugsanschrift im Ausland und den Staat (DSMeld 1232, 1233)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Einzugsdatum (DSMeld 1301, 1301a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Auszugsdatum (DSMeld 1306)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand (DSMeld 1401)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>26</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Datum und Ort der Eheschließung oder der Begründung der Lebenspartnerschaft sowie bei Eheschließung oder Begründung der Lebenspartnerschaft im Ausland auch den Staat (DSMeld 1402, 1402a, 1408, 1409)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>27</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Ehegatten oder Lebenspartner: Familienname (DSMeld 0001, 1501a oder 1517a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>28</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Ehegatten oder Lebenspartner: Vornamen (DSMeld 0001, 1503 oder 1519)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>29</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Ehegatten oder Lebenspartner: Geburtsname (DSMeld 0001, 1502b oder 1518b)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>30</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Ehegatten oder Lebenspartner: Doktorgrad (DSMeld 0001, 1504 oder 1520)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Ehegatten oder Lebenspartner: Geburtsdatum (DSMeld 0001, 1505 oder 1521)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>32</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Ehegatten oder Lebenspartner: Geschlecht (DSMeld 0001, 1506 oder 1522)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>33</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Ehegatten oder Lebenspartner: derzeitige Anschriften im Zuständigkeitsbereich der Meldebehörde sowie Anschrift der letzten alleinigen Wohnung oder Hauptwohnung außerhalb des Zuständigkeitsbereichs der Meldebehörde (DSMeld 0001, 1200 bis 1213a oder 1508 bzw. 1524)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>34</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Ehegatten oder Lebenspartner: Sterbedatum (DSMeld 0001, 1516 oder 1532)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>35</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zu minderjährigen Kindern: Familienname (DSMeld 1601a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>36</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zu minderjährigen Kindern: Vornamen (DSMeld 1603)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>37</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zu minderjährigen Kindern: Geburtsdatum (DSMeld 1604)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>38</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zu minderjährigen Kindern: Geschlecht (DSMeld 1604a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>39</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zu minderjährigen Kindern: Anschrift im Inland (DSMeld 1200 bis 1212)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>40</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zu minderjährigen Kindern: Sterbedatum (DSMeld 1605)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>41</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Personalausweis, vorläufigen Personalausweis oder Ersatz-Personalausweis, des anerkannten und gültigen Passes oder Passersatzpapiers oder zur eID-Karte: Ausstellungsbehörde (DSMeld 1700, 1701, 1704, 1705, 1715)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>42</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Personalausweis, vorläufigen Personalausweis oder Ersatz-Personalausweis, des anerkannten und gültigen Passes oder Passersatzpapiers: Ausstellungsdatum (DSMeld 1700, 1702, 1704, 1706)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>43</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Personalausweis, vorläufigen Personalausweis oder Ersatz-Personalausweis, des anerkannten und gültigen Passes oder Passersatzpapiers oder zur eID-Karte: letzter Tag der Gültigkeitsdauer (DSMeld 1700, 1703, 1704, 1707, 1716)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>44</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>zum Personalausweis, vorläufigen Personalausweis oder Ersatz-Personalausweis, des anerkannten und gültigen Passes oder Passersatzpapiers oder zur eID-Karte: Seriennummer (DSMeld 1700, 1704, 1708, 1709, 1717)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>45</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache, dass zur Person kein Sterbedatum eingetragen ist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>46</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geschlechtseintrag vor Änderung nach § 2 SBGG (DSMeld 0702)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,1309 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Duldung</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Eine Duldung stellt eine zeitlich befristete Aussetzung der Abschiebung von ausreisepflichtigen Ausländern dar. Sie ist kein Aufenthaltstitel (und hat somit auch kein ATT_Etikett sondern eine ATT_Bescheinigungsnummer)</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2022-04-26</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.DuldungArt</ShortName>
+      <LongName>Art der Duldung</LongName>
+      <Version>6</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:artderduldung</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:artderduldung_6</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Kurzbeschreibung" Use="optional">
+         <ShortName>Kurzbeschreibung</ShortName>
+         <LongName>Kurzbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-ab" Use="optional">
+         <ShortName>meldbar-ab</ShortName>
+         <LongName>meldbar ab</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-bis" Use="optional">
+         <ShortName>meldbar-bis</ShortName>
+         <LongName>meldbar bis</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Zusatzinformation" Use="optional">
+         <ShortName>Zusatzinformation</ShortName>
+         <LongName>Zusatzinformation</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a AufenthG erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>30.11.2014</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a AufenthG widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>30.11.2015</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2a AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2a AufenthG erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2a AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2a AufenthG widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 1 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 1 AufenthG erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 1 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 1 AufenthG widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a Abs. 2 Satz 1 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>05.09.2013</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a Abs. 2 Satz 1 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>05.09.2013</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 2 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 2 AufenthG erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 2 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 2 AufenthG widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 3 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 3 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2b AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2b AufenthG erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2b AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2b AufenthG widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG wegen fehlender Reisedokumente erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG wegen fehlender Reisedokumente, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG wegen fehlender Reisedokumente widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG wegen fehlender Reisedokumente, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aufgrund fam. Bindungen erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG aufgrund familiärer Bindungen erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aufgrund fam. Bindungen widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG aufgrund familiärer Bindungen widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aus sonstigen Gründen erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG aus sonstigen Gründen, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aus sonstigen Gründen widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG aus sonstigen Gründen, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aus medizinischen Gründen erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG aus medizinischen Gründen, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aus medizinischen Gründen widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG aus medizinischen Gründen, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a Absatz 2 Satz 13 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 13 AufenthG, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2019</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a Absatz 2 Satz 13 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 13 AufenthG, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2019</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>26</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG weil konkrete Maßnahmen zur Aufenthaltsbeendigung bevorstehen erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG weil konkrete Maßnahmen zur Aufenthaltsbeedigung bevorstehen, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>27</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG weil konkrete Maßnahmen zur Aufenthaltsbeendigung bevorstehen widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG weil konkrete Maßnahmen zur Aufenthaltsbeedigung bevorstehen, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>28</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG wegen eines Asylfolgeantrags erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG wegen eines Asylfolgeantrags, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>29</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG wegen eines Asylfolgeantrags widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG wegen eines Asylfolgeantrags , widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>30</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG als unbegleiteter Minderjähriger gem. § 58 Abs. 1a AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG als unbegleiteter Minderjähriger gemäß §58 Abs 1a AufenthG, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG als unbegleiteter Minderjähriger gem. § 58 Abs. 1a AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG als unbegleiteter Minderjähriger gemäß §58 Abs 1a AufenthG, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>32</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem, aber erforderliches Einvernehmen einer Stelle nach § 72 Abs. 4 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem, aber erforderlichem Einvernehmen einer Stelle nach § 72 (4) AufenthG , erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>33</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem, aber erforderliches Einvernehmen einer Stelle nach § 72 Abs. 4 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem, aber erforderlichem Einvernehmen einer Stelle nach § 72 AbS. 4 AufenthG , widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>34</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei stattgegebenem Eilantrag gemäß § 123 VwGO erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei stattgegebenem Eilantrag gemäß § 123 VwGO , erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>35</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei stattgegebenem Eilantrag gemäß § 123 VwGO widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei stattgegebenem Eilantrag gemäß § 123 VwGO, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>36</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei Abschiebungshindernissen nach § 60 Abs. 1-5, 7 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei Abschiebungshindernissen nach § 60 Abs. 1-5, 7 AufenthG, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>37</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei Abschiebungshindernissen nach § 60 Abs. 1-5, 7 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei Abschiebungshindernissen nach§ 60 Abs. 1-5, 7 AufenthG, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>38</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a Abs. 2 S. 4 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 4 AufenthG erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2019</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>39</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a Abs. 2 S. 4 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 4 AufenthG widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2019</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>40</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a Absatz 2 Satz 4 AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 4 AufenthG erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2019</SimpleValue>
+         </Value>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>42</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 1 AufenthG bei Anordnung der aufschiebenden Wirkung nach § 80 Absatz 5 VwGO erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 80 Absatz 5 VwGO erteilt nach § 60a Abs. 2 S. 1 AufenthG bei Anordnung der aufschiebenden Wirkung nach § 80 (5) VwGO, erteiltam &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>43</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 1 AufenthG bei Anordnung der aufschiebenden Wirkung nach § 80 Absatz 5 VwGO widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 80 Absatz 5 VwGO widerrufen nach § 60a Abs. 2 S. 1 AufenthG bei Anordnung der aufschiebenden Wirkung nach § 80 (5) VwGO, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>44</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG weil konkrete Maßnahmen zur Aufenthaltsbeendigung bevorstehen erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG weil konkrete Maßnahmen zur Aufenthaltsbeedigung bevorstehen, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>45</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG wegen eines Asylfolgeantrags erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG wegen eines Asylfolgeantrags, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>46</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG als unbegleiteter Minderjähriger gem. § 58 Abs. 1a AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG als unbegleiteter Minderjähriger gemäß §58 Abs 1a AufenthG, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>47</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem, aber erforderliches Einvernehmen einer Stelle nach § 72 Abs. 4 AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem, aber erforderlichem Einvernehmen einer Stelle nach § 72 Absatz 4 AufenthG, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>48</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem Absehen von einer Vollstreckung nach § 456a StPO erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 456a StPO erteilt nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem Absehen von einer Vollstreckung nach § 456a StPO, erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>49</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem Absehen von einer Vollstreckung nach § 456a StPO widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem Absehen von einer Vollstreckung nach § 456a StPO, widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>50</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem Absehen von einer Vollstreckung nach § 456a StPO erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei fehlendem Absehen von einer Vollstreckung nach § 456a StPO, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>51</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei stattgegebenem Eilantrag gemäß § 123 VwGO erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei stattgegebenem Eilantrag gemäß § 123 VwGO, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>52</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 S. 1 AufenthG bei Abschiebungshindernissen nach § 60 Abs. 1-5, 7 AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG bei Abschiebungshindernissen nach § 60 Abs. 1-5, 7 AufenthG, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>53</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 1 AufenthG bei Anordnung der aufschiebenden Wirkung nach § 80 Absatz 5 VwGO erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 80 Absatz 5 VwGO erloschen nach § 60a Abs. 2 S. 1 AufenthG bei Anordnung der aufschiebenden Wirkung nach § 80 (5) VwGO, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>54</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aufgrund fam. Bindungen erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG (familiären Bindungen zu Duldungsinhaber) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>55</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG wegen fehlender Reisedokumente erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG wegen fehlender Reisedokumente, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>56</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aus sonstigen Gründen erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG aus sonstigen Gründen, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>57</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Abs. 2 Satz 1 AufenthG aus medizinischen Gründen erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 1 AufenthG aus medizinischen Gründen, erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>58</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60c Absatz 1 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60c Absatz 1 AufenthG (Ausbildungsduldung, Anspruch) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>59</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60c Absatz 1 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60c Absatz 1 AufenthG (Ausbildungsduldung, Anspruch) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>60</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60c Absatz 1 AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60c Absatz 1 AufenthG (Ausbildungsduldung, Anspruch) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>61</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60c Absatz 7 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60c Absatz 7 AufenthG (Ausbildungsduldung, Anspruch) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>62</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60c Absatz 7 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60c Absatz 7 AufenthG (Ausbildungsduldung, Anspruch) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>63</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60c Absatz 7 AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60c Absatz 7 AufenthG (Ausbildungsduldung, Anspruch) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>64</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60d Absatz 1 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60d Absatz 1 AufenthG (Beschäftigungsduldung, Regelanspruch, Beschäftigter) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>65</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60d Absatz 1 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60d Absatz 1 AufenthG (Beschäftigungsduldung, Regelanspruch, Beschäftigter) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>66</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60d Absatz 1 AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60d Absatz 1 AufenthG (Beschäftigungsduldung, Regelanspruch, Beschäftigter) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>67</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60d Absatz 4 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60d Absatz 4 AufenthG (Beschäftigungsduldung, Regelanspruch, Beschäftigter) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>68</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60d Absatz 4 AufenthG widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60d Absatz 4 AufenthG (Beschäftigungsduldung, Regelanspruch, Beschäftigter) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>69</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 in Verbindung mit § 60d Absatz 4 AufenthG erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 in Verbindung mit § 60d Absatz 4 AufenthG (Beschäftigungsduldung, Regelanspruch, Beschäftigter) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>70</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 2 AufenthG (Beschäftigungsduldung, Regelanspruch, minderjährige ledige Kinder) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 2 AufenthG (Beschäftigungsduldung, Regelanspruch, minderjährige ledige Kinder) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;,  Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>71</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 2 AufenthG (Beschäftigungsduldung, Regelanspruch, minderjährige ledige Kinder) widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 2 AufenthG (Beschäftigungsduldung, Regelanspruch, minderjährige ledige Kinder) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>72</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 2 AufenthG (Beschäftigungsduldung, Regelanspruch, minderjährige ledige Kinder) erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 2 AufenthG (Beschäftigungsduldung, Regelanspruch, minderjährige ledige Kinder) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>73</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 4 in Verbindung mit Absatz 1 AufenthG (Beschäftigungsduldung, Ermessen, Ehegatte/Lebenspartner) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 4 in Verbindung mit Abs. 1 AufenthG (Beschäftigungsduldung, Ermessen, Ehegatte/Lebenspartner) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;,  Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>74</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 4 in Verbindung mit Absatz 1 AufenthG (Beschäftigungsduldung, Ermessen, Ehegatte/Lebenspartner) widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 4 in Verbindung mit Abs. 1 AufenthG (Beschäftigungsduldung, Ermessen, Ehegatte/Lebenspartner) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>75</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 4 in Verbindung mit Absatz 1 AufenthG (Beschäftigungsduldung, Ermessen, Ehegatte/Lebenspartner) erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 4 in Verbindung mit Abs. 1 AufenthG (Beschäftigungsduldung, Ermessen, Ehegatte/Lebenspartner) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>76</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 4 in Verbindung mit Absatz 2 AufenthG (Beschäftigungsduldung, Ermessen, minderjährige ledige Kinder) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 4 in Verbindung mit Abs. 2 AufenthG (Beschäftigungsduldung, Ermessen, minderjährige ledige Kinder) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;,  Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>77</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 4 in Verbindung mit Absatz 2 AufenthG (Beschäftigungsduldung, Ermessen, minderjährige ledige Kinder) widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 4 in Verbindung mit Abs. 2 AufenthG (Beschäftigungsduldung, Ermessen, minderjährige ledige Kinder) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>78</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 4 in Verbindung mit Absatz 2 AufenthG (Beschäftigungsduldung, Ermessen, minderjährige ledige Kinder) erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 4 in Verbindung mit Abs. 2 AufenthG (Beschäftigungsduldung, Ermessen, minderjährige ledige Kinder) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>79</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60b Absatz 1 AufenthG (Duldung für Personen mit ungeklärter Identität) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60b Abs. 1 AufenthG (Personen mit ungeklärter Identität) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;,  Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>80</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60b Absatz 1 AufenthG (Duldung für Personen mit ungeklärter Identität) widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60b Abs. 1 AufenthG (Personen mit ungeklärter Identität) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>81</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60b Absatz 1 AufenthG (Duldung für Personen mit ungeklärter Identität) erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60b Abs. 1 AufenthG (Personen mit ungeklärter Identität) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>82</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 1 AufenthG (Beschäftigungsduldung, Regelanspruch, Ehegatte/Lebenspartner) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 1 AufenthG (Beschäftigung, Regelanspruch, Ehegatte/Lebenspartner) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;,  Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>83</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 1 AufenthG (Beschäftigungsduldung, Regelanspruch, Ehegatte/Lebenspartner) widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 1 AufenthG (Beschäftigung, Regelanspruch, Ehegatte/Lebenspartner) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>84</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60d Absatz 1 AufenthG (Beschäftigungsduldung, Regelanspruch,Ehegatte/Lebenspartner) erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60d Abs. 1 AufenthG (Beschäftigung, Regelanspruch, Ehegatte/Lebenspartner) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>85</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 4 AufenthG (Verfahren nach § 85a) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 4 AufenthG (Verfahren nach § 85a) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;,  Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>86</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 4 AufenthG (Verfahren nach § 85a) widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 4 AufenthG (Verfahren nach § 85a) widerrufen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>87</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - nach § 60a Absatz 2 Satz 4 AufenthG (Verfahren nach § 85a) erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 4 AufenthG (Verfahren nach § 85a) erloschen am &lt;ereignisdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation">
+            <SimpleValue>Bestandskennung-nicht meldbar</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>88</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60c Absatz 6 Satz 1 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60c Abs. 6 Satz 1 AufenthG (Suche nach weiterem Ausbildungsplatz) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>15.07.2021</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>89</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>nach § 60a Absatz 2 Satz 3 AufenthG in Verbindung mit § 60c Absatz 6 Satz 2 AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Aussetzung der Abschiebung (Duldung) nach § 60a Abs. 2 S. 3 AufenthG in Verbindung mit § 60c Abs. 6 Satz 2 AufenthG (Arbeitsplatzsuche nach Ausbildungsabschluss) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer der Bescheinigung &lt;bescheinigungsNummer&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>15.07.2021</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="Zusatzinformation"/>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>DSMeld Staatsangehörigkeit Glaubhaftmachung (DSMeld-Blatt 1002)</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden Angaben zur deutschen Staatsangehörigkeit bzw. zum Verlust der deutschen Staatsangehörigkeit abgebildet. Siehe Blatt 1002 des DSMeld.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2025-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>staatsangehoerigkeit.glaubhaftmachung</ShortName>
+      <LongName>DSMeld Staatsangehörigkeit Glaubhaftmachung (DSMeld-Blatt 1002)</LongName>
+      <Version>4</Version>
+      <CanonicalUri>urn:de:dsmeld:schluesseltabelle:staatsangehoerigkeit.glaubhaftmachung</CanonicalUri>
+      <CanonicalVersionUri>urn:de:dsmeld:schluesseltabelle:staatsangehoerigkeit.glaubhaftmachung_4</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Staatsangehörigkeitsausweis oder sonstiger Nachweis z. B. Pass, Personalausweis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>früher ausgestellter Ausweis über die Rechtsstellung als Deutscher</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Einbürgerungsurkunde oder Urkunde über den Erwerb der deutschen Staatsangehörigkeit durch Erklärung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Einbürgerungsurkunde oder Urkunde über den Erwerb der deutschen Staatsangehörigkeit durch Erklärung und zusätzlicher Staatsangehörigkeitsausweis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Entlassungsurkunde, Verzichtsurkunde oder Bescheid (Bescheinigung) über das Nichtbestehen nach § 30 StAG oder den Verlust der deutschen Staatsangehörigkeit nach § 29 Abs. 6 StAG (in der bis zum 26.6.2024 geltenden Fassung des StAG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>6</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erwerb nach dem Geburtsort nach § 4 Abs. 3 StAG</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Einbürgerung nach § 40b StAG (in der bis zum 26.6.2024 geltenden Fassung des StAG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bescheid über das Fortbestehen der deutschen Staatsangehörigkeit nach § 29 Abs. 6 StAG (in der bis zum 26.6.2024 geltenden Fassung des StAG)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bescheinigung nach § 15 Abs 1 oder 2 BVFG</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

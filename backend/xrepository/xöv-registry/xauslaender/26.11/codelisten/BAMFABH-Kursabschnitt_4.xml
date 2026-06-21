@@ -1,0 +1,189 @@
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+    xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ http://docs.oasis-open.org/codelist/cs-genericode-1.0/xsd/genericode.xsd http://xoev.de/schemata/genericode/1_0 http://xoev.de/schemata/genericode/1_0/xoev-cl-attributes.xsd">
+    <Annotation>
+        <Description>
+            <xoev-cl:beschreibung xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0">Beschreibt
+                die möglichen Arten eines Kursabschnitts</xoev-cl:beschreibung>
+            <xoev-cl:datumgueltigkeitab xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0"
+                >2016-08-01</xoev-cl:datumgueltigkeitab>
+        </Description>
+    </Annotation>
+    <Identification>
+        <ShortName>BAMFABH-Kursabschnitt</ShortName>
+        <LongName>Arten eines Kursabschnitts</LongName>
+        <Version>4</Version>
+        <CanonicalUri>urn:de:xauslaender:codelist:bamfabh:int:kursabschnitt</CanonicalUri>
+        <CanonicalVersionUri>urn:de:xauslaender:codelist:bamfabh:int:kursabschnitt_4</CanonicalVersionUri>
+        <Agency>
+            <ShortName>BAMF</ShortName>
+            <LongName>Bundesamt für Migration und Flüchtlinge, Fachbereich Integration</LongName>
+        </Agency>
+    </Identification>
+    <ColumnSet>
+        <Column Id="Schlüssel" Use="required">
+            <ShortName>Schlüssel</ShortName>
+            <Data Type="string"/>
+        </Column>
+        <Column Id="Wert" Use="required">
+            <ShortName>Wert</ShortName>
+            <Data Type="string"/>
+        </Column>
+        <Key Id="codeKey">
+            <Annotation>
+                <AppInfo>
+                    <xoev-cl:xoev-code xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0"/>
+                </AppInfo>
+            </Annotation>
+            <ShortName>codeKey</ShortName>
+            <ColumnRef Ref="Schlüssel"/>
+        </Key>
+    </ColumnSet>
+    <SimpleCodeList>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>1</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Basiskurs - Abschnitt 1</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>2</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Basiskurs - Abschnitt 2</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>3</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Basiskurs - Abschnitt 3</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>4</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Aufbaukurs – Abschnitt 1</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>5</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Aufbaukurs – Abschnitt 2</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>6</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Aufbaukurs – Abschnitt 3</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>7</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Orientierungskurs - Orientierungskurs (45 UE)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>8</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Orientierungskurs - Verkürzter Orientierungskurs für Intensivkurs (nur für Intensivkurs)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>9</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Spezialkurs - Abschnitt 1 (nur für Jugendintegrationskurs, Eltern- bzw. Frauenintegrationskurs, Integrationskurs mit Alphabetisierung, Gehörlosenkurs, Elternintegrationskurs, Frauenintegrationskurs, Förderkurs, Sonstiger spezieller Kurs)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>10</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Spezialkurs - Abschnitt 2 (nur für Jugendintegrationskurs, Eltern- bzw. Frauenintegrationskurs, Integrationskurs mit Alphabetisierung, Gehörlosenkurs, Elternintegrationskurs, Frauenintegrationskurs, Förderkurs, Sonstiger spezieller Kurs)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>11</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Spezialkurs - Abschnitt 3 (nur für Jugendintegrationskurs, Eltern- bzw. Frauenintegrationskurs, Integrationskurs mit Alphabetisierung, Gehörlosenkurs, Elternintegrationskurs, Frauenintegrationskurs, Förderkurs, Sonstiger spezieller Kurs)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>12</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Intensivkurs - Abschnitt 1 (nur für Intensivkurs)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>13</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Intensivkurs - Abschnitt 2 (nur für Intensivkurs)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>14</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Intensivkurs - Abschnitt 3 (nur für Intensivkurs)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>15</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Intensivkurs - Abschnitt 4 (nur für Intensivkurs)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>16</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Wiederholerkurs – Wiederholerkursabschnitt (nur für Wiederholerkurs allgemein, Wiederholerkurs Alpha, Wiederholerkurs Jugendliche, Wiederholerkurs Frauen, Wiederholerkurs Eltern, Wiederholerkurs Förderkurs, Wiederholerkurs Gehörlose, Wiederholerkurs sonstige spezielle Kurse)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>17</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Orientierungskurs - Orientierungskurs (60 UE)</SimpleValue>
+            </Value>
+        </Row>
+        <Row>
+            <Value ColumnRef="Schlüssel">
+                <SimpleValue>18</SimpleValue>
+            </Value>
+            <Value ColumnRef="Wert">
+                <SimpleValue>Orientierungskurs – Orientierungskurs (100 UE)</SimpleValue>
+            </Value>
+        </Row>
+    </SimpleCodeList>
+</gc:CodeList>

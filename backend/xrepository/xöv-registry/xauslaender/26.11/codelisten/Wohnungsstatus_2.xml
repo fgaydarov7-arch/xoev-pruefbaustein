@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>Wohnungsstatus</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Beschreibt den Status der Wohnung.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2021-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>wohnungsstatus</ShortName>
+      <LongName>Wohnungsstatus</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:wohnungsstatus</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:wohnungsstatus_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Hauptwohnung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Nebenwohnung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Sonstige Wohnung - hier könnte der Ausländer aufhältig (gewesen) sein</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

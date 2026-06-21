@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>BZSt Hinweis auf Inkonsistenz</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Mit dieser Schlüsseltabelle wird Art des Hinweises auf eine vermutete Unrichtigkeit oder Unvollständigkeit des Melderegisters für im BZSt-Kontext abgebildet.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2018-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>bzst.hinweis.auf.inkonsistenz</ShortName>
+      <LongName>BZSt Hinweis auf Inkonsistenz</LongName>
+      <Version>4</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:bzst.hinweis.auf.inkonsistenz</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:bzst.hinweis.auf.inkonsistenz_4</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>IdNr für den auswärtigen Ehegatte oder Lebenspartner bekannt, aber im Melderegister nicht eingetragen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstände des Betroffenen und des Ehegatten oder Lebenspartners passen nicht zusammen</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die IdNrn des Betroffenen und des Ehegatten oder des Lebenspartners verweisen nicht wechselseitig aufeinander</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die IdNr des auswärtigen Ehegatten oder Lebenspartners wurde storniert</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Für den Betroffenen wurde die IdNr eines Kindes geliefert, für das die Meldebehörde laut BZSt nicht zuständig ist</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Das Datum zum Familienstand "VW" oder "LV" des Betroffenen passt nicht zum Sterbedatum des Ehegatten oder Lebenspartners</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>IdNr des Ehegatten bzw. Lebenspartners ist bekannt, aber im Melderegister sind weder IdNr noch VBM eingetragen bzw. an das BZSt übermittelt worden, obwohl beide Ehegatten bzw. Lebenspartner im Zuständigkeitsbereich derselben Meldebehörde gemeldet sind</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Für den minderjährigen Betroffenen, der das 14. Lebensjahr noch nicht vollendet hat, wurde ein Kind übermittelt.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

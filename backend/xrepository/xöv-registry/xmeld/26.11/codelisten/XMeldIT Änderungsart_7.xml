@@ -1,0 +1,492 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>XMeldIT Änderungsart</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle wird die Art der Änderungen bei Mitteilungen an das zentral geführte Register gemäß Landesvorschrift abgebildet.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>xmeldit.aenderungsart</ShortName>
+      <LongName>XMeldIT Änderungsart</LongName>
+      <Version>7</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:xmeldit.aenderungsart</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:xmeldit.aenderungsart_7</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Beschreibung" Use="optional">
+         <ShortName>Beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>101</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erstbefüllung des zentralen Registers</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Wird nur im Rahmen der Erstbefüllung verwendet. Alle Datensätze der Erstlieferung haben diesen Änderungsgrund.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>102</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bestandsabgleich im laufenden Betrieb</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Abbildung von Eingemeindungen/Ausgliederungen sowie Berichtigung oder Ergänzung des zentralen Bestands. Das zentrale Register verwirft ggf. nicht wie bei der Erstlieferung den gesamten Bestand, sondern führt die gelieferten Datensätze mit den im zentralen Bestand vorhandenen zusammen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>103</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erstmalige Anmeldung in Deutschland</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die Person wird als Einwohner erstmalig im Melderegister erfasst (z. B. Erfassung eines neu geborenen Kindes als Einwohner).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>104</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Zuzug</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Einwohner zieht mit Haupt-, alleiniger oder Nebenwohnung neu in die Gemeinde zu und war in dieser Gemeinde zuvor noch nie gemeldet.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>201</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sterbemitteilung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Einwohner ist verstorben. Es muss das Sterbedatum geliefert werden.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>202</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wegzug</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die Haupt- oder alleinige Wohnung oder die letzte Nebenwohnung des Einwohners in der Gemeinde wurde aufgegeben (z. B. Wegzugsmeldebehörde nach Einarbeitung der Rückmeldung, Wegzug des Einwohners ins Ausland, Aufgabe der letzten Nebenwohnung in der Gemeinde, Abmeldung von Amts wegen).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>301</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Begründung einer (weiteren) Nebenwohnung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Einwohner hat neben einer bestehenden Wohnung eine (weitere) Nebenwohnung in der Gemeinde angemeldet. Begründet der Einwohner eine Nebenwohnung als einzige aktuelle Wohnung in der Gemeinde, so wird dies als Zuzug (104) oder ggf. als Wiederzuzug (321) mitgeteilt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>302</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Innerörtlicher Umzug</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Einwohner zieht innerhalb der Gemeinde um.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>303</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geburtsmeldung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Dem Datensatz eines Elternteils wurden Daten zu einem neugeborenen Kind hinzugefügt (das neugeborene Kind selbst wird mit Änderungsart 103 übermittelt).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>304</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung der Namen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Eine Änderung der Vor- oder Familiennamen oder beider wurde für diesen Einwohner im Melderegister erfasst. Die bisherigen Namen wurden als frühere Namen im Datensatz gespeichert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>305</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung von Daten auf Grund von Löschungsfristen nach Wegzug/Tod</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Aus dem Datensatz wurden entsprechend der in der Landesgesetzgebung geregelten Löschfristen Daten gelöscht (Teillöschungen, z. B. Ablauf 1. Jahr nach Wegzug). Die Meldebehörde übermittelt den nach Löschung weiter gespeicherten Datenumfang.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>307</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Eintrag/Löschung einer Auskunfts- oder Übermittlungssperre</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Zur Person wurde eine Auskunfts- oder Übermittlungssperre eingetragen oder gelöscht. Der Ablauf der Gültigkeitsfrist einer Sperre führt nicht zur Übermittlung eines Datensatzes.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>308</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Begründung einer Lebenspartnerschaft</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Zur Person wurde die Begründung einer Lebenspartnerschaft erfasst. Hiermit kann auch eine Änderung der Namen einhergehen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>309</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aufhebung einer Lebenspartnerschaft</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Zur Person wurd die Beendigung einer Lebenspartnerschaft erfasst. Hiermit kann auch eine Änderung der Namen einhergehen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>310</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Eheschließung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Zur Person wurde eine Eheschließung erfasst. Hiermit kann auch eine Änderung der Namen einhergehen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>311</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehescheidung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Zur Person wurde eine Ehescheidung erfasst. Hiermit kann auch eine Änderung der Namen einhergehen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>312</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Eintragung eines Gesetzlichen Vertreters</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Zur Person wurde ein gesetzlicher Vertreter eingetragen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>313</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Löschung eines Gesetzlichen Vertreters</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Ein zur Person eingetragener gesetzlicher Vertreter wurde gelöscht.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>314</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung der Anschriftsdaten</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Eine aktuelle oder ggf. inaktuelle Anschrift der Person ändert sich auf Grund einer Orts(teil)- oder Straßenumbenennung oder durch Umnummerierung von Grundstücken oder Richtigstellung dieser Daten.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>315</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Korrektur der Namen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die zur Person gespeicherten Namen wurden berichtigt. Die bisher eingetragenen Namen sind nicht als frühere Namen zu speichern.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>316</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Religionsänderung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Das zur Person eingetragene Religionskennzeichen wurde geändert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>317</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung der Staatsangehörigkeit</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die zur Person eingetragenen Staatsangehörigkeit(en) wurde(n) geändert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>321</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wiederzuzug</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Einwohner zieht mit Haupt-, alleiniger oder Nebenwohnung in die Gemeinde zu. Er war in dieser Gemeinde früher bereits gemeldet. Der Wegzug liegt nur so weit zurück, dass der Datensatz noch nicht in die gesonderte Aufbewahrung überführt ist. Wurde der Datensatz bereits archiviert, erfolgt die Mitteilung eines normalen Zuzugs (104).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>322</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Statuswechsel Hauptwohnung zu Nebenwohnung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die Hauptwohnung des Einwohners in der Gemeinde hat den Status der Hauptwohnung verloren und bleibt als Nebenwohnung erhalten.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>323</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Statuswechsel Nebenwohnung zu Hauptwohnung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Eine bereits bestehende Nebenwohnung des Einwohners in der Gemeinde hat den Status der Hauptwohnung erhalten.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>324</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aufgabe einer Nebenwohnung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Eine bestehende Nebenwohnung in der Gemeinde wird aufgegeben, die Person behält mindestens eine Wohnung in der Gemeinde bei.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>325</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tod einer bezogenen Person</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Zur Person wurde der Tod einer bezogenen Person erfasst (Ehegatte/Lebenspartner, Kind, gesetzlicher Vertreter).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>380</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erteilung einer waffenrechtlichen Erlaubnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Mit diesem Schlüssel wird die Tatsache übermittelt, dass eine waffenrechtliche Erlaubnis erteilt worden ist.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>381</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aufhebung einer waffenrechtlichen Erlaubnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Mit diesem Schlüssel wird die Tatsache übermittelt, dass eine waffenrechtliche Erlaubnis aufgehoben worden ist.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>382</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erteilung einer sprengstoffrechtlichen Erlaubnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Mit diesem Schlüssel wird die Tatsache übermittelt, dass eine sprengstoffrechtliche Erlaubnis erteilt worden ist.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>383</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aufhebung einer sprengstoffrechtlichen Erlaubnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Mit diesem Schlüssel wird die Tatsache übermittelt, dass eine sprengstoffrechtliche Erlaubnis aufgehoben worden ist.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>385</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erteilung eines Waffenbesitzverbots</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Mit diesem Schlüssel wird die Tatsache übermittelt, dass ein Waffenbesitzverbot erteilt worden ist.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>386</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aufhebung eines Waffenbesitzverbots</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Mit diesem Schlüssel wird die Tatsache übermittelt, dass ein Waffenbesitzverbot aufgehoben worden ist.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>387</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Eintragung einer Identifikationsnummer nach § 139b AO</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die Identifikationsnummer nach § 139b AO wird eingetragen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>388</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung einer Identifikationsnummer nach § 139b AO</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die Identifikationsnummer nach § 139b AO wird geändert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>389</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Löschung einer Identifikationsnummer nach § 139b AO</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Die Identifikationsnummer nach § 139b AO wird gelöscht.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>390</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sonstige Änderungen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Änderungen und Korrekturen an einem bestehenden Datensatz, für die kein eigener Schlüssel vergeben wurde.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>701</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aussonderung des Datensatzes in die gesonderte Aufbewahrung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Einwohnerdatensatz wurde entsprechend der Landesvorschriften für die Aufbewahrung von Daten nach Wegzug oder Tod eines Einwohners in den gesondert aufzubewahrenden Datenbestand überführt. Es ist der entsprechend landesrechtlicher Regelungen reduzierte Datensatz zu übermitteln.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>703</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung der Daten in gesonderter Aufbewahrung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Ein Datensatz in der gesonderten Aufbewahrung wurde geändert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>704</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bestandslieferung gesonderte Aufbewahrung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Es wird der gesamte Datenbestand in der gesonderten Aufbewahrung übermittelt.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

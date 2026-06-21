@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>Widersprüche und Übermittlungssperren Eintragung Ergebnis</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Mit dieser Schlüsseltabelle werden die Gründe mitgeteilt, warum bestimmte Widersprüche oder Übermittlungssperren nicht eingetragen werden konnten.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2022-05-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>widerspruecheuebermittlungssperren.eintragung.ergebnis</ShortName>
+      <LongName>Widersprüche und Übermittlungssperren Eintragung Ergebnis</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:xmeld:codeliste:widerspruecheuebermittlungssperren.eintragung.ergebnis</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xmeld:codeliste:widerspruecheuebermittlungssperren.eintragung.ergebnis_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Eintragung des Schlüssels 2 gem. Anlage 1 des DSMeld „Übermittlungssperre nach § 42 Abs. 3 Satz 2 BMG (Übermittlung an öffentlich-rechtliche Religionsgesellschaften)“ ist nicht möglich, da er nur bei der Meldebehörde der Haupt- oder alleinigen Wohnung eingetragen werden darf.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Eintragung des Schlüssels 7 gem. Anlage 1 des DSMeld „Übermittlungssperre nach § 50 Abs. 5 i.V.m. § 50 Abs. 1 BMG (Widerspruchsrecht zur Auskunft an Parteien u.a.)“ ist nicht möglich, da er nur bei der Meldebehörde der Haupt- oder alleinigen Wohnung eingetragen werden darf.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Eintragung des Schlüssels 10 gem. Anlage 1 des DSMeld „Übermittlung nach § 36 Abs. 2 BMG (Widerspruchsrecht gegen Übermittlung an das Bundesamt für Personalmanagement der Bundeswehr)“ ist nicht möglich, da er nur bei der Meldebehörde der Haupt- oder alleinigen Wohnung eingetragen werden darf.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Eintragung des Schlüssels 10 gem. Anlage 1 des DSMeld „Übermittlung nach § 36 Abs. 2 BMG (Widerspruchsrecht gegen Übermittlung an das Bundesamt für Personalmanagement der Bundeswehr)“ ist nicht möglich, da er nur bei Personen eingetragen werden darf, die das 18. Lebensjahr noch nicht vollendet haben.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Eintragung des Schlüssels 10 gem. Anlage 1 des DSMeld „Übermittlung nach § 36 Abs. 2 BMG (Widerspruchsrecht gegen Übermittlung an das Bundesamt für Personalmanagement der Bundeswehr)“ ist nicht möglich, da er nur bei Personen eingetragen werden darf, die die deutsche Staatsbürgerschaft besitzen.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

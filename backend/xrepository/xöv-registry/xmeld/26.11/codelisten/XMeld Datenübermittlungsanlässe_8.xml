@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>XMeld Datenübermittlungsanlässe</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden die Anlässe, die zu einer Datenübermittlung führen können, abgebildet.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2026-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>xmeld.datenuebermittlungsanlaesse</ShortName>
+      <LongName>XMeld Datenübermittlungsanlässe</LongName>
+      <Version>8</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:xmeld.datenuebermittlungsanlaesse</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:xmeld.datenuebermittlungsanlaesse_8</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Zuzug aus dem Inland</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Namen und Doktorgraden</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Geburtsdaten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geburt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zum Geschlecht</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zum gesetzlichen Vertreter</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zur Staatsangehörigkeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zur Religion</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zur Anschrift</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ab- und Aufspaltung einer Gemeinde</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wohnungsstatuswechsel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Umzug mit AGS-Wechsel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zum Familienstand</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zum Ehegatten oder Lebenspartner</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zu Kindern</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zu Pass und Ausweis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zu Auskunfts- und Übermittlungssperren</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sterbefall</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>26</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Daten zur Identifikationsnummer nach § 139b AO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>27</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung der Identifikationsnummer nach § 139b AO der beigeschriebenen Person</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>28</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>29</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fortschreibung des Ordnungsmerkmales</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Umzug ohne AGS-Wechsel</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>30</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Hinweise auf Unrichtigkeiten und Unvollständigkeiten im Melderegister</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bestandsdatenlieferung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>32</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rücknahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>33</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rücknahme eines Sterbefalls</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>34</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Stornierung einer Person</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>35</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rückweisung gemäß Prüfungsebene II</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>36</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Fachspezifische Datenübermittlungsanlässe</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>37</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Korrektur Sterbefall</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>38</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wohnungsstatuswechsel mit Wechsel des Zuständigkeitsbereichs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>39</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wohnungsstatuswechsel ohne Wechsel des Zuständigkeitsbereichs ohne Änderung des AGS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bezug einer Nebenwohnung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>40</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wohnungsstatuswechsel ohne Wechsel des Zuständigkeitsbereichs mit Änderung des AGS</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>41</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Rücknahme der Stornierung einer Person</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>42</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sonstige Fortschreibung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erstmaliger Zuzug aus dem Ausland</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>6</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wiederzuzug aus dem Ausland</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wegzug in das Ausland</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wegzug nach unbekannt</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aufgabe einer Nebenwohnung</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

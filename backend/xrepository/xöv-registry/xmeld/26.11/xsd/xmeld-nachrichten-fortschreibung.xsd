@@ -1,0 +1,2282 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+              namespace="http://www.osci.de/xinneres/geschlecht/1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="type.Fortschreibung.Kind">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Daten des Kindes für die Übermittlung von Fortschreibungsnachrichten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten zum Kind inklusive Sterbetag abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.Kind">
+            <xs:sequence>
+               <xs:element name="name" type="xmeld:type.NameNatuerlichePerson.Kind">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Name des Kindes übermittelt (siehe DSMeld-Blätter 1601a, 1603).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="geburt" type="xmeld:type.Geburtsdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Geburtsdatum des Kindes übermittelt (siehe DSMeld-Blatt 1604).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="geschlecht" minOccurs="0" type="xig:Code.Geschlecht">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Geschlecht des Kindes übermittelt (siehe DSMeld-Blatt 1604a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="anschrift"
+                           minOccurs="0"
+                           type="xmeld:type.AnschriftMelderechtOhneAuslandMitSperrvermerk">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Daten zur Anschrift des Kindes übermittelt (siehe DSMeld-Blätter 1200 - 1212, 1801a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="sterbetag" minOccurs="0" type="xmeld:type.Sterbetag">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Sterbetag des Kindes übermittelt (DSMeld-Blatt 1605).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="auskunftssperre"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.Auskunftssperre">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die Auskunftssperre des Kindes übermittelt (siehe DSMeld-Blätter 1606, 1607). Im Element grund sind nur die Schlüssel 1, 3 und 11 zulässig.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Fortschreibung.LetzteFruehereNamensangaben">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Daten zum letzten früheren Vornamen im Kontext der Übermittlung von Fortschreibungsnachrichten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten zum letzten früheren Vornamen abgebildet. Die Elemente fruehererVorname, fruehererVorname.aenderungsdatum und fruehererVorname.behoerdeUndAktenzeichen sind Pflichtangaben.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="fruehererVorname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der frühere Vorname der betroffenen Person übermittelt (siehe DSMeld-Blatt 0303).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fruehererVorname.aenderungsdatum" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum der Namensänderung übermittelt (siehe DSMeld-Blatt 0304).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="fruehererVorname.behoerdeUndAktenzeichen"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Behörde und Aktenzeichen der Namensänderung übermittelt (siehe DSMeld-Blatt 0305).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.Fortschreibung.NameNatuerlichePersonMitNachweis">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Namen einer Person mit Nachweisdaten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden alle Namensinformationen einer Person sowie die Nachweisdaten zu früheren Namen abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.NameNatuerlichePersonMitNachweis">
+            <xs:sequence>
+               <xs:element name="familienname.unstrukturiert"
+                           type="xmeld:type.FamiliennameUnstrukturiert">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Familienname einer Person übermittelt (siehe DSMeld-Blatt 0101a). Wenn es sich bei dem Namen um einen Blocknamen handelt, wird der vollständige Name als Nachname der Person übermittelt, während für den Vornamen statt einer Zeichenkette das Kindelement nichtVorhanden verwendet wird, um auszudrücken, dass die Person zu Recht keinen Vornamen führt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="ehename.unstrukturiert"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Ehename einer Person übermittelt (siehe DSMeld-Blatt 0103a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="lebenspartnerschaftsname.unstrukturiert"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Lebenspartnerschaftsame einer Person übermittelt (siehe DSMeld-Blatt 0105a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="geburtsname.unstrukturiert"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Geburtsname einer Person übermittelt (siehe DSMeld-Blatt 0201a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="frueherer.familienname"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.FruehererFamiliennameMitNachweis">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der frühere Familienname einer Person sowie die Nachweisdaten übermittelt (siehe DSMeld-Blätter 0203a, 0205, 0206). Die Änderung eines Geburtsnamens durch Adoption wird nicht als Namensänderung behandelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="vornamen" type="xmeld:type.Vornamen">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Vornamen einer Person übermittelt (siehe DSMeld-Blatt 0301).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="gebraeuchlicherVorname"
+                           minOccurs="0"
+                           type="xian:AllgemeinerName">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der gebräuchliche Vorname der betroffenen Person übermittelt (siehe DSMeld-Blatt 0302).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="fruehere.vornamen"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.FruehereVornamenMitNachweis">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Vornamen, die die betroffene Person vor Änderung des Vornamens (falls es eine solche gegeben hat) geführt hat sowie die Nachweisdaten übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="doktorgrad" minOccurs="0" type="xmeld:type.Doktorgrad">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden die Doktorgrade einer Person übermittelt. Es sind nur diejenigen Doktorgrade anzugeben, die in Pässe eingetragen werden dürfen. Zulässig sind: DR., Dr., DR.HC., Dr.hc., Dr.EH. und Dr.eh. Sind mehrere Doktorgrade anzugeben, so sind sie durch ein Leerzeichen zu trennen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="ordensname" minOccurs="0" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Ordensname der betroffenen Person übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="kuenstlername" minOccurs="0" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Künstlername der betroffenen Person übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Fortschreibung.Partner">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Daten des Partners im Kontext der Übermittlung von Fortschreibungsnachrichten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten des Partners im Kontext der Übermittlung von Fortschreibungsnachrichten abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.Partner">
+            <xs:sequence>
+               <xs:element name="partnerschaftstyp" type="xmeld:Code.Ehegatte.oder.Lebenspartner">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird übermittelt, ob es sich um einen Ehegatten oder einen Lebenspartner handelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name" type="xmeld:type.NameNatuerlichePerson.Partner">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Name des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1501a, 1502b, 1503, 1504, 1517a, 1518b, 1519, 1520).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="geburt" type="xmeld:type.Geburtsdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Geburtsdatum des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1505, 1521).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="geschlecht" minOccurs="0" type="xig:Code.Geschlecht">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Geschlecht des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1506, 1522).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="wohnung"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.Wohnung.Partner">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die Wohnung des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1200 - 1213a, 1508, 1524, 1801a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="sterbetag" minOccurs="0" type="xmeld:type.Sterbetag">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Sterbetag des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1516, 1532).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="auskunftssperre"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.Auskunftssperre">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die Auskunftssperre des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1516a, 1516b, 1533, 1534). Im Element grund sind nur die Schlüssel 3 und 11 zulässig.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Fortschreibung.Staatsangehoerigkeit.Glaubhaftmachung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Informationen zur Glaubhaftmachung der deutschten Staatsangehörigkeit</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Informationen zur Glaubhaftmachung des Erwerbs oder des Verlusts der deutschen Staatsangehörigkeit im Rahmen der Übermittlung von Fortschreibungsnachrichten abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.Staatsangehoerigkeit.Glaubhaftmachung">
+            <xs:sequence>
+               <xs:element name="glaubhaftmachung"
+                           type="xmeld:Code.Staatsangehoerigkeit.Glaubhaftmachung">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die Glaubhaftmachung des Erwerbs bzw. des Verlusts der deutschen Staatsangehörigkeit übermittelt (siehe DSMeld-Blatt 1002).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="nachweisdaten" type="xmeld:type.Nachweisdaten">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element werden Nachweisdaten zur Glaubhaftmachung des Erwerbs bzw. des Verlusts der deutschen Staatsangehörigkeit übermittelt (siehe DSMeld-Blatt 1003 und 1004).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.Partnerfortschreibung.Identifikation.Partner">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikationsdaten zum Ehegatten oder Lebenspartner für die Partnerfortschreibung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Identifikationsdaten des Ehegatten oder Lebenspartners der betroffenen Person für die Partnerfortschreibung abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.Partner">
+            <xs:sequence>
+               <xs:element name="partnerschaftstyp" type="xmeld:Code.Ehegatte.oder.Lebenspartner">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird übermittelt, ob es sich um einen Ehegatten oder einen Lebenspartner handelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="name" type="xmeld:type.NameNatuerlichePerson.Partner">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird der Name des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1501a, 1502b, 1503, 1517a, 1518b, 1519).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="geburt" type="xmeld:type.Geburtsdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Geburtsdatum des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1505, 1521).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="wohnung"
+                           maxOccurs="unbounded"
+                           type="xmeld:type.Wohnung.Partner">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die Wohnung des Ehegatten oder Lebenspartners übermittelt (siehe DSMeld-Blätter 1200 - 1212).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.fortschreibung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Allgemeiner Fortschreibungs-Datentyp</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird ein allgemeines Schema für die Fortschreibung des Melderegisters nach § 33 Abs. 3 und 4 BMG und § 8 1. BMeldDÜV bereitgestellt. Er stellt eine Erweiterung des Nachrichtenkopfes um Identifikationsdaten der betroffenen Person dar. Der Autor teilt der empfangenden Meldebehörde mit, dass Daten einer betroffenen Person im Melderegister fortzuschreiben oder zu korrigieren sind. Die betroffene Person wird im Element betroffener identifiziert.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.Nachricht.G2G">
+            <xs:sequence>
+               <xs:element name="betroffener" type="xmeld:type.identifikation.fortschreibung">
+                  <xs:annotation>
+                     <xs:documentation>Dient ausschließlich der Identifikation des Betroffenen. Dessen Daten werden im Melderegister fortgeschrieben.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.fortschreibung.partnermeldebehoerde.betroffener">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Daten des Betroffenen für die Partnermeldebehörde</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element werden die Daten der betroffenen Person an die Partnermeldebehörde übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="familienstand" type="xmeld:type.FamilienstandNurBegruendung">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Familienstand der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="name" type="xmeld:type.NameNatuerlichePerson.Partner">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Name der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtsdatum" type="xmeld:type.Geburtsdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Geburtsdatum der betroffenen Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" type="xig:Code.Geschlecht"/>
+         <xs:element name="anschrift" type="xmeld:type.AnschriftMelderechtMitSperrvermerk">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift der betroffenen_person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sterbetag" minOccurs="0" type="xmeld:type.Sterbetag">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum des Sterbetages übermittelt. Ist im Sterbeeintrag für den Zeitpunkt des Todes ein Zeitraum eingetragen (Nr. 31.2 der Allgemeinen Verwaltungsvorschrift zum Personenstandsgesetz (PStG-VwV) in der jeweils gültigen Fassung), so ist hier das zweite (spätere) Datum anzugeben. Ggf. ist der Zeitpunkt des Todes, einer Todeserklärung oder einer gerichtlichen Feststellung der Todeszeit anzugeben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="auskunftssperre"
+                     minOccurs="0"
+                     type="xmeld:type.Auskunftssperre">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Auskunftssperre der betroffenen_person übermittelt. Zulässig sind die Schlüssel 3 und 11</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="steueridentifikation"
+                     minOccurs="0"
+                     type="xmeld:type.Steueridentifikation">
+            <xs:annotation>
+               <xs:documentation>Dieses Element darf sowohl für Ehegatten als auch für Lebenspartner übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="fortschreibung.geburt.0003">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Berichtigung des Geburtsdatums</title>
+         </xs:appinfo>
+         <xs:documentation>Das bisher gespeicherte Geburtsdatum des Betroffenen ist falsch und muss berichtigt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="geburt.alt" type="xmeld:type.GeburtsdatumMitHistorie">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geburtsdatum inkl. ggf. vorliegender früherer Geburtsdaten übermittelt wie sie vor der Fortschreibung im Melderegister gespeichert waren.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburt.neu" type="xmeld:type.GeburtsdatumMitHistorie">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geburtsdatum inkl. ggf. vorliegender früherer Geburtsdaten übermittelt wie sie nach der Fortschreibung im Melderegister gespeichert sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.dokument.0006">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Übernahme oder Eintragung eines Personaldokumentes in das Melderegister</title>
+         </xs:appinfo>
+         <xs:documentation>Der Autor teilt der adressierten Meldebehörde mit, dass ein Personaldokument in das Melderegister übernommen oder eingetragen worden ist.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="ausweisdokument" type="xmeld:type.Ausweisdokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das in das Melderegister übernommene oder eingetragene Personaldokument beschrieben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.geburt.0014">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Korrektur der Angaben zum Geburtsort</title>
+         </xs:appinfo>
+         <xs:documentation>Angaben zum Geburtsort des Betroffenen sind falsch und müssen berichtigt werden. Vorliegende Nachweisdaten sind zu übermitteln, unabhängig davon, ob sie geändert worden sind oder nicht.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="geburt.alt" type="xmeld:type.GeburtMitHistorie">
+                     <xs:annotation>
+                        <xs:documentation>Fehlerhafte Angaben zur Geburt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburt.neu" type="xmeld:type.GeburtMitHistorie">
+                     <xs:annotation>
+                        <xs:documentation>Die in den Kindelementen geburtsort und geburtsortstaat angegebenen Daten ersetzen die bisher gespeicherten Daten.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis.geburtsort.neu"
+                              minOccurs="0"
+                              type="xmeld:type.Nachweisdaten">
+                     <xs:annotation>
+                        <xs:documentation>Die Nachweisdaten zum berichtigten Geburtsort sind zu übermitteln, falls sie vorliegen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.tod.0040">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung über den Tod des Betroffenen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird mitgeteilt, dass der Betroffene verstorben ist.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="tod" type="xmeld:type.Tod">
+                     <xs:annotation>
+                        <xs:documentation>Informationen zum Tod des Verstorbenen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis.tod" type="xmeld:type.Nachweisdaten">
+                     <xs:annotation>
+                        <xs:documentation>Es ist nachzuweisen, dass der Betroffene verstorben ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.dokument.0063">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Verlängerung eines Kinderreisepasses</title>
+         </xs:appinfo>
+         <xs:documentation>Der Autor teilt der adressierten Meldebehörde die Verlängerung eines Kinderreisepasses mit.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="kinderreisepass" type="xmeld:type.Ausweisdokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der zu verlängernde Kinderreisepass (Passart: Schlüsselwert 03 aus Schlüsseltabelle Pass- und Ausweisdokumente) spezifiziert. Die Mitteilung von Seriennummer, ausstellender Behörde und Ausstellungsdatum dient der Identifkation des Dokumentes beim Leser. Diese Daten wurden durch den Vorgang nicht verändert.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.dokument.0064">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Berichtigung/Änderung von Daten des Personaldokumentes</title>
+         </xs:appinfo>
+         <xs:documentation>Mitgeteilt werden Veränderungen an den Daten zu einem Personaldokument, die sich weder auf die Übernahme/Eintragung in das Melderegister, auf die Löschung aus dem Melderegister bzw. auf die Verlängerung eines Kinderreisepasses beziehen. Insbesondere sind hierunter Korrekturen zu fassen oder eventuelle Verlängerungen von Personaldokumenten für Ausländer.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="personaldokument.alt" type="xmeld:type.Ausweisdokument">
+                     <xs:annotation>
+                        <xs:documentation>Dies ist das Personaldokument, wie es vor der Änderung/Korrektur im Melderegister gespeichert war.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="personaldokument.neu" type="xmeld:type.Ausweisdokument">
+                     <xs:annotation>
+                        <xs:documentation>Dies ist das Personaldokument, wie es nach der Änderung/Korrektur im Melderegister gespeichert ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.dokument.0065">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Löschung eines Personaldokumentes aus dem Melderegister</title>
+         </xs:appinfo>
+         <xs:documentation>Das aus dem Melderegister des Autors gelöschte Personaldokument wird mitgeteilt. Die Löschung bereits abgelaufener Personaldokumente wird nicht übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="personaldokument" type="xmeld:type.Ausweisdokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zum Personaldokument übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.religion.0066">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Übermittlung von Änderungen/Korrekturen in der Religionszugehörigkeit</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird jegliche Änderung/Korrektur der Religionszugehörigkeit des Betroffenen übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="religion.alt" type="xmeld:type.Religion">
+                     <xs:annotation>
+                        <xs:documentation>Dies ist die Religionszugehörigkeit der betroffenen_person vor der Änderung/Korrektur.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="religion.neu" type="xmeld:type.Religion">
+                     <xs:annotation>
+                        <xs:documentation>Dies ist die Religionszugehörigkeit der betroffenen_person nach der Änderung/Korrektur.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.staatsangehoerigkeit.0067">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Einbürgerung</title>
+            <implementationHint>Die Staatsangehörigkeit 000 darf in staatsangehoerigkeit.alt nicht enthalten sein, muss aber in staatsangehoerigkeit.neu enthalten sein.</implementationHint>
+         </xs:appinfo>
+         <xs:documentation>Die Nachricht ist zu verwenden, wenn eine Person, die bisher Ausländer war, die deutsche Staatsangehörigkeit annimmt, unabhängig davon, ob die bisherige Staatsangehörigkeit beibehalten wird oder nicht.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="staatsangehoerigkeit.alt"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Alle bisherigen ausländischen Staatsbürgerschaften</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit.neu"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Übergeben werden alle nach der Einbürgerung vorhandenen Staatsangehörigkeiten, also die deutsche und alle ggf. beibehaltenen nichtdeutschen Staatsangehörigkeiten.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit.glaubhaftmachung"
+                              maxOccurs="2"
+                              type="xmeld:type.Fortschreibung.Staatsangehoerigkeit.Glaubhaftmachung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur Glaubhaftmachung des Erwerbs der deutschen Staatsangehörigkeit übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.staatsangehoerigkeit.0068">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Entlassung aus der deutschen Staatsangehörigkeit</title>
+            <implementationHint>Die Staatsangehörigkeit 000 muss in staatsangehoerigkeit.alt, darf aber nicht in staatsangehoerigkeit.neu enthalten sein.</implementationHint>
+         </xs:appinfo>
+         <xs:documentation>Die Nachricht ist zu verwenden, wenn eine Entlassung aus der deutschen Staatsangehörigkeit vorliegt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="staatsangehoerigkeit.alt"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Die deutsche und ggf. vorhandene ausländische Staatsangehörigkeiten vor der Entlassung aus der deutschen Staatsangehörigkeit.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit.neu"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Die ausländische(n) Staatsangehörigkeit(en) nach der Entlassung aus der deutschen Staatsangehörigkeit.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit.glaubhaftmachung"
+                              type="xmeld:type.Fortschreibung.Staatsangehoerigkeit.Glaubhaftmachung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Informationen zum Verlust oder zur Aufgabe der deutschen Staatsangehörigkeit übermittelt. Für das Kindelement glaubhaftmachung darf nur der Schlüssel 5 verwendet werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.staatsangehoerigkeit.0069">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Korrektur Glaubhaftmachung deutsche Staatsangehörigkeit</title>
+         </xs:appinfo>
+         <xs:documentation>Diese Nachricht wird zur Übermittlung der Korrektur der Glaubhaftmachung und der zugehörigen Nachweisdaten genutzt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="staatsangehoerigkeit.glaubhaftmachung"
+                              maxOccurs="2"
+                              type="xmeld:type.Fortschreibung.Staatsangehoerigkeit.Glaubhaftmachung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Korrekturen an den Informationen zur Glaubhaftmachung der deutschen Staatsangehörigkeit übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.staatsangehoerigkeit.0070">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Änderung / Korrektur von Staatsangehörigkeiten</title>
+         </xs:appinfo>
+         <xs:documentation>Die Nachricht ist zu verwenden, wenn sich bei einer Person Veränderungen bei einer weiteren (nichtdeutschen) Staatsangehörigkeit ergeben. Das kann neben einer Berichtigung die Aufnahme, der Verlust bzw. die Aufgabe einer weiteren Staatsangehörigkeit sein oder aber die Änderung einer Staatsangehörigkeit - auch durch die anerkannt geänderte Souveränität eines Staates. oder bei der Erfassung der Staatsangehörigkeit eines Ausländers irrtümlich die deutsche Staatsangehörigkeit (ohne Nachweis der Glaubhaftmachung der deutschen Staatsangehörigkeit) eingetragen worden ist oder bei der Erfassung der Staatsangehörigkeit eines Deutschen irrtümlich ein nichtdeutscher Staatenschlüssel eingetragen wurde. Nachweisdaten sind dabei regelhaft nicht vorhanden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="staatsangehoerigkeit.alt"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Alle vor der Korrektur gespeicherten Staatsangehörigkeiten (deutsche und nichtdeutsche).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="staatsangehoerigkeit.neu"
+                              maxOccurs="4"
+                              type="xmeld:Code.Staatsangehoerigkeit">
+                     <xs:annotation>
+                        <xs:documentation>Alle nach der Korrektur gespeicherten Staatsangehörigkeiten (deutsche und nichtdeutsche).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.todBerichtigung.0074">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Berichtigung / Rücknahme des Sterbedatums des Betroffenen</title>
+            <implementationHint>Muss die Mitteilung eines Sterbefalls zurück genommen werden, so dürfen die Kindelemente tod sowie nachweisdaten.tod nicht übermittelt werden.</implementationHint>
+         </xs:appinfo>
+         <xs:documentation>Die Nachricht ist zu verwenden, wenn für eine als verstorben gemeldete Person festgestellt wird, dass entweder der Sterbefall zu Unrecht übermittelt wurde oder die mitgeteilten Angaben zum Sterbefall nicht korrekt waren. Außerdem können mit dieser Nachricht fehlerhaft übermittelte Nachweisdaten korrigiert werden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="sterbetag.alt" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Sterbetag übermittelt, der fälschlicherweise übermittelt wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tod" minOccurs="0" type="xmeld:type.Tod">
+                     <xs:annotation>
+                        <xs:documentation>Wurde der Sterbefall zu Recht - allerdings mit falschen Daten - übermittelt, so ist auf jeden Fall der Sterbetag erneut zu übergeben. Dies gilt auch, wenn der bisherige Sterbetag korrekt war, aber andere Datenfelder korrigiert werden müssen. Soll eine Korrektur von Sterbeort und / oder Staat des Sterbeortes erfolgen, sind diese Daten zusätzlich zum Sterbetag zu übergeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweisdaten.tod"
+                              minOccurs="0"
+                              type="xmeld:type.Nachweisdaten">
+                     <xs:annotation>
+                        <xs:documentation>Soll für eine verstorbene Person eine Korrektur der bisher mitgeteilten Nachweisdaten erfolgen, so werden hier die korrekten Daten übergeben. Auch wenn ausschließlich Nachweisdaten korrigiert werden, ist im Element tod das Sterbedatum zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.stornoperson.0075">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Person im Bestand löschen</title>
+         </xs:appinfo>
+         <xs:documentation>Eine Person ist fälschlicherweise (evtl. doppelt) im Melderegister des Autors eingetragen und ist gelöscht worden. Vor einer Fortschreibung im Melderegister des Lesers muss der Sachverhalt dahingehend überprüft werden, ob diese Änderungen auch zu übernehmen sind.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="grund" type="xmeld:Code.Stornierung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Grund für die Stornierung einer Person im Melderegister mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.anschrift.0081">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Umbenennung einer Gemeinde oder einer Änderung am Gemeindegefüge</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht teilt die Meldebehörde eine Umbenennung einer Gemeinde oder eine Änderung am Gemeindegefüge (Änderung des AGS und/oder amtl. Gemeindenamens (Wohnort)) mit. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer fortschreibung.ab_aufspaltung_gemeinde im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ), betroffenen_nebenwohnungs_mb im Falle einer fortschreibung.ab_aufspaltung_gemeinde außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer fortschreibung.ab_aufspaltung_gemeinde außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="wirksamkeitsdatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum übermittelt, zu dem die Änderung rechtswirksam wird.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anschrift.alt"
+                              type="xmeld:type.AnschriftMelderechtMitSperrvermerk">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Anschrift vor der Änderung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anschrift.neu"
+                              type="xmeld:type.AnschriftMelderechtMitSperrvermerk">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Anschrift nach der Änderung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der die Umbenennung einer Gemeinde oder eine Änderung am Gemeindegefüge mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0081 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.beigeschriebenerpartner.0085">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Partnerfortschreibung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die hauptwohnungs_mb oder die alleinigewohnungs_mb im Falle einer Fortschreibung die Daten der betroffenen_person an dessen partner_mb. Diese Nachricht wird versendet von der hauptwohnungs_mb oder alleinigewohnungs_mb im Falle eines umzugs (Prozess siehe ), alleinigewohnungs_mb im Falle eines wegzugs_ausland (Prozess siehe ), alleinigewohnungs_mb im Falle eines wegzugs_unbekannt (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer fortschreibung.namen_doktorgrad (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer fortschreibung.geburtsdaten (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer fortschreibung.geschlecht (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer Fortschreibung von Daten zum Geschlechtseintrag und zu den Vornamen nach § 2 SBGG (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer Fortschreibung von Daten zur Identifikationsnummer nach § 139b AO (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer fortschreibung.anschriften (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle eines fortschreibung.wohnungsstatuswechsels ohne Wechsel des Zuständigkeitsbereichs (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer fortschreibung.ehegatten_lebenspartner (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer fortschreibung.auskunfts_uebermittlungssperren (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle eines fortschreibung.sterbefalls (Prozess siehe ), hauptwohnungs_mb oder alleinigewohnungs_mb im Falle einer ruecknahme eines fortschreibung.sterbefalls (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="anlass" type="xmeld:Code.Partnerdaten.Anlass.der.Fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass für die Übermittlung der Fortschreibung der Daten des Betroffenen (der in der Partnermeldebehörde beigeschriebener Partner ist) mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="partner"
+                              type="xmeld:type.Partnerfortschreibung.Identifikation.Partner">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten des in der Partnermeldebehörde gemeldeten Ehegatten oder Lebenspartners übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aenderungBetroffener">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="betroffener.vorher"
+                                       minOccurs="0"
+                                       type="xmeld:type.fortschreibung.partnermeldebehoerde.betroffener">
+                              <xs:annotation>
+                                 <xs:documentation>Dies sind die Daten des Betroffenen vor der Änderung.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="betroffener.nachher"
+                                       minOccurs="0"
+                                       type="xmeld:type.fortschreibung.partnermeldebehoerde.betroffener">
+                              <xs:annotation>
+                                 <xs:documentation>Dies sind die Daten des Betroffenen nach der Änderung.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.wohnungsbild.0088">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung des Wohnungsbildes</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörden der Nebenwohnungen über die Tatsache und die Details der Fortschreibung von Daten zum Wohnungsbild der betroffenen_person. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle eines umzugs im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle eines umzugs außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle eines bezug_nebenwohnung (Prozess siehe ), hauptwohnungs_mb im Falle einer aufgabe_nebenwohnung durch Abmeldung bei der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle einer aufgabe_nebenwohnung durch Abmeldung bei der betroffenen_nebenwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle einer fortschreibung.anschriften ohne Änderung des AGS im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle einer fortschreibung.anschriften ohne Änderung des AGS außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle eines fortschreibung.wohnungsstatuswechsels ohne Wechsel des Zuständigkeitsbereichs (Prozess siehe ), hauptwohnungs_mb im Falle einer Fortschreibung von Daten zu bedingten Sperrvermerken nach § 52 bmg im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer Fortschreibung von Daten zu bedingten Sperrvermerken nach § 52 bmg außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer erweiterten_anmeldung (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass der Datenübermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlass.fachspezifisch"
+                              minOccurs="0"
+                              type="xmeld:Code.Fortschreibung.Datenuebermittlungsanlaesse.Fachspezifisch">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der fachspezifische Anlass übermittelt, falls mit dem Element anlass der Schlüssel 36 übermittelt wird.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleWohnung"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.Wohnung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zur aktuellen Wohnung der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aufgegebeneWohnung" minOccurs="0" type="xmeld:type.Wohnung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element können die Angaben zur aufgegebenen Wohnung der betroffenen_person übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zur Fortschreibung des Wohnungsbildes mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0089 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.wohnungsbild.0089">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung des Wohnungsbildes</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die nebenwohnungs_mb die hauptwohnungs_mb über Änderungen des Wohnungsbildes zu Nebenwohnungen in ihrem Zuständigkeitsbereich. Diese Nachricht wird versendet von der betroffenen_nebenwohnungs_mb im Falle eines umzugs außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ), betroffenen_nebenwohnungs_mb im Falle einer aufgabe_nebenwohnung durch Abmeldung bei der nebenwohnungs_mb (Prozess siehe ), betroffenen_nebenwohnungs_mb im Falle einer fortschreibung.anschriften ohne Änderung des AGS außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ), betroffenen_nebenwohnungs_mb im Falle einer Fortschreibung von Daten zu bedingten Sperrvermerken nach § 52 bmg außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ),</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass der Datenübermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bezogeneWohnung" minOccurs="0" type="xmeld:type.Wohnung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zur bezogenen Wohnung der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aufgegebeneWohnung" minOccurs="0" type="xmeld:type.Wohnung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zur aufgegebenen Wohnung der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geaenderteWohnung" minOccurs="0" type="xmeld:type.Wohnung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die geänderten bzw. korrigierten Angaben zur Wohnung der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.anschrift.0090">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Anschriften</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Zuzugsmeldebehörde die Wegzugsmeldebehörde bzw. die letzte Inlandsmeldebehörde über Änderungen und Korrekturen von Daten zur Anschrift der Hauptwohnung bzw. alleinigen Wohnung sowie über die Eintragung oder Löschung der Tatsache des Vorliegens eines bedingten Sperrvermerks nach § 52 BMG. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer fortschreibung.anschriften ohne Änderung des AGS im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle einer Fortschreibung von Daten zu bedingten Sperrvermerken nach § 52 bmg im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ),</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlass" type="xmeld:Code.XMeld.Datenuebermittlungsanlaesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass der Datenübermittlung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anschrift.alt"
+                              type="xmeld:type.AnschriftMelderecht.InlandMitSperrvermerk">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Anschrift vor der Änderung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anschrift.neu"
+                              type="xmeld:type.AnschriftMelderecht.InlandMitSperrvermerk">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Anschrift nach der Änderung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.name.0091">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Namen und Doktorgraden</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörden der Nebenwohnungen über die Tatsache und die Details der Fortschreibung von Namen und Doktorgraden der betroffenen_person. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer Fortschreibung von Namen und Doktorgraden im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer Fortschreibung von Namen und Doktorgraden außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="namen"
+                              type="xmeld:type.Fortschreibung.NameNatuerlichePersonMitNachweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Namen und Doktorgrade der betroffenen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zur Fortschreibung von Namen und Doktorgraden mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0092 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.name.0092">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung von Namen und Doktorgraden</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Nebenwohnung die Meldebehörde der Hauptwohnung über die Tatsache und die Details der Fortschreibung von Namen und Doktorgraden der betroffenen_person. Diese Nachricht wird versendet von der betroffenen Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Namen und Doktorgraden außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aenderungsart" type="xmeld:Code.Fortschreibung.Aenderungsart">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Änderungsart übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienname.unstrukturiert"
+                              minOccurs="0"
+                              type="xmeld:type.Aenderung.Familienname">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Änderungen des Familiennamens einer Person übermittelt (siehe DSMeld-Blatt 0101a).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ehename.unstrukturiert"
+                              minOccurs="0"
+                              type="xmeld:type.Aenderung.Name">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Änderungen des Ehenamens einer Person übermittelt (siehe DSMeld-Blatt 0103a).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="lebenspartnerschaftsname.unstrukturiert"
+                              minOccurs="0"
+                              type="xmeld:type.Aenderung.Name">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Änderungen des Lebenspartnerschaftsnamens einer Person übermittelt (siehe DSMeld-Blatt 0105a).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsname.unstrukturiert"
+                              minOccurs="0"
+                              type="xmeld:type.Aenderung.Name">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Änderungen des Geburtsnamens einer Person übermittelt (siehe DSMeld-Blatt 0201a).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fruehererFamilienname" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen des früheren Familiennamens übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher"
+                                       minOccurs="0"
+                                       type="xmeld:type.FruehererFamiliennameMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der frühere Familienname vor Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher"
+                                       minOccurs="0"
+                                       type="xmeld:type.FruehererFamiliennameMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der frühere Familienname nach Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="vornamen" minOccurs="0" type="xmeld:type.Aenderung.Vornamen">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Änderungen der Vornamen einer Person übermittelt (siehe DSMeld-Blatt 0301). Aufgrund der Regelung zu nicht vorhandenen Vornamen sind in jedem Fall beide Kindelemente vorher und nachher zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gebraeuchlicherVorname"
+                              minOccurs="0"
+                              type="xmeld:type.Aenderung.Name">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen des gebräuchlichen Vornamens übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fruehereVornamen" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen der früheren Vornamen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher"
+                                       minOccurs="0"
+                                       type="xmeld:type.FruehereVornamenMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die früheren Vornamen vor Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher"
+                                       minOccurs="0"
+                                       type="xmeld:type.FruehereVornamenMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die früheren Vornamen nach Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="doktorgrad" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen des Doktorgrades übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" minOccurs="0" type="xmeld:type.Doktorgrad">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Doktorgrad vor Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" minOccurs="0" type="xmeld:type.Doktorgrad">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Doktorgrad nach Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ordensname" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen des Ordensnamens übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Ordensname vor Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Ordensname nach Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="kuenstlername" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen des Künstlernamens übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Künstlername vor Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Künstlername nach Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.auskunftssperre.0093">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Daten zu Auskunftssperren</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informieren die aktuell zuständigen Meldebehörden weitere aktuell zuständige Meldebehörden über die Tatsache und die Details der Fortschreibung von Auskunftssperren nach § 51 BMG der betroffenen_person. Diese Nachricht wird versendet von der Meldebehörde der Hauptwohnung im Falle einer Fortschreibung von Daten zu Auskunftssperren nach § 51 BMG im Zuständigkeitsbereich der Meldebehörde der Hauptwohnung (Prozess siehe ), betroffenen Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Daten zu Auskunftssperren nach § 51 BMG außerhalb des Zuständigkeitsbereichs der Meldebehörde der Hauptwohnung (Prozess siehe ), Meldebehörde der Hauptwohnung im Falle einer Fortschreibung von Daten zu Auskunftssperren nach § 51 BMG außerhalb des Zuständigkeitsbereichs der Meldebehörde der Hauptwohnung (Prozess siehe ), Meldebehörde der Hauptwohnung im Falle einer Fortschreibung von Daten zu Auskunftssperren nach § 51 BMG an die Meldebehörde der weiteren Nebenwohnung bei der Meldebehörde der Hauptwohnung (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="auskunftssperre"
+                              minOccurs="0"
+                              maxOccurs="3"
+                              type="xmeld:type.Auskunftssperre">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Auskunftssperren gemäß § 51 BMG der betroffenen Person inkl. der Frist übermittelt Erlaubt sind in diesem Zusammenhang nur folgende Schlüssel für Auskunftssperren: 1 3 11</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der die Mitteilung zur Fortschreibung von Daten zu Auskunftssperren mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0093 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.auskunftssperre.0094">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Daten zu Auskunftssperren</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informieren die aktuell zuständigen Meldebehörden die ihnen bekannte Wegzugsmeldebehörde, letzte Inlandsmeldebehörde oder Meldebehörde der letzten früheren Nebenwohnung außerhalb über die Tatsache und die Details der Fortschreibung von Auskunftssperren nach § 51 BMG der betroffenen Person. Diese Nachricht wird versendet von der Meldebehörde der Hauptwohnung, Meldebehörde der alleinigen Wohnung oder Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Daten zu Auskunftssperren nach § 51 BMG an inaktuelle Meldebehörden (Prozess siehe ),</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt. Das Element wohnung.leser/wohnungsstatus darf bei inaktuellen Wohnungen nicht übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="auskunftssperre"
+                              minOccurs="0"
+                              maxOccurs="3"
+                              type="xmeld:type.Auskunftssperre">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Auskunftssperren gemäß § 51 BMG der betroffenen Person inkl. der Frist übermittelt Erlaubt sind in diesem Zusammenhang nur folgende Schlüssel für Auskunftssperren: 1 3 11</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.gesetzlicherVertreter.0095">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Daten des gesetzlichen Vertreters</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörde der Nebenwohnung über die Fortschreibung von Daten des gesetzlichen Vertreters der betroffenen_person Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer Fortschreibung von Daten des gesetzlichen Vertreters im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer Fortschreibung von Daten des gesetzlichen Vertreters außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gesetzlicherVertreter"
+                              minOccurs="0"
+                              maxOccurs="4"
+                              type="xmeld:type.GesetzlicherVertreterOhneIdNr">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Daten zum gesetzlichen Vertreter übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zurFortschreibung von Daten des gesetzlichen Vertreters mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0096 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.gesetzlicherVertreter.0096">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung von Daten des gesetzlichen Vertreters</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Nebenwohnung die Meldebehörde der Hauptwohnung über die Fortschreibung von Daten des gesetzlichen Vertreters der betroffenen_person. Diese Nachricht wird versendet von der betroffenen Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Daten des gesetzlichen Vertreters außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gesetzlicherVertreter"
+                              minOccurs="0"
+                              maxOccurs="4"
+                              type="xmeld:type.GesetzlicherVertreterOhneIdNr">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Daten zum gesetzlichen Vertreter übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.partner.0097">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Daten zum Familienstand und zum Ehegatten oder Lebenspartner</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörde der Nebenwohnung über die Fortschreibung von Daten zum Familienstand und die Fortschreibung von Daten zum Ehegatten oder Lebenspartner der betroffenen_person. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer Fortschreibung von Daten zum Familienstand im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle einer Fortschreibung von Daten zum Familienstand außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle einer Fortschreibung von Daten zum Ehegatten oder Lebenspartner im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ), hauptwohnungs_mb im Falle einer Fortschreibung von Daten zum Ehegatten oder Lebenspartner außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="partner"
+                              minOccurs="0"
+                              type="xmeld:type.Fortschreibung.Partner">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Daten zum Ehegatten oder Lebenspartner übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienstand" type="xmeld:type.FamilienstandMitNachweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Daten zum Familienstand übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zur Fortschreibung von Daten zum Familienstand und zum Ehegatten oder Lebenspartner mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0098 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.partner.0098">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung von Daten zum Familienstand und zum Ehegatten oder Lebenspartner</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Nebenwohnung die Meldebehörde der Hauptwohnung über die Fortschreibung von Daten zum Familienstand und die Fortschreibung von Daten zum Ehegatten oder Lebenspartner der betroffenen_person. Diese Nachricht wird versendet von der betroffenen Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Daten zum Familienstand außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ), betroffenen Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Daten zum Ehegatten oder Lebenspartner außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="partner"
+                              minOccurs="0"
+                              type="xmeld:type.Fortschreibung.Partner">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Daten zum Ehegatten oder Lebenspartner übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienstand" type="xmeld:type.FamilienstandMitNachweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Daten zum Familienstand übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.kind.0099">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Daten zu Kindern</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörde der Nebenwohnung über die Fortschreibung von Daten zu Kindern der betroffenen_person. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer Fortschreibung von Daten zu Kindern im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer Fortschreibung von Daten zu Kindern außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kind"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.Fortschreibung.Kind">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Daten zum Kind übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zur Fortschreibung von Daten zu Kindern mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0100 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.kind.0100">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung von Daten zu Kindern</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Nebenwohnung die Meldebehörde der Hauptwohnung über die Fortschreibung von Daten zu Kindern der betroffenen_person. Diese Nachricht wird versendet von der betroffenen Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Daten zu Kindern außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kind"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.Fortschreibung.Kind">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Daten zum Kind übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.waffenUndSprengstoff.0103">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörden der Nebenwohnungen über die Tatsache und die Details der Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten der betroffenen_person. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="waffenrechtlicheErlaubnis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.WaffenrechtlicheErlaubnisMitNachweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur waffenrechtlichen Erlaubnis der betroffenen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="waffenbesitzverbot"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.WaffenbesitzverbotPflichtMitNachweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zum Waffenbesitzverbot der betroffenen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="sprengstoffrechtlicheErlaubnis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.SprengstoffrechtlicheErlaubnisMitNachweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur sprengstoffrechtlichen Erlaubnis der betroffenen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zur Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0104 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.waffenUndSprengstoff.0104">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Nebenwohnung die Meldebehörde der Hauptwohnung über die Tatsache und die Details der Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten der betroffenen_person. Diese Nachricht wird versendet von der betroffenen Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Waffen- und Sprengstoffrechtlichen Daten außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="waffenrechtlicheErlaubnis"
+                              minOccurs="0"
+                              maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen der Daten zur waffenrechtlichen Erlaubnis übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher"
+                                       minOccurs="0"
+                                       type="xmeld:type.WaffenrechtlicheErlaubnisMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur waffenrechtlichen Erlaubnis vor Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher"
+                                       minOccurs="0"
+                                       type="xmeld:type.WaffenrechtlicheErlaubnisMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur waffenrechtlichen Erlaubnis nach Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="waffenbesitzverbot" minOccurs="0" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen der Daten zum Waffenbesitzverbot übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher"
+                                       minOccurs="0"
+                                       type="xmeld:type.WaffenbesitzverbotPflichtMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zum Waffenbesitzverbot vor Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher"
+                                       minOccurs="0"
+                                       type="xmeld:type.WaffenbesitzverbotPflichtMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zum Waffenbesitzverbot nach Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="sprengstoffrechtlicheErlaubnis"
+                              minOccurs="0"
+                              maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen der Daten zur sprengstoffrechtlichen Erlaubnis übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorher"
+                                       minOccurs="0"
+                                       type="xmeld:type.SprengstoffrechtlicheErlaubnisMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element die Daten zur sprengstoffrechtlichen Erlaubnis vor Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachher"
+                                       minOccurs="0"
+                                       type="xmeld:type.SprengstoffrechtlicheErlaubnisMitNachweis">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Daten zur sprengstoffrechtlichen Erlaubnis nach Fortschreibung im Melderegister übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.passversagung.0105">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Daten zu Passversagungsgründen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörden der Nebenwohnungen über die Tatsache und die Details der Fortschreibung von Daten zu Passversagungsgründen der betroffenen_person. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer Fortschreibung von Daten zu Passversagungsgründen im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer Fortschreibung von Daten zu Passversagungsgründen außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="passversagung"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.PassversagungMitNachweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zu Passversagungsgründen der betroffenen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zur Fortschreibung von Daten zu Passversagungsgründen mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0106 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.passversagung.0106">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung von Daten zu Passversagungsgründen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Nebenwohnung die Meldebehörde der Hauptwohnung über die Tatsache und die Details der Fortschreibung von Daten zu Passversagungsgründen der betroffenen_person. Diese Nachricht wird versendet von der betroffenen Meldebehörde der Nebenwohnung im Falle einer Fortschreibung von Daten zu Passversagungsgründen außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="passversagung"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.PassversagungMitNachweis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Fortschreibungen der Daten zu Passversagungsgründen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.sbgg.0107">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Daten nach dem SBGG</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörden der Nebenwohnungen über die Tatsache und die Details der Fortschreibung von Daten zum Geschlechtseintrag und zu den Vornamen nach § 2 SBGG. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer Fortschreibung von Daten zum Geschlechtseintrag und zu den Vornamen nach § 2 SBGG im Zuständigkeitsbereich der Meldebehörde der Hauptwohnung (Prozess siehe ). hauptwohnungs_mb im Falle einer Fortschreibung von Daten zum Geschlechtseintrag und zu den Vornamen nach § 2 SBGG außerhalb des Zuständigkeitsbereichs der Meldebehörde der Hauptwohnung (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlechtseintrag.neu" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Geschlechtseintrag nach Änderung übermittelt (siehe DSMeld-Blatt 0701).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fruehererGeschlechtseintrag"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.FruehererGeschlechtseintrag">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zum früheren Gechlechtseintrag der betroffenen Person übermittelt (siehe DSMeld-Blätter 0702, 0703 und 0704).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vornamensaenderung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden, sofern eine Vornamensänderung erfolgt ist, sowohl die neuen Vornamen als auch die vor der Änderung geführten Vornamen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vornamen.neu" type="xmeld:type.Vornamen">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die neuen Vornamen der betroffenen Person übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="letzteFruehereNamensangaben"
+                                       type="xmeld:type.Fortschreibung.LetzteFruehereNamensangaben">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Angaben zum letzten früheren Vornamen übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="weitereFruehereNamensangaben"
+                              minOccurs="0"
+                              maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden weitere frühere Vornamen der betroffenen Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="fruehererVorname" type="xian:AllgemeinerName">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der frühere Vorname der betroffenen Person übermittelt (siehe DSMeld-Blatt 0303).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="fruehererVorname.aenderungsdatum"
+                                       minOccurs="0"
+                                       type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum der Namensänderung übermittelt (siehe DSMeld-Blatt 0304).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="fruehererVorname.behoerdeUndAktenzeichen"
+                                       minOccurs="0"
+                                       type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Behörde und Aktenzeichen der Namensänderung übermittelt (siehe DSMeld-Blatt 0305).</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zur Fortschreibung von Daten nach dem SBGG mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement ursprungsnachricht/nachrichtentyp nur der Wert 0108 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.sbgg.0108">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung von Daten nach dem SBGG</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Nebenwohnung die Meldebehörde der Hauptwohnung über die Fortschreibung von Daten zum Geschlechtseintrag und zu den Vornamen nach § 2 SBGG. Diese Nachricht wird versendet von der betroffenen Meldebehörde der Nebenwohnung im Fortschreibung von Daten zum Geschlechtseintrag und zu den Vornamen nach § 2 SBGG außerhalb des Zuständigkeitsbereichs der Meldebehörde der Hauptwohnung (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlechtseintrag.neu" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Geschlechtseintrag nach Änderung übermittelt (siehe DSMeld-Blatt 0701).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fruehererGeschlechtseintrag"
+                              type="xmeld:type.FruehererGeschlechtseintrag">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der vor Änderung gespeicherte Geschlechtseintrag (DSMeld-Blatt 0702) sowie die zum SBGG-Fall gehörigen Nachweisdaten (DSMeld-Blätter 0703 und 0704) übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vornamensaenderung" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden, sofern eine Vornamensänderung erfolgt ist, sowohl die neuen Vornamen als auch die vor der Änderung geführten Vornamen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vornamen.neu" type="xmeld:type.Vornamen">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die neuen Vornamen der betroffenen Person übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="letzteFruehereNamensangaben"
+                                       type="xmeld:type.Fortschreibung.LetzteFruehereNamensangaben">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die Angaben zum letzten früheren Vornamen übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.geschlecht.0109">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Mitteilung zur Fortschreibung von Daten zum Geschlecht</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Hauptwohnung die Meldebehörden der Nebenwohnungen über die Tatsache und die Details der Fortschreibung von Daten zum Geschlecht. Diese Nachricht wird versendet von der hauptwohnungs_mb im Falle einer Fortschreibung von Daten zum Geschlecht im Zuständigkeitsbereich der hauptwohnungs_mb (Prozess siehe ). hauptwohnungs_mb im Falle einer Fortschreibung von Daten zum Geschlecht außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht.neu" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geschlecht nach Änderung übermittelt (siehe DSMeld-Blatt 0701).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht"
+                              minOccurs="0"
+                              type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der der Hinweis zur Fortschreibung von Daten zum Geschlecht mitgeteilt wurde, sofern eine solche Nachricht vorliegt. Als Schlüssel darf im Kindelement Element ursprungsnachricht/nachrichtentyp nur der Wert 0110 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.geschlecht.0110">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Hinweis zur Fortschreibung von Daten zum Geschlecht</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde der Nebenwohnung die Meldebehörde der Hauptwohnung über die Fortschreibung von Daten zum Geschlecht. Diese Nachricht wird versendet von der betroffenen Meldebehörde der Nebenwohnung im Falle der Fortschreibung von Daten zum Geschlecht außerhalb des Zuständigkeitsbereichs der hauptwohnungs_mb (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="identifikation.betroffenePerson"
+                              type="xmeld:type.identifikation.fortschreibung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Identifikationsdaten der betroffenen_person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geschlecht.neu" type="xig:Code.Geschlecht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Geschlecht nach Änderung übermittelt (siehe DSMeld-Blatt 0701).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.BeigeschriebenePersonAbweichung.0197">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Rückweisung der Partnerfortschreibung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde den Leser der Nachricht über rueckweisung der Partnerfortschreibung. Diese Nachricht wird versendet von der Meldebehörde im Falle einer Rückweisung einer partnerfortschreibung aufgrund fehlender identifikation (Prozess siehe ), Meldebehörde im Falle einer Rückweisung einer partnerfortschreibung aufgrund unplausibler Meldeverhältnisse (Prozess siehe ).</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="grund" type="xmeld:Code.Melderegister.Abweichung">
+                     <xs:annotation>
+                        <xs:documentation>In diesem Element wird der Grund mitgeteilt, warum aus Sicht der rückweisenden Meldebehörde die Partnerfortschreibung nicht plausibel ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aenderungBetroffener">
+                     <xs:annotation>
+                        <xs:documentation>Hier ist das namensgleiche Element aus der Nachricht zu übernehmen, auf die diese Nachricht eine Reaktion ist.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="betroffener.vorher"
+                                       minOccurs="0"
+                                       type="xmeld:type.fortschreibung.partnermeldebehoerde.betroffener">
+                              <xs:annotation>
+                                 <xs:documentation>Dies sind die Daten des Betroffenen vor der Änderung.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="betroffener.nachher"
+                                       minOccurs="0"
+                                       type="xmeld:type.fortschreibung.partnermeldebehoerde.betroffener">
+                              <xs:annotation>
+                                 <xs:documentation>Dies sind die Daten des Betroffenen nach der Änderung.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="aktuelleAnschrift"
+                              minOccurs="0"
+                              type="xmeld:type.AnschriftMelderecht">
+                     <xs:annotation>
+                        <xs:documentation>Sofern der Partner bereits verzogen ist, teilt die Meldebehörde die aktuelle Anschrift der betroffenen Person mit. Ist der Partner nur mit Nebenwohnung gemeldet ist, teilt die Meldebehörde die aktuelle Hauptwohnungsanschrift Anschrift der betroffenen Person mit. Wurde der Partner nach unbekannt abgemeldet wird diese Tatsache über das Element anschrift.unbekannt mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="sterbedatum" minOccurs="0" type="xmeld:type.Sterbetag">
+                     <xs:annotation>
+                        <xs:documentation>Sofern der Partner bereits verstorben ist, teilt die Meldebehörde den Sterbetag der betroffenen Person mit.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, mit der die unplausible Partnerfortschreibung mitgeteilt wurde. Als Schlüssel darf im Kindelement nachrichtentyp nur der Wert 0085 übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="fortschreibung.keineeinwohnerschaft.0198">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>§ 33 Abs. 3 und 4 BMG, § 8 1. BMeldDÜV</rechtsgrundlage>
+            <title>Fortschreibungsauswertung: Person nicht identifiziert</title>
+            <implementationHint>Die Nachricht 0198 wird weiterhin im Rahmen des allgemeinen Prozesses zur Mitteilung von Fortschreibungen, die noch nicht auf die Anlass-bezogene Sicht umgestellt wurden, genutzt. Für alle Mitteilungen von Fortschreibungen, die bereits auf die Anlass-bezogene Sicht umgestellt wurden, wird die Nachricht 0930 zur fachlichen Rückweisung genutzt.</implementationHint>
+         </xs:appinfo>
+         <xs:documentation>Die versuchte Bearbeitung einer Fortschreibung hat ergeben, dass der Betroffene nicht identifiziert werden konnte oder verzogen bzw. verstorben ist. Daher wird diese Nachricht an den Autor der eingegangenen Fortschreibungsnachricht geschickt. Die Daten im Kindelement betroffener müssen eine Kopie der Daten sein, wie sie im Rahmen der Fortschreibung, auf die mit dieser Nachricht reagiert wird, angegeben sind. Im darin enthaltenen Identifikationsblock muss das Element anschrift.sender weggelassen werden. Das Element anschrift.empfaenger ist mit dem Element anschrift.sender aus der erhaltenen Fortschreibungsnachricht zu befüllen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.fortschreibung">
+               <xs:sequence>
+                  <xs:element name="zusatzinformation" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Wenn dieses Element vorhanden ist, so wird damit entweder der Sachverhalt Person ist verzogen oder der Sachverhalt Person ist verstorben mitgeteilt. Das Fehlen dieses Elementes zeigt an, dass der Betroffene nicht identifziert werden konnte.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="verzogen">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Information mitgeteilt, dass die Person, zu der eine Fortschreibungsnachricht übermittelt wurde, zwischenzeitlich verzogen ist.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="auszugsdatum" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element kann das Auszugsdatum übermittelt werden.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="wegzugsanschrift"
+                                                minOccurs="0"
+                                                type="xmeld:type.AnschriftMelderecht">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element teilt die Meldebehörde die ihr bekannte Wegzugsadresse mit.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="verstorben">
+                              <xs:annotation>
+                                 <xs:documentation>Die identifizierte Person ist als verstorben gespeichert.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="tod" type="xmeld:type.Tod"/>
+                                    <xs:element name="nachweisdaten" type="xmeld:type.Nachweisdaten"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

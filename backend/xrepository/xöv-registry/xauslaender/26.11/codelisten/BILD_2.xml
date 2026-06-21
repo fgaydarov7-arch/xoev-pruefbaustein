@@ -1,0 +1,76 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+   xmlns:xoev-cl-2="http://xoev.de/schemata/genericode/2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-2:nameKurz>BILD</xoev-cl-2:nameKurz>
+         <xoev-cl-2:beschreibung-codeliste>Definiert die möglichen Lichtbildgrößen. Maximale Größe
+            des Lichtbilds in kB bild.groesse.in.kb.maximal =
+            2048</xoev-cl-2:beschreibung-codeliste>
+         <xoev-cl-2:beschreibung-versionCodeliste>Update am 26.04.2023: Diese Codeliste wurde von
+            der KoSIT angepasst um Konformität mit Codelistenregelungen herzustellen. Es gibt keine
+            inhaltlichen Änderungen.</xoev-cl-2:beschreibung-versionCodeliste>
+         <xoev-cl-2:herausgebernameKurz>BVA</xoev-cl-2:herausgebernameKurz>
+         <xoev-cl-2:datumGueltigkeitAb>2018-09-01</xoev-cl-2:datumGueltigkeitAb>
+         <xoev-cl-2:versionXOEVHandbuch>2.1</xoev-cl-2:versionXOEVHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.Lichtbildgroesse</ShortName>
+      <LongName>Lichtbildgroesse</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:lichtbildgroesse</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:lichtbildgroesse_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="optional">
+         <ShortName>beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-2:xoev-code/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>klein, Breite 100px, etwa Passbildgröße</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>mittel, Breite 250px</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>groß (Originale Übermittlungsgröße), Breite 1800px</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

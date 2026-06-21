@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>XInneres Geschlecht</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Diese Codeliste umfasst die im Standard XInneres zur Datenübermittlung genutzten Codes für Geschlechtsangaben gemäß §§ 22 und 45 b PStG.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2022-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+         <xoev-cl-3:aenderungZurVorversion>Initiale Version.</xoev-cl-3:aenderungZurVorversion>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>geschlecht</ShortName>
+      <LongName xml:lang="de-DE">Geschlechtsangaben in XInneres</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:xinneres:codeliste:geschlecht</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xinneres:codeliste:geschlecht_1</CanonicalVersionUri>
+      <Agency>
+         <LongName xml:lang="de-DE">Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName xml:lang="de-DE">Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="required">
+         <ShortName>beschreibung</ShortName>
+         <LongName xml:lang="de-DE">Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="anwendung" Use="optional">
+         <ShortName>anwendung</ShortName>
+         <LongName xml:lang="de-DE">Vorgaben zur Anwendung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>m</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>männlich</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>w</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>weiblich</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>x</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>keine Angabe</SimpleValue>
+         </Value>
+         <Value ColumnRef="anwendung">
+            <SimpleValue>Der Code "x" wird in den Fällen vergeben, in denen (A) das Geschlecht unbekannt ist, (B) in einem ausländischen Pass ein "x" bzw. "X" eingetragen ist und keine anderslautenden Geschlechtsangaben durch eine Personenstandsurkunde nachgewiesen werden können oder (C) zum Geschlecht aufgrund von § 22 Abs. 3 PStG oder aufgrund § 45 b PStG keine Angabe zum Geschlecht gemacht wurde.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>d</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>divers</SimpleValue>
+         </Value>
+         <Value ColumnRef="anwendung">
+            <SimpleValue>Der Code "d" wird ausschließlich vergeben (A) gem. § 45b PStG oder (B) falls das Geschlecht bei der Geburt weder dem weiblichen noch dem männlichen Geschlecht zugeordnet werden konnte und gem. § 22 Abs. 3 PStG die Angabe "divers" gemacht wurde.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

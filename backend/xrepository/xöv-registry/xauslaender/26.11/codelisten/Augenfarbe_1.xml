@@ -1,0 +1,149 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+   xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0"
+   xmlns:xoev-cl-2="http://xoev.de/schemata/genericode/2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <!--Metadaten entsprechend XÖV-Handbuch 2.0-->
+         <xoev-cl:beschreibung>Diese externe Liste beschreibt die Art der Augenfarbe in der
+            Kommunikation mit dem Ausländerzentralregister. Der 2-stellige Schlüssel aus dem
+            Schlüsselverzeichnis der Augenfarben.</xoev-cl:beschreibung>
+         <xoev-cl:datumgueltigkeitab>2018-09-01</xoev-cl:datumgueltigkeitab>
+         <!--Metadaten entsprechend XÖV-Handbuch 2.1-->
+         <xoev-cl-2:nameKurz>Augenfarbe</xoev-cl-2:nameKurz>
+         <xoev-cl-2:beschreibung-codeliste>Diese externe Liste beschreibt die Art der Augenfarbe in
+            der Kommunikation mit dem Ausländerzentralregister. Der 2-stellige Schlüssel aus dem
+            Schlüsselverzeichnis der Augenfarben.</xoev-cl-2:beschreibung-codeliste>
+         <xoev-cl-2:beschreibung-versionCodeliste>Update am 26.04.2023: Diese Codeliste wurde von
+            der KoSIT angepasst um Konformität mit Codelistenregelungen herzustellen. Es gibt keine
+            inhaltlichen Änderungen.</xoev-cl-2:beschreibung-versionCodeliste>
+         <xoev-cl-2:herausgebernameKurz>BVA</xoev-cl-2:herausgebernameKurz>
+         <xoev-cl-2:datumGueltigkeitAb>2018-09-01</xoev-cl-2:datumGueltigkeitAb>
+         <xoev-cl-2:versionXOEVHandbuch>2.1</xoev-cl-2:versionXOEVHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>AZR.AugenfarbeArt</ShortName>
+      <LongName>AugenfarbeArt</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:artderaugenfarbe</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:artderaugenfarbe_1</CanonicalVersionUri>
+      <Agency>
+         <ShortName>BVA</ShortName>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="optional">
+         <ShortName>beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl:xoev-code/>
+               <xoev-cl-2:xoev-code/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Blau</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Blaugrau</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Braun</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Grau</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Graubraun</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Graugrün</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Grauschwarz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Grün</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>35</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Schwarz</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>98</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Sonstige</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>99</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Unbekannt</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>
