@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Meldestatus</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Enthält den aktuellen Meldestatus des Ausländers. Wenn der Ausländer in der Bundesrepublik aufhältig ist, speichert diese Entität, welche Behörde die "aktenführende Behörde" des Ausländers ist.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-08-27</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Redaktionelle Anpassung Kennung 02</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.MeldestatusArt</ShortName>
+      <LongName>MeldestatusArt</LongName>
+      <Version>3</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:meldestatusart</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:meldestatusart_3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="optional">
+         <ShortName>beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Ersteinreise in das Bundesgebiet</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Ersteinreise in das Bundesgebiet am &lt;ereignisdatum&gt;, Aktenzeichen &lt;aktenzeichen&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Zuzug/Zuständigkeitswechsel</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zuzug/Zuständigkeitswechsel am &lt;ereignisdatum&gt;, Aktenzeichen &lt;aktenzeichen&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Wiederzuzug aus dem Ausland</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Wiederzuzug aus dem Ausland am &lt;ereignisdatum&gt;, Aktenzeichen &lt;aktenzeichen&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Fortzug ins Ausland</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Fortzug ins Ausland am &lt;ereignisdatum&gt;, Aktenzeichen &lt;aktenzeichen&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Fortzug nach unbekannt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Fortzug nach unbekannt am &lt;ereignisdatum&gt;, Aktenzeichen &lt;aktenzeichen&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>verstorben</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>verstorben am &lt;ereignisdatum&gt;, Aktenzeichen &lt;aktenzeichen&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>hält sich nicht mehr im Bundesgebiet auf</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>hält sich nicht mehr im Bundesgebiet auf seit &lt;ereignisdatum&gt;, Aktenzeichen &lt;aktenzeichen&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Zuzug von unbekannt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Zuzug von unbekannt am &lt;ereignisdatum&gt;, Aktenzeichen &lt;aktenzeichen&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

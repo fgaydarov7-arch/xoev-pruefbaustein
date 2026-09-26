@@ -1,0 +1,1385 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>BAMFBerD_Modulart</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Diese Liste beschreibt die Kursarten die in der berufsbezogenen Deutschsprachförderung verwendet werden. Es ist die jeweils aktuellste Version zu verwenden, welche im XRepository veröffentlicht ist.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF, FB Integration</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Update am 01.11.2024: Diese Codeliste wurde vom BAMF angepasst um den neu eingeführten Job-BSK zu hinterlegen.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2024-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>In den Zeilen 091-105 sowie 162 wurde Einzelhandel durch Job-BSK ersetzt.</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>berd.modulart</ShortName>
+      <LongName>Arten berufsbezogener Deutschsprachkurse</LongName>
+      <Version>V3</Version>
+      <CanonicalUri>urn:de:bund:bamf:codelist:berd:modulart</CanonicalUri>
+      <CanonicalVersionUri>urn:de:bund:bamf:codelist:berd:modulart_V3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Fachbereich Integration</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="optional">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>001</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>002</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>003</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>004</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>005</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>006</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>007</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>008</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>009</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>010</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>011</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>012</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>013</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>014</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>015</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>016</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>017</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>018</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>019</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>020</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>021</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>022</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>023</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>024</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>025</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>026</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>027</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>028</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>029</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>030</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>031</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>032</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>033</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>034</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>035</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>036</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>037</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>038</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>039</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>040</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>041</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>042</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>043</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>044</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>045</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>046</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>047</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>048</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>049</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>050</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>051</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>052</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>053</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>054</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>055</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>056</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>057</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>058</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>059</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>060</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>061</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>062</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>063</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>064</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>065</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>066</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>067</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>068</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>069</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>070</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>071</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>072</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>073</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>074</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>075</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>076</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>077</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>078</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>079</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>080</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>081</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>082</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>083</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>084</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>085</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>086</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>087</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>088</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>089</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>090</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>091</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>092</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>093</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>094</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>095</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>096</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>097</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>098</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>099</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>100</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>101</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>102</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>103</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>104</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>105</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>106</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>107</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>108</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>109</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>110</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>111</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>112</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>113</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>114</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>115</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>116</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>117</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>118</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>119</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>120</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>121</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>122</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>123</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>124</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>125</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>126</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>127</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>128</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>129</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>130</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>131</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>132</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>133</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>134</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>135</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Pädagogik (Anerkennungsverfahren) * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>136</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>137</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>138</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>139</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>140</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Eltern-Kind-Kurs * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>141</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Eltern-Kind-Kurs * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>142</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>143</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>144</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Kurs für Menschen mit Behinderung * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>145</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>146</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Kombi-Maßnahme * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>147</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Kombi-Maßnahme * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>148</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * KomBer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>149</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * KomBer * Vollzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>150</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * KomBer * Teilzeit</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>151</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * KomjuF</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>152</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Keine Auswahl * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>153</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel A2 * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>154</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B1 * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>155</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * KomjuF</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>158</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>159</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel B2 * mit Brückenelement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>160</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C1 * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>161</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Akademische Heilberufe (Anerkennungsverfahren) * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>162</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Job-BSK (fachspezifischer Unterricht) * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>163</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gewerbe / Technik (fachspezifischer Unterricht) * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>164</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Gesundheitsfachberufe (Anerkennungsverfahren) * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>165</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C2</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>166</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C2 * Eltern-Kind-Kurs</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>167</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C2 * Kurs für Menschen mit Behinderung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>168</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C2 * Kombi-Maßnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>169</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berufssprachkurs - Ziel C2 * Beschäftigten- oder Auszubildenden-Berufssprachkurs</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

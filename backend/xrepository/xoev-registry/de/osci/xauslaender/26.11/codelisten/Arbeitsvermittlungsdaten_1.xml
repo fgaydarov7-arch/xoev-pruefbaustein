@@ -1,0 +1,107 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Arbeitsvermittlungsdaten</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit diesem Element werden Angaben zur Arbeitsvermittlung übermittelt.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2022-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>azr.artarbeitsvermittlungsdaten</ShortName>
+      <LongName>Art der Arbeitsvermittlungsdaten</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:bva:codeliste:azr.artarbeitsvermittlungsdaten</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:bva:codeliste:azr.artarbeitsvermittlungsdaten_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Code" Use="required">
+         <ShortName>Code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Kurzbeschreibung" Use="optional">
+         <ShortName>Kurzbeschreibung</ShortName>
+         <LongName>Kurzbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="CodeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="Code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Schulbesuch</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Schulbesuch (&lt;anerkennung&gt;) von &lt;beginn&gt; bis &lt;ende&gt; oder für die Dauer von &lt;dauer&gt;, Schulart &lt;schulart&gt;,  Abschluss &lt;schulabschluss&gt;, in Staat &lt;staat&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Studium</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Studium (&lt;anerkennung&gt;) von &lt;beginn&gt; bis &lt;ende&gt; oder für die Dauer von &lt;dauer&gt;, Beruf &lt;beruf&gt;, in Staat &lt;staat&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Berufsausbildung</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Berufsausbildung (&lt;anerkennung&gt;) von &lt;beginn&gt; bis &lt;ende&gt; oder für die Dauer von &lt;dauer&gt;,  Beruf &lt;beruf&gt;, in Staat &lt;staat&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Berufliche Tätigkeit (Berufsausübung)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Berufsausübung (&lt;anerkennung&gt;) von &lt;beginn&gt; bis &lt;ende&gt; oder für die Dauer von &lt;dauer&gt;,  Beruf &lt;beruf&gt;, in Staat &lt;staat&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Sprachkenntnis</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Sprachkenntnis (&lt;anerkennung&gt;) in &lt;sprache&gt;, Reifegrad &lt;gradDerSprachkenntnis&gt;, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,123 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<gc:CodeList xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/" xmlns:xoev-cl="http://xoev.de/schemata/genericode/1_0" xsi:schemaLocation="http://docs.oasis-open.org/codelist/ns/genericode/1.0/ http://docs.oasis-open.org/codelist/cs-genericode-1.0/xsd/genericode.xsd http://xoev.de/schemata/genericode/1_0 https://xoev.de/schemata/genericode/1_0/xoev-cl-attributes.xsd">
+	<Annotation>
+		<Description>
+			<xoev-cl:beschreibung>Mit dieser Schlüsseltabelle wird der personenstandsrechtliche Familienstand einer Person abgebildet. Siehe Blatt 1401 des DSMeld.
+</xoev-cl:beschreibung>
+			<xoev-cl:datumgueltigkeitab>2017-11-01</xoev-cl:datumgueltigkeitab>
+		</Description>
+	</Annotation>
+	<Identification>
+		<ShortName>DSMeld_Familienstand_(DSMeld-Blatt_1401)</ShortName>
+		<LongName>Familienstand</LongName>
+		<Version>2</Version>
+		<CanonicalUri>urn:de:dsmeld:schluesseltabelle:familienstand</CanonicalUri>
+		<CanonicalVersionUri>urn:de:dsmeld:schluesseltabelle:familienstand_2</CanonicalVersionUri>
+		<Agency>
+			<ShortName>KoSIT</ShortName>
+			<LongName>Koordinierungsstelle für IT-Standards</LongName>
+		</Agency>
+	</Identification>
+	<ColumnSet>
+		<Column Id="key" Use="required">
+			<ShortName>key</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Column Id="name" Use="required">
+			<ShortName>name</ShortName>
+			<Data Type="string"/>
+		</Column>
+		<Key Id="codeKey">
+			<Annotation>
+				<AppInfo>
+					<xoev-cl:xoev-code/>
+				</AppInfo>
+			</Annotation>
+			<ShortName>CodeKey</ShortName>
+			<ColumnRef Ref="key"/>
+		</Key>
+	</ColumnSet>
+	<SimpleCodeList>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>LD</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>ledig</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>VH</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>verheiratet</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>VW</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>verwitwet</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>GS</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>geschieden</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>EA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>Ehe aufgehoben</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>LP</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>in eingetragener Lebenspartnerschaft</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>LV</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>durch Tod aufgelöste Lebenspartnerschaft</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>LA</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>aufgehobene Lebenspartnerschaft</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>LE</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>durch Todeserklärung aufgelöste Lebenspartnerschaft</SimpleValue>
+			</Value>
+		</Row>
+		<Row>
+			<Value ColumnRef="key">
+				<SimpleValue>NB</SimpleValue>
+			</Value>
+			<Value ColumnRef="name">
+				<SimpleValue>nicht bekannt</SimpleValue>
+			</Value>
+		</Row>
+	</SimpleCodeList>
+</gc:CodeList>

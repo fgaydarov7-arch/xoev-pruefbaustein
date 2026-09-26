@@ -38,6 +38,21 @@ _BAD_POOL = [
     "??", "N/A", "FEHLER", "INVALID_CODE",
 ]
 
+# ── XMeld-Konfiguration ───────────────────────────────────────────────────────
+
+XMELD_JSON    = SCRIPT_DIR / "rules" / "xmeld_compiled.json"
+TEST_DATA_DIR = SCRIPT_DIR / "test_data"
+
+N_XMELD_COLS  = 10    # Anzahl XMeld-Spalten (bevorzugt kleine Codelisten)
+N_XMELD_SMALL = 20    # Zeilen in den kleinen XMeld-Dateien
+N_XMELD_BIG   = 5_000 # Zeilen in den großen XMeld-Dateien
+ERROR_RATIO   = 0.20  # 20 % Fehlerzeilen
+
+_XMELD_BAD_POOL = [
+    "UNGUELTIG", "ошибка", "ERROR", "N/A",
+    "FALSCH_CODE", "???", "INVALID_XMELD", "XX_FEHLER",
+]
+
 
 # ── Schema laden ──────────────────────────────────────────────────────────────
 
@@ -204,16 +219,147 @@ def _log_file(path: Path, rows: int) -> None:
         print(f"  [OK]  {path.name:<35}  {rows:>5} Zeilen")
 
 
+# ── XMeld-Generator ──────────────────────────────────────────────────────────
+
+def _select_xmeld_cols(path: Path, n: int) -> list[tuple[str, list[str]]]:
+    """
+    Wählt bis zu n Spalten aus xmeld_compiled.json.
+
+    Bevorzugt Felder mit kleinen Codelisten (2–50 Einträge), weil
+    Test-Dateien mit menschenlesbaren Codes aussagekräftiger sind.
+    Falls weniger als n solcher Felder existieren, werden weitere Felder
+    mit allowed_codes (beliebiger Größe) ergänzt.
+    """
+    with open(path, encoding="utf-8") as f:
+        schema = json.load(f)
+
+    fields = schema.get("fields", {})
+    if not isinstance(fields, dict):
+        sys.exit(f"Fehler: 'fields' in '{path}' ist kein Objekt.")
+
+    preferred: list[tuple[str, list[str]]] = []
+    fallback:  list[tuple[str, list[str]]] = []
+
+    for field_name, rule in fields.items():
+        codes = [str(c) for c in (rule.get("allowed_codes") or [])]
+        if not codes:
+            continue
+        if 2 <= len(codes) <= 50:
+            preferred.append((field_name, codes))
+        else:
+            fallback.append((field_name, codes))
+
+    combined = preferred + fallback
+    if not combined:
+        sys.exit(
+            f"Fehler: Keine Felder mit allowed_codes in '{path}' gefunden.\n"
+            "Bitte prüfen Sie, ob xmeld_compiled.json korrekt kompiliert wurde."
+        )
+    return combined[:n]
+
+
+def _bad_xmeld(codes: list[str]) -> str:
+    """Ungültiger Wert, der garantiert nicht in der XMeld-Codeliste steht."""
+    lower_set = {c.lower() for c in codes}
+    pool = _XMELD_BAD_POOL.copy()
+    random.shuffle(pool)
+    for v in pool:
+        if v.lower() not in lower_set:
+            return v
+    return f"__XMELD_INV_{random.randint(1000, 9999)}__"
+
+
+def _error_row_xmeld(cols: list[tuple[str, list[str]]]) -> dict[str, str]:
+    """
+    Fehlerzeile für XMeld: 1–2 Zellen sind absichtlich fehlerhaft.
+
+    Fehlertypen (zufällig pro fehlerhafter Zelle):
+      40 % → leer  (simuliert fehlendes Pflichtfeld → LEERES_FELD_WARNUNG)
+      60 % → ungültiger Code               (→ UNGÜLTIGER_CODELISTEN_WERT)
+
+    Alle übrigen Zellen enthalten gültige Codes.
+    """
+    row = {name: _good(codes) for name, codes in cols}
+    n_bad = random.randint(1, min(2, len(cols)))
+    for idx in random.sample(range(len(cols)), n_bad):
+        name, codes = cols[idx]
+        row[name] = "" if random.random() < 0.40 else _bad_xmeld(codes)
+    return row
+
+
+def _make_df_ratio(
+    cols: list[tuple[str, list[str]]],
+    n_rows: int,
+    error_ratio: float,
+) -> pd.DataFrame:
+    """DataFrame mit exakt round(n_rows * error_ratio) Fehlerzeilen."""
+    n_errs   = round(n_rows * error_ratio)
+    err_idx  = set(random.sample(range(n_rows), min(n_errs, n_rows)))
+    col_names = [name for name, _ in cols]
+    rows = [
+        _error_row_xmeld(cols) if i in err_idx else _valid_row(cols)
+        for i in range(n_rows)
+    ]
+    return pd.DataFrame(rows, columns=col_names)
+
+
+def generate_xmeld_files(
+    schema_path: Path,
+    out_dir: Path,
+    n_cols: int,
+    seed: int,
+) -> None:
+    """Generiert 4 XMeld-Testdateien (2 × XLSX + 2 × CSV) in out_dir."""
+    if not schema_path.exists():
+        sys.exit(f"XMeld-Schema nicht gefunden: {schema_path}")
+
+    random.seed(seed)
+    cols = _select_xmeld_cols(schema_path, n_cols)
+
+    print(f"\nXMeld-Schema : {schema_path.name}")
+    print(f"Spalten ({len(cols)}):")
+    for name, codes in cols:
+        print(f"  - {name[:65]:<65}  {len(codes):>4} Codes")
+
+    out_dir.mkdir(parents=True, exist_ok=True)
+    print(f"\nAusgabe : {out_dir}\n")
+
+    n_small_errs = round(N_XMELD_SMALL * ERROR_RATIO)
+    n_big_errs   = round(N_XMELD_BIG   * ERROR_RATIO)
+
+    df_small = _make_df_ratio(cols, N_XMELD_SMALL, ERROR_RATIO)
+    df_big   = _make_df_ratio(cols, N_XMELD_BIG,   ERROR_RATIO)
+
+    _write_excel(df_small, out_dir / "xmeld_small_test.xlsx")
+    _write_excel(df_big,   out_dir / "xmeld_big_test.xlsx")
+    _write_csv  (df_small, out_dir / "xmeld_small_test.csv")
+    _write_csv  (df_big,   out_dir / "xmeld_big_test.csv")
+
+    sep = "-" * 60
+    print(
+        f"\n{sep}\n"
+        f"  xmeld_small_test : {N_XMELD_SMALL} Zeilen, ~{n_small_errs} Fehlerzeilen ({ERROR_RATIO:.0%})\n"
+        f"  xmeld_big_test   : {N_XMELD_BIG} Zeilen, ~{n_big_errs} Fehlerzeilen ({ERROR_RATIO:.0%})\n"
+        f"  Schema           : {schema_path.name}\n"
+        f"  Seed             : {seed}\n"
+        f"{sep}\n"
+    )
+
+
 # ── CLI ───────────────────────────────────────────────────────────────────────
 
 def _parse_args() -> argparse.Namespace:
     ap = argparse.ArgumentParser(
-        description="XÖV-Testdatei-Generator — erstellt XLSX und CSV für den Prüfbaustein",
+        description="XÖV-Testdatei-Generator — erstellt XLSX und CSV für XAusländer und XMeld",
         formatter_class=argparse.ArgumentDefaultsHelpFormatter,
     )
     ap.add_argument(
         "--schema", type=Path, default=DEFAULT_JSON, metavar="PATH",
-        help="Pfad zur JSON-Regeldatei",
+        help="Pfad zur XAusländer JSON-Regeldatei",
+    )
+    ap.add_argument(
+        "--xmeld-schema", type=Path, default=XMELD_JSON, metavar="PATH",
+        help="Pfad zur XMeld JSON-Regeldatei",
     )
     ap.add_argument(
         "--seed", type=int, default=42,
@@ -221,57 +367,76 @@ def _parse_args() -> argparse.Namespace:
     )
     ap.add_argument(
         "--columns", type=int, default=N_COLUMNS, metavar="N",
-        help="Anzahl der Spalten aus dem Schema",
+        help="Anzahl der Spalten aus dem XAusländer-Schema",
+    )
+    ap.add_argument(
+        "--xmeld-columns", type=int, default=N_XMELD_COLS, metavar="N",
+        help="Anzahl der Spalten aus dem XMeld-Schema",
+    )
+    ap.add_argument(
+        "--no-xauslaender", action="store_true",
+        help="XAusländer-Dateien überspringen",
+    )
+    ap.add_argument(
+        "--no-xmeld", action="store_true",
+        help="XMeld-Dateien überspringen",
     )
     return ap.parse_args()
 
 
 def main() -> None:
     args = _parse_args()
-    random.seed(args.seed)
 
-    # ── Schema laden ──────────────────────────────────────────────────────
-    if not args.schema.exists():
-        sys.exit(f"Schema nicht gefunden: {args.schema}")
+    # ── XAusländer-Dateien ────────────────────────────────────────────────
+    if not args.no_xauslaender:
+        random.seed(args.seed)
 
-    print(f"\nSchema   : {args.schema.name}")
-    cols = load_columns(args.schema, args.columns)
+        if not args.schema.exists():
+            sys.exit(f"Schema nicht gefunden: {args.schema}")
 
-    print(f"Spalten ({len(cols)}):")
-    for name, codes in cols:
-        print(f"  - {name[:65]:<65}  {len(codes):>4} Codes")
+        print(f"\nSchema   : {args.schema.name}")
+        cols = load_columns(args.schema, args.columns)
 
-    # ── Ausgabeverzeichnis anlegen ────────────────────────────────────────
-    TESTFILES.mkdir(parents=True, exist_ok=True)
-    print(f"\nAusgabe  : {TESTFILES}\n")
+        print(f"Spalten ({len(cols)}):")
+        for name, codes in cols:
+            print(f"  - {name[:65]:<65}  {len(codes):>4} Codes")
 
-    # ── Kleine Dateien (20 Zeilen) ────────────────────────────────────────
-    df_small = _make_small(cols)
-    _write_excel(df_small, TESTFILES / "test_small.xlsx")
-    _write_csv  (df_small, TESTFILES / "test_small.csv")
+        TESTFILES.mkdir(parents=True, exist_ok=True)
+        print(f"\nAusgabe  : {TESTFILES}\n")
 
-    # ── Große Dateien (5 000 Zeilen, exakt 200 Fehlerzeilen) ──────────────
-    df_large = _make_large(cols)
-    _write_excel(df_large, TESTFILES / "test_large.xlsx")
-    _write_csv  (df_large, TESTFILES / "test_large.csv")
+        df_small = _make_small(cols)
+        _write_excel(df_small, TESTFILES / "test_small.xlsx")
+        _write_csv  (df_small, TESTFILES / "test_small.csv")
 
-    # ── Zusammenfassung ───────────────────────────────────────────────────
-    errs_small = sum(
-        1 for i, row in df_small.iterrows()
-        if any(
-            v == "" or (v != "" and v not in codes)
-            for (_, codes), v in zip(cols, row)
+        df_large = _make_large(cols)
+        _write_excel(df_large, TESTFILES / "test_large.xlsx")
+        _write_csv  (df_large, TESTFILES / "test_large.csv")
+
+        errs_small = sum(
+            1 for i, row in df_small.iterrows()
+            if any(
+                v == "" or (v != "" and v not in codes)
+                for (_, codes), v in zip(cols, row)
+            )
         )
-    )
-    sep = "-" * 60
-    print(
-        f"\n{sep}\n"
-        f"  test_small  : {N_SMALL} Zeilen, {errs_small} Fehlerzeilen\n"
-        f"  test_large  : {N_LARGE} Zeilen, {N_LARGE_ERRS} Fehlerzeilen (exakt)\n"
-        f"  Schema      : {args.schema.name}\n"
-        f"  Seed        : {args.seed}\n"
-        f"{sep}\n"
-    )
+        sep = "-" * 60
+        print(
+            f"\n{sep}\n"
+            f"  test_small  : {N_SMALL} Zeilen, {errs_small} Fehlerzeilen\n"
+            f"  test_large  : {N_LARGE} Zeilen, {N_LARGE_ERRS} Fehlerzeilen (exakt)\n"
+            f"  Schema      : {args.schema.name}\n"
+            f"  Seed        : {args.seed}\n"
+            f"{sep}\n"
+        )
+
+    # ── XMeld-Dateien ─────────────────────────────────────────────────────
+    if not args.no_xmeld:
+        generate_xmeld_files(
+            schema_path = args.xmeld_schema,
+            out_dir     = TEST_DATA_DIR,
+            n_cols      = args.xmeld_columns,
+            seed        = args.seed,
+        )
 
 
 if __name__ == "__main__":

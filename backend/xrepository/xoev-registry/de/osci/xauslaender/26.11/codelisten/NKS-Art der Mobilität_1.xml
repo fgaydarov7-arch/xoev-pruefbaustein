@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>NKS-Art der Mobilität</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Diese externe Codeliste bezeichnet die Art der Mobilität im Rahmen von NKS. Es ist die jeweils aktuellste Version zu verwenden, welche im Xrepository veröffentlicht ist.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>BAMF-XAusländer</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2020-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.0</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>artdermobilitaet</ShortName>
+      <LongName xml:lang="de-DE">Mobilitätsarten Nationale Kontaktstelle</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:bund:bamf:codeliste:nks:artdermobilitaet</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:bund:bamf:codeliste:nks:artdermobilitaet_1</CanonicalVersionUri>
+      <Agency>
+         <LongName xml:lang="de-DE">Bundesamt für Migration und Flüchtlinge, Ausländerwesen</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName xml:lang="de-DE">Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="optional">
+         <ShortName>wert</ShortName>
+         <LongName xml:lang="de-DE">Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Studierendenmobilität</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>kurzfristige Mobilität Forscher</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>kurzfristige Mobilität ICT</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

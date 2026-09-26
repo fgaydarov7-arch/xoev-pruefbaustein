@@ -1,0 +1,1543 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Datenabruf Personensuche nach § 34a Abs. 2 BMG Anforderungselement</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden die Anforderungselemente für die Personensuche nach § 34a Abs. 2 BMG durch Sicherheits- oder Strafermittlungsbehörden und anderen öffentlichen Stellen abgebildet.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2026-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>personensuche.anforderungselement</ShortName>
+      <LongName>Datenabruf Personensuche nach § 34a Abs. 2 BMG Anforderungselement</LongName>
+      <Version>3</Version>
+      <CanonicalUri>urn:xoev-de:xmeld:codeliste:personensuche.anforderungselement</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xmeld:codeliste:personensuche.anforderungselement_3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienname (DSMeld 0101a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Doktorgrad (DSMeld 0401)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand - Ort der letzten Eheschließung oder Begründung der letzten Lebenspartnerschaft (DSMeld 1408)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>101</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand - Staat der letzten Eheschließung oder Begründung der letzten Lebenspartnerschaft im Ausland (DSMeld 1409)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>102</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Familienname (DSMeld 1501a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>103</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Geburtsname (DSMeld 1502b)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>104</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Vornamen (DSMeld 1503)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>105</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Doktorgrad (DSMeld 1504)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>106</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Geburtsdatum (DSMeld 1505)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>107</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Geschlecht (DSMeld 1506)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>108</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - unbekannt (DSMeld 1200)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>109</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Gemeindeschlüssel (DSMeld 1201)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ordensname (DSMeld 0501)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>110</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Postleitzahl (DSMeld 1202)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>111</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Wohnort (DSMeld 1203)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>112</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Wohnort - früherer Gemeindename (DSMeld 1204)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>113</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Straße (DSMeld 1205)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>114</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Hausnummer (DSMeld 1206)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>115</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Hausnummer - Buchstabe/Zusatzziffern (DSMeld 1208)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>116</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Hausnummer - Teilnummer (DSMeld 1209)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>117</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Stockwerks-, Wohnungsnummer (DSMeld 1210)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>118</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Zusatzangaben (DSMeld 1211)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>119</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Wohnungsinhaber (DSMeld 1212)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Künstlername (DSMeld 0502)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>120</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Status der Wohnung (DSMeld 1213)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>121</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Art der Wohnung (DSMeld 1213a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>122</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Anschrift - Staat (DSMeld 1508)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>123</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehegatte - Sterbedatum (DSMeld 1516)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>124</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Familienname (DSMeld 1517a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>125</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Geburtsname (DSMeld 1518b)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>126</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Vornamen (DSMeld 1519)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>127</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Doktorgrad (DSMeld 1520)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>128</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Geburtsdatum (DSMeld 1521)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>129</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Geschlecht (DSMeld 1522)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geburtsdatum (DSMeld 0601)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>130</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - unbekannt (DSMeld 1200)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>131</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Gemeindeschlüssel (DSMeld 1201)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>132</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Postleitzahl (DSMeld 1202)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>133</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Wohnort (DSMeld 1203)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>134</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Wohnort - früherer Gemeindename (DSMeld 1204)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>135</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Straße (DSMeld 1205)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>136</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Hausnummer (DSMeld 1206)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>137</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Hausnummer - Buchstabe/Zusatzziffern (DSMeld 1208)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>138</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Hausnummer - Teilnummer (DSMeld 1209)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>139</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Stockwerks-, Wohnungsnummer (DSMeld 1210)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Geburtsdaten (DSMeld 0601)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>140</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Zusatzangaben (DSMeld 1211)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>141</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Wohnungsinhaber (DSMeld 1212)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>142</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Status der Wohnung (DSMeld 1213)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>143</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Art der Wohnung (DSMeld 1213a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>144</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Anschrift - Staat (DSMeld 1524)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>145</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartner - Sterbedatum (DSMeld 1532)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>146</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Familienname (DSMeld 1601a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>147</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Vornamen (DSMeld 1603)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>148</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Geburtsdatum (DSMeld 1604)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>149</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - unbekannt (DSMeld 1200)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geburtsort (DSMeld 0602)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>150</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder- Anschrift - Gemeindeschlüssel (DSMeld 1201)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>151</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Postleitzahl (DSMeld 1202)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>152</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Wohnort (DSMeld 1203)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>153</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Wohnort - früherer Gemeindename (DSMeld 1204)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>154</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Straße (DSMeld 1205)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>155</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Hausnummer (DSMeld 1206)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>156</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Hausnummer - Buchstabe/Zusatzziffern (DSMeld 1208)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>157</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Hausnummer - Teilnummer (DSMeld 1209)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>158</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Stockwerks-, Wohnungsnummer (DSMeld 1210)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>159</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Anschrift - Zusatzangaben (DSMeld 1211)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geburtsort - Staat (DSMeld 0603)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>160</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder- Anschrift - Wohnungsinhaber (DSMeld 1212)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>161</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Geschlecht (DSMeld 1604a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>162</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Kinder - Sterbedatum (DSMeld 1605)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>163</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Personalausweis - Art oder Pass - Art (DSMeld 1700 oder 1704)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>164</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Personalausweis - Ausstellungsbehörde (DSMeld 1701)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>165</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Personalausweis - Ausstellungsdatum (DSMeld 1702)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>166</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Personalausweis - letzter Tag der Gültigkeitsdauer (DSMeld 1703)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>167</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pass - Ausstellungsbehörde (1705)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>168</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pass - Ausstellungsdatum (1706)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>169</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pass - letzter Tag der Gültigkeitsdauer (DSMeld 1707)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geburtsort - Nachweisdaten (DSMeld 0604, 0605)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>170</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Personalausweis - Seriennummer (DSMeld 1708)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>171</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Pass - Seriennummer (DSMeld 1709)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>172</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sterbedatum (DSMeld 1901)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>173</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sterbedatum - Sterbeeintrag - Nachweisdaten (DSMeld 1902, 1903)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>174</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sterbeort (DSMeld 1904)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>175</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sterbeort - Staat (1905)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>176</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache des Vorliegens von Pass-, Personalausweis- oder Vorläufiger Personalausweisversagungsgründen, der Pass-, Personalausweis- oder Vorläufiger Personalausweisversagung bzw. -entziehung sowie einer Anordnung nach § 6 Abs. 7 des Personalausweisgesetzes (DSMeld 2301)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>177</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache des Vorliegens von Pass-, Personalausweis- oder Vorläufiger Personalausweisversagungsgründen, der Pass-, Personalausweis- oder Vorläufiger Personalausweisversagung bzw. -entziehung sowie einer Anordnung nach § 6 Abs. 7 des Personalausweisgesetzes – Behörde und Aktenzeichen (DSMeld 2302)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>178</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache, dass eine waffenrechtliche Erlaubnis erteilt worden ist - Datum der erstmaligen Erteilung (DSMeld 2601)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>179</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache, dass eine waffenrechtliche Erlaubnis erteilt worden ist - Behörde und Aktenzeichen (DSMeld 2602)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Vorliegen eines Geburtseintrags ohne Geburtsurkunde (DSMeld 0606)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>180</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache, dass ein Waffenbesitzverbot erlassen worden ist - Datum des Erlasses (DSMeld 2603)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>181</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache, dass ein Waffenbesitzverbot erlassen worden ist - Behörde und Aktenzeichen (DSMeld 2604)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>182</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache, dass eine sprengstoffrechtliche Erlaubnis oder ein Befähigungsschein nach § 20 Sprengstoffgesetz erteilt worden ist - Datum der erstmaligen Erteilung (DSMeld 2801)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>183</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Tatsache, dass eine sprengstoffrechtliche Erlaubnis oder ein Befähigungsschein nach § 20 Sprengstoffgesetz erteilt worden ist - Behörde und Aktenzeichen (DSMeld 2802)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>184</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wohnungsgeber – Name und Anschrift – (DSMeld 3001)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>185</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Eigentümer, aber nicht Wohnungsgeber – Name – (DSMeld 3002)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>186</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geschlechtseintrag vor Änderung nach § 2 SBGG (DSMeld 0702)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>187</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geschlechtseintrag vor Änderung nach § 2 SBGG – Nachweisdaten (DSMeld 0703, 0704)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geschlecht (DSMeld 0701)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Ehename (DSMeld 0103a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Art der Vertretung (DSMeld 0001)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Familienname (DSMeld 0902a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Vornamen (DSMeld 0904)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Doktorgrad (DSMeld 0905)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Geburtsdatum (DSMeld 0906)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - unbekannt (DSMeld 1200)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>26</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Gemeindeschlüssel (DSMeld 1201)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>27</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Postleitzahl (DSMeld 1202)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>28</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Wohnort (DSMeld 1203)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>29</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Wohnort - früherer Gemeindename (DSMeld 1204)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Lebenspartnerschaftsname (DSMeld 0105a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>30</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Straße (DSMeld 1205)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Hausnummer (DSMeld 1206)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>32</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Hausnummer - Buchstabe/Zusatzziffern (DSMeld 1208)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>33</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Hausnummer - Teilnummer (DSMeld 1209)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>34</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Stockwerks-, Wohnungsnummer (DSMeld 1210)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>35</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Zusatzangaben (DSMeld 1211)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>36</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Wohnungsinhaber (DSMeld 1212)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>37</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Anschrift - Staat (DSMeld 0907a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>38</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Sterbedatum (DSMeld 0915)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>39</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Datum der Beendigung der gesetzlichen Vertretung bzw. Betreuung (DSMeld 0916)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Geburtsname (DSMeld 0201a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>40</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Gesetzlicher Vertreter - Geschlecht (DSMeld 0917)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>41</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Staatsangehörigkeiten (DSMeld 1001)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>42</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Glaubhaftmachung der deutschen Staatsangehörigkeit/des Verlusts der deutschen Staatsangehörigkeit - Nachweisdaten (DSMeld 1002 - 1004)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>43</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - unbekannt (DSMeld 1200)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>44</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Gemeindeschlüssel (DSMeld 1201)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>45</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Postleitzahl (DSMeld 1202)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>46</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Wohnort (DSMeld 1203)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>47</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Wohnort - früherer Gemeindename (DSMeld 1204)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>48</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Straße (DSMeld 1205)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>49</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Hausnummer (DSMeld 1206)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienname vor Änderung (DSMeld 0203a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>50</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Hausnummer - Buchstabe/Zusatzziffern (DSMeld 1208)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>51</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Hausnummer - Teilnummer (DSMeld 1209)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>52</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Stockwerks-, Wohnungsnummer (DSMeld 1210)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>53</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Zusatzangaben (DSMeld 1211)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>54</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Anschrift - Wohnungsinhaber (DSMeld 1212)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>55</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Status der aktuellen Wohnung (DSMeld 1213)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>56</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Art der aktuellen Wohnung (DSMeld 1213a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>57</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - unbekannt (DSMeld 1200)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>58</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Gemeindeschlüssel (DSMeld 1201)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>59</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Postleitzahl (DSMeld 1202)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>6</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung des Familiennamens - Nachweisdaten (DSMeld 0205, 0206)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>60</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Wohnort (DSMeld 1203)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>61</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Wohnort - früherer Gemeindename (DSMeld 1204)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>62</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Straße (DSMeld 1205)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>63</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Hausnummer (DSMeld 1206)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>64</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Hausnummer - Buchstabe/Zusatzziffern (DSMeld 1208)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>65</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Hausnummer - Teilnummer (DSMeld 1209)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>66</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Stockwerks-, Wohnungsnummer (DSMeld 1210)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>67</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Zusatzangaben (DSMeld 1211)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>68</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Anschrift - Wohnungsinhaber (DSMeld 1212)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>69</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Status der früheren Wohnung (DSMeld 1213)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Vornamen unter Kennzeichnung des gebräuchlichen Vornamens (DSMeld 0301, 0302)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>70</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Art der früheren Wohnung (DSMeld 1213a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>71</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Zuzug aus dem Ausland - Staat (DSMeld 1223)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>72</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wegzug in das Ausland - Staat (DSMeld 1232)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>73</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wegzug in das Ausland - Auslandsanschrift (DSMeld 1232, 1233)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>74</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Wohnung - Einzugsdatum (DSMeld 1301)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>75</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Wohnung - Datum Wohnungsstatuswechsel (DSMeld 1301a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>76</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Wohnung - Datum der Anmeldung von Amts wegen - Fortschreibung des Melderegisters (DSMeld 1308)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>77</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Wohnung - Datum des Wohnungsstatuswechsels von Amts wegen - Fortschreibung des Melderegisters (DSMeld 1310)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>78</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Wohnung - Datum der Anmeldung bei der Meldebehörde (DSMeld 1311)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>79</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>aktuelle Wohnung - Datum der Mitteilung des Wohnungsstatuswechsels (DSMeld 1313)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>8</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Vornamen vor Änderung (DSMeld 0303)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>80</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Einzugsdatum (DSMeld 1301)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>81</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Datum Wohnungsstatuswechsel (DSMeld 1301a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>82</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Auszugsdatum (DSMeld 1306)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>83</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Datum der Anmeldung von Amts wegen - Fortschreibung des Melderegisters (DSMeld 1308)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>84</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Datum der Abmeldung von Amts wegen - Fortschreibung des Melderegisters (DSMeld 1309)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>85</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Datum des Wohnungsstatuswechsels von Amts wegen - Fortschreibung des Melderegisters (DSMeld 1310)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>86</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Datum der Anmeldung bei der Meldebehörde (DSMeld 1311)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>87</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Datum der Abmeldung bei der Meldebehörde (DSMeld 1312)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>88</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>frühere Wohnung - Datum der Mitteilung des Wohnungsstatuswechsels (DSMeld 1313)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>89</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Zuzugsdatum - Gemeinde (DSMeld 1302)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>9</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung des (der) Vornamen(s) - Nachweisdaten (DSMeld 0304, 0305)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>90</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Zuzugsdatum - Kreis (DSMeld 1303)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>91</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Zuzugsdatum - Land (DSMeld 1304)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>92</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Zuzugsdatum - Bund (DSMeld 1305)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>93</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Datum des letzten Wegzugs in das Ausland (DSMeld 1314)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>94</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand (DSMeld 1401)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>95</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand - Datum der letzten Eheschließung oder Begründung der letzten Lebenspartnerschaft (DSMeld 1402)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>96</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand – Datum des Beginns der der Ehe vorangehenden Lebenspartnerschaft (DSMeld 1402a)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>97</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand - Nachweisdaten (DSMeld 1403, 1404)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>98</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand - Beendigung oder Nichtigkeit der letzten Ehe oder der letzten Lebenspartnerschaft - rechtlicher Grund (DSMeld 1405)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>99</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Familienstand - Beendigung oder Nichtigkeit der letzten Ehe oder der letzten Lebenspartnerschaft - Nachweisdaten (DSMeld 1406, 1407)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

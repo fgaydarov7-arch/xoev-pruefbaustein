@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Rücksendung einer Nachricht (RTS)</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden die möglichen Gründe für die Rücksendung einer Nachricht in der synchronen Kommunikation sowie in der Kommunikation zwischen Privaten und Behörden oder sonstigen öffentlichen Stellen an den Autor abgebildet. Mit dem Präfix des jeweiligen Schlüssels wird folgende Systematik festgelegt: T (Transportproblem), X (formales Problem mit XML oder mit (Inhalten von) Schlüsseltabellen), V (Versionsproblem), S (nicht spezifikationskonform).</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2023-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>ruecksendung.einer.nachricht</ShortName>
+      <LongName>Rücksendung einer Nachricht (RTS)</LongName>
+      <Version>5</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:ruecksendung.einer.nachricht</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:ruecksendung.einer.nachricht_5</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>S000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nicht Spezifikationskonform: Melderechtlicher Vorgang mit einem in der Zukunft liegenden Datum.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>S030</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nicht spezifikationskonform: In der Nachricht ist mindestens ein mandatorisches Kindelement des Typs din91379:datatypeC leer (d. h. mit einer Zeichenkette der Länge 0) enthalten.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>S100</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nicht spezifikationskonform: Zurückweisung aufgrund erneuter Lieferung eines bereits erfolgreich verarbeiteten Datensatzes</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>S999</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nicht Spezifikationskonform aus anderen Gründen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Das Zertifikat des Absenders ist abgelaufen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T001</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Das Zertifikat des Absenders ist widerrufen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T002</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Das Zertifikat des Absenders ist nicht gültig.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T003</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Das Zertifikat des Absenders fehlt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T010</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Signatur der Inhaltsdaten fehlt oder hat nicht das geforderte Signaturniveau.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T011</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Signatur der Inhaltsdaten ist nicht gültig (Integrität verletzt).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T020</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Inhaltsdaten können von dem Empfänger nicht dechiffriert werden.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T070</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Der Absender ist zur Inanspruchnahme dieses Dienstes nicht berechtigt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T080</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Der Empfänger ist für die Bearbeitung dieser Nachricht nicht zuständig (Irrläufer).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>T099</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Sonstiger Verstoß gegen Anforderungen des OSCI-Transport-Profils für OSCI-XMeld.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>V000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Nachricht kann in der Version, die in der Nachricht angegeben wird, vom Empfänger nicht bearbeitet werden (Der Dienst ist in dieser Version nicht oder nicht mehr bereit).</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>X000</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Nachricht ist kein wohlgeformtes XML-Dokument.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>X001</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Nachricht ist nicht valide zu dem Schema der in der Nachricht angegebenen Version von OSCI-XMeld.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>X010</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nicht Spezifikationskonform: Ungültige Schlüsseltabelle.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>X011</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nicht Spezifikationskonform: Ungültiger Schlüssel in einer Schlüsseltabelle.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

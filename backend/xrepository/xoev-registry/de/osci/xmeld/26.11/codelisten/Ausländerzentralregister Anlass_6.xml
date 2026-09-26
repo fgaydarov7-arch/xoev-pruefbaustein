@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>Ausländerzentralregister Anlass</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Mit dieser Schlüsseltabelle werden die Anlässe der Datenübermittlung vom Ausländerzentralregister an die Meldebehörden abgebildet.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2022-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>azr.anlass</ShortName>
+      <LongName>Ausländerzentralregister Anlass</LongName>
+      <Version>6</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:azr.anlass</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:azr.anlass_6</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Erstmeldung des Ausländerzentralregisters</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung der Anschrift im Ausländerzentralregister</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung der Grundpersonalien oder der Übermittlungssperre im Ausländerzentralregister</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Löschung der Anschrift im Ausländerzentralregister</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Wegzug nach unbekannt oder Wegzug in das Ausland</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Reaktivierung der Anschrift im Ausländerzentralregister</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung der AZR-Nummer</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Änderung oder Korrektur des Einzugs- und/oder Auszugsdatum</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

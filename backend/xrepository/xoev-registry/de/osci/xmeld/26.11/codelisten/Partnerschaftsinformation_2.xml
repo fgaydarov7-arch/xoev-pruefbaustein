@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>Partnerschaftsinformation</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Mit dieser Schlüsseltabelle werden die Partnerschaftsinformationen (verheiratet, eine Lebenspartnerschaft führend oder weder verheiratet noch eine Lebenspartnerschaft führend ) abgebildet.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2017-11-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>partnerschaftsinformation</ShortName>
+      <LongName>Partnerschaftsinformation</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:partnerschaftsinformation</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:partnerschaftsinformation_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>verheiratet</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>eine Lebenspartnerschaft führend</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>weder verheiratet noch eine Lebenspartnerschaft führend</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,241 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>EUAufenthaltsrecht</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Die EU-Aufenthaltsrechte zeigen, dass ein Ausländer eine Bescheinigung als freizügigkeitsberechtigter EU-Bürger oder eine Aufenthaltserlaubnis als Angehöriger eines EU-Bürgers besitzt. Diese können befristet oder unbefristet sein.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2025-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Neu Kennungen - 14 und 15</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.EUAufenthaltsrechtArt</ShortName>
+      <LongName>EUAufenthaltsrechtArt</LongName>
+      <Version>6</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:euaufenthaltsrecht</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:euaufenthaltsrecht_6</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Kurzbeschreibung" Use="optional">
+         <ShortName>Kurzbeschreibung</ShortName>
+         <LongName>Kurzbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbeschreibung" Use="optional">
+         <ShortName>Langbeschreibung</ShortName>
+         <LongName>Langbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-ab" Use="optional">
+         <ShortName>meldbar-ab</ShortName>
+         <LongName>meldbar ab</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-bis" Use="optional">
+         <ShortName>meldbar-bis</ShortName>
+         <LongName>meldbar bis</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltserlaubnis/EU (Angehörige von EU-/EWR-Bürgern, unbefristet) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Aufenthaltserlaubnis/EU (Angehoerige von EU-/EWR-Buergern, unbefristet) erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>27.08.2007</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltserlaubnis/EU (Angehörige von EU-/EWR-Bürgern, befristet) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Aufenthaltserlaubnis/EU (Angehörige von EU-/EWR-Bürgern, befristet)erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.01.2005</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>27.08.2007</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Bescheinigung des Daueraufenthaltsrechts EU-/EWR-Bürger ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Bescheinigung des Daueraufenthaltsrechts EU-/EWR-Bürger ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>30.04.2006</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>07</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Daueraufenthaltskarte nach § 5 Absatz 5 Satz 2 FreizügG/ EU (Angehörige von EU-/EWR-Bürgern) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Daueraufenthaltskarte nach § 5 Abs. 5 Satz 2 FreizügG/ EU (Angehörige von EU-/EWR-Bürgern) ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>30.04.2006</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltskarte nach § 5 Absatz 1 FreizügG/EU (Angehörige von EU-/ EWR-Bürgern) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Aufenthaltskarte nach § 5 Absatz 1 FreizügG/EU (Angehörige von EU-/ EWR-Bürgern) ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>30.04.2006</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltskarte nach § 3a FreizügG/ EU (nahestehende Personen von EU-Bürgern) erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Aufenthaltskarte nach § 3a FreizügG/ EU (nahestehende Personen von EU-Bürgern) erteilt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>01.05.2022</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltsdokument GB nach § 16 Absatz 2 Satz 1 FreizügG/ EU (britische Staatsangehörige und ihre Familienangehörigen nach Artikel 18 Absatz 4 des Austrittsabkommens) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Aufenthaltsdokument GB nach § 16 Absatz 2 Satz 1 FreizügG/ EU (britische Staatsangehörige und ihre Familienangehörigen nach Artikel 18 Absatz 4 des Austrittsabkommens) ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltsdokument für Grenzgänger GB nach § 16 Absatz 3 FreizügG/ EU (britische Staatsangehörige nach Teil Zwei Titel II Kapitel 2 des Austrittsabkommens) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Aufenthaltsdokument für Grenzgänger GB nach § 16 Abs. 3 FreizügG/ EU (nach Teil Zwei Titel II Kap. 2 des Austrittsabkommens) ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Daueraufenthaltskarte nach § 5 Abs. 7 Satz 3 FreizügG/EU (nahestehende Personen von EU-Bürgern) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Daueraufenthaltskarte nach § 5 Abs. 7 Satz 3 FreizügG/EU (nahestehende Personen von EU-Bürgern) ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltskarte nach § 5 Abs. 7 Satz 1 FreizügG/EU (nahestehende Personen von EU-Bürgern) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Aufenthaltskarte nach § 5 Abs. 7 Satz 1 FreizügG/EU (nahestehende Personen von EU-Bürgern) ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>24.11.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Dokument nach § 78 Absatz 1 Satz 2 AufenthG (nach dem Abkommen EU/Schweiz freizügigkeitsberechtigte Schweizer Bürger) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Dokument nach § 78 Absatz 1 Satz 2 AufenthG (nach dem Abkommen EU/Schweiz freizügigkeitsberechtigte Schweizer Bürger) ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.05.2025</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Dokument nach § 78 Absatz 1 Satz 2 AufenthG (Angehörige von nach dem Abkommen EU/Schweiz freizügigkeitsberechtigten Schweizer Bürgern) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbeschreibung">
+            <SimpleValue>Dokument nach § 78 Absatz 1 Satz 2 AufenthG (Angehörige von nach dem Abkommen EU/Schweiz freizügigkeitsberechtigten Schweizer Bürgern) ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, Nummer des Aufenthaltstitels &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt; </SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.05.2025</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

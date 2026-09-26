@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           xmlns:xoev-code="http://xoev.de/schemata/code/1_0"
+           targetNamespace="http://www.osci.de/xinneres/geschlecht/1"
+           version="1"
+           elementFormDefault="unqualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XInneres-Basismodul</nameLang>
+            <nameKurz>XInneres-Basismodul</nameKurz>
+            <nameTechnisch>xinneres.basismodul</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.basismodul</kennung>
+            <beschreibung>Im Auftrag des AK I hat die PG Standard bisher unter anderem die fachlichen Vorgaben und die Struktur der Meldeanschrift für die Bereiche Ausländer-, Melde- und Personenstandswesen harmonisiert. Der vorliegende Standard XInneres bildet auf technischer Ebene eine Klammer vor den Standards der Innenverwaltung. An dieser Stelle können gemeinsam genutzte Komponenten definiert werden. In der ersten Version von XInneres definiert der Standard die Datentypen für die Darstellung der Meldeanschrift.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>3.0.2</versionXOEVHandbuch>
+            <versionXGenerator>3.2.4</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+         <title>Geschlecht</title>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:import schemaLocation="http://xoev.de/schemata/code/1_0/xoev-code.xsd"
+              namespace="http://xoev.de/schemata/code/1_0"/>
+   <xs:complexType name="Code.Geschlecht">
+      <xs:annotation>
+         <xs:appinfo>
+            <codeliste>
+               <nameLang>Geschlechtsangaben in XInneres</nameLang>
+               <nameKurz>XInneres Geschlecht</nameKurz>
+               <nameTechnisch>geschlecht</nameTechnisch>
+               <kennung>urn:xoev-de:xinneres:codeliste:geschlecht</kennung>
+               <beschreibung>Diese Codeliste umfasst die im Standard XInneres zur Datenübermittlung genutzten Codes für Geschlechtsangaben gemäß §§ 22 und 45 b PStG.</beschreibung>
+               <herausgebernameLang>Koordinierungsstelle für IT-Standards</herausgebernameLang>
+               <herausgebernameKurz>KoSIT</herausgebernameKurz>
+            </codeliste>
+         </xs:appinfo>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xoev-code:Code">
+            <xs:sequence>
+               <xs:element name="code" type="xs:token"/>
+               <xs:element name="name" type="xs:normalizedString" minOccurs="0"/>
+            </xs:sequence>
+            <xs:attribute name="listURI"
+                          type="xs:anyURI"
+                          use="optional"
+                          fixed="urn:xoev-de:xinneres:codeliste:geschlecht"/>
+            <xs:attribute name="listVersionID" type="xs:normalizedString" use="required"/>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+</xs:schema>

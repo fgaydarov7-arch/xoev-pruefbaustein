@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>BAMFBerD_Berechtigung/Verpflichtung</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Diese Liste beschreibt die Arten der Teilnahmeberechtigung / Teilnahmeverpflichtung die in der berufsbezogenen Deutschsprachförderung verwendet werden. Es ist die jeweils aktuellste Version zu verwenden, welche im XRepository veröffentlicht ist.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF, FB Integration</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2026-07-01T00:00:00Z</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Das Wording wurde angepasst</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>artberechtigungverpflichtung</ShortName>
+      <LongName>Arten der Berechtigung/Verpflichtung</LongName>
+      <Version>Version3</Version>
+      <CanonicalUri>urn:de:bund:bamf:codelist:berd:artberechtigungverpflichtung</CanonicalUri>
+      <CanonicalVersionUri>urn:de:bund:bamf:codelist:berd:artberechtigungverpflichtung_Version3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Fachbereich Integration</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="optional">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Verpflichtung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berechtigung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Berechtigung - Kostenbeitragspflicht</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

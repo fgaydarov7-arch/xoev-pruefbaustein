@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Melderegisterauskunft gewerblicher Zweck</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden gewerbliche Zwecke nach § 44 Abs. 1 Satz 2 BMG abgebildet.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2022-09-27</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Die gewerblichen Zwecke für Werbung und Adresshandel wurden auf Grundlage der am 27.09.2022 verkündeten Neufassung der BMGVwV entfernt.</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>melderegisterauskunft.gewerblicher.zweck</ShortName>
+      <LongName>Melderegisterauskunft gewerblicher Zweck</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xmeld:schluesseltabelle:melderegisterauskunft.gewerblicher.zweck</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xmeld:schluesseltabelle:melderegisterauskunft.gewerblicher.zweck_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Adressabgleich</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Markt-, Meinungs- oder Sozialforschung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Adressermittlung und -weitergabe an (eine) im Freitextfeld bestimmte Person(en) oder Stelle(n)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>3</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Speicherung und Nutzung zum Adressabgleich für Dritte</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>4</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Aktualisierung eigener Bestandsdaten</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>5</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Speicherung und Nutzung zur Adresshistorisierung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>6</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Forderungsmanagement</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>7</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Bonitätsrisikoprüfungen</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

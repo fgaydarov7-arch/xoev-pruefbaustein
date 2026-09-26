@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>NKS-Ablehnungsgrund</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Diese externe Codeliste bezeichnet den Grund der Ablehnung eines Aufenthaltstitels im Rahmen von NKS. Es ist die jeweils aktuellste Version zu verwenden, welche im Xrepository veröffentlicht ist.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF-XAusländer</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-01-18</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>nks.ablehnungsgrund</ShortName>
+      <LongName>NKS Ablehnungsgrund</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:nks.ablehnungsgrund</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:nks.ablehnungsgrund_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Ausländerwesen</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Code" Use="required">
+         <ShortName>Code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Beschreibung" Use="optional">
+         <ShortName>Beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="CodeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>CodeKey</ShortName>
+         <ColumnRef Ref="Code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Antragsteller hat falsche oder unvollständige Angaben zur Erlangung der Blauen Karte EU gemacht (die vorgelegten Dokumente wurden in betrügerischer Weise erworben oder gefälscht oder manipuliert)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Antragsteller stellt eine Gefahr für die öffentliche Ordnung dar</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Antragsteller stellt eine Gefahr für die öffentliche Gesundheit dar</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Beschreibung">
+            <SimpleValue>Der Antragsteller stellt eine Gefahr für die öffentliche Sicherheit dar</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

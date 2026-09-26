@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+   xmlns:xoev-cl-2="http://xoev.de/schemata/genericode/2"
+   xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-2:nameKurz>Ausschreibung</xoev-cl-2:nameKurz>
+         <xoev-cl-2:beschreibung-codeliste>Der Zweck einer Ausschreibung wird als Kennung
+            geführt.</xoev-cl-2:beschreibung-codeliste>
+         <xoev-cl-2:beschreibung-versionCodeliste>Update am 26.04.2023: Diese Codeliste wurde von
+            der KoSIT angepasst um Konformität mit Codelistenregelungen herzustellen. Es gibt keine
+            inhaltlichen Änderungen.</xoev-cl-2:beschreibung-versionCodeliste>
+         <xoev-cl-2:herausgebernameKurz>BVA</xoev-cl-2:herausgebernameKurz>
+         <xoev-cl-2:datumGueltigkeitAb>2019-04-22</xoev-cl-2:datumGueltigkeitAb>
+         <xoev-cl-2:versionXOEVHandbuch>2.1</xoev-cl-2:versionXOEVHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.AusschreibungArt</ShortName>
+      <LongName>AusschreibungArt</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:artderausschreibung</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:artderausschreibung_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="optional">
+         <ShortName>beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-2:xoev-code/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Festnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Aufenthaltsermittlung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>zur Inobhutnahme oder Ingewahrsamnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Zurückweisung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Festnahme Haft-/Unterbringungsbefehl, Abschiebehaftbeschluss, Zurückschiebungsverfügung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Festnahme aufgrund Zurückschiebung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>77</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Zurückweisung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>78</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Zurückweisung Terror gefährdete Person</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>79</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Zurückweisung Terror Verdächtiger</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>88</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Aufenthaltsermittlung</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>89</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Festnahme</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>99</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Vorgang zur Ausschreibung</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

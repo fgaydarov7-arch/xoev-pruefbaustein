@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>NKS Sachverhalt</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Eine Liste der Anlässe bzw. Sachverhalte der Datenübermittlungen zu europäischen Aufenthaltstiteln.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2021-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>nks.sachverhalt</ShortName>
+      <LongName>NKS Nachrichtensachverhalt</LongName>
+      <Version>3</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:nks.sachverhalt</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:nks.sachverhalt_3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards, Bremen</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Schluessel" Use="required">
+         <ShortName>Schluessel</ShortName>
+         <LongName>Schluessel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Wert" Use="required">
+         <ShortName>Wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="SchluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>SchluesselKey</ShortName>
+         <ColumnRef Ref="Schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ausstellung eines Daueraufenthaltes EU im Mitgliedstaat</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Ausstellung eines auf dem deutschen Daueraufenthalt EU basierenden Aufenthaltstitels im Mitgliedstaat</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Aufenthaltsbeendigung bei Drittstaatsangehörigem mit in Deutschland ausgestelltem Daueraufenthalt EU (Nicht-Verlängerung)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Aufenthaltsbeendigung bei Drittstaatsangehörigem mit in Deutschland ausgestelltem Daueraufenthalt EU (Entzug)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Aufenthaltsbeendigung und Rückführung in Drittstaat bei Drittstaatsangehörigen mit in Deutschland ausgestelltem Daueraufenthalt-EU</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Übergang des Internationalen Schutzes an den Mitgliedstaat</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Schluessel">
+            <SimpleValue>20</SimpleValue>
+         </Value>
+         <Value ColumnRef="Wert">
+            <SimpleValue>Gewährung internationalen Schutzes im Mitgliedstaat</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

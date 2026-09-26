@@ -1,0 +1,1995 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xauslaender="http://www.osci.de/xauslaender2611"
+           xmlns:bn-uq-g2g="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xiaa="http://www.osci.de/xinneres/auslandsanschrift/5"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xiaz="http://www.osci.de/xinneres/azrnummer/3"
+           xmlns:xibehoerde="http://www.osci.de/xinneres/behoerde/7"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xima="http://www.osci.de/xinneres/meldeanschrift/5"
+           xmlns:xipa="http://www.osci.de/xinneres/postanschrift/5"
+           targetNamespace="http://www.osci.de/xauslaender2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XAusländer</nameLang>
+            <nameKurz>XAusländer</nameKurz>
+            <nameTechnisch>xinneres.xauslaender</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xauslaender</kennung>
+            <beschreibung>Das Fachmodul XAusländer des Standards XInneres beschreibt die Datenübermittlung im Ausländerwesen.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xauslaender-allgemeine-datentypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/auslandsanschrift/5/xinneres-auslandsanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/auslandsanschrift/5"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/azrnummer/3/xinneres-azrnummer.xsd"
+              namespace="http://www.osci.de/xinneres/azrnummer/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/behoerde/7/xinneres-behoerde.xsd"
+              namespace="http://www.osci.de/xinneres/behoerde/7"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/meldeanschrift/5"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/postanschrift/5"/>
+   <xs:import schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+              namespace="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="NKS.AnschriftEinrichtung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Anschrift einer Einrichtung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element wird die Anschrift im In- bzw. Ausland einer Einrichtung im Kontext NKS übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:choice>
+         <xs:element name="anschriftInland" type="xipa:PostalischeInlandsanschrift"/>
+         <xs:element name="anschriftAusland" type="xiaa:Auslandsanschrift.Druckbild"/>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="NKS.Antwort">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Antwort</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird eine Antwort übermittelt. Es muss mindestens eines der Kindelemente befüllt werden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="antwort" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der deutsche Wortlaut der Antwort übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anlage"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird eine Anlage zur Antwort übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.AufenthaltstitelDeutsch">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Deutscher Aufenthaltstitel</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Informationen zum deutschen Aufenthaltstitel übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:NKS.AufenthaltstitelDeutschKurz">
+            <xs:sequence>
+               <xs:element name="ausstellungsdatum" type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Das Element beschreibt den Zeitpunkt an dem der Aufenthaltstitel ausgestellt wurde.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="gueltigBis">
+                  <xs:annotation>
+                     <xs:documentation>Das Element gibt das Ende der Gültigkeit des Aufenthaltstitels an.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element name="befristungsdatum" type="xida:Tagesdatum">
+                           <xs:annotation>
+                              <xs:documentation>Mit diesem Element wird das Befristungsdatum übermittelt.</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                        <xs:element name="unbefristet" fixed="true" type="xs:boolean">
+                           <xs:annotation>
+                              <xs:documentation>Bei einem unbefristeten Aufenthaltstitel, wird dieses Element übermittelt.</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="NKS.AufenthaltstitelDeutschKurz">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Deutscher Aufenthaltstitel kurz</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Art und Seriennummer zum deutschen Aufenthaltstitel übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="art" type="xauslaender:Code.NKS.AufenthaltstitelDeutsch">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Art des deutschen Aufenthaltstitels angegeben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="seriennummer" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Es ist die Seriennummer des Aufenthaltstitels anzugeben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.AufenthaltstitelMS">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Informationen zum Aufenthaltstitel des mses</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zu einem Aufenthaltstitel eines mses übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="seriennummer" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Es ist die Seriennummer des Aufenthaltstitels anzugeben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellungsdatum" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum der Ausstellung mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="gueltigBis" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Das Element beinhaltet das Datum der Gültigkeit, das auf dem Dokument angegeben ist. Im Falle des Daueraufenthaltes EU kann das Datum fehlen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="art" type="xauslaender:Code.NKS.AufenthaltstitelMS">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Art des Aufenthaltstitels des mses angegeben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellenderStaat" type="xauslaender:Code.Mitgliedstaaten">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der ms übermittelt, der den Aufenthaltstitel erteilt hat. Deutschland, Dänemark und Irland sind keine zulässigen Werte.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.AufenthaltstitelMSundScan">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Informationen zum Aufenthaltstitel des mses inkl. Kopie</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zu einem Aufenthaltstitel eines mses, ergänzt um eine Kopie des Aufenthaltstitels, übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:NKS.AufenthaltstitelMS">
+            <xs:sequence>
+               <xs:element name="aufenthaltstitel"
+                           maxOccurs="unbounded"
+                           type="xauslaender:NKS.Dokument">
+                  <xs:annotation>
+                     <xs:documentation>Es ist die Kopie des gültigen, von einem anderen ms der Europäischen Union ausgestellten, Aufenthaltstitels i. S. der Richtlinien 2014/66/EU (ICT) oder (EU) 2016/801 (REST) zu übermitteln.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="NKS.Ausweisdokument">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Informationen zum Ausweisdokument</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zu einem Ausweisdokument übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:Ausweisdokument">
+            <xs:sequence>
+               <xs:element name="ausweisdokument"
+                           maxOccurs="unbounded"
+                           type="xauslaender:NKS.Dokument">
+                  <xs:annotation>
+                     <xs:documentation>Es ist die Kopie eines anerkannten und gültigen Passes oder Passersatzes des Ausländers zu übermitteln.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="NKS.Ausweispapier">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Ausweispapier</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element enthält Angaben zu einem Ausweispapier.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ausweisart" type="xauslaender:Code.AZR.AusweisArt"/>
+         <xs:element name="ausweisIdentifikation"
+                     minOccurs="0"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird Seriennummer eines Ausweisdokuments übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellenderStaat"
+                     minOccurs="0"
+                     type="xauslaender:AngabenZumStaat">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der ausstellende Staat übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="gueltigBis" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum, bis zu dem das Ausweisdokument gültig ist, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellungsdatum" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Ausstellungsdatum übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.Dokument">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Dokumentenanhang</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird ein Dokument übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dokument" type="xs:base64Binary">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Dokument übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dokumententyp" type="xauslaender:Code.Dokumentformat">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Format des Dokumentes übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.Einrichtung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Aufnehmende oder entsendende Einrichtung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element werden Angaben zu einer aufnehmenden oder einer entsendenden Einrichtung übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="bezeichnung" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Name der aufnehmenden bzw. entsendenden Einrichtung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anschrift"
+                     minOccurs="0"
+                     type="xauslaender:NKS.AnschriftEinrichtung">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift der aufnehmenden bzw. entsendenden Einrichtung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="unternehmensgruppe" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Name der Unternehmensgruppe übermittelt, zu der die entsendende Einrichtung gehört. Diese Angabe ist nur für ICT-Anträge relevant.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.Familienmitglied">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Familienmitglied</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben zu einem Familienmitglied übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="vorname" type="xian:AllgemeinerName"/>
+         <xs:element name="nachname" type="xian:AllgemeinerName"/>
+         <xs:element name="geburt" type="xauslaender:Geburt"/>
+         <xs:element name="staatsangehoerigkeit"
+                     minOccurs="0"
+                     maxOccurs="4"
+                     type="xauslaender:AngabenZumStaat"/>
+         <xs:element name="azrnummer" minOccurs="0" type="xiaz:AZRNummer"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.FamilienmitgliedMitAnhang">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Familienmitglied mit Anhängen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben zu einem Familienmitglied und möglichen Anhängen übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:NKS.Familienmitglied">
+            <xs:sequence>
+               <xs:element name="anhang"
+                           minOccurs="0"
+                           maxOccurs="unbounded"
+                           type="xauslaender:NKS.Dokument">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element können z. B. der Nachweis der Familienzugehörigkeit, ein Abbild des Ausweisdokumentes und des Aufenthaltsstitels übermittelt werden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="NKS.Frage">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Frage</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird eine Anfrage übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="frage" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element übermittelt die abh den Wortlaut ihrer Frage.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anlage"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird eine Anlage zu der gestellten Frage übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.IdentifikationVorgangMSAT">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Identifikation eines Vorganges bzw. Mitgliedstaates anhand des Aufenthaltstitels</title>
+         </xs:appinfo>
+         <xs:documentation>Um den ms festzustellen, muss das bamf anhand der Vorgangsnummer den betreffenden ms ermitteln. Liegt keine Vorgangsnummer vor, wird der zuständige ms über den Aufenthaltstitel des mses festgestellt.</xs:documentation>
+      </xs:annotation>
+      <xs:choice>
+         <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+         <xs:element name="aufenthaltstitelMS" type="xauslaender:NKS.AufenthaltstitelMS"/>
+      </xs:choice>
+   </xs:complexType>
+   <xs:complexType name="NKS.KurzfristigerICT">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachweisdaten zum kurzfristigen ICT</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element werden alle Nachweisdaten zum kurzfristigen ICT übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nachweisUnternehmenszugehoerigkeit"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis einer Unternehmenszugehörigkeit übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisArbeitsvertrag"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird ein Arbeitsvertrag nachgewiesen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vorabzustimmungBA"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis über die vorab erteilte Zustimmung der Bundesagentur für Arbeit übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisAbordnung"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis einer Abordnung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisLebensunterhalt"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis zur Lebensunterhaltssicherung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisKrankenversicherung"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis zu einer Krankenversicherung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vollmacht"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird eine Vollmacht übermittelt, wenn die Mitteilung von einer anderen als der unmittelbar mitteilungsberechtigten Stelle übermittelt wird.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="berufsausuebungserlaubnis"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird ein Nachweis über die Berufsausübungserlaubnis übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.KurzfristigerMobilerForscher">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachweisdaten zum kurzfristig mobilen Forscher</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element werden alle Nachweisdaten zum kurzfristig mobilen Forscher übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nachweisAufnahmevereinbarung"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis für eine Aufnahmevereinbarung bzw. einem Vertrag mit einer Forschungseinrichtung im Inland übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisKrankenversicherung"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis zu einer Krankenversicherung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisLebensunterhalt"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis zur Lebensunterhaltssicherung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="familienmitglied" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zu einem mitreisenden Familienmitglied übermittelt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="familienmitglied"
+                              type="xauslaender:NKS.FamilienmitgliedMitAnhang"/>
+                  <xs:element name="sbhnummer" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die SBH-Nummer übermittelt. Sie wird auf Basis einer Abfrage vom BAMF gem. § 73 Abs. 3 c AufenthG erzeugt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.MobilerStudent">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachweisdaten zum mobilen Studenten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden alle Nachweisdaten zum mobilen Studenten übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nachweisProgramm"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis für eine Teilnahme an einem unions- oder multilateralen Programm übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisZulassung"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis einer Zulassung zum Studium an der Uni im Inland übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisKrankenversicherung"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis zu einer Krankenversicherung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweisLebensunterhalt"
+                     maxOccurs="unbounded"
+                     type="xauslaender:NKS.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Nachweis zur Lebensunterhaltssicherung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="NKS.Person">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Mindestangaben zur Person</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element werden die minimal benötigten Daten zur Identifikation der Person übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="azrnummer" minOccurs="0" type="xiaz:AZRNummer"/>
+         <xs:element name="vorname" type="xian:AllgemeinerName"/>
+         <xs:element name="nachname" type="xian:AllgemeinerName"/>
+         <xs:element name="geburt" type="xauslaender:Geburt"/>
+         <xs:element name="staatsangehoerigkeit"
+                     maxOccurs="4"
+                     type="xauslaender:AngabenZumStaat"/>
+         <xs:element name="geburtsname" minOccurs="0" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Geburtsname ist der Name, der sich jeweils aus dem Geburtseintrag ergibt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="weitererName" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element sind weitere Namen mitzuteilen, unter denen die Person identifiziert werden kann, dies beinhaltet frühere und/oder korrigierte Namen. An dieser Stelle werden keine Künstler-, Ordens-, Genanntnamen oder Aliaspersonalien übermittelt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="familienname" minOccurs="0" type="xian:AllgemeinerName"/>
+                  <xs:element name="vornamen" minOccurs="0" type="xian:AllgemeinerName"/>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="NKS.Vorgangsnummer">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Vorgangsnummer im BAMF</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element wird die Vorgangsnummer im bamf übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:pattern value="[4-7]{1}-[0-9]{8}"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:element name="NKS.MitteilungMobilitaet.120101">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 16c Abs. 5 / 18e Abs. 6/ 19a Abs. 5 AufenthG  </rechtsgrundlage>
+            <title>Mitteilung zur (kurzfristigen) Mobilität von Drittstaatsangehörigen (ICT und REST)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert das bamf die zuständige abh über die Ablehnung der (kurzfristigen) Mobilität oder die Ausstellung einer Bescheinigung zur Mobilität. Die Inhalte der Mitteilung werden der abh mit übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="artDerMobilitaet" type="xauslaender:Code.NKS.ArtDerMobilitaet">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Art der Mobilität übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="zustimmung" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, ob das bamf die Bescheinigung zur Mobilität ausstellt oder die Mobilität ablehnt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerEntscheidung" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum übermittelt, an dem das bamf über die Mobilität entschieden hat.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweise">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die jeweiligen Nachweisdaten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="mobilerStudent" type="xauslaender:NKS.MobilerStudent"/>
+                           <xs:element name="kurzfristigerMobilerForscher"
+                                       type="xauslaender:NKS.KurzfristigerMobilerForscher"/>
+                           <xs:element name="kurzfristigerICT" type="xauslaender:NKS.KurzfristigerICT"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="geplantesEinreisedatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist das Datum der voraussichtlichen Einreise in das Bundesgebiet zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geplantesAusreisedatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist das Datum der voraussichtlichen Ausreise aus dem Bundesgebiet zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="erreichbarkeit" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Informationen zur Erreichbarkeit übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="anschriftInland"
+                                       minOccurs="0"
+                                       type="xipa:PostalischeInlandsanschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine Anschrift im Inland, an die der Schriftverkehr gerichtet werden soll, übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="anschriftAusland"
+                                       minOccurs="0"
+                                       type="xiaa:Auslandsanschrift.Druckbild">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine Anschrift im Ausland, an die der Schriftverkehr gerichtet werden soll, übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="kommunikation"
+                                       minOccurs="0"
+                                       type="bn-uq-g2g:KommunikationType">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="angabenZumAufenthaltstitel"
+                              type="xauslaender:NKS.AufenthaltstitelMSundScan">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zum Aufenthaltstitel des mses übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenZumAusweisdokument"
+                              minOccurs="0"
+                              type="xauslaender:NKS.Ausweisdokument"/>
+                  <xs:element name="sbhnummer" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die SBH-Nummer einer Sicherheitsabfrage übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aufnehmendeEinrichtung" type="xauslaender:NKS.Einrichtung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur aufnehmenden Einrichtung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kontaktperson">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorname" type="xian:AllgemeinerName">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der aktuelle Vorname der Kontaktperson übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachname" type="xian:AllgemeinerName">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der aktuelle Nachname der Kontaktperson übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="kommunikation"
+                                       maxOccurs="unbounded"
+                                       type="bn-uq-g2g:KommunikationType">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="geplanteWohnanschrift"
+                              minOccurs="0"
+                              type="xima:Meldeanschrift">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur geplanten Wohnanschrift überrmittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bemerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden zusätzliche Informationen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.RueckfrageAusD.120104">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91d Abs.3 / 91g Abs.3</rechtsgrundlage>
+            <title>Rückfrage aus Deutschland an Mitgliedstaat</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht bittet eine abh das bamf um Einholung einer Auskunft beim ms.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="identifikationVorgangMS"
+                              type="xauslaender:NKS.IdentifikationVorgangMSAT"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ausweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Ausweispapier"/>
+                  <xs:element name="frage" type="xauslaender:NKS.Frage">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Anfrage der abh übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="betroffenesFamilienmitglied"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.FamilienmitgliedMitAnhang">
+                     <xs:annotation>
+                        <xs:documentation>Mit dem Element wird angegeben, welches Familienmitglied von der Rückfrage betroffen ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.AntwortAnD.120105">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91d Abs.3 /91g Abs.3</rechtsgrundlage>
+            <title>Antwort aus ms an Deutschland</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht leitet das bamf eine Rückmeldung des mses an die zuständige abh weiter.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ausweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Ausweispapier"/>
+                  <xs:element name="antwort" type="xauslaender:NKS.Antwort">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Antwort des mses übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.NachtraeglicheInformation.120106">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage/>
+            <title>Weiterleitung nachträglicher Informationen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht leitet das bamf der zuständigen abh nachträgliche Informationen, die von einem ms eingegangen sind, weiter. Diese Nachricht gilt für REST, ICT, Blaue Karte und Daueraufenthalt EU.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="information"
+                              minOccurs="0"
+                              type="xauslaender:Code.NKS.NachtraeglicheInformation">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Art der nachträglichen Information übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="weitereInformation" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden weitere Angaben übermittelt, die über die Codeliste hinausgehen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlage"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element kann eine Anlage zur Information übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.NachtraeglicheAblehnungMobilitaet.120107">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 19f Abs. 5 /19a Abs. 3 AufenthG i. V. m.  § 91d Abs.4 / 91g Abs.4  AufenthG</rechtsgrundlage>
+            <title>Nachträgliche Ablehnung der Mobilität (REST und ICT)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die zuständige abh das bamf über eine nachträgliche Ablehnung zur Mobilitätsabsicht eines Drittstaatsangehörigen im Bundesgebiet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="identifikationVorgangMS"
+                              type="xauslaender:NKS.IdentifikationVorgangMSAT"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerEntscheidung" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Tag der Entscheidung zur Ablehnung mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienmitglied"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Familienmitglied">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu einem von der Ablehnung betroffenen mitreisenden Familienmitglied übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundDerAufenthaltsbeendigung"
+                              minOccurs="0"
+                              type="xauslaender:Code.NKS.GrundDerAufenthaltsbeendigung">
+                     <xs:annotation>
+                        <xs:documentation>Sofern die Abschiebung in einen ms beabsichtigt ist, wird mit diesem Element der Grund für die Aufenthaltsbeendigung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.AntragLangfristigeMobilitaet.120108">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91d Abs.1 / 91g Abs.1 AufenthG</rechtsgrundlage>
+            <title>Antrag auf langfristige Mobilität von Drittstaatsangehörigen (ICT und REST)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert das bamf die zuständige abh über den Antrag eines Forschers oder eines Drittstaatsangehörigen im Rahmen eines unternehmensinternen Transfers auf langfristige Mobilität im Bundesgebiet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer"
+                              minOccurs="0"
+                              type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="antragsdatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Antragsdatum zur Überwachung der Frist übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anhang"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die mit dem Antrag eingegangenen Schriftgutobjekte übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienmitglied"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Familienmitglied">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu einem mitreisenden Familienmitglied übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aufnehmendeEinrichtung"
+                              minOccurs="0"
+                              type="xauslaender:NKS.Einrichtung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur aufnehmenden Einrichtung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="wohnanschrift" minOccurs="0" type="xima:Meldeanschrift">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur geplanten oder bereits bestehenden Wohnanschrift überrmittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.ErteilungAufenthaltstitelMobileForscherUndICT.120109">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91d Abs.4 / 91g Abs.4  AufenthG</rechtsgrundlage>
+            <title>Aufenthaltstitel für langfristige Mobilität</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die zuständige abh das bamf über die Erteilung eines Aufenthaltstitels für langfristige Mobilität gemäß §§ 19b Abs. 1 oder 18f Abs. 1 AufenthG.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="identifikationVorgangMS"
+                              type="xauslaender:NKS.IdentifikationVorgangMSAT"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aufenthaltstitel" type="xauslaender:NKS.AufenthaltstitelDeutsch"/>
+                  <xs:element name="familienmitglied"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Familienmitglied">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu einem mitreisenden Familienmitglied übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.VerlaengerungMitteilungMobilitaet.120110">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91c/d/f/g AufenthG, § 16a Abs. 1 AufenthG; § 20a Abs. 1 AufenthG</rechtsgrundlage>
+            <title>Mitteilung zur Verlängerung der (kurzfristigen) Mobilität von Drittstaatsangehörigen (ICT und REST)</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert das bamf im Falle einer Verlängerung der (kurzfristigen) Mobilität bei Forschern, Studenten und unternehmensinternen Transfers von Drittstaatsangehörigen die zu beteiligende abh.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="artDerMobilitaet" type="xauslaender:Code.NKS.ArtDerMobilitaet">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Art der Mobilität übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="zustimmung" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird mitgeteilt, ob das bamf die Bescheinigung zur Mobilität ausstellt oder die Mobilität ablehnt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerEntscheidung" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum übermittelt, an dem das bamf über die Mobilität entschieden hat.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweise">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die jeweiligen Nachweisdaten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="mobilerStudent" type="xauslaender:NKS.MobilerStudent"/>
+                           <xs:element name="kurzfristigerMobilerForscher"
+                                       type="xauslaender:NKS.KurzfristigerMobilerForscher"/>
+                           <xs:element name="kurzfristigerICT" type="xauslaender:NKS.KurzfristigerICT"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="ehemalsGeplantesEinreisedatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist das Datum der voraussichtlichen Einreise in das Bundesgebiet zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ehemalsGeplantesAusreisedatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist das Datum der voraussichtlichen Ausreise aus dem Bundesgebiet zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geplantesAusreisedatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element ist das neue Datum der voraussichtlichen Ausreise aus dem Bundesgebiet zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="erreichbarkeit" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Informationen zur Erreichbarkeit übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="anschriftInland"
+                                       minOccurs="0"
+                                       type="xipa:PostalischeInlandsanschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine Anschrift im Inland, an die der Schriftverkehr gerichtet werden soll, übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="anschriftAusland"
+                                       minOccurs="0"
+                                       type="xiaa:Auslandsanschrift.Druckbild">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird eine Anschrift im Ausland, an die der Schriftverkehr gerichtet werden soll, übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="kommunikation"
+                                       minOccurs="0"
+                                       type="bn-uq-g2g:KommunikationType">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="angabenZumAufenthaltstitel"
+                              type="xauslaender:NKS.AufenthaltstitelMSundScan">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zum Aufenthaltstitel des mses übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenZumAusweisdokument"
+                              minOccurs="0"
+                              type="xauslaender:NKS.Ausweisdokument"/>
+                  <xs:element name="sbhnummer" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die SBH-Nummer einer Sicherheitsabfrage übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aufnehmendeEinrichtung" type="xauslaender:NKS.Einrichtung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur aufnehmenden Einrichtung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kontaktperson">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="vorname" type="xian:AllgemeinerName">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der aktuelle Vorname der Kontaktperson übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="nachname" type="xian:AllgemeinerName">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der aktuelle Nachname der Kontaktperson übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="kommunikation"
+                                       maxOccurs="unbounded"
+                                       type="bn-uq-g2g:KommunikationType">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="entsendendeEinrichtung"
+                              minOccurs="0"
+                              type="xauslaender:NKS.Einrichtung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur entsendenden Einrichtung im ms übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ausstellungsdatumErsteBescheinigung" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum der ersten Ausstellung einer Bescheinigung zur Mobilität übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aBHErstmitteilung" type="xibehoerde:BehoerdeMitAnschrift">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur abh übermittelt, die die erste Mitteilung zur Mobilität erhalten hat.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bemerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden zusätzliche Informationen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.EntscheidungBlaueKarte.120112">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91f Abs.1 AufenthG</rechtsgrundlage>
+            <title>Entscheidung Blaue Karte</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die zuständige abh das bamf über die Entscheidung zu einem Antrag auf Erteilung einer Blauen Karte gemäß § 18g AufenthG.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ausweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Ausweispapier"/>
+                  <xs:element name="vorangegangeneBlaueKarte"
+                              type="xauslaender:NKS.AufenthaltstitelMS">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Informationen zur vorangegangenen Blauen Karte übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="entscheidungZurBlauenKarte">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element teilt die abh die Erteilung oder Ablehnung einer Blauen Karte mit.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="erteilt" type="xauslaender:NKS.AufenthaltstitelDeutsch">
+                              <xs:annotation>
+                                 <xs:documentation>Sofern eine neue Blaue Karte ausgestellt wurde, sind die Daten der Karte zu übermitteln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="abgelehnt">
+                              <xs:annotation>
+                                 <xs:documentation>Sofern die abh entscheidet keine deutsche Blaue Karte zu erteilen, werden Informationen dazu mit diesem Element übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="tagDerEntscheidung" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Entscheidungsdatum zur Entscheidung übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="entscheidendeBehoerde" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element ist die Behördenkennung der entscheidenden Behörde zu übermitteln.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="ablehnungsgrund" minOccurs="0">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="ablehnungsgrund"
+                                                         minOccurs="0"
+                                                         maxOccurs="unbounded"
+                                                         type="xauslaender:Code.NKS.Ablehnungsgrund">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der Ablehnungsgrund übermittelt. Weitere Ausführungen dazu können im Element bemerkung übermittelt werden.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="bemerkung" minOccurs="0" type="din91379:datatypeC">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element werden die Ablehnungsgründe präzisiert.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="ausreiseverpflichtung" type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird mitgeteilt, ob eine Ausreiseverpflichtung vorliegt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="betroffenesfamilienmitglied"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xauslaender:NKS.FamilienmitgliedMitAnhang">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit dem Element wird angegeben, welches Familienmitglied von der Entscheidung betroffen ist.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.EntscheidungDaueraufenthalt.120113">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91c Abs.1 AufenthG</rechtsgrundlage>
+            <title>Entscheidung zum Daueraufenthalt EU bzw. einer Aufenthaltserlaubnis nach § 38a AufenthG</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die zuständige abh das bamf über die Erteilung eines Titels Daueraufenthalt EU oder einer Aufenthaltserlaubnis nach § 38a AufenthG.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="neuerTitel38aOder9a"
+                              type="xauslaender:NKS.AufenthaltstitelDeutsch">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element sind die Angaben zum neu erteilten Aufenthaltstitel gem. § 9a oder § 38a AufenthG zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="daueraufenthaltEUimMS" type="xauslaender:NKS.AufenthaltstitelMS">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Informationen zum vorangegangenen Daueraufenthalt EU aus dem ms übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.MSBeteiligen.120115">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91c Abs.2 AufenthG</rechtsgrundlage>
+            <title>MS Beteiligung durch Rückfrage</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht bittet die abh das bamf um Weiterleitung des Konsultationsersuchens an den ms.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="identifikationVorgangMS"
+                              type="xauslaender:NKS.IdentifikationVorgangMSAT"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerAnhoerung" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum der Anhörung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlass" type="xauslaender:Code.NKS.Beteiligungsanfrage.Anlass"/>
+                  <xs:element name="anlassFreitext" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden wesentliche, tatsächliche und rechtliche Gründe für die vorgesehene Maßnahme übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geplanteAufenthaltsbeendigung">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="artDesAusreisestaates"
+                                       type="xauslaender:Code.NKS.AusreisestaatArt">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird angegeben, ob geplant ist, den Aufenthalt mit Ausreise in einen Drittstaat oder in einen Mitgliedstaat zu beenden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="grundDerAufenthaltsbeendigung"
+                                       type="xauslaender:Code.NKS.GrundDerAufenthaltsbeendigung">
+                              <xs:annotation>
+                                 <xs:documentation>Mit dem Element wird der Grund für die geplante Aufenthaltsbeendigung angegeben.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="datumDerAufenthaltsbeendigung"
+                                       minOccurs="0"
+                                       type="xida:Tagesdatum"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="frage"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Frage"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.Aufenthaltsbeendigung38a.120117">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91c Abs.3 AufenthG</rechtsgrundlage>
+            <title>Aufenthaltsbeendigung bei § 38a AufenthG</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die abh das bamf über Maßnahmen zur Beendigung des Aufenthaltes bei Fällen gem. § 38a AufenthG.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="identifikationVorgangMS"
+                              type="xauslaender:NKS.IdentifikationVorgangMSAT"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerAnordnung" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Tag der Anordnung von aufenthaltsbeendenden Maßnahmen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="massnahmeZurAufenthaltsbeendigung"
+                              type="xauslaender:Code.NKS.MassnahmeZurAufenthaltsbeendigung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird angegeben, dass eine Maßnahme zur Aufenthaltsbeendigung angedroht oder durchgeführt wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundDerAufenthaltsbeendigung"
+                              type="xauslaender:Code.NKS.GrundDerAufenthaltsbeendigung">
+                     <xs:annotation>
+                        <xs:documentation>Mit dem Element wird der wesentliche Grund für die Aufenthaltsbeendigung angegeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="betroffenesFamilienmitglied"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.FamilienmitgliedMitAnhang">
+                     <xs:annotation>
+                        <xs:documentation>Mit dem Element wird angegeben, welches Familienmitglied mit abgeschoben wird.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datumMassnahme" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum der durchgeführten Maßnahme übermittelt. Im Falle einer Androhung oder Anordnung, wird mit diesem Element der voraussichtliche Fristablauf zur Ausreise übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.InformationenAnfordern.120118">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91d Abs.3 / 91g Abs. 3 AufenthG</rechtsgrundlage>
+            <title>Nachträgliche Anforderung von Informationen zur Mobilität</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht bittet eine abh das bamf nachträglich Informationen zu einer (kurzfristigen) Mobilität zu übermitteln.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben. Die AZR-Nummer muss im Kindelement azrnummer mit angegeben werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aufenthaltstitelMS"
+                              type="xauslaender:Code.NKS.AufenthaltstitelMS">
+                     <xs:annotation>
+                        <xs:documentation>Dieses Element enthält die Art des Aufenthaltstitels des Mitgliedsstaats, der die Mobilität begründet. Bei der Übermittlung sind nur die Codelisteneinträge 03. Aufenthaltserlaubnis zum Studium, 06. Aufenthaltserlaubnis für Forscher (+ ggf. Familienangehörige), 08. ICT-Karte zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.InformationAntwort.120119">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91d Abs.3 / 91g Abs. 3  AufenthG</rechtsgrundlage>
+            <title>Antwort zur nachträglichen Anforderung von Informationen zur Mobilität</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht beantwortet das bamf eine Anfrage einer abh zur nachträglichen Übermittlung von Informationen zu einer (kurzfristigen) Mobilität.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="antwort">
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="informationen">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                                    <xs:element name="artDerMobilitaet" type="xauslaender:Code.NKS.ArtDerMobilitaet">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Art der Mobilität übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="zustimmung" type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird mitgeteilt, ob das bamf die Bescheinigung zur Mobilität ausstellt oder die Mobilität ablehnt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="tagDerEntscheidung" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird das Datum übermittelt, an dem das bamf über die Mobilität entschieden hat.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="nachweise">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die jeweiligen Nachweisdaten übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:choice>
+                                             <xs:element name="mobilerStudent" type="xauslaender:NKS.MobilerStudent"/>
+                                             <xs:element name="kurzfristigerMobilerForscher"
+                                                         type="xauslaender:NKS.KurzfristigerMobilerForscher"/>
+                                             <xs:element name="kurzfristigerICT" type="xauslaender:NKS.KurzfristigerICT"/>
+                                          </xs:choice>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="geplantesEinreisedatum" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element ist das Datum der voraussichtlichen Einreise in das Bundesgebiet zu übermitteln.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geplantesAusreisedatum" type="xida:Tagesdatum">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element ist das Datum der voraussichtlichen Ausreise aus dem Bundesgebiet zu übermitteln.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="erreichbarkeit" minOccurs="0">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Informationen zur Erreichbarkeit übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="anschriftInland"
+                                                         minOccurs="0"
+                                                         type="xipa:PostalischeInlandsanschrift">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird eine Anschrift im Inland, an die der Schriftverkehr gerichtet werden soll, übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="anschriftAusland"
+                                                         minOccurs="0"
+                                                         type="xiaa:Auslandsanschrift.Druckbild">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird eine Anschrift im Ausland, an die der Schriftverkehr gerichtet werden soll, übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="kommunikation"
+                                                         minOccurs="0"
+                                                         type="bn-uq-g2g:KommunikationType">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="angabenZumAufenthaltstitel"
+                                                type="xauslaender:NKS.AufenthaltstitelMSundScan">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Angaben zum Aufenthaltstitel des mses übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="angabenZumAusweisdokument"
+                                                minOccurs="0"
+                                                type="xauslaender:NKS.Ausweisdokument"/>
+                                    <xs:element name="sbhnummer" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die SBH-Nummer einer Sicherheitsabfrage übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="aufnehmendeEinrichtung" type="xauslaender:NKS.Einrichtung">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zur aufnehmenden Einrichtung übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="kontaktperson">
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="vorname" type="xian:AllgemeinerName">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der aktuelle Vorname der Kontaktperson übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="nachname" type="xian:AllgemeinerName">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der aktuelle Nachname der Kontaktperson übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="kommunikation"
+                                                         maxOccurs="unbounded"
+                                                         type="bn-uq-g2g:KommunikationType">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="geplanteWohnanschrift"
+                                                minOccurs="0"
+                                                type="xima:Meldeanschrift">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zur geplanten Wohnanschrift überrmittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="aBHErstmitteilung" type="xibehoerde:BehoerdeMitAnschrift">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zur abh übermittelt, die die erste Mitteilung zur Mobilität erhalten hat.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="keineInformationVorhanden" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird mitgeteilt, dass keine Informationen zu der angefragten Person vorliegen.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="bemerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden zusätzliche Informationen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.Voraufenthalt.120120">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91c/d/f/g AufenthG, § 16a Abs. 1 AufenthG; § 20a Abs. 1 AufenthG</rechtsgrundlage>
+            <title>Frage zu einem Voraufenthalt</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das bamf eine Frage zu einem Voraufenthalt an die abh.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="frage" type="xauslaender:NKS.Frage">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt das bamf eine Frage an die abh.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="frist" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element gibt das bamf an, bis wann eine Antwort auf diese Anfrage berücksichtigt werden kann. Das Datum kann 1 bis 19 Tage in der Zukunft liegen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.AntwortVoraufenthalt.120121">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91c/d/f/g AufenthG, § 16a Abs. 1 AufenthG; § 20a Abs. 1 AufenthG</rechtsgrundlage>
+            <title>Antwort zur Anfrage nach einem Voraufenthalt</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh ihre Antwort an das bamf.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="antwort" type="xauslaender:NKS.Antwort">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh ihre Antwort.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.MSInformationAufenthalt.120201">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91c Abs.6 AufenthG</rechtsgrundlage>
+            <title>Information aus Mitgliedstaat zu einem Drittstaatsangehörigen mit einem deutschen Aufenthaltstitel</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert das bamf die zuständige abh über die Mitteilung eines mses zur Entscheidung eines der im genannten Sachverhalte.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="sachverhalt" type="xauslaender:Code.NKS.Sachverhalt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der jeweilige Anlass bzw. Sachverhalt dieser Nachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ablehnungsgrund"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:Code.NKS.Ablehnungsgrund">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Ablehnungsgrund übermittelt. Dieses Element ist dann zu befüllen, wenn das Element sachverhalt den Inhalt „22 - Erteilung der Blauen Karte EU im MS abgelehnt“ enthält. Weitere Ausführungen dazu können im Element bemerkung übermittelt werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person"/>
+                  <xs:element name="aufenthaltstitelInland"
+                              type="xauslaender:NKS.AufenthaltstitelDeutschKurz"/>
+                  <xs:element name="aufenthaltstitelMS" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Sofern der ms einen Aufenthaltstitel erteilt hat, wird mit diesem Element der Gültigkeitszeitraum übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="ausstellungsdatum" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum der Ausstellung mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="gueltigBis" minOccurs="0" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Das Element gibt das Ende der Gültigkeit an.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="tagDerEntscheidung" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Tag der Entscheidung mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="mitgliedstaat" type="xauslaender:Code.Mitgliedstaaten">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der ms übermittelt von dem die Information gekommen ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="betroffenesFamilienmitglied"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Familienmitglied">
+                     <xs:annotation>
+                        <xs:documentation>Mit dem Element wird angegeben, welches Familienmitglied von der Entscheidung betroffen ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="bemerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden zusätzliche Informationen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.RueckfrageAnABH.120204">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91c Abs.1a/91d Abs.2/ 91g Abs.2 AufenthG</rechtsgrundlage>
+            <title>Rückfrage vom Bundesamt für Migration und Flüchtlinge oder Mitgliedstaat an Ausländerbehörde</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht stellt das bamf eine Anfrage zur Einholung einer Auskunft oder leitet eine Rückfrage eines mses an die zuständige abh weiter.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ausweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Ausweispapier"/>
+                  <xs:element name="frage" type="xauslaender:NKS.Frage">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Anfrage des mses übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="rueckfragendeStelle">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird angegeben, ob ein ms oder das bamf die Rückfrage an die abh stellt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="rueckfrageAusMS" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird markiert, dass die Rückfrage aus einem ms kommt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="rueckfrageVomBAMF" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird markiert, dass die Rückfrage vom bamf kommt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.AntwortVonABH.120205">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91c Abs.1a/91d Abs.2/ 91g Abs.2 AufenthG</rechtsgrundlage>
+            <title>Antwort von Ausländerbehörde an Mitgliedstaat oder Bundesamt für Migration und Flüchtlinge</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht beantwortet die abh die Anfrage des mses oder des Bundesamtes für Migration und Flüchtlinge.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person">
+                     <xs:annotation>
+                        <xs:documentation>Es sind die persönlichen Angaben des Ausländers anzugeben.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ausweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:NKS.Ausweispapier"/>
+                  <xs:element name="antwort" type="xauslaender:NKS.Antwort">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Antwort der abh übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.ABHBeteiligen.120208">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Bundesamt für Migration und Flüchtlinge (dbs)</autor>
+            <leser>Ausländerbehörde (azr)</leser>
+            <rechtsgrundlage>§ 91c Abs.5 AufenthG</rechtsgrundlage>
+            <title>Beteiligung Deutschlands bei beabsichtigter Rückführung in den Drittstaat</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht leitet das bamf ein Konsultationsgesuch des ms zur Durchführung einer Rückführung an die zuständige abh weiter.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person"/>
+                  <xs:element name="mitgliedstaat" type="xauslaender:Code.Mitgliedstaaten">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der ms übermittelt von dem die Information gekommen ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geplanteRueckfuehrungMS" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element informiert der ms über die geplante Rückführung und stellt ggf. Rückfragen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.StellungnahmeABH.120209">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91c Abs.5 AufenthG</rechtsgrundlage>
+            <title>Stellungsnahme Deutschlands zur Rückführung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh dem bamf die Antwort zum Konsultationsgesuch des mses zur Durchführung einer Rückführung.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                  <xs:element name="person" type="xauslaender:NKS.Person"/>
+                  <xs:element name="stellungnahme">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Interessen für oder gegen die Rückführung in das Bundesgebiet oder einen Drittstaat oder sonstige Umstände, von denen anzunehmen ist, dass sie für die aufenthaltsrechtliche Entscheidung des konsultierenden mses von Bedeutung sein können (u. A. aufenthalts- und asylrechtliche Entscheidungen), übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="sachdienlicheAngaben">
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="aufenthaltsUndAsylrechtlicheEntscheidungen"
+                                                minOccurs="0"
+                                                type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden aufenthalts- und asylrechtliche Entscheidungen übermittelt, die gegen oder für die Person getroffen worden sind.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="rueckfuehrungNachDE">
+                                       <xs:complexType>
+                                          <xs:choice>
+                                             <xs:element name="dafuer" fixed="true" type="xs:boolean">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird das Interesse für eine Rückführung nach Deutschland übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="dagegen">
+                                                <xs:complexType>
+                                                   <xs:sequence>
+                                                      <xs:element name="grund" maxOccurs="unbounded">
+                                                         <xs:annotation>
+                                                            <xs:documentation>Mit diesem Element wird ein Grund für das Interesse gegen eine Rückführung nach Deutschland übermittelt.</xs:documentation>
+                                                         </xs:annotation>
+                                                         <xs:complexType>
+                                                            <xs:choice>
+                                                               <xs:element name="code" type="xauslaender:Code.NKS.GrundDerAufenthaltsbeendigung"/>
+                                                               <xs:element name="freitext" type="din91379:datatypeC"/>
+                                                            </xs:choice>
+                                                         </xs:complexType>
+                                                      </xs:element>
+                                                   </xs:sequence>
+                                                </xs:complexType>
+                                             </xs:element>
+                                          </xs:choice>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="sonstigeUmstaende" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden sonstige Umstände übermittelt, von denen anzunehmen ist, dass sie für die aufenthaltsrechtliche Entscheidung des konsultierenden Mitgliedstaates von Bedeutung sein können.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="keineSachdienlichenAngaben" fixed="true" type="xs:boolean">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird übermittelt, dass keine sachdienlichen Angaben bekannt sind.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="NKS.EntzugDeutschenAufenthaltstitel.120210">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (azr)</autor>
+            <leser>Bundesamt für Migration und Flüchtlinge (dbs)</leser>
+            <rechtsgrundlage>§ 91d Abs.5 /91g Abs.4 AufenthG</rechtsgrundlage>
+            <title>Information über Entzug des deutschen Aufenthaltstitels</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh dem bamf Informationen über den Entzug des deutschen Aufenthaltstitels.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:Nachricht.G2G.XA.erweitert">
+               <xs:sequence>
+                  <xs:element name="identifikationVorgangMS">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Vorgang identifiziert. Sollte keine Vorgangsnummer vorliegen, ist der ms zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="vorgangsnummer" type="xauslaender:NKS.Vorgangsnummer"/>
+                           <xs:element name="mitgliedstaat" type="xauslaender:Code.Mitgliedstaaten">
+                              <xs:annotation>
+                                 <xs:documentation>Die Staaten Deutschland, Dänemark und Irland sind hier nicht zulässig.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="person" type="xauslaender:NKS.Person"/>
+                  <xs:element name="aufenthaltstitelInland"
+                              type="xauslaender:NKS.AufenthaltstitelDeutschKurz"/>
+                  <xs:element name="tagDerEntscheidung" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Tag der Entscheidung mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="begruendung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh den Grund für ihre Entscheidung zum Entzug des deutschen Aufenthaltstitels.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

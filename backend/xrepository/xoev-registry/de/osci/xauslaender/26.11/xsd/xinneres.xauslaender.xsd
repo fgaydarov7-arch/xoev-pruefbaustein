@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="http://www.osci.de/xauslaender2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:include schemaLocation="xauslaender-allgemeine-datentypen.xsd"/>
+   <xs:include schemaLocation="xauslaender-basistypen.xsd"/>
+   <xs:include schemaLocation="xauslaender-baukasten.xsd"/>
+   <xs:include schemaLocation="xauslaender-codes.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachricht-asyl.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachricht-berd.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachricht-geas.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachricht-peb.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-abh-abh.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-abh-mb.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-administration.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-azr.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-bamf-abh.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-bamftgs.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-bpol.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-ersst.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-mb-abh.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-nks.xsd"/>
+   <xs:include schemaLocation="xauslaender-nachrichten-ozg.xsd"/>
+</xs:schema>

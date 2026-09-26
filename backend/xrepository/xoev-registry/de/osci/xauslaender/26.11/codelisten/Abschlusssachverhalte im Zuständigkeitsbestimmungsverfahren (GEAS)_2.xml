@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Abschlusssachverhalte im Zuständigkeitsbestimmungsverfahren (GEAS)</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Codeliste wird der Sachverhalt zum Abschluss des Zuständigkeitsbestimmungsverfahrens übermittelt.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>XAuslaender</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Mit dieser Codeliste wird der Sachverhalt zum Abschluss des Zuständigkeitsbestimmungsverfahrens übermittelt.</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2026-06-12</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Redaktionelle Anpassung. Hinzufügen des Wordings "Unanfechtbare" bei den Code 01 und 99.</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>geas.zbvabschlusssachverhalt</ShortName>
+      <LongName>Abschlusssachverhalte im Zuständigkeitsbestimmungsverfahren (GEAS)</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:xoev-de:xauslaender:codeliste:geas.zbvabschlusssachverhalt</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xauslaender:codeliste:geas.zbvabschlusssachverhalt_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Asylverfahren</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="required">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Unanfechtbare Überstellungsentscheidung nach Art. 42 Abs. 1 AMMVO</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>99</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Unanfechtbare sonstige Entscheidung</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -108,8 +108,28 @@
   -->
 
   <!-- ═══════════════════════════════════════════════════════════════════════
-       ABSCHNITT 3 — Untergeordneter Katalog (falls vorhanden)
+       ABSCHNITT 3 — XMeld-Schemata
+       Leitet <xs:import schemaLocation="http://www.osci.de/xmeld/...">
+       auf das lokale xmeld/26.11/xsd/-Verzeichnis um.
+       XMeld-interne xs:include nutzen relative Pfade → kein Katalogeintrag nötig.
+       ═══════════════════════════════════════════════════════════════════════ -->
+
+  <rewriteSystem
+    systemIdStartString="http://www.osci.de/xmeld/"
+    rewritePrefix="xöv-registry/xmeld/26.11/xsd/"/>
+
+  <!-- xinneres-idnr: von xmeld-baukasten.xsd explizit importiert;
+       der allgemeine rewriteSystem-Eintrag für xinneres würde greifen,
+       aber exakter Eintrag hat Vorrang und ist robuster gegenüber Versionswechseln. -->
+  <system
+    systemId="http://www.osci.de/xinneres/idnr/2/xinneres-idnr.xsd"
+    uri="xöv-registry/xinneres/26.11/xsd/xinneres-idnr.xsd"/>
+
+  <!-- ═══════════════════════════════════════════════════════════════════════
+       ABSCHNITT 4 — Untergeordneter Katalog (falls vorhanden)
        ═══════════════════════════════════════════════════════════════════════ -->
   <!-- <nextCatalog catalog="xöv-registry/catalog.xml"/> -->
+
+
 
 </catalog>

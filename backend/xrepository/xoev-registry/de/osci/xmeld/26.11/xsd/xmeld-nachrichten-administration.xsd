@@ -1,0 +1,466 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:bn-uq-g2g="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xima="http://www.osci.de/xinneres/meldeanschrift/5"
+           xmlns:xirts="http://www.osci.de/xinneres/rueckweisung/6"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/meldeanschrift/5"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/rueckweisung/6/xinneres-rueckweisung.xsd"
+              namespace="http://www.osci.de/xinneres/rueckweisung/6"/>
+   <xs:import schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+              namespace="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="type.administration.returntosender.begruendung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Begründung</title>
+         </xs:appinfo>
+         <xs:documentation>Es ist der Grund mitzuteilen, weshalb die Nachricht zurückgesandt wird. Hierfür ist eine Schlüsseltabelle mit möglichen Rücksendungsgründen vorgesehen, außerdem gibt es die Möglichkeit, ergänzende Hinweise mitzuteilen. In manchen Fällen (zum Beispiel wenn als Grund der Rücksendung Sonstige angegeben wird) sind ergänzende Angaben verpflichtend. Generell ist so vorzugehen, dass der Grund der Rücksendung so präzise wie möglich bezeichnet wird, um eine schnelle Klärung des Sachverhalts zu ermöglichen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="grund" type="xmeld:Code.Ruecksendung.einer.Nachricht">
+            <xs:annotation>
+               <xs:documentation>Der Grund der Rücksendung der Nachricht ist anzugeben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ergaenzende.hinweise"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Dem durch die Schlüsseltabelle bezeichneten Grund können weitere Hinweise zugefügt werden, die der Klärung des Sachverhalts dienen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.administration.returntosender.container">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur Beschreibung der rückweisenden Stelle, des Rücksendungsgrundes und der zurückzusendenden Nachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Container enthält sowohl die zurückzusendende Nachricht, als auch die notwendigen Angaben über den Grund der Rücksendung. Sofern die Nachricht nicht von dem ursprünglich adressierten Leser zurückgesandt wird, sondern von einer anderen Stelle (zum Beispiel einer Clearingstelle, die im Auftrag der ursprünglich adressierten Meldebehörde eine Prüfung eingehender Nachrichten nach formalen Kriterien durchführt), dann ist diese Stelle in dem Element rueckweisende.stelle genauer zu bezeichnen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="rueckweisende.stelle"
+                     minOccurs="0"
+                     type="xmeld:type.administration.returntosender.rueckweisende.stelle">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Kindelement wird die zurückweisende Organisationseinheit genauer bezeichnet. Das Element ist aber nur zu übermitteln, wenn eine andere Stelle als der intendierte Leser eine Nachricht zurücksendet.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="begruendung"
+                     type="xmeld:type.administration.returntosender.begruendung"/>
+         <xs:element name="transportinformationen"
+                     minOccurs="0"
+                     type="xmeld:type.administration.returntosender.transportinformationen"/>
+         <xs:element name="nachricht" type="xs:base64Binary">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Ursprungsnachricht übermittelt. Um technische Probleme mit verschachtelten XML-Dokumenten zu vermeiden, ist der zurückgesandte Inhalt immer base64-codiert zurückzusenden. Sollte es sich bei der Ursprungsnachricht um eine Sammelnachricht handeln, müssen die Einzelfälle, die korrekt verarbeitet wurden, aus der hier übermittelten Nachricht entfernt worden sein. Die hier übermittelte Nachricht enthält also nur Einzelfälle, die nicht verarbeitet worden sind. Je nicht verarbeitetem Einzelfall ist innerhalb der ReturnToSender-Nachricht ein Element nicht.verarbeitbarer.einzelfall mit einer entsprechenden Begründung im Element begruendung zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nicht.verarbeitbarer.einzelfall"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.administration.returntosender.nicht.verarbeitbarer.einzelfall">
+            <xs:annotation>
+               <xs:documentation>Dieses Element wird nur bei der Rücksendung von Sammelnachrichten verwendet. Jede Instanz dient der Identifizierung und qualifizierten Beschreibung des Rücksendegrundes genau eines Einzelfalles innerhalb der zurückgeschickten Sammelnachricht.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ursprungsnachricht"
+                     minOccurs="0"
+                     type="xmeld:type.identifikation.nachricht.alt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element kann die fehlerhafte Ursprungsnachricht referenziert werden. Nur in den Fällen, in denen die benötigten Informationen nicht aus der Ursprungsnachricht auslesbar sind (Entschlüsseln der Nachricht nicht möglich, Nachricht kein valides XML, Nachricht nicht schema-konform), darf eine Übermittlung dieses Elements unterbleiben. In allen anderen Fällen ist dieses Element zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.administration.returntosender.container.ohne.ursprungsnachricht">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur Beschreibung der rückweisenden Stelle und des Rücksendungsgrundes</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die notwendigen Angaben über den Grund der Rücksendung, aber keine Ursprungsnachricht übermittelt. Sofern die Rückweisung gemäß Prüfungsebene I durch eine andere Stelle als den Leser der Nachricht (z. B. eine Clearingstelle) durchgeführt wird, ist diese Stelle in dem Element rueckweisende.stelle genauer zu bezeichnen.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="rueckweisende.stelle"
+                     minOccurs="0"
+                     type="xirts:Rueckweisung.RueckweisendeStelle">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Kindelement wird die zurückweisende Stelle genauer bezeichnet. Das Element ist aber nur zu übermitteln, wenn eine andere Stelle als der intendierte Leser eine Nachricht zurücksendet.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="begruendung"
+                     type="xmeld:type.administration.returntosender.begruendung"/>
+         <xs:element name="transportinformationen"
+                     minOccurs="0"
+                     type="xmeld:type.administration.returntosender.transportinformationen"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.administration.returntosender.nicht.verarbeitbarer.einzelfall">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nicht verarbeitbarer Einzelfall</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird ein Einzelfall aus einer Sammelnachricht übermittelt. Es werden zusätzliche Informationen bzgl. des Grundes der Nichtverarbeitbarkeit ergänzt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="technische.einzelidentifikation"
+                     type="xmeld:type.technische.einzelidentifikation"/>
+         <xs:element name="grund" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element ist der Grund für die Nichtverarbeitbarkeit des Einzelfalles aus der zurückgeschickten Sammelnachricht mitzuteilen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.administration.returntosender.rueckweisende.stelle">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Rückweisende Stelle</title>
+         </xs:appinfo>
+         <xs:documentation>Die rückweisende Stelle kann eine der Institutionen sein, die sich auf dem Weg zwischen Autor und Leser der Nachricht befinden, z. B.: Clearingstelle der Leser selbst (Meldebehörde, andere Behörde, ...)</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="pruefinstanz" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Stelle bezeichnet, die die Nachricht beanstandet hat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anschrift" type="xima:Meldeanschrift"/>
+         <xs:element name="erreichbarkeit"
+                     maxOccurs="unbounded"
+                     type="bn-uq-g2g:KommunikationType"/>
+         <xs:element name="organisationseinheit"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.Organisationseinheit"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.administration.returntosender.transportinformationen">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Transportinformationen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen, die bei dem Empfang der als fehlerhaft betrachteten Nachricht möglicherweise der Transportebene entnommen werden konnten, übermittelt. Diese Angaben können gemacht werden, um dem Leser dieser Rücksendenachricht die Identifikation der als fehlerhaft betrachteten und nunmehr zurückgesandten Nachricht zu erleichtern. Alle Kindelemente dieses Elementes sind optional, da keine verbindlichen Anforderungen an das Transportprotokoll gestellt werden können.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nachrichten.id" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Hier kann eine Identifikation der aus den genannten Gründen zurückgesandten Nachricht übermittelt werden, sofern sich diese aus dem Transportprotokoll entnehmen lässt. Im Falle von OSCI-Transport wäre hier die messageID des Transportumschlages zu nutzen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="betreff" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Hier kann der Inhalt der Betreff- oder Subject-Zeile der aus den genannten Gründen zurückgesandten Nachricht übermittelt werden, sofern sich diese aus dem Transportprotokoll entnehmen lässt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sendezeitpunkt" minOccurs="0" type="xs:dateTime">
+            <xs:annotation>
+               <xs:documentation>Hier kann der Zeitpunkt des Versands der aus den genannten Gründen zurückgesandten Nachricht übermittelt werden, sofern sich dieser aus dem Transportprotokoll entnehmen lässt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ergaenzende.hinweise" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Hier können weitere Angaben gemacht werden, die dem Leser der aus den genannten Gründen zurückgesandten Nachricht helfen, diese in seinem Verfahren zu identifizieren.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="administration.returntosender.0900">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Alle XMeld-Kommunikationspartner (ags, dbs, rel)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>1. BMeldDÜV, 2. BMeldDÜV, BMeldDAV, landesrechtliche Regelungen</rechtsgrundlage>
+            <title>ReturnToSender-Nachricht für die Kommunikation zwischen Privaten und Behörden oder sonstigen öffentlichen Stellen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird in der asynchronen Kommunikation zwischen Privaten und Behörden oder sonstigen öffentlichen Stellen eine Nachricht als fehlerhaft an den Autor zurückgewiesen. Die erhaltene Nachricht wurde nicht verarbeitet. Informationen zu der zurückweisenden Stelle sowie den Grund der Zurückweisung sind im Kindelement rts.container enthalten.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.datenuebermittlung.b2b">
+               <xs:sequence>
+                  <xs:element name="rts.container"
+                              type="xmeld:type.administration.returntosender.container"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="administration.freitext.0905">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Alle XMeld-Kommunikationspartner (ags, dbs, rel)</autor>
+            <leser>Alle XMeld-Kommunikationspartner</leser>
+            <rechtsgrundlage>1. BMeldDÜV, 2. BMeldDÜV, landesrechtliche Regelungen</rechtsgrundlage>
+            <title>Freitextnachricht für die Kommunikation zwischen Behörden im Kontext des Meldewesens</title>
+         </xs:appinfo>
+         <xs:documentation>Diese Nachricht ermöglicht es, für spezielle personenbezogene Fälle im Kontext des Meldewesens, Sachverhalte von einer Behörde an eine andere Behörde mitzuteilen. Die Nachricht soll für die Klärung genau eines Einzelfalls und nicht für die Klärung mehrerer verwendet werden. Müssen mehrere Einzelfälle geklärt werden, sind dafür auch jeweils einzelne Nachrichten 0905 zu verwenden.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="betroffener">
+                     <xs:annotation>
+                        <xs:documentation>Dient ausschließlich der Identifikation des Betroffenen.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="identifikation.mb2mb"
+                                       type="xmeld:type.identifikation.fortschreibung">
+                              <xs:annotation>
+                                 <xs:documentation>In der Kommunikation zwischen Meldebehörden ist diese Struktur verpflichtend zu verwenden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="identifikation.bzst">
+                              <xs:annotation>
+                                 <xs:documentation>Falls Rückfragen von Seiten der Meldebehörde an das BZSt oder vom BZSt an die Meldebehörde gestellt werden, ist diese Struktur verpflichtend zu verwenden.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="identifikation.person" type="xmeld:type.identifikation.person"/>
+                                    <xs:element name="steueridentifikation"
+                                                minOccurs="0"
+                                                type="xmeld:type.Steueridentifikation">
+                                       <xs:annotation>
+                                          <xs:documentation>Sofern Steueridentifikationsdaten (idnummer oder vbm) vorliegen, werden sie mit übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="konfliktkennzeichen"
+                                                minOccurs="0"
+                                                type="xmeld:type.bzst.konfliktkennzeichen">
+                                       <xs:annotation>
+                                          <xs:documentation>Sofern eine Anfrage zu einem Konflikt (Nachricht 0503) gestellt werden soll, ist immer auch das Konfliktkennzeichen zu übermitteln.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="identifikation.sonstige"
+                                       type="xmeld:type.identifikation.personanschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Diese Struktur ist in den anderen Fällen zu verwenden.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="sachverhalt.unformatiert">
+                     <xs:annotation>
+                        <xs:documentation>Der unformatierte Sachverhalt ist mit diesem Element zu übermitteln.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="titel" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>In diesem Feld ist der Titel bzw. der Anlass der Freitextnachricht zu übermitteln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="inhalt" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>In diesem Feld ist der eigentliche Sachverhalt zu übermitteln.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="sachverhalt.formatiert" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Der formatierte Sachverhalt kann mit diesem Element übermittelt werden. Dieses Element ist nur dazu da, zusätzlich zur mandatorischen unformatierten auch eine formatierte Übermittlung des Sachverhalts zu ermöglichen. Bei der Übermittlung sowohl des unformatierten als auch des formatierten Sachverhalts müssen beide inhalt-Kindelemente dieselbe Information übermitteln.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="mimetype" type="xmeld:Code.MIME-Type">
+                              <xs:annotation>
+                                 <xs:documentation>Die für die Übermittlung von formatierten Sachverhalten erlaubten MIME-Types sind in einer Schlüsseltabelle definiert. (Die Einschränkung auf einige wenige MIME-Types ist wesentlich, um nicht zu einem Format-Wildwuchs zu kommen.)</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="inhalt" type="xs:base64Binary">
+                              <xs:annotation>
+                                 <xs:documentation>In diesem Element wird der Sachverhalt in dem im Element mimetype festgelegten Format übermittelt. (Dieses Element übermittelt somit den Sachverhalt in einem bestimmten Layout.)</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="bezugsnachricht" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Falls sich die Nachricht auf eine vorausgehende Nachricht bezieht, ist dieser Bezug in diesem Element mitzuteilen.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, auf die sich die Freitextnachricht bezieht.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="ursprungsereignis"
+                                       minOccurs="0"
+                                       type="xmeld:type.Identifikation.Ereignis">
+                              <xs:annotation>
+                                 <xs:documentation>Sofern die Nachricht 0905 als Reaktion auf eine Sammelnachricht übermittelt wird, werden mit diesem Element die Daten zur Identifikation des Ereignisses aus der Sammelnachricht übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="identifikation.ereignis"
+                              type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten übermittelt, die zur Identifikation und zeitlichen Einordnung des Ereignisses notwendig sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="administration.returntosender.0910">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Alle XMeld-Kommunikationspartner (ags, dbs, rel)</autor>
+            <leser>Alle XMeld-Kommunikationspartner</leser>
+            <rechtsgrundlage>1. BMeldDÜV, 2. BMeldDÜV, BMeldDAV, landesrechtliche Regelungen</rechtsgrundlage>
+            <title>ReturnToSender-Nachricht für die synchrone Kommunikation</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird eine synchrone an eine Behörde gerichtete Nachricht als fehlerhaft an den Autor zurückgewiesen, die erhaltene Nachricht wurde nicht verarbeitet. Informationen zu der zurückweisenden Stelle sowie den Grund der Zurückweisung sind im Kindelement rts.container enthalten.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="rts.container"
+                              type="xmeld:type.administration.returntosender.container.ohne.ursprungsnachricht"/>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die fehlerhafte Ursprungsnachricht referenziert.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="administration.quittierungbestandslieferung.0928">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Alle XMeld-Kommunikationspartner (ags, dbs, rel)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>1. BMeldDÜV, 2. BMeldDÜV, landesrechtliche Regelungen</rechtsgrundlage>
+            <title>Quittierung einer Bestandsdatenlieferung</title>
+         </xs:appinfo>
+         <xs:documentation>Der Datenempfänger bestätigt mit dieser Nachricht den vollständigen Empfang und die technische Prüfung der Spezifikationskonformität einer Bestandslieferung.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="uebermittlungsart" type="xmeld:Code.XMeld.Nachrichten">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird dem Leser mitgeteilt, auf welche Übermittlungsart sich die Quittierung der Bestandslieferung bezieht. Da eine Bestandslieferung immer durch die Verwendung von 1..n Nachrichten desselben Typs erfolgt, wird hier die xmeld-Bezeichnung der referenzierten Nachricht mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="quittierung" type="xmeld:type.quittierung"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="administration.unplausibleMeldeverhaeltnisse.0930">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Alle XMeld-Kommunikationspartner (ags, dbs, rel)</leser>
+            <rechtsgrundlage>1. BMeldDÜV, 2. BMeldDÜV, landesrechtliche Regelungen</rechtsgrundlage>
+            <title>Mitteilung unplausibler Meldeverhältnisse</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die Meldebehörde den Leser der Nachricht über die rueckweisung einer Nachricht aufgrund der Feststellung unplausibler Meldeverhältnisse.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="grund" type="xmeld:Code.Melderegister.Abweichung">
+                     <xs:annotation>
+                        <xs:documentation>In diesem Element wird der Grund für die aus Sicht der rückweisenden Meldebehörde nicht plausiblen Meldedaten mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="aktuelleAnschrift"
+                              minOccurs="0"
+                              type="xmeld:type.AnschriftMelderechtOhneAusland">
+                     <xs:annotation>
+                        <xs:documentation>Sofern die betroffene Person bereits im Inland verzogen ist (Schlüssel 4 im Element grund), wird mit diesem Element die Anschrift übermittelt, in die die betroffene Person laut Rückmeldung verzogen ist. Sofern die betroffene Person, anders als vom Autor der Ursprungsnachricht erwartet, nur mit Nebenwohnung gemeldet ist (Schlüssel 5 im Element grund), wird mit diesem Element die Anschrift der aktuellen Hauptwohnung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="auszugsdatum" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element kann das Auszugsdatum übermittelt werden. Sofern die betroffene Person in das Inland verzogen ist (Schlüssel 4 im Element grund), wird mit diesem Element zwingend das Datum des Auszugs übermittelt. Sofern die betroffene Person in das Ausland verzogen ist (Schlüssel 2 im Element grund), ist die Übermittlung des Auszugsdatums optional.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tod" minOccurs="0" type="xmeld:type.Tod">
+                     <xs:annotation>
+                        <xs:documentation>Sofern die betroffene Person verstorben ist (Schlüssel 1 im Element grund), werden mit diesem Element die Sterbedaten übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsnachricht" type="xmeld:type.Identifikation.Nachricht">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Ursprungsnachricht referenziert, in der unplausible Meldedaten festgestellt wurden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ursprungsereignis" type="xmeld:type.Identifikation.Ereignis">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Daten zur Identifikation des Ereignisses aus der Ursprungsnachricht übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

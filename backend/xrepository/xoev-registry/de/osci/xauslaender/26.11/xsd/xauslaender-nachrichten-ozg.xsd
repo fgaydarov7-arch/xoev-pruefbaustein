@@ -1,0 +1,2143 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xauslaender="http://www.osci.de/xauslaender2611"
+           xmlns:bn-uq-g2g="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xiaa="http://www.osci.de/xinneres/auslandsanschrift/5"
+           xmlns:xian="http://www.osci.de/xinneres/allgemeinername/4"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xipa="http://www.osci.de/xinneres/postanschrift/5"
+           targetNamespace="http://www.osci.de/xauslaender2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XAusländer</nameLang>
+            <nameKurz>XAusländer</nameKurz>
+            <nameTechnisch>xinneres.xauslaender</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xauslaender</kennung>
+            <beschreibung>Das Fachmodul XAusländer des Standards XInneres beschreibt die Datenübermittlung im Ausländerwesen.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xauslaender-allgemeine-datentypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/allgemeinername/4/xinneres-name.xsd"
+              namespace="http://www.osci.de/xinneres/allgemeinername/4"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/auslandsanschrift/5/xinneres-auslandsanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/auslandsanschrift/5"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/postanschrift/5/xinneres-postanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/postanschrift/5"/>
+   <xs:import schemaLocation="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1/xoev-basisnachricht-unqualified-g2g_1.1.xsd"
+              namespace="http://xoev.de/schemata/basisnachricht/unqualified/g2g/1_1"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="OZG.AntragstellerVertreter">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Vertreter des Antragstellers</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben einer vertretenden Person im Rahmen des OZG übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="vertretungsart" type="xauslaender:Code.Art.der.Vertretung">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Art der Vertretung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vorname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="familienname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anschrift"
+                     minOccurs="0"
+                     type="xipa:PostalischeInlandsanschrift.Gebaeudeanschrift">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die inländische Anschrift der Vertretung übermittelt. Das Eingabeverfahren sollte die Eingabe für Nutzende möglichst vereinfachen und die Zerteilung der Angaben auf die einzelnen Felder selbst vornehmen (z. B. bei der Hausnummerierung).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="postfach"
+                     minOccurs="0"
+                     type="xipa:PostalischeInlandsanschrift.Postfachanschrift">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird eine Postfachadresse übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kommunikation"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="bn-uq-g2g:KommunikationType">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anlageVertreter"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xauslaender:OZG.Dokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Vollmacht oder die Bestellung als Vertretung übermittelt.Eltern müssen grundsätzlich keinen Nachweis vorlegen. Nur im Fall, dass ein Elternteil die elterliche Sorge allein ausübt, muss die Kopie des Gerichtsbeschlusses oder des Urteils vorgelegt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+         <xs:element name="tagDerGeburt" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das eigentliche Geburtsdatum spezifiziert.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="firma" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Bezeichnung der Firma/Organisation angegeben für die diese vertretende Person tätig ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vertrauensniveau" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird übermittelt, welche der vorliegenden Angaben mindestens das Vertrauensniveau substanziell erreichen und damit als gesichert betrachtet werden können.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="vorname" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob der Vorname mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="familienname" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob der Familienname mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anschrift" minOccurs="0" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob die Anschrift mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="kommunikation"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob die Information zur Kommunikation mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann. Da mehrere Angaben zur Kommunikation vorliegen können, ist diese Information korrespondierend zu den Angaben der Kommunikation zu übermitteln (z. B. es wurden drei Kommunikationsmöglichkeiten übermittelt, dann müssen auch, in der gleichen Reihenfolge, drei Angaben zum Vertrauensniveau übermittelt werden).</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerGeburt" minOccurs="0" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob der Tag der Geburt mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="firma" minOccurs="0" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob der Name des Unternehmens, eines Vereins oder einer sonstigen Organisation mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.AuslaendischeIdentifikation">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Ausländische Identifikation</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp enthält alle Angaben zu einem Aufenthaltstitel bzw. einem ausländischen Identifikationsdokument.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="artDesAufenthaltstitels"
+                     minOccurs="0"
+                     type="xauslaender:Code.OZG.AufenthaltstitelArt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Art des Aufenthaltstitels übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nummerEAT" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Nummer des Aufenthaltstitels übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellendeABH" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Es wird der Name der Ausländerbehörde übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="vomAufenthaltstitelBefreit"
+                     minOccurs="0"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Sollte der Ausländer vom Erfordernis eines Aufenhaltstitels befreit sein, ist hier die Begründung zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="artDesAuslaendischenIdentifikationsdokuments"
+                     minOccurs="0"
+                     type="xauslaender:Code.OZG.AuslaendischeIdentifikationArt">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Art eines ausländischen Identifikationsdokuments übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nummerDesAuslaendischenIdentifikationsdokuments"
+                     minOccurs="0"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Es ist die Nummer des ausländischen Identifikationsdokuments zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellenderStaat" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der ausstellende Staat des ausländischen Identifikationsdokuments übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.Basisnachricht">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Basisnachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten des Nachrichtenkopfs für Nachrichten zu Verwaltungsleistungen nach dem OZG zwischen einem Eingabeverfahren und abhn übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:Nachricht.G2G.XA">
+            <xs:sequence>
+               <xs:element name="antragsidentifikation" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die durch das Eingabeverfahren generierte, innerhalb des Eingabeverfahrens eindeutige, Identifikation des Antrags übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="OZG.Basisnachricht.Antwort">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Basisnachricht für Antwortnachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Typ bildet eine erweiterte Basis für XAusländer OZG-Antwortnachrichten. Er dient der leichteren programmtechnischen Verarbeitung von Nachrichten. Die von diesem Typ abgeleiteten Nachrichten können nur als Reaktion auf eine (Anfrage-) Nachricht übermittelt werden. Hierfür ist das Element ausloeserUUID als Referenz zu übermitteln.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:OZG.Basisnachricht">
+            <xs:sequence>
+               <xs:element name="ausloeserUUID" type="bn-uq-g2g:UUID">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element übermittelt die Universally Unique Identifier (UUID) derjenigen Nachricht, auf die sich diese Nachricht bezieht.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="OZG.BasisnachrichtAnAbh">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Basisnachricht an ABH</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten des Nachrichtenkopfs für Nachrichten zu Verwaltungsleistungen nach dem OZG von Eingabeverfahren an abhn inkl. der Information, ob ein Rückkanal vorhanden ist, übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:OZG.Basisnachricht">
+            <xs:sequence>
+               <xs:element name="rueckkanalVorhanden" type="xs:boolean">
+                  <xs:annotation>
+                     <xs:documentation>Sofern in diesem Element false übermittelt wird, darf das Fachverfahren keine Rücknachrichten an das Eingabeverfahren zu der Antragsnummer dieser Nachricht übermitteln.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="OZG.BasisnachrichtAnAbh.Antwort">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Basisnachricht an ABH für Antwortnachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Typ bildet eine erweiterte Basis für XAusländer OZG-Antwortnachrichten. Er dient der leichteren programmtechnischen Verarbeitung von Nachrichten. Die von diesem Typ abgeleiteten Nachrichten können nur als Reaktion auf eine (Anfrage-) Nachricht übermittelt werden. Hierfür ist das Element ausloeserUUID als Referenz zu übermitteln.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh">
+            <xs:sequence>
+               <xs:element name="ausloeserUUID" type="bn-uq-g2g:UUID">
+                  <xs:annotation>
+                     <xs:documentation>Dieses Element übermittelt die Universally Unique Identifier (UUID) derjenigen Nachricht, auf die sich diese Nachricht bezieht.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="OZG.CVisumOderVisumfrei">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Aufenthaltszweck C-Visum bzw. Visumsfreiheit</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben zum Anlass der Vorbereitung/Abgabe der Verpflichtungserklärung übermittelt, wenn es sich um ein C-Visum handelt oder die Verpflichtungserklärung als Nachweis ausreichender Mittel bei der Grenzübertrittskontrolle benötigt wird.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="cVisum" type="xauslaender:Code.OZG.CVisumVisumfrei">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Art des C-Visums oder die Angaben zum Aufenthaltszweck bei einem Visum freien Aufenthalt übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zweck" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Zweck des Aufenthalts übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aufenthaltsdauer" minOccurs="0" type="xs:positiveInteger">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die voraussichtliche Dauer des Aufenthalts in Tagen übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.DVisumOderAufenthaltstitel">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Aufenthaltszweck D-Visum bzw. Aufenthaltstitel</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben zum Anlass der Vorbereitung/Abgabe der Verpflichtungserklärung übermittelt, wenn es sich um ein D-Visum handelt oder die Verpflichtungserklärung als Nachweis ausreichender Mittel bei der Erteilung oder Verlängerung eines Aufenthaltstitels durch die abh benötigt wird.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dVisum" type="xauslaender:Code.OZG.DVisumAufenthaltstitel">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Art des D-Visums übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausbildungszweck"
+                     minOccurs="0"
+                     type="xauslaender:Code.OZG.Ausbildungszweck">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Angaben zum Zweck der Ausbildung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aufenthaltsdauer" minOccurs="0" type="xs:positiveInteger">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die voraussichtliche Dauer des Aufenthalts in Monaten übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.DeutscheIdentifikation">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Deutsches Identifikationsdokument</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp enthält alle Angaben zu deutschen Identifikationsdokumenten.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="artDesIdentifikationsdokuments"
+                     minOccurs="0"
+                     type="xauslaender:Code.OZG.deutschesIdentifikationsdokument">
+            <xs:annotation>
+               <xs:documentation>Sollte diese Information gewünscht sein, wird eine neue Codeliste benötigt, die diese Schlüssel enthält.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nummerDesDeutschenIdentifikationsdokuments"
+                     minOccurs="0"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Nummer des Identifikationsdokuments übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausstellendeBehoerde" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Behörde übermittelt, die das Ausweisdokument ausgestellt hat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.Dokument">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Dokumentenanhang</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird ein Dokument übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dokument" type="xs:base64Binary">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Dokument übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dokumententyp" type="xauslaender:Code.Dokumentformat">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Format des Dokumentes übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.DokumentErweitert">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Dokumentenanhang erweitert</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird ein Dokument, welches um weitere Informationen ergänzt wurde, übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:OZG.Dokument">
+            <xs:sequence>
+               <xs:element name="bezeichnung" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die vom Eingabeverfahren vergebene Bezeichnung des Dokumentes übermittelt, die zur Orientierung über den Inhalt des Dokumentes geeignet ist.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="OZG.DokumentOderReferenz">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Dokumentenanhang</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird ein Dokument oder eine Dokumentreferenz übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="dokumentOderReferenz">
+            <xs:complexType>
+               <xs:choice>
+                  <xs:element name="dokument" type="xs:base64Binary">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Dokument übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="dokumentuuid" type="bn-uq-g2g:UUID">
+                     <xs:annotation>
+                        <xs:documentation>Dieses Element übermittelt die UUID des Dokuments. Sie ordnet das Dokument zu der Datei im Dokumentencontainer zu.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:choice>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="dokumententyp" type="xauslaender:Code.Dokumentformat">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Format des Dokuments übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dateiname" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Dieses Element übermittelt den Dateinamen. Es ist möglichst der originale Dateiname, wie er beim Autor vorlag, zu übernehmen. Die Dateiendung (z. B. .pdf oder .jpg) ist mit zu übermitteln.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.DokumentOderReferenzErweitert">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Dokumentenanhang erweitert</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird ein Dokument, welches um weitere Informationen ergänzt wurde, übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xauslaender:OZG.DokumentOderReferenz">
+            <xs:sequence>
+               <xs:element name="bezeichnung" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die vom Eingabeverfahren vergebene Bezeichnung des Dokumentes übermittelt, die zur Orientierung über den Inhalt des Dokumentes geeignet ist.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="OZG.Person">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Angaben zur Person</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element werden die persönlichen Angaben der Person übermittelt, die einen Aufenthaltstitel begehrt oder ein Freizügigkeitsrecht geltend macht.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="vorname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="familienname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="weitererName"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element kann beispielsweise ein vor einer Namensänderung geführter Vor- und Familienname (zum Beispiel Geburtsname), ein Ehe- oder Lebenspartnerschaftsname, eine abweichende Namensschreibweise, der Name nach deutschem Recht o.Ä. übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+         <xs:element name="geburt" type="xauslaender:Geburt"/>
+         <xs:element name="personenbeschreibung" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Angaben zur Personenbeschreibung übermittelt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="koerpergroesse"
+                              minOccurs="0"
+                              type="xauslaender:Koerpergroesse">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Körpergröße in cm übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="augenfarbe"
+                              minOccurs="0"
+                              type="xauslaender:Code.AZR.AugenfarbeArt">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Augenfarbe übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="familienstand">
+            <xs:annotation>
+               <xs:documentation>In diesem Feld wird die Information zum Familienstand oder einer entsprechenden Rechtsstellung bezüglich einer Lebenspartnerschaft in codierter Form abgelegt. Zusätzlich kann angegeben werden, ob Ehe- oder Lebenspartner bzw. Ehe- oder Lebenspartnerin getrennt leben.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="familienstand" type="xauslaender:Code.Familienstand"/>
+                  <xs:element name="getrenntLebend"
+                              minOccurs="0"
+                              fixed="true"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird angegeben, ob die Person vom Ehe- oder Lebenspartner bzw. Ehe- oder Lebenspartnerin getrennt lebt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="familienstandOderGetrenntlebendSeit"
+                     minOccurs="0"
+                     type="xida:TeilbekanntesDatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum übermittelt, seit wann der Familienstand besteht bzw. getrennt gelebt wird.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="staatsangehoerigkeit"
+                     maxOccurs="4"
+                     type="xauslaender:AngabenZumStaat"/>
+         <xs:element name="anschrift"
+                     minOccurs="0"
+                     type="xipa:PostalischeInlandsanschrift.Basis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die inländische Meldeanschrift der Person übermittelt, deren Anliegen Gegenstand der Nachricht ist. Das Eingabeverfahren sollte die Eingabe möglichst vereinfachen und die Zerteilung der Angaben auf die einzelnen Felder selbst vornehmen (z. B. bei der Hausnummerierung).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kommunikation"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="bn-uq-g2g:KommunikationType">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="aufenthaltsdokument" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zum Aufenthaltsdokument (z. B. Aufenthaltstitel, der auch das Visum umfasst, sowie Aufenthaltsgestattung oder Duldung) übermittelt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:choice>
+                  <xs:element name="aufenthaltsdokument"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird ein Abbild eines vorhandenen ausländischen Aufenthaltsdokuments übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="visumsfreieEinreise" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Begründung übermittelt, warum ein Aufenthaltstitel in den ersten drei Monaten nach der Einreise zu Recht nicht vorliegt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="deutschesAufenthaltsdokumentVorhanden"
+                              fixed="true"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Information übermittelt, dass die Person, deren Anliegen Gegenstand der Nachricht ist, über ein deutsches Aufenthaltsdokument verfügt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:choice>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="ausweisdokument" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zum Ausweisdokument übermittelt.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="ausweisseite"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Seiten des Ausweisdokuments übermittelt. Dies sind mindestens die Lichtbildseite und die Seite mit den Angaben zur Gültigkeit.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gueltigkeitszeitraum" type="xauslaender:Zeitraum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Gültigkeitszeitraum des Ausweisdokuments übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="seriennummer" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Seriennummer des Ausweisdokuments übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="vertrauensniveau"
+                     minOccurs="0"
+                     type="xauslaender:OZG.Vertrauensniveau">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird übermittelt, welche der vorliegenden Angaben mindestens das Vertrauensniveau substanziell erreichen und damit als gesichert betrachtet werden können.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.Referenzperson">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Referenzperson</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Angaben einer Person übermittelt, auf die (z. B. bei der Ableitung des Aufenthaltsrechts) Bezug genommen wird.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="vorname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="familienname" type="xian:AllgemeinerName">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburt" type="xauslaender:Geburt"/>
+         <xs:element name="staatsangehoerigkeit"
+                     maxOccurs="4"
+                     type="xauslaender:AngabenZumStaat"/>
+         <xs:element name="familiaereBeziehung"
+                     type="xauslaender:Code.OZG.FamiliaereBeziehungReferenzperson">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Art der familiären Beziehung zwischen der Person, die ein Anliegen geltend macht, und der Referenzperson aus der Perspektive der Person, die das Anliegen geltend macht, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anschrift"
+                     minOccurs="0"
+                     type="xipa:PostalischeInlandsanschrift.Gebaeudeanschrift">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die inländische Meldeanschrift der Referenzperson übermittelt, sofern sie von der Anschrift der Person abweicht, deren Anliegen Gegenstand der Nachricht ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.Vertrauensniveau">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Vertrauensniveau bei Personendaten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp wird für alle genannten Elemente mitgeteilt, welche der Informationen mindestens das Vertrauensniveau „substanziell“ erreichen und damit als gesichert betrachtet werden können.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="vorname" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird übermittelt, ob der Vorname mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="familienname" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird übermittelt, ob der Familienname mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburt" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird übermittelt, ob die einzelnen Angaben zur Geburt mindestens das Vertrauensniveau substanziell erreichen und damit als gesichert betrachtet werden können.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="geburtsort" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob der Geburtsort mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="geburtsortStaat" minOccurs="0" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob der Staat der Geburt mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerGeburt" type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob der Tag der Geburt mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="staatsangehoerigkeit"
+                     minOccurs="0"
+                     maxOccurs="4"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird übermittelt, ob die Staatsangehörigkeit mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann. Wenn mehrere Staatsangehörigkeiten vorliegen, ist diese Information für jede Angabe zur Staatsangehörigkeit korrespondierend zu übermitteln (z. B. wurden drei Staatsangehörigkeiten übermittelt, dann müssen auch, in der gleichen Reihenfolge, drei Angaben zum Vertrauensniveau übermittelt werden).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anschrift" minOccurs="0" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird übermittelt, ob die Anschrift mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="kommunikation"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird übermittelt, ob die Information zur Kommunikation mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann. Wenn mehrere Angaben zur Kommunikation vorliegen, ist diese Information für jede Angabe zur Kommunikation korrespondierend zu übermitteln (z. B. wurden drei Kommunikationsmöglichkeiten übermittelt, dann müssen auch, in der gleichen Reihenfolge, drei Angaben zum Vertrauensniveau übermittelt werden).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="OZG.WeitereVerpflichtungserklaerungen">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Weitere Verpflichtungserklärungen</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp beschreibt eine noch gültige Verpflichtungserklärung.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="nummerVE" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Nummer einer noch gültigen Verpflichtungserklärung übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nameABH" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird der Name der Ausländerbehörde übermittelt, die diese Verpflichtungserklärung bearbeitet hat.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anzahlAbgesichertePersonen"
+                     minOccurs="0"
+                     type="xs:nonNegativeInteger">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anzahl der abgesicherten Personen übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:element name="OZG.Antrag.130101">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Eingabeverfahren</autor>
+            <leser>Ausländerbehörde (AZR)</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Antrag</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht werden Antragsdaten übermittelt. Im Kontext dieses Kapitels handelt es sich um Angaben zur Beantragung eines Aufenthaltstitels, einer Beschäftigungserlaubnis oder einer Ausbildungs- oder Beschäftigungsduldung.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh">
+               <xs:sequence>
+                  <xs:element name="antragsdatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum übermittelt, an dem der Antrag online erfasst wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundDesAntrags" type="xauslaender:Code.OZG.Antragsgrund">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Grund der Antragstellung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="ersteinreisedatum" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum der erstmaligen Einreise zum dauerhaften Aufenthalt im Bundesgebiet übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundAenderungNebenbestimmung"
+                              minOccurs="0"
+                              type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Begründung für den Bedarf einer Änderung von Nebenbestimmungen übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundDesAufenthalts" type="xauslaender:Code.OZG.Aufenthaltsgrund">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Grund des Aufenthalts übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenZurPerson" type="xauslaender:OZG.Person">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zu der Person übermittelt, deren Anliegen Gegenstand der Nachricht ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="antragstellerVertreter"
+                              minOccurs="0"
+                              type="xauslaender:OZG.AntragstellerVertreter">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben der Person übermittelt, die für eine andere Person einen Antrag stellt. Die vertretende Person muss dafür ggf. die Legitimation nachweisen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="referenzperson"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.Referenzperson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu einer Person übermittelt, von der die Person, für die der Aufenthaltstitel beantragt wird, ihr Aufenthaltsrecht ableitet.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="antragszusammenfassung"
+                              minOccurs="0"
+                              type="xauslaender:OZG.DokumentOderReferenz">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt das Eingabeverfahren die von ihm erstellte Antragszusammenfassung.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.DokumentOderReferenzErweitert">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt das Eingabeverfahren Nachweise, die für die Antragstellung erforderlich sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="sonstigeAnmerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine Anmerkung zum Antrag für die Ausländerbehörde übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="verbundenerAntrag"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Antragsidentifikation eines zeitgleich gestellten verbundenen Antrags eines Elternteils oder minderjährigen Kindes übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenDokumentenlieferung"
+                              minOccurs="0"
+                              type="xauslaender:AngabenDokumentenlieferung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur Dokumentenlieferung übermittelt, sofern Dokumentreferenzen in dieser Nachricht enthalten sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.RueckkanalFrage.130102">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG, § 66 Abs. 2 AufenthG, § 81a AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Rückfrage zum Antrag</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh eine Frage an die das Eingabeverfahren nutzende Person.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="frage" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine Rückfrage übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="fristdatum" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element teilt die abh ein Fristablaufdatum für die Nachreichung von nachgeforderten Unterlagen oder die Beantwortung einer Nachfrage mit. Der Fristablauf ohne Erfüllung der Nachforderung kann zur Beendigung des Online-Verfahrens führen. Die das Eingabeverfahren nutzende Person muss über die Frist und die Folgen der Fristversäumung informiert werden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlage" minOccurs="0" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine Anlage (z. B. ein Informationsblatt) übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.RueckkanalAntwort.130103">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Eingabeverfahren</autor>
+            <leser>Ausländerbehörde (AZR)</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG, § 66 Abs. 2 AufenthG, § 81a AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Antwort zur Rückfrage</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das Eingabeverfahren die Antwort auf die Rückfrage an die abh.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh.Antwort">
+               <xs:sequence>
+                  <xs:element name="unterlage"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.DokumentOderReferenz">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden zusätzliche Unterlagen nachgereicht.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="antworttext" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird ein frei formulierter Text übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenDokumentenlieferung"
+                              minOccurs="0"
+                              type="xauslaender:AngabenDokumentenlieferung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur Dokumentenlieferung übermittelt, sofern Dokumentreferenzen in dieser Nachricht enthalten sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Statusmeldung.130104">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG, § 66 Abs. 2 AufenthG, § 81a AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Statusmeldung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh eine Information zum Stand des Verfahrens an das Eingabeverfahren.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="status" type="xauslaender:Code.OZG.Status">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der aktuelle Status des Verfahrens übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anhang" minOccurs="0" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird ein Dokument zum Status übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Terminmitteilung.130105">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG, § 66 Abs. 2 AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Angaben zur Terminmitteilung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh Informationen für einen Termin zur persönlichen Vorstellung.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="strukturierteTermininformationen" minOccurs="0">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Termininformation in strukturierter Form übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="datum" type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum des Termins übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="uhrzeitAb" type="xs:time">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Uhrzeit des Termins übermittelt bzw. der Beginn eines Zeitraums, an dem sich die eingeladene Person in der abh einfinden kann.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="uhrzeitBis" minOccurs="0" type="xs:time">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Ende eines Zeitraums, an dem sich die eingeladene Person in der abh einfinden kann, übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="ort" type="xipa:PostalischeInlandsanschrift.Gebaeudeanschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Anschrift übermittelt, an der der Termin stattfindet.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="weitereAngabenZumOrt" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden weitere Angaben zum Ort, wie z. B. Etage, Raumnummer, Name der zuständigen Person oder Wartebereich, übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="terminmitteilung"
+                              minOccurs="0"
+                              type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird ein Schreiben der abh zur Terminvergabe übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="onlinevergabe" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine URL zu einem Verfahren für die Online-Terminvergabe übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gebuehrenmitteilung"
+                              minOccurs="0"
+                              type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh eine Mitteilung über anfallende Gebühren.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="weitereHinweise" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden weitere Hinweise zur Wahrnehmung des Termins, z. B. über mitzubringende Dokumente, Bitte um Absage im Falle der Verhinderung und zugehörige Kontaktmöglichkeiten, übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.RuecknahmeReaktion.130107">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Eingabeverfahren</autor>
+            <leser>Ausländerbehörde (AZR)</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG, § 66 Abs. 2 AufenthG, § 81a AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Reaktion auf die Rücknahme</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh dem Eingabeverfahren ihre Reaktion auf die Rücknahme des Anliegens.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="rueckmeldung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Hinweise der abh zur Reaktion auf die Rücknahme (z. B. zu deren Folgen wie Gebühren, Bitte um Vorsprache etc.) übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlage" minOccurs="0" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird ein Schreiben der abh mit Informationen zur Reaktion auf die Rücknahme übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Unzustaendig.130109">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG, § 66 Abs. 2 AufenthG, § 81a AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Unzuständigkeitsmitteilung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht teilt die abh mit, dass sie für dieses Anliegen nicht die zuständige abh ist.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="hinweis"
+                              default="Ihr Anliegen kann von uns nicht bearbeitet werden, weil wir nicht zuständig sind. Bitte wenden Sie sich an die für Sie zuständige Ausländerbehörde."
+                              type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh Informationen darüber, warum sie für dieses Anliegen nicht zuständig ist.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="zustaendigeABH" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh Informationen zur zuständigen Stelle, sofern sie darüber Kenntnis hat.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.BeabsichtigteAblehnung.130110">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Ablehnungsabsicht</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht teilt die abh mit, dass sie beabsichtigt, die Leistung abzulehnen. Sie kann die das Eingabeverfahren nutzende Person darauf hinweisen, dass eine Rücknahme möglich ist. Die abh kann mit dieser Nachricht auch eine Mitteilung über anfallende Gebühren übermitteln.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="mitteilung" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element Informiert die abh über die beabsichtigte Ablehnung der Leistung.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gebuehrenmitteilung"
+                              minOccurs="0"
+                              type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh eine Mitteilung über anfallende Gebühren.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Ruecknahme.130111">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Eingabeverfahren</autor>
+            <leser>Ausländerbehörde (AZR)</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG, § 66 Abs. 2 AufenthG, § 81a AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Erklärung der Rücknahme</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das Eingabeverfahren die Rücknahme des Anliegens an die abh.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh"/>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Verpflichtungserklaerung.130201">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Eingabeverfahren</autor>
+            <leser>Ausländerbehörde (AZR)</leser>
+            <rechtsgrundlage>§§ 66 Abs. 2 AufenthG</rechtsgrundlage>
+            <title>Verpflichtungserklärung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht werden Angaben zu einer Verpflichtungserklärung vom Eingabeverfahren an die abh übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh">
+               <xs:sequence>
+                  <xs:element name="rechtsverbindlicheVE"
+                              minOccurs="0"
+                              fixed="true"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die rechtsverbindliche Abgabe der Verpflichtungserklärung übermittelt. Dies ist nur dann der Fall, wenn die gastgebende Person sich authentifiziert und außerdem erklärt hat, dass sie die Erklärung rechtsverbindlich abgibt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="gastgeber">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur gastgebenden Person übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="privat">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zu einer privaten gastgebenden Person übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="vorname" type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="familienname" type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="auslaendischeIdentifikation"
+                                                minOccurs="0"
+                                                type="xauslaender:OZG.AuslaendischeIdentifikation">
+                                       <xs:annotation>
+                                          <xs:documentation>Es sind Informationen einer nicht deutschen gastgebenden Person zu deren Identifikation zu übermitteln.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtsangaben" minOccurs="0" type="xauslaender:Geburt"/>
+                                    <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+                                    <xs:element name="staatsangehoerigkeit"
+                                                minOccurs="0"
+                                                maxOccurs="4"
+                                                type="xauslaender:AngabenZumStaat"/>
+                                    <xs:element name="anschrift"
+                                                minOccurs="0"
+                                                type="xipa:PostalischeInlandsanschrift.Gebaeudeanschrift">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die inländische Meldeanschrift der Person übermittelt, die diese Verpflichtung erklärt. Das Eingabeverfahren sollte die Eingabe möglichst vereinfachen und die Zerteilung der Angaben auf die einzelnen Felder selbst vornehmen (z. B. bei der Hausnummerierung).</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="kommunikation"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="bn-uq-g2g:KommunikationType">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="deutscheIdentifikation"
+                                                minOccurs="0"
+                                                type="xauslaender:OZG.DeutscheIdentifikation">
+                                       <xs:annotation>
+                                          <xs:documentation>Es sind Informationen einer gastgebenden Person mit einem deutschen Identifikationsdokument zu übermitteln.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="beruf" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Es ist die Bezeichnung des ausgeübten Berufs zu übermitteln.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="arbeitgeber" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Name des Arbeitgebers übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="arbeitnehmerverhaeltnis" minOccurs="0">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zu einem bestehenden Arbeitnehmerverhältnis übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="einkuenfte"
+                                                         minOccurs="0"
+                                                         maxOccurs="7"
+                                                         type="xs:nonNegativeInteger">
+                                                <xs:annotation>
+                                                   <xs:documentation>Es werden die Einkünfte aus nicht selbstständiger Arbeit, der letzten sieben aufeinander folgenden Monate übermittelt. Es sind keine Nachkommastellen anzugeben.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="befristet" minOccurs="0" type="xida:Tagesdatum">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element ist der Tag zu übermitteln, auf den das Arbeitsverhältnis befristet ist.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="befristetErklaerung" minOccurs="0" type="din91379:datatypeC">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element ist eine Erläuterung zum befristeten Arbeitnehmerverhältnis zu übermitteln.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="arbeitsverhaeltnisEnde" minOccurs="0" type="xida:Tagesdatum">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element ist der Tag zu übermitteln, zu dem das Arbeitsverhältnis gekündigt ist.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="arbeitsverhaeltnisEndeErklaerung"
+                                                         minOccurs="0"
+                                                         type="din91379:datatypeC">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element ist eine Erläuterung zum gekündigten Arbeitnehmerverhältnis zu übermitteln.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="sonstigeEinkuenfte"
+                                                minOccurs="0"
+                                                maxOccurs="7"
+                                                type="xs:nonNegativeInteger">
+                                       <xs:annotation>
+                                          <xs:documentation>Es werden die sonstigen Einkünfte (z. B. Einkünfte aus Land- und Forstwirtschaft, Gewerbebetrieb, selbstständiger Arbeit, Kapitalvermögen, Vermietung oder Rente) der letzten sieben aufeinander folgenden Monate übermittelt. Es sind keine Nachkommastellen anzugeben.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="regelmaessigeAusgaben"
+                                                minOccurs="0"
+                                                type="xs:nonNegativeInteger">
+                                       <xs:annotation>
+                                          <xs:documentation>Es werden Angaben zu regelmäßig wiederkehrenden Ausgaben pro Monat in vollen Eurobeträgen angegeben (z. B. Lebensunterhalt, Unterkunft, Mobilität, Anschaffungen, Versicherungen, Schuldendienst, Mitgliedsbeiträge/Abonnements).</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="vermoegen" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Es werden die Angaben zu vorhandenem Vermögen übermittelt (z. B. Sparbücher mit Sperrvermerk, Pfand, Sperrkonto).</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="zahlungsklagen" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Es werden die Angaben zu Zahlungsklagen, Zwangsvollstreckungen oder Ähnlichem der letzten fünf Jahre übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="finanzielleVerantwortung" minOccurs="0">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird übermittelt, für wie viele Personen die gastgebende Person eine finanzielle Verantwortung trägt (z. B. Ehepartnerin oder Ehepartner und Kinder). Die Beschränkung auf fünf Personen ist gesetzlich vorgegeben.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:simpleType>
+                                          <xs:restriction base="xs:nonNegativeInteger">
+                                             <xs:maxInclusive value="5"/>
+                                          </xs:restriction>
+                                       </xs:simpleType>
+                                    </xs:element>
+                                    <xs:element name="einkuenfteDritterPersonen"
+                                                minOccurs="0"
+                                                maxOccurs="5"
+                                                type="xs:nonNegativeInteger">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zu Einkünften Dritter gemacht (z. B. von Ehepartnerin oder Ehepartner), welche über 300 EUR im Monat liegen.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="weitereVE"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xauslaender:OZG.WeitereVerpflichtungserklaerungen">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zu weiteren noch gültigen Verpflichtungserklärungen der gastgebenden Person übermittelt, mit denen Gästen bereits die Einreise ermöglicht worden ist.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="offeneVE" minOccurs="0" maxOccurs="unbounded">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zu weiteren Verpflichtungserklärungen übermittelt, die die gastgebende Person in unmittelbarem zeitlichem Zusammenhang abzugeben beabsichtigt oder bereits abgegeben hat, die aber noch nicht von der Ausländerbehörde anerkannt worden sind.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="nameABH" minOccurs="0" type="din91379:datatypeC">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der Name der Ausländerbehörde übermittelt, die diese Verpflichtungserklärung bearbeitet.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="anzahlAbgesichertePersonen"
+                                                         minOccurs="0"
+                                                         type="xs:nonNegativeInteger">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird die Anzahl der abzusichernden Personen übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="sonstigeAnmerkungen" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden sonstige Anmerkungen zur privaten gastgebenden Person für die abh übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="nachweis"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xauslaender:OZG.DokumentErweitert">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Nachweisdokumente übermittelt. Zum Beispiel: Einkommensteuernachweis Einkommensnachweis aus nicht selbständiger Arbeit Einkommennachweise Dritter Belege für andere Einkünfte Belege für einsatzfähiges Vermögen</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="abholberechtigtePerson" minOccurs="0">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zur Identifizierung einer abholberechtigten Person übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="familienname" minOccurs="0" type="xian:AllgemeinerName">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="vorname" minOccurs="0" type="xian:AllgemeinerName">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="tagDerGeburt"
+                                                         minOccurs="0"
+                                                         type="xida:TeilbekanntesDatumMitUnbekannt">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird das eigentliche Geburtsdatum spezifiziert.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="geburtsort" minOccurs="0" type="xauslaender:Geburtsort"/>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="vertrauensniveau"
+                                                minOccurs="0"
+                                                type="xauslaender:OZG.Vertrauensniveau">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird übermittelt, welche der vorliegenden Angaben mindestens das Vertrauensniveau substanziell erreichen und damit als gesichert betrachtet werden können.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="institutionell">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zu einem institutionellen Gastgeber übermittelt (z. B. ein Unternehmen, ein Verein).</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="nameOrganisation" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Name des Unternehmens, eines Vereins oder einer sonstigen Organisation, in deren Namen die Verpflichtungserklärung abgegeben wird, übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="anschrift"
+                                                minOccurs="0"
+                                                type="xipa:PostalischeInlandsanschrift.Gebaeudeanschrift">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die inländische Anschrift des Unternehmens, eines Vereins oder einer sonstigen Organisation übermittelt. Das Eingabeverfahren sollte die Eingabe möglichst vereinfachen und die Zerteilung der Angaben auf die einzelnen Felder selbst vornehmen (z. B. bei der Hausnummerierung).</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="schuldnerverzeichnis" minOccurs="0">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Informationen über eine Eintragung im Schuldnerverzeichnis übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="eintragungszeitpunkt" type="xida:Tagesdatum">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird das Datum des Eintrags im Schuldnerverzeichnis übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="eintragungsgrund" type="din91379:datatypeC">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element werden Gründe für die Eintragung übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="insolvenzverfahren" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zu einem in den vergangenen fünf Jahren eröffneten Insolvenzverfahren über das Vermögen der Organisation (des Unternehmens, Vereins) übermittelt, welche die Verpflichtungserklärung abgeben wird.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="fortfuehrungUnwahrscheinlich"
+                                                minOccurs="0"
+                                                type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Ist die Unternehmensfortführung in den nächsten zwölf Monaten unwahrscheinlich, wird die Begründung hierfür übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="weitereVE"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xauslaender:OZG.WeitereVerpflichtungserklaerungen">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zu weiteren noch gültigen Verpflichtungserklärungen der gastgebenden Person übermittelt, mit denen Gästen bereits die Einreise ermöglicht worden ist.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="sonstigeAnmerkungen" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden sonstige Anmerkungen zum institutionellen Gastgeber für die abh übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="vertretungsberechtigtePerson" maxOccurs="unbounded">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden die Daten der vertretungsberechtigten Person/en (z. B. Geschäftsführung, Vorstand) übermittelt. Im Falle einer Gesamtvertretung oder gemeinschaftlichen Vertretung sind alle vertretungsberechtigten Personen anzugeben.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="vorname" type="xian:AllgemeinerName">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="familienname" type="xian:AllgemeinerName">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+                                             <xs:element name="kommunikation"
+                                                         minOccurs="0"
+                                                         maxOccurs="unbounded"
+                                                         type="bn-uq-g2g:KommunikationType">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                    <xs:element name="nachweis"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="xauslaender:OZG.DokumentErweitert">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Nachweisdokumente übermittelt. Zum Beispiel: Bei einer GmbH, AG oder OHG Gesellschaftsvertrag bzw. die Satzung in der aktuellen Fassung Auszug aus dem Handelsregister Vollmacht bzw. ein Nachweis der Vertretungsberechtigung Die beiden letzten Jahresabschlüsse Bei einer GmbH amp Co. KG Auszug aus dem Handelsregister für die KG Auszug aus dem Handelsregister für die GmbH Gesellschaftsvertrag/Satzung in der aktuellen Fassung für die KG Vollmacht bzw. ein Nachweis der Vertretungsberechtigung Gesellschaftsvertrag/Satzung in der aktuellen Fassung für die GmbH Die beiden letzten Jahresabschlüsse für die KG Die beiden letzten Jahresabschlüsse für die GmbH Bei einem Verein Nachweis der Vertretungsmacht Gesellschaftsvertrag/Satzung in der aktuellen Fassung Auszug aus dem Vereinsregister Nachweise zum einsatzfähigen Vermögen Die beiden letzten Jahresabschlüsse Jahresbericht des Vereins Bei Sonstigen Satzung oder Gesellschaftsvertrag oder ähnliches Geeigneter Nachweis der finanziellen Leistungsfähigkeit Geeigneter Nachweis der vertretungsberechtigten Person Nachweise zum einsatzfähigen Vermögen Bei begleitenden Familienangehörigen des Gastes der Einkommensnachweis der unterhaltspflichtigen Personen</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="vertrauensniveau" minOccurs="0">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird übermittelt, welche der vorliegenden Angaben mindestens das Vertrauensniveau substanziell erreichen und damit als gesichert betrachtet werden können.</xs:documentation>
+                                       </xs:annotation>
+                                       <xs:complexType>
+                                          <xs:sequence>
+                                             <xs:element name="nameOrganisation" type="xs:boolean">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird übermittelt, ob der Name des Unternehmens, eines Vereins oder einer sonstigen Organisation mindestens das Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                             <xs:element name="anschrift" minOccurs="0" type="xs:boolean">
+                                                <xs:annotation>
+                                                   <xs:documentation>Mit diesem Element wird übermittelt, ob die Anschrift das mindestens Vertrauensniveau substanziell erreicht und damit als gesichert betrachtet werden kann.</xs:documentation>
+                                                </xs:annotation>
+                                             </xs:element>
+                                          </xs:sequence>
+                                       </xs:complexType>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="gast">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zum Gast übermittelt.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="aufenthaltVisum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Anlass zur Vorbereitung/Abgabe der Verpflichtungserklärung übermittelt (warum braucht der Gast die Verpflichtungserklärung).</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:choice>
+                                    <xs:element name="cVisum" type="xauslaender:OZG.CVisumOderVisumfrei">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zum C-Visum übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="dVisum" type="xauslaender:OZG.DVisumOderAufenthaltstitel">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben zum D-Visum übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="visumfrei" type="xauslaender:OZG.CVisumOderVisumfrei">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben für den Fall übermittelt, dass die Verpflichtungserklärung als Nachweis ausreichender Mittel bei der Grenzübertrittskontrolle benötigt wird.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="aufenthaltstitel"
+                                                type="xauslaender:OZG.DVisumOderAufenthaltstitel">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Angaben für den Fall übermittelt, dass die Verpflichtungserklärung als Nachweis ausreichender Mittel bei der Erteilung bzw. Verlängerung eines Aufenthaltstitels durch die abh benötigt wird.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="sonstiges" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden sonstige Gründe zu einem Aufenthalt übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:choice>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="sonstigeAnmerkungen" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden der abh sonstige Anmerkungen zum Gast übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="voraussichtlichesEinreisedatum"
+                                       minOccurs="0"
+                                       type="xida:Tagesdatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird das Datum der voraussichtlichen Einreise in das Bundesgebiet übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="krankenversicherung"
+                                       minOccurs="0"
+                                       type="xs:nonNegativeInteger">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden monatliche Kosten in Euro für eine private Kranken- und Pflegeversicherung des Gastes übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="unterkunftskosten" minOccurs="0" type="xs:nonNegativeInteger">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden monatliche Kosten in Euro für eine Unterkunft übermittelt, sofern der Gast nicht bei einer gastgebenden Person oder einem insitutionellen Gastgeber wohnt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="familienname" minOccurs="0" type="xian:AllgemeinerName">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="vorname" minOccurs="0" type="xian:AllgemeinerName">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="staatsangehoerigkeit"
+                                       minOccurs="0"
+                                       type="xauslaender:AngabenZumStaat"/>
+                           <xs:element name="anschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die voraussichtliche Wohnanschrift des Gastes im Inland übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:choice>
+                                    <xs:element name="anschriftWieGastgeber" fixed="true" type="xs:boolean">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird übermittelt, dass der Gast bei einer gastgebenden Person oder einem insitutionellen Gastgeber wohnt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="abweichendeAnschrift"
+                                                type="xipa:PostalischeInlandsanschrift.Basis">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird eine von der Anschrift einer gastgebenden Person oder eines insitutionellen Gastgebers abweichende Wohnanschrift des Gastes im Inland übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:choice>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="anschriftAusland"
+                                       minOccurs="0"
+                                       type="xiaa:Auslandsanschrift.Druckbild">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Wohnanschrift des Gastes im Ausland übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="geburt" minOccurs="0" type="xauslaender:Geburt"/>
+                           <xs:element name="reisepassnummer" minOccurs="0" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Nummer des Reisedokumentes des Gastes übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="beziehungZumGastgeber"
+                                       minOccurs="0"
+                                       type="xauslaender:Code.OZG.BeziehungGastgeber">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Beziehung zu einer gastgebenden Person oder einem insitutionellen Gastgeber übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="weitereGaeste" minOccurs="0" maxOccurs="unbounded">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zu, den Gast begleitenden Familienangehörigen (Ehegattin/Ehegatte, minderjährige Kinder) übermittelt.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="vorname" minOccurs="0" type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="familienname" minOccurs="0" type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburt" minOccurs="0" type="xauslaender:Geburt"/>
+                                    <xs:element name="beziehungZumGast"
+                                                minOccurs="0"
+                                                type="xauslaender:Code.OZG.BeziehungGast">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Beziehung zwischen Gästen übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="sonstigeAnmerkungen" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden der abh sonstige Anmerkungen zum den Gast begleitenden Ehepartner bzw. Eheparterin und minderjährigen Kindern übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geburtsname" minOccurs="0" type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Geburtsname ist der Name, der sich jeweils aus dem Geburtseintrag ergibt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+                                    <xs:element name="staatsangehoerigkeit"
+                                                minOccurs="0"
+                                                type="xauslaender:AngabenZumStaat"/>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                           <xs:element name="geburtsname" minOccurs="0" type="xian:AllgemeinerName">
+                              <xs:annotation>
+                                 <xs:documentation>Geburtsname ist der Name, der sich jeweils aus dem Geburtseintrag ergibt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="zusammenfassungBelehrung" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Zusammenfassung der Angaben zur Verpflichtung, die Hinweise und Belehrungstexte und die Zustimmung dazu übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Freizuegigkeit.130301">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>FreizügG/EU</rechtsgrundlage>
+            <title>Meldung oder Antrag zur Freizügigkeit</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht werden Daten zur Meldung bzw. zum Antrag zur Geltendmachung des Freizügigkeitsrechts übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh">
+               <xs:sequence>
+                  <xs:element name="antragsdatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum übermittelt, an dem die Angaben online erfasst wurden.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundDesAntrags" type="xauslaender:Code.OZG.Antragsgrund">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Grund der Meldung bzw. der Antragstellung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundDerMeldung" type="xauslaender:Code.OZG.Meldungsgrund">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Auswahl der Art von Meldung oder Antrag zur Freizügigkeit übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenZurPerson" type="xauslaender:OZG.Person">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die Angaben zu der Person übermittelt, die ihre Freizügigkeitsberechtigung geltend macht.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="antragstellerVertreter"
+                              minOccurs="0"
+                              type="xauslaender:OZG.AntragstellerVertreter">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben der Person übermittelt, die für eine andere Person ein Freizügigkeitsrecht geltend macht. Die vertretende Person muss dafür ggf. die Legitimation nachweisen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="referenzperson"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.Referenzperson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu einer Person übermittelt, von der die Person, für die das Freizügigkeitsrecht geltend gemacht wird, ihr Freizügigkeitsrecht ableitet.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="auslandsaufenthalt" minOccurs="0" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Zeiten mitgeteilt, in denen das Bundesgebiet verlassen wurde.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="von" type="xida:TeilbekanntesDatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Monat und Jahr des Beginns des Auslandsaufenthalts übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="bis" type="xida:TeilbekanntesDatum">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Monat und Jahr übermittelt, in dem der Auslandsaufenthalt endete.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="grund" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird der Grund für den Auslandsaufenthalt übermittelt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="einreisedatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum der erstmaligen Einreise zum dauerhaften Aufenthalt im Bundesgebiet übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="verurteilung"
+                              minOccurs="0"
+                              fixed="true"
+                              type="xs:boolean">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird übermittelt, ob eine Verurteilung zu einer Freiheitsstrafe erfolgte die nicht zur Bewährung ausgesetzt wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="antragszusammenfassung"
+                              minOccurs="0"
+                              type="xauslaender:OZG.DokumentOderReferenz">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt das Eingabeverfahren die von ihm erstellte Antragszusammenfassung.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.DokumentOderReferenzErweitert">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt das Eingabeverfahren Nachweise, die für die Antragstellung bzw. Meldung je nach Aufenthaltsgrund erforderlich sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="sonstigeAnmerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine Anmerkung zum Sachverhalt für die Ausländerbehörde übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="verbundenerAntrag"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Antragsidentifikation eines zeitgleich gestellten verbundenen Antrags eines Elternteils oder minderjährigen Kindes übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenDokumentenlieferung"
+                              minOccurs="0"
+                              type="xauslaender:AngabenDokumentenlieferung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur Dokumentenlieferung übermittelt, sofern Dokumentreferenzen in dieser Nachricht enthalten sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Fachkraefte.130401">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Eingabeverfahren</autor>
+            <leser>Ausländerbehörde (AZR)</leser>
+            <rechtsgrundlage>§ 81a AufenthG</rechtsgrundlage>
+            <title>Antrag beschleunigtes Fachkräfteverfahren</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht werden Antragsdaten zur Einleitung eines beschleunigten Fachkräfteverfahrens übermittelt.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh">
+               <xs:sequence>
+                  <xs:element name="antragsdatum" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird das Datum übermittelt, an dem der Antrag online erfasst wurde.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="grundDesAufenthalts81a"
+                              type="xauslaender:Code.OZG.GrundDesAufenthalts81a">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Aufenthaltszweck im beschleunigten Fachkräfteverfahren nach § 81a AufenthG übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="arbeitgeber">
+                     <xs:complexType>
+                        <xs:sequence>
+                           <xs:element name="firma" type="din91379:datatypeC">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Bezeichnung der Firma/Organisation angegeben, in der die Fachkraft tätig werden soll.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="anschriftBetriebsstaette" type="xipa:PostalischeInlandsanschrift">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird die Anschrift der Betriebstätte in Deutschland übermittelt, an der die Fachkraft eingesetzt werden soll.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="vertreter">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden Angaben zu der Person übermittelt, die das Unternehmen vertritt. Dies kann ein Mitarbeiter des Unternehmens oder eine unterbevollmächtigte Person sein.</xs:documentation>
+                              </xs:annotation>
+                              <xs:complexType>
+                                 <xs:sequence>
+                                    <xs:element name="vorname" type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Vorname oder werden die Vornamen übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="familienname" type="xian:AllgemeinerName">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird der Familienname übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="geschlecht" type="xauslaender:Geschlecht"/>
+                                    <xs:element name="kommunikation"
+                                                minOccurs="0"
+                                                maxOccurs="unbounded"
+                                                type="bn-uq-g2g:KommunikationType">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element werden Kontaktinformationen (z. B. E-Mail-Adresse) übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="abweichendeAnschrift"
+                                                minOccurs="0"
+                                                type="xipa:PostalischeInlandsanschrift">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird eine von der Anschrift der Betriebsstätte abweichende Anschrift des Vertreters oder der unterbevollmächtigten Person der Firma/Organisation übermittelt.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="firma" minOccurs="0" type="din91379:datatypeC">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element wird die Bezeichnung der Firma/Organisation angegeben, für die eine unterbevollmächtigte Person tätig ist.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                    <xs:element name="anlageVertreter"
+                                                maxOccurs="unbounded"
+                                                type="xauslaender:OZG.DokumentOderReferenzErweitert">
+                                       <xs:annotation>
+                                          <xs:documentation>Mit diesem Element übermittelt das Eingabeverfahren Nachweise zur vertretenden Person und ihrer Vertretungsbefugnis.</xs:documentation>
+                                       </xs:annotation>
+                                    </xs:element>
+                                 </xs:sequence>
+                              </xs:complexType>
+                           </xs:element>
+                        </xs:sequence>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="fachkraft">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu einer drittstaatsangehörigen Person übermittelt, die in Deutschland eine Erwerbstätigkeit aufnehmen möchte.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:complexContent>
+                           <xs:extension base="xauslaender:OZG.Person">
+                              <xs:sequence>
+                                 <xs:element name="auslandsanschrift"
+                                             minOccurs="0"
+                                             type="xiaa:Auslandsanschrift.Druckbild">
+                                    <xs:annotation>
+                                       <xs:documentation>Mit diesem Element wird die Auslandsanschrift der Fachkraft übermittelt.</xs:documentation>
+                                    </xs:annotation>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:extension>
+                        </xs:complexContent>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="familienangehoerige" minOccurs="0" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zu einer familienangehörigen Person übermittelt, die eine Fachkraft begleitet.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:complexContent>
+                           <xs:extension base="xauslaender:OZG.Person">
+                              <xs:sequence>
+                                 <xs:element name="auslandsanschrift"
+                                             minOccurs="0"
+                                             type="xiaa:Auslandsanschrift.Druckbild">
+                                    <xs:annotation>
+                                       <xs:documentation>Mit diesem Element werden Angaben zu einer, von der ausländischen Anschrift der beantragenden Fachkraft, abweichenden ausländischen Anschrift des Familienangehörigen übermittelt.</xs:documentation>
+                                    </xs:annotation>
+                                 </xs:element>
+                                 <xs:element name="familiaereBeziehung"
+                                             type="xauslaender:Code.OZG.FamiliaereBeziehungReferenzperson">
+                                    <xs:annotation>
+                                       <xs:documentation>Mit diesem Element wird die Art der familiären Beziehung zwischen der/dem Familienangehörigen und der Fachkraft aus der Perspektive der Familienangehörigen übermittelt.</xs:documentation>
+                                    </xs:annotation>
+                                 </xs:element>
+                              </xs:sequence>
+                           </xs:extension>
+                        </xs:complexContent>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="antragszusammenfassung"
+                              minOccurs="0"
+                              type="xauslaender:OZG.DokumentOderReferenz">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt das Eingabeverfahren die von ihm erstellte Antragszusammenfassung.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="nachweis"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.DokumentOderReferenzErweitert">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt das Eingabeverfahren Nachweise, die für die Antragstellung je nach Aufenthaltsgrund erforderlich sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="sonstigeAnmerkung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine Anmerkung zum Sachverhalt für die Ausländerbehörde übermittelt</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="angabenDokumentenlieferung"
+                              minOccurs="0"
+                              type="xauslaender:AngabenDokumentenlieferung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden Angaben zur Dokumentenlieferung übermittelt, sofern Dokumentreferenzen in dieser Nachricht enthalten sind.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Beendigung.130402">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§ 81a AufenthG</rechtsgrundlage>
+            <title>Beendigung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht informiert die abh über die Beendigung des Vorgangs.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="anlass" type="xauslaender:Code.OZG.AnlassBeendigung">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird der Anlass der Beendigung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anhang"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh Unterlagen im Zusammenhang mit der Beendigung des Verfahrens.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Vereinbarung.130403">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§ 81a AufenthG </rechtsgrundlage>
+            <title>Vereinbarung nach FEG</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh die Vereinbarung zur Durchführung des beschleunigten Fachkräfteverfahrens für den Arbeitgeber.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="vereinbarung" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh die Vereinbarung zur Durchführung des beschleunigten Fachkräfteverfahrens.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="mitteilung" minOccurs="0" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die Ausländerbehörde dem Arbeitgeber eine Mitteilung zur beiliegenden Vereinbarung.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.RueckmeldungVereinbarung.130404">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Eingabeverfahren</autor>
+            <leser>Ausländerbehörde (AZR)</leser>
+            <rechtsgrundlage>§§ 18a bis 21 AufenthG, § 66 Abs. 2 AufenthG, § 81a AufenthG und §§ 28 bis 36a AufenthG</rechtsgrundlage>
+            <title>Rückmeldung der Vereinbarung FEG</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das Eingabeverfahren die unterzeichnete Vereinbarung zur Durchführung des beschleunigten Fachkräfteverfahrens an die abh.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh.Antwort">
+               <xs:sequence>
+                  <xs:element name="vereinbarung" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die unterzeichnete Vereinbarung zur Durchführung des beschleunigten Fachkräfteverfahrens übermittelt. Dies kann als Foto oder Scan der unterschriebenen Vereinbarung sowie als elektronisch signierte PDF-Datei erfolgen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.BescheidAnerkennungsstelle.130405">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§ 81a AufenthG</rechtsgrundlage>
+            <title>Bescheid der Anerkennungsstelle</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh den Bescheid der für die Anerkennung zuständigen Stelle an das Eingabeverfahren.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="bescheid" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh den Bescheid der für die Anerkennung zuständigen Stelle.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="empfangsbestaetigung" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element übermittelt die abh die zu unterzeichnende Empfangsbestätigung für den Bescheid der für die Anerkennung zuständigen Stelle.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.BescheidEmpfangsbestaetigung.130406">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Eingabeverfahren</autor>
+            <leser>Ausländerbehörde (AZR)</leser>
+            <rechtsgrundlage>§ 81a AufenthG</rechtsgrundlage>
+            <title>Empfangsbestätigung FEG</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt das Eingabeverfahren die vom Arbeitgeber unterzeichnete Bestätigung des empfangenen Bescheids der für die Anerkennung zuständigen Stelle an die abh.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.BasisnachrichtAnAbh.Antwort">
+               <xs:sequence>
+                  <xs:element name="empfangsbestaetigung" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die unterzeichnete Empfangsbestätigung übermittelt. Dies kann als Foto oder Scan der unterschriebenen Empfangsbestätigung sowie als elektronisch signierte PDF-Datei erfolgen.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="OZG.Vorabzustimmung.130407">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Ausländerbehörde (AZR)</autor>
+            <leser>Eingabeverfahren</leser>
+            <rechtsgrundlage>§ 81a AufenthG</rechtsgrundlage>
+            <title>Vorabzustimmung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht übermittelt die abh die Vorabzustimmung an das Eingabeverfahren.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xauslaender:OZG.Basisnachricht.Antwort">
+               <xs:sequence>
+                  <xs:element name="vorabzustimmung" type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Vorabzustimmung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="anlage"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xauslaender:OZG.Dokument">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird eine Anlage zur Vorabzustimmung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

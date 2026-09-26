@@ -1,0 +1,5 @@
+<?xml version='1.0' encoding='utf-8'?>
+<catalog xmlns="urn:oasis:names:tc:entity:xmlns:xml:catalog">
+<rewriteSystem systemIdStartString="http://www.osci.de/xauslaender2611" rewritePrefix="de/osci/xauslaender/26.11/xsd/" />
+<rewriteSystem systemIdStartString="http://www.osci.de/xinneres" rewritePrefix="de/osci/xinneres/26.11/xsd/" />
+<rewriteSystem systemIdStartString="http://www.osci.de/xmeld2611" rewritePrefix="de/osci/xmeld/26.11/xsd/" /></catalog>

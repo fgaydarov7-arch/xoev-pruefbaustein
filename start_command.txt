@@ -1,0 +1,44 @@
+ 
+.venv\Scripts\uvicorn.exe app.main:app --reload --port 8000
+
+npm install
+npm run dev
+
+
+## 🚀 Quick Start
+
+### Prerequisites
+* Python 3.10+
+* Node.js 18+
+
+### 1. Backend Setup
+
+```bash
+# Clone repository and navigate to root
+git clone <your-repo-url>
+cd <repo-name>
+
+# Create & activate virtual environment
+# Windows:
+python -m venv .venv
+.venv\Scripts\activate
+
+# Linux/macOS:
+# python3 -m venv .venv
+# source .venv/bin/activate
+
+# Install dependencies
+pip install -r requirements.txt
+
+# Run FastAPI dev server
+.venv\Scripts\uvicorn.exe app.main:app --reload --port 8000
+
+
+# Frontand
+cd frontend
+
+# Install dependencies
+npm install
+
+# Start local development server
+npm run dev

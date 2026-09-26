@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Datenabruf nach § 34a BMG Ergebnisstatus</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden die Schlüssel zur Mitteilung des Ergebnisstatus der Auskunft für Datenabrufe nach 34a BMG definiert.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>datenabruf.ergebnisstatus</ShortName>
+      <LongName>Datenabruf nach § 34a BMG Ergebnisstatus</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:xoev-de:xmeld:codeliste:datenabruf.ergebnisstatus</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xmeld:codeliste:datenabruf.ergebnisstatus_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName/>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die betroffene Person wurde eindeutig identifiziert. Die Daten werden übermittelt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die betroffene Person wurde nicht eindeutig identifiziert. Es wird eine Trefferliste übermittelt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Die Person wurde nicht identifiziert oder es liegt eine Auskunftssperre vor. Sofern eine Auskunftssperre vorliegt, aber deren Schutzzweck einer Übermittlung der Daten nicht entgegensteht und nicht auf eine manuelle Bearbeitung der Anfrage verzichtet wurde, erfolgt diese nach Abschluss der Prüfung im manuellen Verfahren.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Es wird eine Ergebnisliste übermittelt.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

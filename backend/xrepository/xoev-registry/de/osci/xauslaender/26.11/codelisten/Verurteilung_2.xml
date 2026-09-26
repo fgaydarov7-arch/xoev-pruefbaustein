@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Verurteilung</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Verurteilung eines Ausländers nach § 95 Abs. 1 Nr.3 AufenthG oder nach § 95 Abs. 2 Nr.1 AufenthG, wegen unerlaubter Einreise oder unerlaubten Aufenthaltes.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-07-16</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Redaktionelle Anpassung von Langbeschreibung</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.VerurteilungWegenStraftatArt</ShortName>
+      <LongName>Art der Verurteilung auf Grund einer Straftat</LongName>
+      <Version>2</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:artderverurteilung</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:artderverurteilung_2</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="optional">
+         <ShortName>beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="langbeschreibung" Use="optional">
+         <ShortName>langbeschreibung</ShortName>
+         <LongName>Langbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Verurteilung nach § 95 Abs. 1 Nr. 3 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbeschreibung">
+            <SimpleValue>Verurteilung nach § 95 Abs. 1 Nr. 3 AufenthG, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Verurteilung nach § 95 Abs. 2 Nr. 1 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="langbeschreibung">
+            <SimpleValue>Verurteilung nach § 95 Abs. 2 Nr. 1 AufenthG, Löschdatum &lt;loeschdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,444 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>BZSt.fachliche.Fehlercodes</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Mit dieser Schlüsseltabelle werden fachlichen Rückweisungsgründe einer Nachricht im Datenaustausch mit dem Bundeszentralamt für Steuern dargestellt.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BZSt</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:versionDescription>Fehlerprüfungen der Prüfungsebene II für die XMeld-Version 3.1</xoev-cl-4:versionDescription>
+         <xoev-cl-4:validFrom>2022-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Hinweis zum neuen Fehlercode:
+30114 (gilt nur wenn das neue IdNr-Verfahren produktiv geht, da hier eine andere Nachrichtenverarbeitung im Kontext der Nachricht 0512 erfolgt)
+Änderungen sowie Anpassungen an bestehenden Fehlercodes:
+30016, 30054, 30056, 30057, 30061, 30062, 30068, 30072, 30076, 30078, 30079, 30080, 30081, 30083, 30084, 30087, 30088, 30089, 30091, 30095, 30099, 30100, 30103, 30104, 30105, 30106, 30107 und 30115 (siehe Legende zum Fehlerkatalog).</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>BZSt.fachliche.Fehlercodes</ShortName>
+      <LongName>BZSt.fachliche.Fehlercodes</LongName>
+      <Version>2022-05-09</Version>
+      <CanonicalUri>urn:de:bund:bzst:schluessel:fachliche.fehlercodes</CanonicalUri>
+      <CanonicalVersionUri>urn:de:bund:bzst:schluessel:fachliche.fehlercodes_2022-05-09</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundeszentralamt für Steuern</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="Fehlercode" Use="required">
+         <ShortName>Fehlercode</ShortName>
+         <LongName>Fehlercode</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Fehlertext" Use="required">
+         <ShortName>Fehlertext</ShortName>
+         <LongName>Fehlertext ergaenzende Hinweise</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="FehlercodeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>FehlercodeKey</ShortName>
+         <ColumnRef Ref="Fehlercode"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30001</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Als zuständig ist die Gemeinde mit dem AGS XXXXXXXX gespeichert.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30008</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Doppelte Erstlieferung des VBM.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30016</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Im Datensatz zur übermittelten IdNr/VBM (so wie beim BZSt gespeichert) ist ein anderes Geburtsdatum enthalten.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30028</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Das Sterbedatum liegt in der Zukunft.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30054</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Der Ereigniszeitpunkt der Nachricht liegt vor der Anforderung der IdNr.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30055</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Es liegt keine zugrundeliegende Nachricht 0501, 0516, 0517, 0520 oder 0522 vor.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30056</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Bekanntgabe der IdNr. durch Nachricht 0501 ist noch nicht erfolgt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30057</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Übermittlung einer Zuständigkeits(end)nachricht konnte nicht verarbeitet werden, da der Ereigniszeitpunkt dieser Nachricht vor dem Ereigniszeitpunkt einer bereits verarbeiteten anderen Nachricht liegt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30061</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Nachricht ist nicht prozesskonform, da der Betroffene abgemeldet oder als verstorben gemeldet ist. Soll die Zuständigkeit für den Betroffenen erlangt werden, so ist mit einer Nachricht 0500 die IdNr anzufordern.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30062</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Nachricht enthält bei der zu stornierenden als auch bei der im Bestand fortgeführten Person das gleiche VBM/IdNr.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30065</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Das Zuständigkeits- oder Einzugs- oder Zuständigkeitsendedatum liegt in der Zukunft.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30068</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Nachricht 0510 mit den Schlüsseln 01 bis 04 und 09 darf nicht auf eine Nachricht 0510 folgen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30072</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Es liegt einer aktuellere Nachricht 0500, 0502, 0504, 0510, 0515 oder 0523 liegt vor, die Stornierung kann daher nicht verarbeitet werden.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30076</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die IdNr./VBM des Ehegatten/Lebenspartner/Kind ist identisch mit der IdNr./VBM des Betroffenen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30078</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Nachricht 0510 mit Schlüssel 10 konnte nicht eindeutig zugeordnet werden. Das Sterbedatum wurde nicht korrigiert! Bitte wenden Sie sich zur Klärung des Sachverhalts an das BZSt mit Nachricht 0905.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30079</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Zuständigkeit für den Betroffenen ist nicht gegeben.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30080</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Zum Betroffenen ist ein Konflikt anhängig. Die Nachricht 0510 mit Schüssel 09 ist in diesem Fall nicht zulässig. Soll eine irrtümliche Anforderung zurückgenommen werden beantworten Sie bitte den Konflikt mit Nachricht 0511.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30081</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Der Betroffene wurde erstmalig angemeldet. Die Nachricht 0510 mit Schlüssel 09 ist in diesem Fall nicht zulässig. Ist in diesem Fall eine irrtümliche Anmeldung erfolgt, so ist die IdNr mit Nachricht 0507 zu stornieren.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30083</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die IdNr/VBM des Ehegatten/Lebenspartner/Kindes ist nicht oder nicht mehr bekannt. Bitte übermitteln Sie erneut eine Änderungsnachricht mit den zutreffenden Angaben zum EhegattenLebenspartner/Kind.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30084</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Zum Betroffenen ist ein Konflikt anhängig. Die Nachricht 0507 ist in diesem Fall nicht zulässig. Soll eine irrtümliche Anforderung zurückgenommen werden beantworten Sie bitte den Konflikt mit Nachricht 0511.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30085</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Das Ende der Zuständigkeit liegt vor dem 01.07.2007. Bitte prüfen Sie, ob die Übermittlung zurecht erfolgte und übermitteln Sie zur Bestätigung eine Nachricht 0905.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30086</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Zum Betroffenen wurde eine ausländische oder unbekannte Anschrift übermittelt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30087</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Im Datensatz zur übermittelten IdNr/VBM des Ehegatten/Lebenspartner/Kind (so wie beim BZSt gespeichert) ist ein anderes Geburtsdatum enthalten.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30088</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die IdNr./VBM des Kindes ist identisch mit der IdNr./VBM des Ehegatten/Lebenspartner bzw. anderen Kindes.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30089</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die übermittelte Nachricht würde sich zwischen einer Abmeldung und einer aktuellen Wiederanmeldung einsortieren und kann daher nicht verarbeitet werden.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30090</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Zum in der Nachricht angegebenen Ereigniszeitpunkt waren Sie nicht zuständig. Aktuell ist die Gemeinde mit dem AGS xxxxxxxx zuständig.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30091</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Der in der Nachricht 0510 angegebene Ereigniszeitpunkt liegt vor dem Ereigniszeitpunkt aus einer Nachricht 0504, 0515 oder 0523.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30094</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Rücknahme einer Sterbemitteilung ist mit der Anforderungsart der IdNr (0500 Schlüssel 02, 06 oder 09) die zum Konflikt geführt hat nicht zulässig. Die Rücknahme einer Sterbemitteilung kann nur mit Nachricht 0500 Schlüssel 08 erfolgen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30095</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Nachricht 0510 mit den Schlüsseln 01 bis 04 und 09 kann fachlich nicht mehr verarbeitet werden, da nachfolgend bereits eine Nachricht 0510 verarbeitet wurde.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30096</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Rücknahme einer Abmeldung kann nur erfolgen wenn die betroffene Person eindeutig identifiziert werden kann und eine Abmeldung im aktuellen Datensatz gespeichert ist. Fordern Sie die IdNr ggf. mit der zutreffenden Anforderungsart erneut an.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30097</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Rücknahme eines Sterbefalls kann nur erfolgen wenn die betroffene Person eindeutig identifiziert werden kann und ein Sterbedatum im aktuellen Datensatz gespeichert ist. Fordern Sie die IdNr ggf. mit der zutreffenden Anforderungsart erneut an.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30098</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Nachricht 0510 mit Schlüssel 10 konnte nicht verarbeitet werden, da bereits eine Nachricht 0510 mit nachfolgendem Ereigniszeitpunkt verarbeitet wurde.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30099</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Zuständigkeit für die betroffene Person wurde mit Nachricht 0510 beendet. Diese Tatsache entbindet die zuständige Meldebehörde nicht von der Beantwortung der Konfliktnachricht.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30100</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die betroffene Person kann in der IdNr-Datenbank nicht storniert werden, da eine steuerliche Zuständigkeit besteht.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30101</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Nachricht 0510 mit Schlüssel 01-03 und 09 darf kein Sterbedatum enthalten.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30102</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Nachricht wurde mit dem übermittelten Ereigniszeitpunkt für die betroffene Person bereits verarbeitet.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30103</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Daten zur betroffenen Person enthalten weder einen Vor- noch einen Nachnamen. Für die betroffene Person kann keine IdNr vergeben werden. Bitte fordern Sie die IdNr erneut an wenn ein Name bekannt ist.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30104</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die IdNr befindet sich nicht im Bestand.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30105</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Das VBM befindet sich nicht im Bestand.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30106</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Zur betroffenen Person wurde ein Kind übermittelt das älter ist als die betroffene Person.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30107</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Nachricht 0510 mit Schlüssel 04, 09 oder 10 kann nicht verarbeitet werden, da bereits eine Nachricht 0500 oder 0523 als nachfolgende Nachricht für die betroffene Person verarbeitet wurde.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30108</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Nachricht 0512 führt nicht zu einem Zuständigkeitswechsel, da zum Datensatz bereits eine Nachricht 0510 als nachfolgende Nachricht verarbeitet wurde. Bitte lösen Sie den Konflikt mit Nachricht 0511 und fordern Sie erneut eine IdNr an.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30109</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Das angegebene Erinnerungskennzeichen der Nachricht 0523 ist dem BZSt nicht bekannt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30112</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Das Konfliktkennzeichen ist nicht oder nicht mehr bekannt. Sie müssen nichts weiter unternehmen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30113</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Der Auslöser des Konfliktes oder die konfliktbeteiligte Person ist in diesem Konflikt nicht beteiligt. Es liegt ggf. eine falsche Zuordnung vor.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30114</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Nachricht 0512 führt nicht zu einem Zuständigkeitswechsel, da zum Datensatz bereits eine aktuellere Bruttonachricht als nachfolgende Nachricht verarbeitet wurde. Bitte lösen Sie den Konflikt mit Nachricht 0511 und fordern Sie ggf. erneut eine IdNr an.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30115</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die betroffene Person, für die der auswärtige Ehegatte/Lebenspartner angefragt wurde, ist abgemeldet oder verstorben.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30116</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Der quittungsrelevante Sachverhalt konnte nicht verarbeitet werden, da die zugrunde liegende Nachricht mit dem Fehlercode XXXXX zurückgewiesen wurde. Bitte übermitteln Sie den Sachverhalt erneut.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="Fehlercode">
+            <SimpleValue>30117</SimpleValue>
+         </Value>
+         <Value ColumnRef="Fehlertext">
+            <SimpleValue>Die Quittungsnachricht wurde nicht von der zuständigen Meldebehörde übermittelt. Die Quittung wird von der Gemeinde mit dem AGS XXXXXXXX erwartet.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-2="http://xoev.de/schemata/genericode/2"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-2:nameKurz>Abschlusstestdaten Sprachkurs</xoev-cl-2:nameKurz>
+         <xoev-cl-2:beschreibung-codeliste>Diese Liste enthält Abschlusstestdaten von Sprachkursen, die im Bereich Integration übermittelt werden. Es ist die jeweils aktuellste Version zu verwenden, welche im XRepository veröffentlicht ist.
+            Update am 26.04.2023: Diese Codeliste wurde von der KoSIT angepasst um Konformität mit Codelistenregelungen herzustellen. Es gibt keine inhaltlichen Änderungen. 
+         </xoev-cl-2:beschreibung-codeliste>
+         <xoev-cl-2:beschreibung-versionCodeliste>Update am 26.04.2023: Diese Codeliste wurde von
+            der KoSIT angepasst um Konformität mit Codelistenregelungen herzustellen. Es gibt keine
+            inhaltlichen Änderungen.</xoev-cl-2:beschreibung-versionCodeliste>
+         <xoev-cl-2:herausgebernameKurz>BAMF-Integration</xoev-cl-2:herausgebernameKurz>
+         <xoev-cl-2:datumGueltigkeitAb>2020-05-01</xoev-cl-2:datumGueltigkeitAb>
+         <xoev-cl-2:versionXOEVHandbuch>2.1</xoev-cl-2:versionXOEVHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>abschlusstestdatensprache</ShortName>
+      <LongName>Abschlusstestdaten Sprachkurs im Bereich Integration</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:int:abschlusstestdatensprache</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:int:abschlusstestdatensprache_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migration und Flüchtlinge, Integration</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="optional">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-2:xoev-code/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>113</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>unter A2</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>114</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>A2</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>115</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>B1</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>140</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>unter B1 (nur für B1-Test)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

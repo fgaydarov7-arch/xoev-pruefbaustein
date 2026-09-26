@@ -1,0 +1,1060 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:xmeld="http://www.osci.de/xmeld2611"
+           xmlns:din91379="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"
+           xmlns:xiaz="http://www.osci.de/xinneres/azrnummer/3"
+           xmlns:xicgvz="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3"
+           xmlns:xida="http://www.osci.de/xinneres/datum/2"
+           xmlns:xig="http://www.osci.de/xinneres/geschlecht/1"
+           xmlns:xiid="http://www.osci.de/xinneres/idnr/2"
+           xmlns:xima="http://www.osci.de/xinneres/meldeanschrift/5"
+           targetNamespace="http://www.osci.de/xmeld2611"
+           version="26.11"
+           elementFormDefault="qualified"
+           attributeFormDefault="unqualified">
+   <xs:annotation>
+      <xs:appinfo>
+         <standard>
+            <nameLang>XMeld</nameLang>
+            <nameKurz>XMeld</nameKurz>
+            <nameTechnisch>xinneres.xmeld</nameTechnisch>
+            <kennung>urn:xoev-de:kosit:standard:xinneres.xmeld</kennung>
+            <beschreibung>OSCI–XMeld ist das XInneres-Fachmodul der Innenverwaltung für den elektronischen Datenaustausch
+im Meldewesen und mit dem Meldewesen. Es ist Kern eines elektronischen Informationsverbundes zwischen
+den Meldebehörden und den Kommunikationspartnern der Meldebehörden. Weitere Bestandteile
+des elektronischen Informationsverbundes sind die Intermediäre und Clearingstellenbetreiber, deren
+Aufgabe die Übermittlung und Zustellung der XMeld-Nachrichten ist. Für die Übermittlung wird OSCITransport
+genutzt. Für die Zustellung und Adressierung der XMeld-Nachrichten das Deutsche Verwaltungsdienste-
+Verzeichnis (DVDV).
+Entwickelt wird OSCI–XMeld durch ein Expertengremium mit Vertreterinnen und Vertretern aus der
+Verwaltung und von Verfahrensherstellern. Die Koordnierungsstelle für IT-Standards (KoSIT) ist dabei
+federführend. Auftraggeber für die Erstellung und Weiterentwicklung ist der Arbeitskreis I (AK I) der
+Innenministerkonferenz (IMK).
+Seit 2007 ist OSCI–XMeld im praktischen Einsatz für die Kommunikation von und mit den Meldebehörden
+und wird seit dem kontinuierlich weiterentwickelt und an geänderte rechtliche Vorgaben angepasst.
+Zur Einführung des Bundesmeldegesetzes wurde OSCI–XMeld vollständig überarbeitet und setzt die
+Anforderungen des Bundesmeldegesetzes in der praktischen Datenübermittlung um.</beschreibung>
+         </standard>
+         <versionStandard>
+            <version>26.11</version>
+            <versionXOEVProfil>3.0.3</versionXOEVProfil>
+            <versionXOEVHandbuch>2.4</versionXOEVHandbuch>
+            <versionXGenerator>3.0.1</versionXGenerator>
+            <versionModellierungswerkzeug>19.0 SP4</versionModellierungswerkzeug>
+            <nameModellierungswerkzeug>MagicDraw</nameModellierungswerkzeug>
+         </versionStandard>
+         <title>Datenübermittlung an zentrale Register</title>
+      </xs:appinfo>
+   </xs:annotation>
+   <xs:include schemaLocation="xmeld-nachrichten-basistypen.xsd"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/azrnummer/3/xinneres-azrnummer.xsd"
+              namespace="http://www.osci.de/xinneres/azrnummer/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3/xinneres-codes-gemeindeverzeichnis.xsd"
+              namespace="http://www.osci.de/xinneres/codes/gemeindeverzeichnis/3"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/datum/2/xinneres-datum.xsd"
+              namespace="http://www.osci.de/xinneres/datum/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/geschlecht/1/xinneres-geschlecht.xsd"
+              namespace="http://www.osci.de/xinneres/geschlecht/1"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/idnr/2/xinneres-idnr.xsd"
+              namespace="http://www.osci.de/xinneres/idnr/2"/>
+   <xs:import schemaLocation="http://www.osci.de/xinneres/meldeanschrift/5/xinneres-meldeanschrift.xsd"
+              namespace="http://www.osci.de/xinneres/meldeanschrift/5"/>
+   <xs:import schemaLocation="https://xoev.de/schemata/din/91379/2022-08/din-norm-91379-datatypes.xsd"
+              namespace="urn:xoev-de:kosit:xoev:datentyp:din-91379_2022-08"/>
+   <xs:complexType name="type.XMeldIT.GesetzlicherVertreter">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>XMeldIT-Darstellung des beigeschriebenen gesetzlichen Vertreters der betroffenen Person.</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datebtyp werden Daten zum gesetzlichen Vertreter im Kontext der Datenübermittlung an zentrale Register abgebildet. Er trennt die Varianten natürlicher und juristischer Vertreter deutlicher als der allgemeine Datentyp type.GesetzlicherVertreter.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="person">
+            <xs:annotation>
+               <xs:documentation>Da der gesetzliche Vertreter entweder eine natürliche oder eine juristische Person sein kann, ist dieses Element als xsd:choice definiert.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:choice>
+                  <xs:element name="natuerlicheperson">
+                     <xs:annotation>
+                        <xs:documentation>Der gesetzliche Vertreter ist eine natürliche Person.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="daten"
+                                       type="xmeld:type.xmeldit.GesetzlicherVertreterOhneSchluesselUndBeendigung">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element werden die im Melderegister gespeicherten Daten des gesetzlichen Vertreters mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                           <xs:element name="referenz"
+                                       type="xmeld:type.XMeldIT.Identifikation.BetroffenePerson">
+                              <xs:annotation>
+                                 <xs:documentation>Mit diesem Element wird ein Verweis auf den Personendatensatz des gesetzlichen Vertreters im zentralen Register mitgeteilt.</xs:documentation>
+                              </xs:annotation>
+                           </xs:element>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+                  <xs:element name="juristischeperson" type="xmeld:type.xmeldit.juristischeperson">
+                     <xs:annotation>
+                        <xs:documentation>Der gesetzliche Vertreter ist eine juristische Person.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:choice>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="zusatzinformation" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Über dieses Element können zusätzliche Informationen zur Art der gesetzlichen Vertretung übermittelt werden.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="gesetzlichervertreterschluessel"
+                              type="xmeld:Code.Gesetzlicher.Vertreter">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird die Art der Vertretung übermittelt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="tagDerBeendigung" minOccurs="0" type="xida:Tagesdatum">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird, sofern vorhanden, das Datum übermittelt, an dem die gesetzliche Vertretung bzw. das Betreuungsverhältnis endet.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.XMeldIT.Identifikation.BetroffenePerson">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur eindeutigen Identifizierung einer Person über Gemeindeschlüssel und Ordnungsmerkmal</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Typ dient der eindeutigen Identifikation der betroffenen Person. Auf der Basis von Gemeindekennzeichen gemeindeschluessel und dem von der Meldebehörde vergebenen Ordnungsmerkmal wird eine Person eindeutig identifiziert.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="gemeindeschluessel"
+                     type="xicgvz:Code.GemeindeVZ.AmtlicherGemeindeschluessel">
+            <xs:annotation>
+               <xs:documentation>Gemeindeschlüssel der Gemeinde, in der die betroffene Person gemeldet ist. Der Gemeindeschlüssel wird vom zentral geführten Register mit dem entsprechenden Eintrag im Nachrichtenkopf (Organisations-ID im Organisationsschlüssel im Element nachrichtenkopf.g2g/autor/kennung) abgeglichen. Wenn die beiden Werte nicht übereinstimmen, wird der betroffene Datensatz zurückgewiesen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ordnungsmerkmal" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Hier ist das aktuelle Ordnungsmerkmal der betroffenen Person einzutragen, welches von der Meldebehörde für Identifikationszwecke des Datensatzes vergeben wurde.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.XMeldIT.Landescontainer">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur Aufnahme von Daten, die nur in einzelnen Bundesländern übermittelt werden dürfen</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Daten, die nur in einzelnen Bundesländern übermittelt werden (festgelegt in den landesspezifischen Teilen des DSMeld) abgebildet. Alle Kindelemente optional ausgeführt und werden durch landesinterne Regelungen aktiviert.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="zuzug.bezirk" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element kann der Tag des Zuzugs in den Regierungsbezirk übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nicht.meldepflichtig"
+                     minOccurs="0"
+                     fixed="true"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass die Person nicht meldepflichtig ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachweis.akademischer.grad"
+                     minOccurs="0"
+                     type="xmeld:type.xmeldit.nachweis.akademischer.grad">
+            <xs:annotation>
+               <xs:documentation>Kennzeichnung des Nachweises des Doktorgrades.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nachbeurkundung.ehe.oder.lebenspartnerschaft"
+                     minOccurs="0"
+                     type="xmeld:type.xmeldit.nachbeurkundung.ehe.oder.lebenspartnerschaft"/>
+         <xs:element name="untersuchungsberechtigungsschein"
+                     minOccurs="0"
+                     type="xmeld:type.XMeldIT.Untersuchungsberechtigungsschein"/>
+         <xs:element name="zusatzfeld" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+               <xs:documentation>Offener Landescontainer. Hier können landesspezifische Felder, die nicht im Landescontainer spezifiziert sind, übermittelt werden. Die hier verwendeten Felder sollten jedoch über einen xmeld-ChangeRequest spezifiziert und in den Landescontainer integriert werden.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:sequence>
+                  <xs:element name="feldname" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Name des Zusatzfeldes</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="feldinhalt" maxOccurs="unbounded" type="din91379:datatypeC">
+                     <xs:annotation>
+                        <xs:documentation>Inhalt, Wert des Zusatzfeldes</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:sequence>
+            </xs:complexType>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.XMeldIT.Untersuchungsberechtigungsschein">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Untersuchungsberechtigungsschein</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zu einem für die Person ausgegebenen Untersuchungsberechtigungsschein abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="art.der.untersuchung"
+                     type="xmeld:Code.XMeldIT.Art.der.Untersuchung">
+            <xs:annotation>
+               <xs:documentation>Die Art der Untersuchung, für die der Untersuchungsberechtigungsschein gilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="datumDerAusstellung" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum der Ausstellung des Untersuchungsberechtigungsscheins übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="datumDerGueltigkeit" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum, an dem die Gültigkeit des Untersuchungsberechtigungsscheins endet, übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="nummer" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Die Nummer des Untersuchungsberechtigungsscheins.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.XMeldIT.WohnungOhneAnschrift">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Hilfstyp zur Unterstützung der Darstellung der XMeldIT-Wohnung</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden Informationen zur Wohnung ohne Informationen zur Anschrift im Kontext der Datenübermittlung an zentrale Register abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:restriction base="xmeld:type.Wohnung">
+            <xs:sequence>
+               <xs:element name="datumAbmeldungBeiAnmeldebehoerde"
+                           minOccurs="0"
+                           type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum der tatsächlichen Abmeldung durch den Meldepflichtigen übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumAnmeldungBeiAnmeldebehoerde"
+                           minOccurs="0"
+                           type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum der tatsächlichen Anmeldung durch den Meldepflichtigen übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumDerAbmeldungVonAmtsWegen"
+                           minOccurs="0"
+                           type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum der Abmeldung von Amts wegen übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumDerAnmeldungVonAmtsWegen"
+                           minOccurs="0"
+                           type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum der Anmeldung von Amts wegen übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumDesAuszugs"
+                           minOccurs="0"
+                           type="xida:TeilbekanntesDatumMitUnbekannt">
+                  <xs:annotation>
+                     <xs:appinfo>
+                        <implementationHint>Der DSMeld erlaubt für dieses Datum keine nur teilweise bekannte oder unbekannte Angabe eines Auszugsdatums. Die Möglichkeit der Angabe eines teilweise bekannten oder unbekannten Datums für inaktuelle Wohnungen, zu denen das Auszugsdatum fehlt oder nur nicht vollständig vorliegt, wird in XMeld aber geschaffen, da in der Praxis nicht immer ein vollständiges Datum vorliegt.</implementationHint>
+                     </xs:appinfo>
+                     <xs:documentation>Mit diesem Element wird das Datum des Auszugs aus der Wohnung übermittelt. Besteht nach dem Auszug aus der Wohnung keine Wohnung mehr im Zuständigkeitsbereich der Meldebehörde, so ist das Auszugsdatum identisch mit dem Wegzugsdatum aus dem Zuständigkeitsbereich der Meldebehörde (siehe auch DSMeld-Blatt 1306).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumDesBeziehens"
+                           minOccurs="0"
+                           type="xida:TagesdatumMitUnbekannt">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum des Beziehens der Wohnung übermittelt; vgl. Blatt 1301.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumDesWohnungsstatuswechselsVonAmtsWegen"
+                           minOccurs="0"
+                           type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum des Wohnungsstatuswechsels von Amts wegen übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumMitteilungWohnungsstatuswechsel"
+                           minOccurs="0"
+                           type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum der tatsächlichen Mitteilung des Wohnungsstatuswechsels durch die betroffene Person übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumDesWohnungsstatuswechsels"
+                           minOccurs="0"
+                           type="xida:Tagesdatum">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird das Datum des Wirksamwerdens des neuen Wohnungsstatus übermittelt (siehe DSMeld-Blatt 1301a).</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="statusderwohnung"
+                           minOccurs="0"
+                           type="xmeld:Code.Wohnungsstatus">
+                  <xs:annotation>
+                     <xs:documentation>Es ist anzugeben, ob es sich bei der Wohnung um die alleinige bzw. die Haupt- oder eine Nebenwohnung handelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="artderwohnung" minOccurs="0" type="xmeld:Code.Wohnungsart">
+                  <xs:annotation>
+                     <xs:documentation>Die Art der Wohnung. Einzutragen bei Wohnungen, die sich außerhalb des Zuständigkeitsbereichs der Meldebehörde befinden .</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="datumLetzterWegzugAusland"
+                           minOccurs="0"
+                           type="xida:TeilbekanntesDatumMitUnbekannt">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird bei Zuzug aus dem Ausland das Datum des letzten Wegzugs in das Ausland übermittelt. Das Datum ist identisch mit dem bei der Wegzugsmeldebehörde der letzten Wohnung im Inland erfassten Auszugdatum. Sofern das vollständige Datum vorliegt, ist das Element jahrMonatTag zu befüllen, sofern die Tagesangabe fehlt, das Element jahrMonat, sofern die Tagesangabe und die Monatsangabe fehlen, das Element jahr und sofern alle Angaben zum Datum fehlen, das Element unbekannt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:restriction>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.GesetzlicherVertreterOhneSchluesselUndBeendigung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>XMeldIT-Ableitung vom allgemeinen Datentyp type.GesetzlicherVertreter</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Typ bildet den allgemeinen Datentyp type.GesetzlicherVertreter ab, blendet dabei aber zwei Elemente aus, die im XMeldIT-Kontext an anderer Stelle bereits dargestellt werden. Ist in die XMeldIT-Darstellung des gesetzlichen Vertreters eingebunden.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="name"
+                     type="xmeld:type.NameNatuerlichePerson.GesetzlicherVertreter">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Namensinformationen des gesetzlichen Vertreters übermittelt (siehe DSMeld-Blätter 0902a, 0904, 0905).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburt" minOccurs="0" type="xmeld:type.Geburtsdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Geburtsdatum des gesetzlichen Vertreters übermittelt (siehe DSMeld-Blatt 0906).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" minOccurs="0" type="xig:Code.Geschlecht">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Geschlecht des gesetzlichen Vertreters übermittelt (siehe DSMeld-Blatt 0917).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anschrift" type="xmeld:type.AnschriftMelderechtMitSperrvermerk">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift des gesetzlichen Vertreters sowie ein bedingter Sperrvermerk übermittelt (siehe DSMeld-Blätter 1200 - 1212, 0907a, 1801a).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sterbetag" minOccurs="0" type="xmeld:type.Sterbetag">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Sterbedatum des gesetzlichen Vertreters übermittelt (siehe DSMeld-Blatt 0915).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="auskunftssperre"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.Auskunftssperre">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Auskunftssperren zum gesetzlichen Vertreter übermittelt (siehe DSMeld-Blätter 0918, 0919). Im Element grund sind nur die Schlüssel 3 und 11 zulässig.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="idNr" minOccurs="0" type="xiid:Identifikationsnummer">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Identifikationsnummer nach § 139b der Abgabenordnung des gesetzlichen Vertreters übermittelt (siehe DSMeld-Blatt 2709).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="type.xmeldit.art.der.lieferung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Art der Lieferung</title>
+         </xs:appinfo>
+         <xs:documentation>Aufzählung der vorgesehenen Lieferungsarten.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:pattern value="gesamtlieferung|deltalieferung"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="type.xmeldit.datensatzloeschung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur Datensatzlöschung</title>
+         </xs:appinfo>
+         <xs:documentation>Das Element wird übermittelt, um einen Datensatz aus dem zentralen Register zu entfernen. Es enthält nur die Identifikationsmerkmale des zu löschenden Personendatensatzes.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="identifikation.ereignis"
+                     type="xmeld:type.Identifikation.Ereignis">
+            <xs:annotation>
+               <xs:documentation>Dieses Element dient der eindeutigen Kennzeichnung der einzelnen Datensätze innerhalb einer Lieferung. In der Quittierungsnachricht wird die satzid zur Identifikation der fehlerhaften Datensätze wiedergegeben. Im Kindelement ereigniszeitpunkt ist der Zeitpunkt zu übermitteln, an welchem der Datensatz im Melderegister geändert wurde.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="identifikation.betroffeneperson"
+                     type="xmeld:type.XMeldIT.Identifikation.BetroffenePerson"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.juristischeperson">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Die Juristische Person im xmeldit-Kontext</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element wird eine juristische Person im xmeldit-Kontext beschrieben.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="bezeichnung" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>An diese Stelle ist die Bezeichnung der juristischen Person zu setzen, die die Rolle der gesetzlichen Vertretung einnimmt, z. B. Jugendamt Kreuzberg von Berlin.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="anschrift" type="xima:Meldeanschrift">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Anschrift der juristischen Person mitgeteilt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.lieferdatensatz">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp für die Übermittlung der Personendaten an das zentral geführte Register</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp bildet die Grundlage für den Lieferdatensatz an das zentral geführte Register. Er bildet die betroffene Person sowie deren Beziehungen zu den mit ihr verknüpften Personen (beigeschriebene Personen) nach Landesrecht ab. Darüber hinaus enthält er Elemente zur Darstellung des Anlasses der Übermittlung und zur eindeutigen Identifikation des Datensatzes in der Liefernachricht.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="identifikation.ereignis"
+                     type="xmeld:type.Identifikation.Ereignis">
+            <xs:annotation>
+               <xs:documentation>Dieses Element dient der eindeutigen Kennzeichnung der einzelnen Datensätze innerhalb einer Lieferung. In der Quittierungsnachricht wird die satzid zur Identifikation der fehlerhaften Datensätze wiedergegeben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="uebermittlungsanlass"
+                     minOccurs="0"
+                     type="xmeld:Code.XMeldIT.Aenderungsart">
+            <xs:annotation>
+               <xs:documentation>Über dieses Element kann mitgeteilt werden, was der Anlass für die Übermittlung des Datensatzes ist. Dieses Element darf nur dann fehlen, wenn das zentrale Register den Übermittlungsanlass nicht benötigt oder im Element landesspezifischerUebermittlungsanlass ein durch Landesrecht bestimmter Übermittlungsanlass vorliegt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="landesspezifischerUebermittlungsanlass"
+                     minOccurs="0"
+                     type="xmeld:Code.XMeldIT.Uebermittlungsanlass.Landesspezifisch">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element kann ein durch Landesrecht bestimmter Übermittlungsanlass übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="identifikation.betroffeneperson"
+                     type="xmeld:type.XMeldIT.Identifikation.BetroffenePerson"/>
+         <xs:element name="personendaten" type="xmeld:type.xmeldit.natuerlicheperson">
+            <xs:annotation>
+               <xs:documentation>In diesem Element wird der Gesamtabzug der personenbezogenen Daten übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="partner" minOccurs="0">
+            <xs:annotation>
+               <xs:documentation>Falls dieses Element übermittelt wird, sind darin die Daten des Ehegatten oder Lebenspartners enthalten.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:choice>
+                  <xs:element name="daten" type="xmeld:type.Partner">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die im Melderegister gespeicherten Daten des Ehegatten bzw. Lebenspartners mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="referenz"
+                              type="xmeld:type.XMeldIT.Identifikation.BetroffenePerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird ein Verweis auf den Personendatensatz des Ehegatten bzw. Lebenspartners im zentralen Register mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:choice>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="kind" minOccurs="0" maxOccurs="unbounded">
+            <xs:annotation>
+               <xs:documentation>Falls dieses Element übermittelt wird, sind darin die Daten eines Kindes enthalten. Stiefkinder sind nicht mit zu übermitteln.</xs:documentation>
+            </xs:annotation>
+            <xs:complexType>
+               <xs:choice>
+                  <xs:element name="daten" type="xmeld:type.Kind">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element werden die im Melderegister gespeicherten Daten des Kindes mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="referenz"
+                              type="xmeld:type.XMeldIT.Identifikation.BetroffenePerson">
+                     <xs:annotation>
+                        <xs:documentation>Mit diesem Element wird ein Verweis auf den Personendatensatz des Kindes im zentralen Register mitgeteilt.</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+               </xs:choice>
+            </xs:complexType>
+         </xs:element>
+         <xs:element name="gesetzlichervertreter"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.XMeldIT.GesetzlicherVertreter">
+            <xs:annotation>
+               <xs:documentation>Falls dieses Element übermittelt wird, sind darin die Daten eines gesetzlichen Vertreters enthalten.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="type.xmeldit.nachbeurkundung.ehe.oder.lebenspartnerschaft">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachbeurkundung Ehe oder Lebenspartnerschaft</title>
+         </xs:appinfo>
+         <xs:documentation>Ist ein Antrag auf Nachbeurkundung einer im Ausland geschlossenen Ehe oder Lebenspartnerschaft gestellt worden, so ist dies anzugeben.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:pattern value="1"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="type.xmeldit.nachrichtenidentifikation">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachrichtenidentifikation</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element ist die genaue Identifikation einer Nachricht möglich.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="paketierung" type="xmeld:type.paketierung"/>
+         <xs:element name="gemeinde" type="xmeld:type.Gemeinde">
+            <xs:annotation>
+               <xs:documentation>Die mit dem Datentyp type.xmeldit.nachrichtenidentifikation zu identifizierenden Nachrichten zwischen Meldebehörde und zentral geführtem Register werden jeweils für eine einzelne Gemeinde aus dem Zuständigkeitsbereich der Meldebehörde erstellt. In diesem Element wird die liefernde bzw. empfangende Gemeinde angegeben.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:simpleType name="type.xmeldit.nachweis.akademischer.grad">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Nachweis des akademischen Grades</title>
+         </xs:appinfo>
+         <xs:documentation>Datentyp für die Kennzeichnung des Nachweises des Doktorgrades.</xs:documentation>
+      </xs:annotation>
+      <xs:restriction base="din91379:datatypeC">
+         <xs:pattern value="\d{1}"/>
+      </xs:restriction>
+   </xs:simpleType>
+   <xs:complexType name="type.xmeldit.natuerlicheperson">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Die Natürliche Person im Kontext der Datenübermittlung an zentral geführte Register</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Daten einer Person, die für die Übermittlung an das zentral geführte Register verwendet werden dürfen, abgebildet. Der tatsächlich zu liefernde Datenumfang wird durch die Vorschriften des jeweiligen Landes geregelt.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="auskunftssperre"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.Auskunftssperre">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Auskunftssperren nach § 51 BMG und Übermittlungssperren übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="namenatuerlicheperson"
+                     type="xmeld:type.NameNatuerlichePersonMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Namen der Person sowie Nachweisdaten zu ggf. vorliegenden früheren Namen übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="familienstand"
+                     minOccurs="0"
+                     type="xmeld:type.FamilienstandMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Daten zum Familienstand sowie Nachweisdaten dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburt" type="xmeld:type.GeburtMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Daten Geburt der Person sowie Nachweisdaten dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="religion" minOccurs="0" type="xmeld:type.ReligionMitDatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Informationen zur Zugehörigkeit einer Person zu einer öffentlich-rechtlichen Religionsgesellschaft sowie das Datum eines Ein- oder Austritts übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="staatsangehoerigkeit"
+                     minOccurs="0"
+                     maxOccurs="4"
+                     type="xmeld:Code.Staatsangehoerigkeit">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Daten zur Staatsangehörigkeit der betroffenen Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="staatsangehoerigkeit.glaubhaftmachung"
+                     minOccurs="0"
+                     maxOccurs="2"
+                     type="xmeld:type.Staatsangehoerigkeit.Glaubhaftmachung">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Daten zur Glaubhaftmachung des Erwerbs oder des Verlusts der deutschen Staatsangehörigkeit der betroffenen Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="tod" minOccurs="0" type="xmeld:type.TodMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zum Tod der Person sowie Nachweisdaten dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="wahlausschluss"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.WahlausschlussMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zum Ausschluss einer Person vom Wahlrecht oder von der Wählbarkeit sowie Nachweisdaten dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ausweisdokument"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.Ausweisdokument">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zum Ausweisdokument der Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="passversagung"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.PassversagungMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Vorliegen von Pass-, Personalausweis- oder Vorläufiger Personalausweisversagungsgründen sowie Nachweisdaten dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="unionsbuerger" minOccurs="0" type="xmeld:type.Unionsbuerger">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden Informationen zur Unionsbürgerschaft der Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="gemeinde" minOccurs="0" type="xmeld:type.Gemeinde">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten zur liefernden Gemeinde übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="wohnung"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.xmeldit.wohnung"/>
+         <xs:element name="zuzugBund" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum des Zuzugs in die Bundesrepublik Deutschland übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zuzugGemeinde" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum des Zuzugs in die Gemeinde übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zuzugKreis" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum des Zuzugs in den Kreis übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="zuzugLand" minOccurs="0" type="xida:Tagesdatum">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Datum des Zuzugs in das Land übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geschlecht" type="xmeld:type.Geschlechtseintrag">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten zum Geschlechtseintrag der Person an das Landesregister übermittelt, die nach Landesrecht für die Datenübermittlung vorgesehen sind.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="steueridentifikation"
+                     minOccurs="0"
+                     type="xmeld:type.Steueridentifikation">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird für die betroffene Person entweder die Identifikationsnummer nach § 139b AO gem. § 3 Abs. 1 Nr. 8 BMG oder das Vorläufige Bearbeitungsmerkmal nach § 139b Absatz 6 Satz 2 AO gem. § 3 Abs. 2 Nr. 3 BMG übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="azrKommunikation"
+                     minOccurs="0"
+                     fixed="true"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass die Nutzung der AZR-Nummer der betroffenen Person ausschließlich im Verkehr mit der Registerbehörde für das Ausländerzentralregister erfolgt (DSMeld-Blatt 1712a).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="waffenrechtlicheerlaubnis"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.WaffenrechtlicheErlaubnisMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Vorliegen einer waffenrechtlichen Erlaubnis sowie Nachweisdaten dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="waffenbesitzverbot"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.WaffenbesitzverbotPflichtMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Vorliegen eines Waffenbesitzverbots sowie Nachweisdaten dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="sprengstoffrechtlicheerlaubnis"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.SprengstoffrechtlicheErlaubnisMitNachweis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird das Vorliegen einer sprengstoffrechtlichen Erlaubnis sowie Nachweisdaten dazu übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="verteidigungsfall"
+                     minOccurs="0"
+                     type="xmeld:type.Verteidigungsfall">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass die betroffene Person bereits vor der Wehrerfassung (§ 15 Wehrpflichtgesetz) seines Jahrgangs erfasst worden ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="azrNummer" minOccurs="0" type="xiaz:AZRNummer">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die AZR-Nummer der Person übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="geburtseintragOhneGeburtsurkunde"
+                     minOccurs="0"
+                     fixed="true"
+                     type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element wird die Tatsache übermittelt, dass zur betroffenen Person ein Eintrag im Geburtenregister erfolgt ist, aber keine Geburtsurkunde ausgestellt wurde.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="landescontainer"
+                     minOccurs="0"
+                     type="xmeld:type.XMeldIT.Landescontainer">
+            <xs:annotation>
+               <xs:appinfo>
+                  <implementationHint>Alle zukünftigen Anforderungen der Länder zu durch Landesrecht bestimmten Daten werden über das Element landesspezifischeErweiterungen abgebildet werden. Der Datentyp type.XMeldIT.Landescontainer wird somit nicht mehr um neue landesrechtliche Anforderungen erweitert werden.</implementationHint>
+               </xs:appinfo>
+               <xs:documentation>Mit diesem Element können landespezifische Informationen übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="landesspezifischeErweiterungen"
+                     minOccurs="0"
+                     type="xmeld:type.LandesspezifischeErweiterungen">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element können durch Landesrecht bestimmte zusätzliche Personendaten übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.ortslisteneintrag">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur Darstellung eines Eintrags in der Ortsliste</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp dient zur Darstellung eines Eintrags in der Ortsliste. Ein solcher Eintrag beschreibt Name und Schlüsselnummern einer Gemeinde oder eines Ortsteils innerhalb einer Gemeinde inkl. der Straßenliste.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ortsnummer" type="xs:positiveInteger">
+            <xs:annotation>
+               <xs:documentation>Dieses Element enthält eine Identifikationsnummer für den Eintrag. Dies ist in der Regel die Schlüsselnummer der Gemeinde oder des Ortsteils im liefernden Melderegister.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="amtlicher.gemeindeschluessel"
+                     type="xicgvz:Code.GemeindeVZ.AmtlicherGemeindeschluessel">
+            <xs:annotation>
+               <xs:documentation>Der amtliche Gemeindeschlüssel (AGS) der Gemeinde, zu der der Ortsteil gehört.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="amtlicher.gemeindename" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Der amtliche Gemeindename der Gemeinde, zu der der Ortsteil gehört.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="ortsteilname" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Dieses Element enthält den Namen des Ortsteils. Ist die Gemeinde nicht in Ortsteile untergliedert oder beschreibt der Eintrag einen Teil der Gemeinde ohne Ortsteilname, entfällt das Element.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="historisch" minOccurs="0" fixed="true" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Dieses Element kann verwendet werden, um Einträge mit früher gültigen Bezeichnungen von Gemeinden oder Ortsteilen zu kennzeichnen. Das Element ist zu übermitteln, wenn der Gemeindename, der Ortsteilname bzw. der zugeordnete Gemeindeschlüssel historisch sind (d. h. nur noch als Teil historischer Anschriften gültig sind).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="strasse"
+                     minOccurs="0"
+                     maxOccurs="unbounded"
+                     type="xmeld:type.xmeldit.strassenlisteneintrag"/>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.quittierung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Quittierung im xmeldit-Kontext</title>
+         </xs:appinfo>
+         <xs:documentation>Dieses Element ist zur Verwendung in xmeldit-Quittierungsnachrichten vorgesehen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.quittierung">
+            <xs:sequence>
+               <xs:element name="saetze.meldung" type="xs:nonNegativeInteger">
+                  <xs:annotation>
+                     <xs:documentation>Die Anzahl der Sätze, zu denen das System des Lesers eine oder mehrere Meldungen (Rückmeldung, Fehler oder Hinweis) ausgegeben hat.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="gemeinde" type="xmeld:type.Gemeinde">
+                  <xs:annotation>
+                     <xs:documentation>Die mit dem Datentyp type.xmeldit.quittierung versehenen Nachrichten zwischen Meldebehörde und zentral geführtem Register werden jeweils für eine einzelne Gemeinde aus dem Zuständigkeitsbereich der Meldebehörde erstellt. In diesem Element wird die liefernde bzw. empfangende Gemeinde angegeben.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.quittungssatz" abstract="true">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Basisdatentyp für Quittierungsmeldungen innerhalb einer Quittierungsnachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Element wird das Grundgerüst für die beiden Quittierungsstrukturen type.xmeldit.quittungssatz.datenlieferung sowie dem (zu XMeld 2.0 gelöschte) type.xmeldit.quittungssatz.landesordnungsmerkmal definiert, welches dann entsprechend erweitert wird. Ein Quittierungssatz wird nur im Fehler- bzw. Hinweisfall generiert. (Für jeden zurückgewiesenen Datensatz muss eine meldung mit der konsequenz 01 übermittelt werden.) Bei fehlerfreier Verarbeitung ohne Hinweis werden demnach keine Quittierungssätze geliefert. Für einen Datensatz können jedoch mehrere (Fehler-)Quittierungssätze erscheinen. Der Bezug zum Datensatz in der Lieferung wird über die satzid hergestellt. Das zentrale System übernimmt die satzid unverändert aus den Datensätzen der Lieferung.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="ursprungsereignis" type="xmeld:type.Identifikation.Ereignis">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element werden die Daten zur Identifikation des Ereignisses aus der Ursprungsnachricht übermittelt.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="konsequenz" type="xmeld:Code.XMeldIT.Konsequenz.Fehler">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element teilt der Autor der Quittierungsmeldung mit, welche Konsequenz der festgestellte Fehler für die Speicherung des Datensatzes im System des Lesers hat: Der Schlüssel 01 bedeutet, dass der Datensatz aufgrund des Fehlers nicht im zentralen Register gespeichert wird. Bei Angabe des Schlüssels 02 wird der Datensatz trotz des aufgetretenen Fehlers im zentralen Register gespeichert. Der Schlüssel 03 kann verwendet werden, wenn die Meldung als Anmerkung zu verstehen ist. Der Datensatz wird verarbeitet und im zentralen Register gespeichert.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="betroffeneperson"
+                     minOccurs="0"
+                     type="xmeld:type.XMeldIT.Identifikation.BetroffenePerson">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element kann die betroffene Person zusätzlich zum Verweis über die satzid direkt identifiziert werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="dsmeld.feldnummer" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>In diesem Element kann das von dem Fehler betroffene Datenfeld näher benannt werden. Dazu wird - soweit zutreffend - die Blattnummer des dsm übermittelt. Bei Datenfeldern, die nicht über den dsm adressiert werden können, ist eine kurze textliche Darstellung zu wählen.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="feldinhalt" minOccurs="0" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element kann der beanstandete Inhalt des in dsmeld.feldnummer referenzierten Datenfeldes an den Autor des Lieferdatensatzes übermittelt werden.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.quittungssatz.datenlieferung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Abgeleiteter Datentyp für Quittierungsmeldungen innerhalb einer Datenlieferungs-Quittierungsnachricht</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Quittierungssatz ist zu verwenden, wenn der Empfang einer Nachricht nachricht.1100 quittiert werden soll. Er ist erweitert um das Element fehlercode, mit dem ein landesspezifischer Fehlercode übermittelt werden kann. Mit Hilfe dieses Elements wird für einen bestimmten Datensatz der Lieferung eine detaillierte Information über dessen Verarbeitung im empfangenden System zurückgeliefert.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.xmeldit.quittungssatz">
+            <xs:sequence>
+               <xs:element name="fehlermeldung" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Das Element enthält eine textliche Darstellung des erkannten Fehlers. Diese soll den Leser der Quittierung in die Lage versetzen, mögliche Ursachen zu ermitteln bzw. den fehlerhaften Zustand zu beheben. Die Fehlertexte sind nicht standardisiert. Sie werden vom sendenden System festgelegt. Eine Dokumentation der Texte soll dem Leser zugänglich sein. Das System des Lesers wird diese Meldungen in der Regel für den Bearbeiter zur Anzeige bringen.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="fehlercode"
+                           minOccurs="0"
+                           type="xmeld:Code.XMeldIT.Fehlercodes.landesspezifisch">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element kann ein landesspezifischer Fehlercode übermittelt werden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.strassenlisteneintrag">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp zur Darstellung eines Eintrags in der Straßenliste</title>
+         </xs:appinfo>
+         <xs:documentation>Dieser Datentyp dient zur Darstellung eines Eintrags in der Straßenliste. Ein solcher Eintrag beschreibt Name und Schlüsselnummer einer Straße.</xs:documentation>
+      </xs:annotation>
+      <xs:sequence>
+         <xs:element name="strassennummer" minOccurs="0" type="xs:positiveInteger">
+            <xs:annotation>
+               <xs:documentation>Mit diesem Element kann eine Identifikationsnummer für den Eintrag übermittelt werden. Dies ist in der Regel die Schlüsselnummer der Straße im liefernden Melderegister. Das zentral geführte Register legt fest, ob das Element zu liefern ist.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="strassenname" type="din91379:datatypeC">
+            <xs:annotation>
+               <xs:documentation>Dieses Element enthält den Namen der Straße.</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+         <xs:element name="historisch" minOccurs="0" fixed="true" type="xs:boolean">
+            <xs:annotation>
+               <xs:documentation>Dieses Element kann verwendet werden, um Einträge mit früher gültigen Bezeichnungen von Straßen zu kennzeichnen. Dieses Element ist zu übermitteln, wenn der Straßenname bzw. der zugeordnete Schlüssel historisch sind (d. h. nur noch als Teil historischer Anschriften gültig sind).</xs:documentation>
+            </xs:annotation>
+         </xs:element>
+      </xs:sequence>
+   </xs:complexType>
+   <xs:complexType name="type.xmeldit.wohnung">
+      <xs:annotation>
+         <xs:appinfo>
+            <title>Datentyp Wohnung für xmeldit-Nachrichten</title>
+         </xs:appinfo>
+         <xs:documentation>Mit diesem Datentyp werden die Informationen zur Wohnung der betroffenen Person im Kontext XMeld-IT abgebildet.</xs:documentation>
+      </xs:annotation>
+      <xs:complexContent>
+         <xs:extension base="xmeld:type.XMeldIT.WohnungOhneAnschrift">
+            <xs:sequence>
+               <xs:element name="xmeldit.anschrift">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird die Anschrift der Person übermittelt.</xs:documentation>
+                  </xs:annotation>
+                  <xs:complexType>
+                     <xs:choice>
+                        <xs:element name="inlandsanschrift"
+                                    type="xmeld:type.AnschriftMelderecht.InlandMitSperrvermerk">
+                           <xs:annotation>
+                              <xs:documentation>Mit diesem Element wird die Inlandsanschrift der Person übermittelt.</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                        <xs:element name="auslandsanschrift" type="xmeld:type.Auslandsanschrift.Druckbild">
+                           <xs:annotation>
+                              <xs:documentation>Mit diesem Element wird die Auslandsanschrift der Person übermittelt (DSMeld-Blatt 1232 und ggf. DSMeld-Blatt 1233).</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                        <xs:element name="zuzugsstaat" type="xmeld:type.AnschriftMelderecht.Ausland">
+                           <xs:annotation>
+                              <xs:documentation>Mit diesem Element wird der Zuzugsstaat der Person übermittelt (DSMeld-Blatt 1223).</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                        <xs:element name="unbekannt" type="xmeld:type.AnschriftMelderecht.Unbekannt">
+                           <xs:annotation>
+                              <xs:documentation>Mit diesem Element wird eine unbekannte Anschrift übermittelt.</xs:documentation>
+                           </xs:annotation>
+                        </xs:element>
+                     </xs:choice>
+                  </xs:complexType>
+               </xs:element>
+               <xs:element name="wohnungsbindung" minOccurs="0" type="din91379:datatypeC">
+                  <xs:annotation>
+                     <xs:documentation>Es kann angegeben werden, dass der Einwohner in einer öffentlich geförderten Wohnung gemeldet ist. Der Inhalt des Elementes ist frei wählbar.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="wohnung.aktuell" type="xs:boolean">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird mitgeteilt, ob es sich um eine aktuelle oder frühere Wohnung der Person handelt. Handelt es sich um eine aktuelle Wohnung, ist true anzugeben, ansonsten false.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="wohnungsgeber" minOccurs="0" type="xmeld:type.Wohnungsgeber">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element wird zu einer Wohnung der Wohnungsgeber übermittelt.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+               <xs:element name="landesspezifischeErweiterungen"
+                           minOccurs="0"
+                           type="xmeld:type.LandesspezifischeErweiterungen">
+                  <xs:annotation>
+                     <xs:documentation>Mit diesem Element können durch Landesrecht bestimmte zusätzliche Daten zur Wohnung übermittelt werden.</xs:documentation>
+                  </xs:annotation>
+               </xs:element>
+            </xs:sequence>
+         </xs:extension>
+      </xs:complexContent>
+   </xs:complexType>
+   <xs:element name="xmeldit.datenlieferung.1100">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Landesregister (ags)</leser>
+            <rechtsgrundlage>landesrechtliche Regelungen</rechtsgrundlage>
+            <title>Datenlieferungsnachricht an das zentral geführte Register</title>
+            <implementationHint>Im Element type.xmeldit.nachrichtenidentifikation wird die Gemeinde angegeben, für die die Lieferung Daten enthält. Eine Lieferung darf nur Datensätze der angegebenen Gemeinde enthalten. Die Datenlieferungen müssen durch das zentral geführte Register in der korrekten Reihenfolge verarbeitet werden. Dafür werden die Liefernachrichten durch den Autor im Element laufende.nummer.der.lieferung lückenlos und fortlaufend aufsteigend nummeriert. Umfangreiche Datenlieferungen müssen vom Autor auf mehrere Pakete aufgeteilt werden. Ein Paket entspricht einer Liefernachricht. Um alle Pakete einer Datenlieferung beim zentral geführten Register wieder in der richtigen Reihenfolge zusammenfügen und die Vollständigkeit der Datenlieferung überprüfen zu können, müssen in jeder Nachricht die Elemente paketnummer und letztes.paket übermittelt werden. Die Paketnummer ist dabei innerhalb einer Datenlieferung mit 1 beginnend lückenlos und aufsteigend zu zählen. Nachfolgend ein Beispiel für die Verwendung der Elemente laufende.nummer, paketnummer und letztes.paket zur Markierung der korrekten Reihenfolge der Datenlieferungen und der zugehörigen Pakete: laufende.nummer.der.lieferung paketnummer letztes.paket art.der.lieferung 1 1 false gesamtlieferung 1 2 false gesamtlieferung 1 3 true gesamtlieferung 2 1 false deltalieferung 2 2 true deltalieferung 3 1 true deltalieferung 4 1 true deltalieferung Die Liefernachricht besteht außerdem aus einer Folge von Datensätzen. Das Kindelement ereigniszeitpunkt innerhalb der jeweils mitgelieferten satzid enthält das Datum und die Uhrzeit (möglichst sekundengenau), an dem die Änderung an diesem Datensatz vorgenommen wurde. Damit kann durch das zentral geführte Register die chronologische Reihenfolge der Änderungen verifiziert werden. Die Datensätze sind dessen ungeachtet in chronologischer Reihenfolge anzuliefern.</implementationHint>
+         </xs:appinfo>
+         <xs:documentation>Diese Nachricht dient der Übermittlung von Meldedaten an das zentral geführte Register. Sie enthält Lieferdatensätze aus genau einer Gemeinde des Zuständigkeitsbereichs der örtlichen Meldebehörde.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="nachrichtenidentifikation"
+                              type="xmeld:type.xmeldit.nachrichtenidentifikation"/>
+                  <xs:element name="art.der.lieferung" type="xmeld:type.xmeldit.art.der.lieferung">
+                     <xs:annotation>
+                        <xs:documentation>Dieses Element spezifiziert die Art der Lieferung näher. Zulässige Werte sind: gesamtlieferung für Bestandsdatenlieferung deltalieferung für Änderungsmitteilung</xs:documentation>
+                     </xs:annotation>
+                  </xs:element>
+                  <xs:element name="datensatz" minOccurs="0" maxOccurs="unbounded">
+                     <xs:annotation>
+                        <xs:documentation>Ein Datensatz muss entweder ein Änderungs- oder Neuanlagesatz (person.liefern) oder ein Löschsatz (person.loeschen) sein.</xs:documentation>
+                     </xs:annotation>
+                     <xs:complexType>
+                        <xs:choice>
+                           <xs:element name="person.liefern" type="xmeld:type.xmeldit.lieferdatensatz"/>
+                           <xs:element name="person.loeschen" type="xmeld:type.xmeldit.datensatzloeschung"/>
+                        </xs:choice>
+                     </xs:complexType>
+                  </xs:element>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="xmeldit.datenlieferungquittung.1101">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Landesregister (ags)</autor>
+            <leser>Meldebehörde (ags)</leser>
+            <rechtsgrundlage>landesrechtliche Regelungen</rechtsgrundlage>
+            <title>Quittierungsnachricht des zentral geführten Registers nach erhaltener Datenlieferung</title>
+            <implementationHint>In type.xmeldit.quittierung wird die Gemeinde angegeben, für die die zu quittierende Nachricht nachricht.1101 Daten enthielt.</implementationHint>
+         </xs:appinfo>
+         <xs:documentation>Mit dieser Nachricht wird der Erhalt einer Datenlieferung (Nachricht nachricht.1100) quittiert (XMeldIT-Quittierungsnachricht). Zu fehlerhaften Datensätzen enthält die Nachricht Fehlermeldungen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="xmeldit.quittierung" type="xmeld:type.xmeldit.quittierung"/>
+                  <xs:element name="meldung"
+                              minOccurs="0"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.xmeldit.quittungssatz.datenlieferung"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+   <xs:element name="xmeldit.ortsundstrassenverzeichnis.1104">
+      <xs:annotation>
+         <xs:appinfo>
+            <autor>Meldebehörde (ags)</autor>
+            <leser>Landesregister (ags)</leser>
+            <rechtsgrundlage>landesrechtliche Regelungen</rechtsgrundlage>
+            <title>Nachricht zur Lieferung eines Gemeinde-/Ortsteil-/Straßenverzeichnisses an das zentral geführte Register</title>
+            <implementationHint>Im Gegensatz zu den Nachrichten für die Übermittlung und Quittierung der Personendaten enthält diese Nachricht Angaben für alle im Zuständigkeitsbereich der Meldebehörde befindlichen Gemeinden. Das Verzeichnis wird also für alle Mitgliedsgemeinden einer Verwaltungsgemeinschaft bzw. einer Samtgemeinde bzw. eines Amtes gemeinsam geliefert.</implementationHint>
+         </xs:appinfo>
+         <xs:documentation>Diese Nachricht dient der Übergabe eines Verzeichnisses der zum liefernden Melderegister gehörenden Gemeinden, ggf. Ortsteile sowie der Straßennamen.</xs:documentation>
+      </xs:annotation>
+      <xs:complexType>
+         <xs:complexContent>
+            <xs:extension base="xmeld:type.Nachricht.G2G">
+               <xs:sequence>
+                  <xs:element name="ort"
+                              maxOccurs="unbounded"
+                              type="xmeld:type.xmeldit.ortslisteneintrag"/>
+               </xs:sequence>
+            </xs:extension>
+         </xs:complexContent>
+      </xs:complexType>
+   </xs:element>
+</xs:schema>

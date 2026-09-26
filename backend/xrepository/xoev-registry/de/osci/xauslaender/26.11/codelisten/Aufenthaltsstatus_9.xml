@@ -1,0 +1,976 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Aufenthaltsstatus</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Diese Entität enthält die nicht titelbezogenen aufenthaltsrechtlichen Status sowie alte aufenthaltsrechtliche Entscheidungen nach dem Ausländergesetz. Letztere können nicht mehr neu vergeben, sondern nur noch für den Wiederaufbau alter Datensätze gemeldet werden und sind noch im Bestand vorhanden für Ausländer, die diesen alten Aufenthaltstitel besitzen.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BVA</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-11-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Redaktionelle Anpassung - Kennung 33</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>Code.AZR.AufenthaltsstatusArt</ShortName>
+      <LongName>AufenthaltsstatusArt</LongName>
+      <Version>9</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:azr:aufenthaltsstatus</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:azr:aufenthaltsstatus_9</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesverwaltungsamt</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Kurzbeschreibung" Use="optional">
+         <ShortName>Kurzbeschreibung</ShortName>
+         <LongName>Kurzbeschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="Langbezeichnung" Use="optional">
+         <ShortName>Langbezeichnung</ShortName>
+         <LongName>Langbezeichnung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-ab" Use="optional">
+         <ShortName>meldbar-ab</ShortName>
+         <LongName>meldbar ab</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="meldbar-bis" Use="optional">
+         <ShortName>meldbar-bis</ShortName>
+         <LongName>meldbar bis</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="entfaellt-ab" Use="optional">
+         <ShortName>entfaellt-ab</ShortName>
+         <LongName>entfällt ab</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>01</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - befristete Aufenthaltserlaubnis erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - befristete Aufenthaltserlaubnis erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2004</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>02</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - unbefristete Aufenthaltserlaubnis erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - unbefristete Aufenthaltserlaubnis erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2004</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>03</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltsberechtigung erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltsberechtigung erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2004</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>04</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>vom Erfordernis eines Aufenthaltstitels befreit</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>vom Erfordernis eines Aufenthaltstitels befreit, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>05</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Erteilung/Verlängerung des Aufenthaltstitels abgelehnt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Erteilung/Verlängerung des Aufenthaltstitels abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>06</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltstitel widerrufen/erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltstitel widerrufen/erloschen  am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>05.09.2013</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>08</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltsbewilligung erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltsbewilligung erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2004</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>09</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltsbefugnis erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltsbefugnis erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2004</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>10</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - befristete Aufenthaltserlaubnis - EG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - befristete Aufenthaltserlaubnis-EG erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2004</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>11</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - unbefristete Aufenthaltserlaubnis - EG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - unbefristete Aufenthaltserlaubnis-EG erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>31.12.2004</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>12</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Antrag auf einen Aufenthaltstitel (Altfall bis 30.06.2014) gestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Antrag auf einen Aufenthaltstitel (Altfall bis 30.06.2014) gestellt am &lt;ereignisdatum&gt;, Nummer der Fiktionsbescheinigung &lt;nummerAufenthaltstitel&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>30.06.2014</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>13</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltstitel zurückgenommen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltstitel zurückgenommen am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>06.09.2013</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>14</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltstitel widerrufen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltstitel widerrufen am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>06.09.2013</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>15</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel erloschen am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>06.09.2013</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>16</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit Visum nach § 18c AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit Visum nach § 18c AufenthG am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>06.09.2013</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>17</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Antrag auf einen Aufenthaltstitel (ab 01.07.2014) gestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Antrag auf einen Aufenthaltstitel (ab 01.07.2014) gestellt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.07.2014</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>18</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Antrag auf Verlängerung eines Aufenthaltstitels gestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Antrag auf Verlängerung eines Aufenthaltstitels gestellt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.07.2014</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>19</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Bescheinigung über die Wirkung der Antragstellung (Fiktionsbescheinigung) ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung über die Wirkung der Antragstellung (Fiktionsbescheinigung) ausgestellt am &lt;ereignisdatum&gt;, befristet bis &lt;befristungsdatum&gt;. Nummer der Fiktionsbescheinigung &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.07.2014</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>21</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>befristete Aufenthaltserlaubnis nach dem AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>befristete Aufenthaltserlaubnis nach dem AufenthG erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>22</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Niederlassungserlaubnis nach dem AufenthG erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Niederlassungserlaubnis nach dem AufenthG erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>23</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltserlaubnis/EU (Angehörige von EU-/EWR-Bürgern) befristet erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltserlaubnis/EU (Angehörige von EU-/EWR-Buergern) befristet erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>27.08.2007</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>24</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltserlaubnis/EU (Angehörige von EU-/EWR-Bürgern) unbefristet erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltserlaubnis/EU (Angehörige von EU-/EWR-Buergern) unbefristet erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>27.08.2007</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>25</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Bescheinigung für freizügigkeitsberechtigte EU/EWR-Bürger befristet erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung für freizügigkeitsberechtigte EU/EWR-Bürger befristet erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>26</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Bescheinigung für freizügigkeitsberechtigte EU/EWR-Bürger unbefristet erteilt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Bescheinigung für freizügigkeitsberechtigte EU/EWR-Bürger unbefristet erteilt am &lt;ereignisdatum&gt;, Nummer des Aufenthaltsetiketts &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab"/>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>27</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 16a AufenthG abgelehnt </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 16a AufenthG abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2017</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>28</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 16a AufenthG, Bescheinigung ausgestellt </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 16a AufenthG , Bescheinigung ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2017</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>29</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 19c Absatz 1 AufenthG abgelehnt </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 19c Absatz 1 AufenthG abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2017</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>30</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 19c Absatz 1 AufenthG, Bescheinigung ausgestellt </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 19c Absatz 1 AufenthG, Bescheinigung ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2017</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>31</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 20a AufenthG abgelehnt </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 20a AufenthG abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2017</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>32</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall -Einreise und Aufenthalt nach § 20a AufenthG, Bescheinigung ausgestellt </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Einreise und Aufenthalt nach § 20a AufenthG, Bescheinigung ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2017</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis">
+            <SimpleValue>29.02.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>33</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit Visum nach § 20 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Aufenthaltstitel nach Einreise in das Bundesgebiet mit Visum nach § 20 AufenthG erteilt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.11.2024</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>34</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 16c AufenthG abgelehnt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 16c AufenthG abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>35</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 16c AufenthG, Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 16c AufenthG, Bescheinigung ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>36</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 19a Absatz 1 AufenthG abgelehnt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach Par. 19a Absatz 1 AufenthG abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>37</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 19a Absatz 1 AufenthG, Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 19a Absatz 1 AufenthG, Bescheinigung ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>38</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 30 Absatz 5 AufenthG (Ehegattennachzug zu kurzfristig mobilen Forschern) abgelehnt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 30 Absatz 5 AufenthG (Ehegattennachzug zu kurzfristig mobilen Forschern) abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>39</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 30 Absatz 5 AufenthG (Ehegattennachzug zu kurzfristig mobilen Forschern), Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 30 Absatz 5 AufenthG (Ehegattennachzug zu kurzfristig mobilen Forschern), Bescheinigung ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>40</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 32 Absatz 5 AufenthG (Kindesnachzug zu kurzfristig mobilen Forschern) abgelehnt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 32 Absatz 5 AufenthG (Kindesnachzug zu kurzfristig mobilen Forschern) abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>41</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 32 Absatz 5 AufenthG (Kindesnachzug zu kurzfristig mobilen Forschern), Bescheinigung ausgestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 32 Absatz 5 AufenthG (Kindesnachzug zu kurzfristig mobilen Forschern), Bescheinigung ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>42</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit Visum nach § 17 Absatz 1 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel nach Einreise in das Bundesgebiet mit Visum nach § 17 Abs. 1 AufenthG erteil am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>43</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit Visum nach § 17 Absatz 2 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel nach Einreise in das Bundesgebiet mit Visum nach § 17 Abs. 2 AufenthG erteilt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>44</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit Visum nach § 20 Absatz 1 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel nach Einreise in das Bundesgebiet mit Visum nach § 20 Abs. 1 AufenthG erteilt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>45</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit Visum nach § 20 Absatz 2 AufenthG</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel nach Einreise in das Bundesgebiet mit Visum nach § 20 Abs. 2 AufenthG erteilt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>46</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel erteilt nach Einreise in das Bundesgebiet mit einem im Verfahren nach § 81a AufenthG erteilten Visum</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel nach Einreise in das Bundesgebiet mit einem im Verfahren nach § 81a AufenthG erteilten Visum  erteilt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>47</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 18e Absatz 1 AufenthG abgelehnt </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 18e Absatz 1 AufenthG abgelehnt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>48</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Einreise und Aufenthalt nach § 18e Absatz 1 AufenthG, Bescheinigung ausgestellt </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Einreise und Aufenthalt nach § 18e Absatz 1 AufenthG, Bescheinigung ausgestellt am &lt;ereignisdatum&gt;, gültig bis &lt;befristungsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.03.2020</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>49</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Altfall - Erteilung/Verlängerung des Aufenthaltstitels abgelehnt, noch nicht unanfechtbar</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Altfall - Erteilung/Verlängerung des Aufenthaltstitels abgelehnt (noch nicht unanfechtbar) am &lt;ereignisdatum&gt;,  gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>50</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Erteilung/Verlängerung des Aufenthaltstitels abgelehnt (unanfechtbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Erteilung/Verlängerung des Aufenthaltstitels abgelehnt (unanfechtbar) am &lt;ereignisdatum&gt;, unanfechtbar seit &lt;:unanfechtbarkeitsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>51</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Fiktionsbescheinigung eingezogen </SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Fiktionsbescheinigung eingezogen am &lt;ereignisdatum&gt;,  Nummer der Fiktionsbescheinigung &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>52</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Fiktionsbescheinigung erloschen</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Fiktionsbescheinigung erloschen am &lt;ereignisdatum&gt;,  Nummer der Fiktionsbescheinigung &lt;nummerAufenthaltstitel&gt;, Nummer des Trägervordrucks &lt;traegervordruck&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.11.2022</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>53</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Antrag auf einen Aufenthaltstitel nach § 24 AufenthG gestellt</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Antrag auf einen Aufenthaltstitel nach § 24 AufenthG gestellt am &lt;ereignisdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.08.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>54</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel zurückgenommen (zugestellt)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel zurückgenommen (zugestellt) am &lt;ereignisdatum&gt;, zugestellt am &lt;zustelldatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>55</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel zurückgenommen (unanfechtbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel zurückgenommen (unanfechtbar) am &lt;ereignisdatum&gt;, unanfechtbar seit &lt;unanfechtbarkeitsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>56</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel widerrufen (zugestellt)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel widerrufen (zugestellt) am &lt;ereignisdatum&gt;, zugestellt am &lt;zustelldatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>57</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Aufenthaltstitel widerrufen (unanfechtbar)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Aufenthaltstitel widerrufen (unanfechtbar) am &lt;ereignisdatum&gt;, unanfechtbar seit &lt;unanfechtbarkeitsdatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>58</SimpleValue>
+         </Value>
+         <Value ColumnRef="Kurzbeschreibung">
+            <SimpleValue>Erteilung/Verlängerung des Aufenthaltstitels abgelehnt (zugestellt)</SimpleValue>
+         </Value>
+         <Value ColumnRef="Langbezeichnung">
+            <SimpleValue>Erteilung/Verlängerung des Aufenthaltstitels abgelehnt (zugestellt) am &lt;ereignisdatum&gt;, zugestellt am &lt;zustelldatum&gt;, gemeldet durch Behörde &lt;meldendeBehoerde&gt;, gemeldet am &lt;letzteAenderung&gt;</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-ab">
+            <SimpleValue>01.05.2023</SimpleValue>
+         </Value>
+         <Value ColumnRef="meldbar-bis"/>
+         <Value ColumnRef="entfaellt-ab"/>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

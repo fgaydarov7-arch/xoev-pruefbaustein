@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Verzeichnisdienst</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Liste der Verzeichnisdienste, in die Behörden / öffentliche Stellen eingetragen sein können. Eine Version ist i.d.R. "Gülitg ab" dem Tag ihrer Veröffentlichung, ein Ende der Gültigkeit wird nicht definiert.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>KoSIT</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2023-07-27</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Die Codes "DVDV FIT-Connect" (Microservice mit separatem Datenbestand für den FIT-Connect Routingdienst) und "SAFE" (Verzeichnisdienst SAFE (Secure Access to Federated e-Justice/e-Government)) wurden aufgenommen. Aktualisierung am 06.03.2024: Aufnahme des Hinweises auf den Umgang mit Gültigkeit in die Beschreibung. Keine Inhaltlichen Änderungen. </xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>verzeichnisdienst</ShortName>
+      <LongName>Verzeichnisdienst</LongName>
+      <Version>3</Version>
+      <CanonicalUri>urn:xoev-de:kosit:codeliste:verzeichnisdienst</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:kosit:codeliste:verzeichnisdienst_3</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="code" Use="required">
+         <ShortName>code</ShortName>
+         <LongName>Code</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="beschreibung" Use="required">
+         <ShortName>beschreibung</ShortName>
+         <LongName>Beschreibung</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="codeKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>codeKey</ShortName>
+         <ColumnRef Ref="code"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DVDV</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Deutsches Verwaltungsdiensteverzeichnis (DVDV)</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>DVDV FIT-Connect</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Microservice mit separatem Datenbestand für den FIT-Connect Routingdienst</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>IDA-BHVZ</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>IDA-Behördenverzeichnis</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="code">
+            <SimpleValue>SAFE</SimpleValue>
+         </Value>
+         <Value ColumnRef="beschreibung">
+            <SimpleValue>Verzeichnisdienst SAFE (Secure Access to Federated e-Justice/e-Government)</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,5 +1,5 @@
 import { useRef, useState, DragEvent, KeyboardEvent, ChangeEvent } from "react";
-import { UploadCloud } from "lucide-react";
+import { UploadCloud, FileCheck } from "lucide-react";
 
 interface Props {
   onFileSelect: (file: File) => void;
@@ -31,13 +31,10 @@ export function FileUploader({ onFileSelect, disabled = false }: Props) {
     if (!disabled) setIsDragging(true);
   }
 
-  function onDragLeave() {
-    setIsDragging(false);
-  }
+  function onDragLeave() { setIsDragging(false); }
 
   function onChange(e: ChangeEvent<HTMLInputElement>) {
     handleFile(e.target.files?.[0]);
-    // Reset so the same file can be re-selected after clearing
     e.target.value = "";
   }
 
@@ -49,17 +46,20 @@ export function FileUploader({ onFileSelect, disabled = false }: Props) {
     }
   }
 
-  const borderClass = isDragging
-    ? "border-blue-400 bg-blue-950"
-    : "border-slate-600 bg-slate-800 hover:border-blue-500 hover:bg-slate-750";
-
   return (
     <div
       role="button"
       tabIndex={disabled ? -1 : 0}
       aria-label="Datei per Drag-and-drop hochladen oder klicken zum Auswählen (CSV oder Excel, max. 50 MB)"
       aria-disabled={disabled}
-      className={`flex flex-col items-center justify-center rounded-lg border-2 border-dashed p-10 text-center transition-colors duration-150 cursor-pointer focus:outline-none focus-visible:ring-2 focus-visible:ring-blue-400 focus-visible:ring-offset-2 focus-visible:ring-offset-slate-900 ${borderClass} ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
+      className={`flex flex-col items-center justify-center border-2 border-dashed p-10 text-center
+        transition-colors duration-150 cursor-pointer
+        focus:outline-none focus:ring-2 focus:ring-[#FFBF47] focus:ring-offset-2
+        ${isDragging
+          ? "border-[#003366] bg-[#EEF4FA]"
+          : "border-[#005B9A] bg-[#F4F6F8] hover:border-[#003366] hover:bg-[#EEF4FA]"
+        }
+        ${disabled ? "opacity-50 cursor-not-allowed" : ""}`}
       onDrop={onDrop}
       onDragOver={onDragOver}
       onDragLeave={onDragLeave}
@@ -76,25 +76,28 @@ export function FileUploader({ onFileSelect, disabled = false }: Props) {
         onChange={onChange}
         disabled={disabled}
       />
-      <UploadCloud
-        className={`h-12 w-12 mb-3 ${isDragging ? "text-blue-300" : "text-slate-500"}`}
-        aria-hidden="true"
-      />
+
       {fileName ? (
         <>
-          <p className="text-sm font-semibold text-blue-300">{fileName}</p>
-          <p className="mt-1 text-xs text-slate-400">
+          <FileCheck className="h-10 w-10 mb-3 text-[#003366]" aria-hidden="true" />
+          <p className="text-sm font-semibold text-[#003366]">{fileName}</p>
+          <p className="mt-1 text-xs text-[#555555]">
             Klicken oder Datei ziehen, um die Datei zu ersetzen
           </p>
         </>
       ) : (
         <>
-          <p className="text-sm font-medium text-slate-300">
+          <UploadCloud
+            className={`h-10 w-10 mb-3 ${isDragging ? "text-[#003366]" : "text-[#005B9A]"}`}
+            aria-hidden="true"
+          />
+          <p className="text-sm font-semibold text-[#222222]">
             CSV- oder Excel-Datei hier ablegen
           </p>
-          <p className="mt-1 text-xs text-slate-500">
-            oder klicken zur Dateiauswahl &mdash; max. 50 MB
+          <p className="mt-1 text-xs text-[#555555]">
+            oder klicken zur Dateiauswahl &mdash; max. 50&nbsp;MB
           </p>
+          <p className="mt-2 font-mono text-[10px] text-[#555555]">.csv · .xlsx · .xls</p>
         </>
       )}
     </div>

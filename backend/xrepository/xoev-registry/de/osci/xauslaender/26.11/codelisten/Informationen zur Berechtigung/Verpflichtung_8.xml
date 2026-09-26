@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xoev-cl-4="http://xoev.de/schemata/genericode/4"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <Annotation>
+      <Description>
+         <xoev-cl-4:shortName>Informationen zur Berechtigung/Verpflichtung</xoev-cl-4:shortName>
+         <xoev-cl-4:codelistDescription>Diese Liste enthält Informationen zur Sachbearbeitung, die zu einer Berechtigung/Verpflichtung übermittelt werden können.</xoev-cl-4:codelistDescription>
+         <xoev-cl-4:agencyShortName>BAMF-Integration</xoev-cl-4:agencyShortName>
+         <xoev-cl-4:validFrom>2024-05-01</xoev-cl-4:validFrom>
+         <xoev-cl-4:versionHandbook>1.2</xoev-cl-4:versionHandbook>
+         <xoev-cl-4:changes>Redaktionelle Änderungen in Code 17563, 17580, 17581, 17583, 17584. 
+Neuer Code 17118, 17143, 17565</xoev-cl-4:changes>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>informationberechtigungverpflichtung</ShortName>
+      <LongName>Informationen zur Berechtigung/Verpflichtung</LongName>
+      <Version>8</Version>
+      <CanonicalUri>urn:de:xauslaender:codelist:int:informationberechtigungverpflichtung</CanonicalUri>
+      <CanonicalVersionUri>urn:de:xauslaender:codelist:int:informationberechtigungverpflichtung_8</CanonicalVersionUri>
+      <Agency>
+         <LongName>Bundesamt für Migraiton und Flüchtlinge, Integration</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="schluessel" Use="required">
+         <ShortName>schluessel</ShortName>
+         <LongName>Schlüssel</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="wert" Use="optional">
+         <ShortName>wert</ShortName>
+         <LongName>Wert</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="schluesselKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-4:recommendedKeyColumn/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>schluesselKey</ShortName>
+         <ColumnRef Ref="schluessel"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17117</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Sie können die bestehende Verpflichtung (ohne Ausstellung eines weiteren Verpflichtungsscheines) unter Nutzung der entsprechenden Nachricht "übernehmen". Nach der Übernahme können Sie die Auskunftsfunktion hinsichtlich der beim Bundesamt vorliegenden Informationen zur Kursanmeldung und Kursteilnahme nutzen. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17118</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Sie können die bestehende Jobcenter-Zulassung (ohne Ausstellung eines weiteren Verpflichtungsscheines) unter Nutzung der entsprechenden Nachricht "übernehmen". Nach der Übernahme können Sie die Auskunftsfunktion hinsichtlich der beim Bundesamt vorliegenden Informationen zur Kursanmeldung und Kursteilnahme nutzen. Für weitere Informationen setzen Sie sich ggf. bitte mit der für Sie zuständigen Regionalstelle des Bundesamtes in Verbindung.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17143</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Person besitzt bereits eine (bloße) Berechtigung zur Teilnahme am Integrationskurs durch eine andere Stelle. Die durch Ihre Stelle vorgenommene Verpflichtung bzw. Zulassung ersetzt von nun an als stärkere Maßnahme die bisher bestehende Berechtigung. Sofern bereits die Anmeldung bei einem Kursträger erfolgt ist bzw. der Integrationskurs bereits begonnen wurde, erstreckt sich Ihre Teilnahmeverpflichtung bzw. -zulassung nur auf das restliche noch zur Verfügung stehende Stundenkontingent.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17563</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Die Person ist bereits durch eine andere zuständige Stelle zur Kursteilnahme verpflichtet bzw. durch den Träger der Grundsicherung für Arbeitsuchende zur Kursteilnahme zugelassen worden und hat einen entsprechenden Verpflichtungs-/Zulassungsschein zur Vorlage beim Kursträger erhalten. Wenn Sie darüber hinaus verpflichten möchten, können Sie die bestehende Verpflichtung/Zulassung (ohne nochmalige Ausstellung eines Verpflichtungsscheines) unter Nutzung der entsprechenden Nachricht "übernehmen“. Nach der Übernahme können Sie die Auskunftsfunktion hinsichtlich der beim Bundesamt vorliegenden Informationen zur Kursanmeldung und Kursteilnahme nutzen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17565</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Die Person ist bereits durch eine andere zuständige Stelle zur Kursteilnahme verpflichtet worden und hat einen entsprechenden Verpflichtungsschein zur Vorlage beim Kursträger erhalten. Wenn Sie darüber hinaus verpflichten bzw. zulassen möchten, können Sie die bestehende Verpflichtung (ohne nochmalige Ausstellung eines Verpflichtungs-/Zulassungsscheines) unter Nutzung der entsprechenden Nachricht "übernehmen". Nach der Übernahme können Sie die Auskunftsfunktion hinsichtlich der beim Bundesamt vorliegenden Informationen zur Kursanmeldung und Kursteilnahme nutzen.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17580</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Für diese Person liegt keine gültige Teilnahmeberechtigung mehr vor. Die Verpflichtung bzw. TGS-Zulassung ist erloschen, da die Person den Kurs nicht innerhalb eines Jahres nach der Anmeldung zum Integrationskurs begonnen bzw. die Kursteilnahme länger als ein Jahr unterbrochen hat. Sollte die Verpflichtung bzw. TGS-Zulassung erst nach der Kursanmeldung bzw. nach dem Beginn der Kursteilnahme zusätzlich zu einer zu diesem Zeitpunkt bereits vorliegenden Berechtigung erteilt worden sein, dann erfolgte die Berechnung der Erlöschensfrist bezogen auf den Zeitpunkt der Erteilung der zusätzlichen Verpflichtung bzw. TGS-Zulassung, d. h. die Frist bis zum Erlöschen hat sich entsprechend verlängert. Hinsichtlich der bis zum Erlöschen nicht in Anspruch genommenen Förderung ist die Übermittlung einer neuen Verpflichtungsanfrage möglich.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17581</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Warnung: Laut aktuellem Datenbestand im Bundesamt ist seit mehr als 9 Monaten keine Kursaktivität durch die Person erfolgt. Sollte es weiterhin keine Kursaktivitäten mehr geben, wird die Teilnahmeverpflichtung bzw. TGS-Zulassung am {0} (Datum des tatsächlichen Erlöschens = Ablauf des 13. Monats) wegen mehr als einjähriger Kursinaktivität gemäß § 4 Abs. 1 Satz 3 IntV erlöschen. Zur Erläuterung wird darauf hingewiesen, dass das Bundesamt mit dem Erlöschen 13 Monate seit der letzten Kursaktivität abwartet, um Nachmeldungen durch den Kursträger zu innerhalb der Jahresfrist erfolgten Kursaktivitäten berücksichtigen zu können.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17582</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Person ist nach im BAMF vorliegenden Informationen verstorben.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17583</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Nach Abschluss der Kursteilnahme im Rahmen der Teilnahmeverpflichtung bzw. TGS-Zulassung wurde die Person auf Antrag am {0} durch das Bundesamt zur Wiederholung von maximal 300 Unterrichtsstunden des Sprachkurses zugelassen. Es ist noch keine Anmeldung beim Kursträger für die Teilnahme an den Wiederholungsstunden erfolgt.</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="schluessel">
+            <SimpleValue>17584</SimpleValue>
+         </Value>
+         <Value ColumnRef="wert">
+            <SimpleValue>Nach Abschluss der Kursteilnahme im Rahmen der Teilnahmeverpflichtung bzw. TGS-Zulassung wurde die Person auf Antrag am {0} durch das Bundesamt zur Wiederholung von maximal 300 Unterrichtsstunden des Sprachkurses zugelassen. Die Anmeldung beim Kursträger für die Teilnahme an den Wiederholungsstunden ist am {1} erfolgt. Nachfolgende Angaben zu besuchten Kursabschnitten, die ab dem Datum der Anmeldung zur Wiederholung begonnen bzw. zu Tests, die ab diesem Datum stattgefunden haben, sind dem Wiederholungsverfahren zuzuordnen.</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

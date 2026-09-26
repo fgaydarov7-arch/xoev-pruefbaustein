@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<gc:CodeList xmlns:gc="http://docs.oasis-open.org/codelist/ns/genericode/1.0/"
+             xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+             xmlns:xoev-cl-3="http://xoev.de/schemata/genericode/3">
+   <Annotation>
+      <Description>
+         <xoev-cl-3:nameKurz>Kirche Hintergrundinformation</xoev-cl-3:nameKurz>
+         <xoev-cl-3:beschreibung-codeliste>Mit dieser Schlüsseltabelle werden Hintergrundinformationen zur Erklärung der Zugehörigkeit zu einer öffentlich-rechtlichen Religionsgesellschaft beschrieben.</xoev-cl-3:beschreibung-codeliste>
+         <xoev-cl-3:herausgebernameKurz>KoSIT</xoev-cl-3:herausgebernameKurz>
+         <xoev-cl-3:datumGueltigkeitAb>2018-05-01</xoev-cl-3:datumGueltigkeitAb>
+         <xoev-cl-3:versionCodelistenHandbuch>1.1</xoev-cl-3:versionCodelistenHandbuch>
+      </Description>
+   </Annotation>
+   <Identification>
+      <ShortName>xmeld.kirche.hintergrundinformation</ShortName>
+      <LongName>Kirche Hintergrundinformation</LongName>
+      <Version>1</Version>
+      <CanonicalUri>urn:xoev-de:xmeld:codeliste:xmeld.kirche.hintergrundinformation</CanonicalUri>
+      <CanonicalVersionUri>urn:xoev-de:xmeld:codeliste:xmeld.kirche.hintergrundinformation_1</CanonicalVersionUri>
+      <Agency>
+         <LongName>Koordinierungsstelle für IT-Standards</LongName>
+      </Agency>
+   </Identification>
+   <ColumnSet>
+      <Column Id="key" Use="required">
+         <ShortName>key</ShortName>
+         <LongName>key</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Column Id="name" Use="required">
+         <ShortName>name</ShortName>
+         <LongName>name</LongName>
+         <Data Type="string"/>
+      </Column>
+      <Key Id="keyKey">
+         <Annotation>
+            <AppInfo>
+               <xoev-cl-3:empfohleneCodeSpalte/>
+            </AppInfo>
+         </Annotation>
+         <ShortName>keyKey</ShortName>
+         <ColumnRef Ref="key"/>
+      </Key>
+   </ColumnSet>
+   <SimpleCodeList>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>1</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Begründung der Kirchenmitgliedschaft</SimpleValue>
+         </Value>
+      </Row>
+      <Row>
+         <Value ColumnRef="key">
+            <SimpleValue>2</SimpleValue>
+         </Value>
+         <Value ColumnRef="name">
+            <SimpleValue>Nachmeldung von Kirchenmitgliedschaftsbegründungen oder Korrektur der Religionszugehörigkeit und/oder Korrektur des Eintrittsdatums</SimpleValue>
+         </Value>
+      </Row>
+   </SimpleCodeList>
+</gc:CodeList>

@@ -1,0 +1,33 @@
+{
+  "comment": "status: pending (für neue), downloaded, deployed",
+  "registry_root": "xrepository/xoev_registry",
+  "packages": [
+    {
+      "standard": "xauslaender",
+      "version": "26.11",
+      "status": "deployed",
+      "domain_path": "de/osci/xauslaender",
+      "target_namespace": "http://www.osci.de/xauslaender2611",
+      "xsd_url": "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:standard:xinneres.xauslaender_26.11:xmlschema",
+      "cl_url": "https://www.xrepository.de/api/version_standard/urn:xoev-de:kosit:standard:xinneres.xauslaender_26.11/genutzteAktuelleCodelisten"
+    },
+    {
+      "standard": "XInneres-Basismodul",
+      "version": "26.11",
+      "status": "deployed",
+      "domain_path": "de/osci/xinneres",
+      "target_namespace": "http://www.osci.de/xinneres",
+      "xsd_url": "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:standard:xinneres.basismodul_26.11:xmlschema",
+      "cl_url": "https://www.xrepository.de/api/version_standard/urn:xoev-de:kosit:standard:xinneres.basismodul_26.11/genutzteAktuelleCodelisten"
+    },
+    {
+      "standard": "XMeld",
+      "version": "26.11",
+      "status": "deployed",
+      "domain_path": "de/osci/xmeld",
+      "target_namespace": "http://www.osci.de/xmeld2611",
+      "xsd_url": "https://www.xrepository.de/api/xrepository/urn:xoev-de:kosit:standard:xinneres.xmeld_26.11:xmlschema",
+      "cl_url": "https://www.xrepository.de/api/version_standard/urn:xoev-de:kosit:standard:xinneres.xmeld_26.11/genutzteAktuelleCodelisten"
+    }
+  ]
+}
