@@ -1,15 +1,26 @@
-
-!old/
-
-# Игнорируем зависимости бэкенда
+# ─── Python ───────────────────────────────────────────────────────────────────
 backend/.venv/
+backend/__pycache__/
+backend/app/__pycache__/
+**/__pycache__/
+*.py[cod]
+*.pyo
+*.pyd
+.Python
 
-# Игнорируем зависимости фронтенда
+# ─── Node / Frontend ──────────────────────────────────────────────────────────
 frontend/node_modules/
-frontend/.env
 frontend/dist/
 frontend/build/
+frontend/.env
+frontend/.env.local
+frontend/.env.*.local
 
-# Системные файлы
-.DS_Store
+old/
 .vscode/
+Thumbs.db
+desktop.ini
+.claude/
+CLAUDE.md
+
+backend/xrepository/

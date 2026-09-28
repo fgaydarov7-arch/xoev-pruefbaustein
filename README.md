@@ -1,112 +1,171 @@
-# XÖV-Prüfbaustein
+# XÖV-Prüfbaustein — XÖV Validation Console
 
-**Datenschutzkonforme Offline-Validierungs-Engine für kommunale XÖV-Register**
+> **Datenschutzkonforme Offline-Validierung von XÖV-Registerdaten für den öffentlichen Dienst**
 
----
-
-## Überblick
-
-Der XÖV-Prüfbaustein ist ein produktionsreifes, monolithisches Werkzeug für Sachbearbeiterinnen und Sachbearbeiter im öffentlichen Dienst. Er ermöglicht die lokale Validierung von CSV- und Excel-Dateien gegen offizielle XÖV-Schemata – vollständig offline, ohne Datenbankverbindung und ohne externe Netzwerkkommunikation.
-
-**Kern-Merkmale:**
-
-- **100 % air-gapped**: Kein CDN, keine Google Fonts, keine externen Abhängigkeiten zur Laufzeit
-- **Datenschutz by Design**: Alle Daten werden ausschließlich im flüchtigen Arbeitsspeicher (`io.BytesIO`) verarbeitet – keine Persistenz, kein Caching, keine Logs mit personenbezogenen Inhalten
-- **BSI-Grundschutz konform**: Dateigröße auf 50 MB begrenzt (DoS-Schutz), strukturiertes PII-freies Logging, UTF-8-Durchsetzung
-- **BITV 2.0 / WCAG 2.1 AA**: Vollständig barrierefreie Benutzeroberfläche auf Deutsch
-- **EUPL 1.2**: Lizenziert unter der European Union Public Licence
+[![Lizenz: EUPL 1.2](https://img.shields.io/badge/Lizenz-EUPL%201.2-blue.svg)](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12)
+[![BSI-Grundschutz](https://img.shields.io/badge/BSI-Grundschutz%20konform-003366.svg)]()
+[![BITV 2.0](https://img.shields.io/badge/Barrierefreiheit-BITV%202.0%20AA-green.svg)]()
+[![Stack](https://img.shields.io/badge/Stack-Python%203.11%20%7C%20FastAPI%20%7C%20React%2019-informational.svg)]()
 
 ---
 
-## Architektur: Universelle XÖV-Abdeckung durch JSON-Regelwerke
+## 📋 Beschreibung
 
-Das entscheidende Architekturmerkmal ist die **vollständige Trennung von Validierungs-Engine und Fachlogik**. Die Engine selbst enthält keinerlei XÖV-spezifisches Wissen – dieses ist ausschließlich in deklarativen JSON-Dateien im Verzeichnis `/backend/rules/` gespeichert.
+Der **XÖV-Prüfbaustein** ist ein schlankes, vollständig offline-fähiges Werkzeug für kommunale Sachbearbeiter im öffentlichen Dienst. Es ermöglicht die lokale Validierung von CSV- und Excel-Dateien gegen offizielle XÖV-Schemata (XRepository) — ohne Internetverbindung, ohne Datenbank und ohne dass personenbezogene Daten das Gerät verlassen.
 
-### Neues XÖV-Schema hinzufügen (ohne Code-Änderung)
+**Kernprinzip:** Alle hochgeladenen Daten werden ausschließlich im flüchtigen Arbeitsspeicher (`io.BytesIO`) verarbeitet und nach der Validierungsantwort sofort verworfen. Kein Logging von PII, kein Caching, keine externe Abhängigkeit.
 
-Um einen der über 30 weiteren XÖV-Standards (XBau, XRechnung, XJustiz, XKfz, XHochschule usw.) zu integrieren, genügt ein einziger Schritt:
+---
+
+## ✨ Funktionsumfang
+
+| Feature | Details |
+|---|---|
+| 🗂 **Multi-Schema-Unterstützung** | XAusländer 26.11, XMeld 26.11 — erweiterbar durch JSON-Drop in `/rules` |
+| 📊 **Interaktive Dateivorschau** | Tabellarische Darstellung mit Fehler-Highlighting auf Zellebene |
+| 🔗 **Spalten-Mapping** | Manuelle Zuordnung von Dateispalten zu XÖV-Feldern per Combobox |
+| ✅ **3-stufige Validierung** | Codelisten → Known Fields → NICHT_IM_PROFIL (amber Hinweis) |
+| 📥 **Korrekturbericht-Export** | CSV-Download mit UTF-8-BOM (Excel-kompatibel) + Formel-Sanitisierung |
+| 🔍 **Fehlerfilter & Paginierung** | Nur-Fehlerzeilen-Modus, konfigurierbare Seitengröße |
+| ♿ **Barrierefreiheit** | BITV 2.0 / WCAG 2.1 AA — Tastaturnavigation, ARIA-Labels, Fokus-Indikatoren |
+| 🛡 **BSI-Grundschutz** | 50 MB DoS-Limit, kein PII-Logging, CSV-Injection-Schutz |
+
+---
+
+## 🏗 Technologie-Stack
+
+**Backend**
+- Python 3.11+
+- FastAPI 0.111 + Uvicorn
+- Pandas 2.2 (In-Memory-Verarbeitung)
+- Pydantic v2
+
+**Frontend**
+- React 19 + TypeScript
+- Vite (Build-Tool)
+- Tailwind CSS (Corporate Design Bund)
+- Lucide-React (lokal gebundelt, kein CDN)
+
+---
+
+## 📁 Projektstruktur
 
 ```
-/backend/rules/
-└── xbau_2_0.json   ← Neue Datei ablegen, fertig.
+xoevpruefbaustein.local/
+├── backend/
+│   ├── app/
+│   │   ├── main.py          # FastAPI-Routen (/schemas, /fields, /validate, /preview)
+│   │   ├── engine.py        # Validierungs-Engine (In-Memory, 3-stufige Prüfung)
+│   │   └── __init__.py
+│   ├── rules/               # Deklarative JSON-Validierungsprofile
+│   │   ├── xauslaender_26.11_compiled.json
+│   │   └── xmeld_26.11_compiled.json
+│   ├── xrepository/         # Originale XSD-Quelldateien (XRepository-Spieglung)
+│   ├── requirements.txt
+│   └── !/                   # Hilfsskripte (build_xauslaender_schema.py, add_known_fields.py)
+├── frontend/
+│   ├── src/
+│   │   ├── App.tsx           # Zentrale State-Verwaltung
+│   │   ├── api.ts            # Fetch-Wrapper für Backend-API
+│   │   └── components/
+│   │       ├── FileUploader.tsx   # Drag-&-Drop, ARIA-konform
+│   │       ├── ResultTable.tsx    # Datenvorschau-Grid mit Mapping-UI
+│   │       ├── StatsCard.tsx      # Validierungsstatistik-Kacheln
+│   │       └── ColumnMapper.tsx   # Spalten-Zuordnungs-Komponente
+│   └── package.json
+└── CLAUDE.md                # Projektdokumentation für KI-Assistenten
 ```
 
-Der Validator erkennt und lädt die neue Datei beim nächsten Start automatisch. Es sind **keinerlei Änderungen am Python-Code** erforderlich. Die Vorlage `_template_future_schema.json` beschreibt das vollständige JSON-Schema mit allen unterstützten Feldtypen und Validierungsregeln.
-
-### Unterstützte Feldtypen
-
-| Typ         | Beschreibung                                                       |
-|-------------|--------------------------------------------------------------------|
-| `string`    | Freier Text; kombinierbar mit `regex` und/oder `codelist`          |
-| `date`      | Datum; Engine parst `TT.MM.JJJJ` und `JJJJ-MM-TT` automatisch    |
-| `steuer_id` | 11-stellige Steuer-ID; BZSt-Prüfziffer-Algorithmus automatisch     |
-| `iban`      | IBAN; Modulo-97-Prüfung (ISO 13616) automatisch                    |
-| `plz`       | Deutsche PLZ; verwenden Sie zusätzlich `"regex": "^[0-9]{5}$"`    |
-
 ---
 
-## Enthaltene XÖV-Schemata
-
-| Datei                    | Standard     | Behörde               |
-|--------------------------|--------------|-----------------------|
-| `xmeld_basic.json`       | XMeld        | Bürgeramt / EWO       |
-| `xgewerbe_2_1.json`      | XGewerbe 2.1 | Ordnungsamt           |
-| `xauslaender_core.json`  | XAusländer   | Ausländerbehörde      |
-
----
-
-## Lokaler Betrieb
+## 🚀 Lokale Installation
 
 ### Voraussetzungen
 
-- Python 3.11+
-- Node.js 20+ und npm
+- Python **3.11** oder neuer
+- Node.js **18** oder neuer
+- npm 9+
 
-### Backend starten
+### 1. Repository klonen
+
+```bash
+git clone https://github.com/<ihr-nutzername>/xoev-pruefbaustein.git
+cd xoev-pruefbaustein
+```
+
+### 2. Backend einrichten
 
 ```bash
 cd backend
+
+# Virtuelle Umgebung erstellen und aktivieren
+python -m venv .venv
+
+# Windows:
+.venv\Scripts\activate
+# Linux / macOS:
+# source .venv/bin/activate
+
+# Abhängigkeiten installieren
 pip install -r requirements.txt
-uvicorn app.main:app --reload --host 127.0.0.1 --port 8000
+
+# Backend starten (Port 8000)
+.venv\Scripts\uvicorn app.main:app --reload --port 8000
+# Linux/macOS:
+# uvicorn app.main:app --reload --port 8000
 ```
 
-Die API-Dokumentation ist unter [http://127.0.0.1:8000/api/docs](http://127.0.0.1:8000/api/docs) erreichbar.
+Der API-Server ist erreichbar unter: **http://127.0.0.1:8000**
+Interaktive Dokumentation: **http://127.0.0.1:8000/api/docs**
 
-### Frontend starten (Entwicklungsmodus)
+### 3. Frontend einrichten
+
+Neues Terminal öffnen:
 
 ```bash
 cd frontend
+
+# Abhängigkeiten installieren
 npm install
+
+# Entwicklungsserver starten (Port 5173)
 npm run dev
 ```
 
-Die Anwendung ist unter [http://localhost:5173](http://localhost:5173) erreichbar.
+Die Anwendung ist erreichbar unter: **http://localhost:5173**
 
-### Frontend als statisches Bundle erstellen
+### 4. Produktions-Build (optional)
 
 ```bash
 cd frontend
 npm run build
+# Statische Dateien liegen dann in frontend/dist/
 ```
 
-Das fertige Bundle im Verzeichnis `frontend/dist/` kann auf jedem lokalen Webserver (z. B. Apache/XAMPP) ohne weitere Abhängigkeiten betrieben werden.
+---
+
+## ➕ Neues XÖV-Schema hinzufügen
+
+Das System ist vollständig deklarativ. Kein Enginecode muss geändert werden:
+
+1. Neue JSON-Datei in `backend/rules/` ablegen (Namensschema: `<standard>_<version>_compiled.json`)
+2. Backend neu starten — das neue Schema erscheint automatisch in der Schemaauswahl
+
+Die JSON-Struktur orientiert sich an den bestehenden Schemadateien. Ein kommentiertes Template liegt in `backend/!/rules - Kopie/_template_future_schema.json`.
 
 ---
 
-## Sicherheitshinweise
+## 🔐 Datenschutz & Sicherheit
 
-| Maßnahme                         | Umsetzung                                                                                   |
-|----------------------------------|---------------------------------------------------------------------------------------------|
-| Kein PII in Logs                 | Strukturierter Logger mit `_PiiFilter`; nur Metadaten (Zeitstempel, Schema-ID, Zeilenanzahl, Fehleranzahl, Dauer) |
-| CSV-Injection-Schutz             | Frontend-Export setzt `'`-Präfix vor Zellen, die mit `=`, `+`, `-`, `@` beginnen           |
-| UTF-8 BOM im Export              | Excel-kompatibler Download mit `﻿`-Präfix; Umlaute bleiben korrekt dargestellt         |
-| DOM-Guardrail                    | Tabelle zeigt maximal 500 Fehlereinträge; vollständiger Bericht im CSV-Export               |
-| Dateigröße begrenzt              | FastAPI lehnt Uploads über 50 MB mit HTTP 413 ab                                            |
-| In-Memory-Verarbeitung           | `io.BytesIO` – keine temporären Dateien auf der Festplatte                                  |
+- **Keine Datenbank** — alle Verarbeitungen laufen vollständig im RAM
+- **Kein PII-Logging** — Protokoll enthält ausschließlich Metadaten (Zeitstempel, Schema-ID, Zeilenanzahl, Fehleranzahl)
+- **Offline-fähig** — kein CDN, keine Google Fonts, keine externen Abhängigkeiten
+- **50 MB Upload-Limit** — DoS-Schutz für kommunale Hardware (BSI-Grundschutz)
+- **CSV-Injection-Schutz** — Formel-Sanitisierung beim Korrekturbericht-Export (`=`, `+`, `-`, `@` werden mit `'` präfigiert)
 
 ---
 
-## Lizenz
+## 📄 Lizenz
 
-Lizenziert unter der **European Union Public Licence 1.2 (EUPL-1.2)**.  
-Siehe [https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12).
+Lizenziert unter der **European Union Public Licence 1.2 (EUPL-1.2)**.
+Siehe [EUPL-Text](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12) für Details.

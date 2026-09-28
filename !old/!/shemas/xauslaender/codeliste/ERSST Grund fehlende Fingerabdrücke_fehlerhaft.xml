@@ -1,7 +1,0 @@
-<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
-<bdt:Fehler xmlns:bdt="http://www.xoev.de/de/xrepository/framework/1/basisdatentypen">
-    <bdt:status>0</bdt:status>
-    <bdt:fehler>Codelisteversion nicht gültig</bdt:fehler>
-    <bdt:meldung>Codelisteversion urn:xoev-de:bva:codeliste:azrersst.grundfehlendefingerabdruecke hat nicht den Status Veröffentlicht
-Codelisteversion urn:xoev-de:bva:codeliste:azrersst.grundfehlendefingerabdruecke hat nicht den Status Endfassung</bdt:meldung>
-</bdt:Fehler>
