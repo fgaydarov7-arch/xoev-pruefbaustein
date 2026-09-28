@@ -2,7 +2,14 @@
 
 > **Datenschutzkonforme Offline-Validierung von XÖV-Registerdaten für den öffentlichen Dienst**
 
-[![Lizenz: EUPL 1.2](https://img.shields.io/badge/Lizenz-EUPL%201.2-blue.svg)](https://joinup.ec.europa.eu/collection/eupl/eupl-text-eupl-12)
+## License
+Copyright © 2026 Farid Gaydarov
+GitHub: https://github.com/fgaydarov7-arch
+This project is licensed under the Apache License, Version 2.0.
+You may obtain a copy of the License at:
+https://www.apache.org/licenses/LICENSE-2.0
+See the [LICENSE](LICENSE) file for the full license text.
+SPDX-License-Identifier: Apache-2.0
 [![BSI-Grundschutz](https://img.shields.io/badge/BSI-Grundschutz%20konform-003366.svg)]()
 [![BITV 2.0](https://img.shields.io/badge/Barrierefreiheit-BITV%202.0%20AA-green.svg)]()
 [![Stack](https://img.shields.io/badge/Stack-Python%203.11%20%7C%20FastAPI%20%7C%20React%2019-informational.svg)]()
